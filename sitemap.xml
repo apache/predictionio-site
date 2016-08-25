@@ -14,7 +14,7 @@
   </url>
   <url>
     <loc>//predictionio.incubator.apache.org/algorithm/</loc>
-    <lastmod>2016-07-25T13:36:22-07:00</lastmod>
+    <lastmod>2016-08-02T09:08:51-07:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -32,91 +32,91 @@
   </url>
   <url>
     <loc>//predictionio.incubator.apache.org/appintegration/</loc>
-    <lastmod>2016-07-25T13:36:22-07:00</lastmod>
+    <lastmod>2016-08-02T09:08:51-07:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>//predictionio.incubator.apache.org/cli/</loc>
-    <lastmod>2016-07-25T13:36:22-07:00</lastmod>
+    <lastmod>2016-08-02T09:08:51-07:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>//predictionio.incubator.apache.org/community/contribute-code/</loc>
-    <lastmod>2016-07-25T14:06:04-07:00</lastmod>
+    <lastmod>2016-08-02T09:08:51-07:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>//predictionio.incubator.apache.org/community/contribute-documentation/</loc>
-    <lastmod>2016-07-25T13:36:22-07:00</lastmod>
+    <lastmod>2016-08-02T09:08:51-07:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>//predictionio.incubator.apache.org/community/contribute-sdk/</loc>
-    <lastmod>2016-07-25T13:36:22-07:00</lastmod>
+    <lastmod>2016-08-02T09:08:51-07:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>//predictionio.incubator.apache.org/community/contribute-webhook/</loc>
-    <lastmod>2016-07-25T13:36:22-07:00</lastmod>
+    <lastmod>2016-08-02T09:08:51-07:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>//predictionio.incubator.apache.org/community/</loc>
-    <lastmod>2016-07-25T13:36:22-07:00</lastmod>
+    <lastmod>2016-08-02T09:08:51-07:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>//predictionio.incubator.apache.org/community/projects/</loc>
-    <lastmod>2016-07-25T13:36:22-07:00</lastmod>
+    <lastmod>2016-08-02T09:08:51-07:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>//predictionio.incubator.apache.org/community/submit-template/</loc>
-    <lastmod>2016-07-18T10:58:28-07:00</lastmod>
+    <lastmod>2016-08-02T09:08:51-07:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>//predictionio.incubator.apache.org/customize/dase/</loc>
-    <lastmod>2016-07-25T13:36:22-07:00</lastmod>
+    <lastmod>2016-08-02T09:08:51-07:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>//predictionio.incubator.apache.org/customize/</loc>
-    <lastmod>2016-07-25T13:36:22-07:00</lastmod>
+    <lastmod>2016-08-02T09:08:51-07:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>//predictionio.incubator.apache.org/customize/troubleshooting/</loc>
-    <lastmod>2016-07-25T13:36:22-07:00</lastmod>
+    <lastmod>2016-08-02T09:08:51-07:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>//predictionio.incubator.apache.org/datacollection/analytics-ipynb/</loc>
-    <lastmod>2016-07-25T13:36:22-07:00</lastmod>
+    <lastmod>2016-08-02T09:08:51-07:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>//predictionio.incubator.apache.org/datacollection/analytics-tableau/</loc>
-    <lastmod>2016-07-25T13:36:22-07:00</lastmod>
+    <lastmod>2016-08-02T09:08:51-07:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>//predictionio.incubator.apache.org/datacollection/analytics-zeppelin/</loc>
-    <lastmod>2016-07-25T13:36:22-07:00</lastmod>
+    <lastmod>2016-08-02T09:08:51-07:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -128,49 +128,49 @@
   </url>
   <url>
     <loc>//predictionio.incubator.apache.org/datacollection/batchimport/</loc>
-    <lastmod>2016-07-25T13:36:22-07:00</lastmod>
+    <lastmod>2016-08-02T09:08:51-07:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>//predictionio.incubator.apache.org/datacollection/channel/</loc>
-    <lastmod>2016-07-25T13:36:22-07:00</lastmod>
+    <lastmod>2016-08-02T09:08:51-07:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>//predictionio.incubator.apache.org/datacollection/eventapi/</loc>
-    <lastmod>2016-07-25T13:36:22-07:00</lastmod>
+    <lastmod>2016-08-11T10:14:21-07:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>//predictionio.incubator.apache.org/datacollection/eventmodel/</loc>
-    <lastmod>2016-07-25T13:36:22-07:00</lastmod>
+    <lastmod>2016-08-02T09:08:51-07:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>//predictionio.incubator.apache.org/datacollection/</loc>
-    <lastmod>2016-07-25T13:36:22-07:00</lastmod>
+    <lastmod>2016-08-02T09:08:51-07:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>//predictionio.incubator.apache.org/datacollection/webhooks/</loc>
-    <lastmod>2016-07-25T13:36:22-07:00</lastmod>
+    <lastmod>2016-08-02T09:08:51-07:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>//predictionio.incubator.apache.org/demo/community/</loc>
-    <lastmod>2016-07-25T13:36:22-07:00</lastmod>
+    <lastmod>2016-08-02T09:08:51-07:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>//predictionio.incubator.apache.org/demo/</loc>
-    <lastmod>2016-07-25T13:36:22-07:00</lastmod>
+    <lastmod>2016-08-02T09:08:51-07:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -182,13 +182,13 @@
   </url>
   <url>
     <loc>//predictionio.incubator.apache.org/demo/tapster/</loc>
-    <lastmod>2016-07-25T13:36:22-07:00</lastmod>
+    <lastmod>2016-08-02T09:08:51-07:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>//predictionio.incubator.apache.org/demo/textclassification/</loc>
-    <lastmod>2016-07-25T13:36:22-07:00</lastmod>
+    <lastmod>2016-08-02T09:08:51-07:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -206,13 +206,13 @@
   </url>
   <url>
     <loc>//predictionio.incubator.apache.org/deploy/</loc>
-    <lastmod>2016-07-25T13:36:22-07:00</lastmod>
+    <lastmod>2016-08-02T09:08:51-07:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>//predictionio.incubator.apache.org/deploy/monitoring/</loc>
-    <lastmod>2016-07-25T13:36:49-07:00</lastmod>
+    <lastmod>2016-08-02T09:08:51-07:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -253,14 +253,26 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>//predictionio.incubator.apache.org/gallery/template-gallery/</loc>
+    <lastmod>2016-08-25T13:11:17-07:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>//predictionio.incubator.apache.org/github/</loc>
+    <lastmod>2016-08-21T12:26:15-07:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>//predictionio.incubator.apache.org/templates/vanilla/dase/</loc>
     <lastmod>2016-07-18T10:58:28-07:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>//predictionio.incubator.apache.org/</loc>
-    <lastmod>2016-07-25T13:36:22-07:00</lastmod>
+    <lastmod>2016-08-02T09:08:51-07:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -272,19 +284,19 @@
   </url>
   <url>
     <loc>//predictionio.incubator.apache.org/install/</loc>
-    <lastmod>2016-07-25T13:36:22-07:00</lastmod>
+    <lastmod>2016-08-02T09:08:51-07:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>//predictionio.incubator.apache.org/install/install-linux/</loc>
-    <lastmod>2016-07-25T14:06:43-07:00</lastmod>
+    <lastmod>2016-08-02T09:08:51-07:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>//predictionio.incubator.apache.org/install/install-sourcecode/</loc>
-    <lastmod>2016-07-25T13:36:22-07:00</lastmod>
+    <lastmod>2016-08-02T09:08:51-07:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -314,7 +326,7 @@
   </url>
   <url>
     <loc>//predictionio.incubator.apache.org/machinelearning/dimensionalityreduction/</loc>
-    <lastmod>2016-07-25T13:36:22-07:00</lastmod>
+    <lastmod>2016-08-02T09:08:51-07:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -332,7 +344,7 @@
   </url>
   <url>
     <loc>//predictionio.incubator.apache.org/resources/faq/</loc>
-    <lastmod>2016-07-25T13:36:22-07:00</lastmod>
+    <lastmod>2016-08-02T09:08:51-07:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -344,13 +356,13 @@
   </url>
   <url>
     <loc>//predictionio.incubator.apache.org/resources/intellij/</loc>
-    <lastmod>2016-07-25T13:36:22-07:00</lastmod>
+    <lastmod>2016-08-02T09:08:51-07:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>//predictionio.incubator.apache.org/resources/upgrade/</loc>
-    <lastmod>2016-07-25T13:36:22-07:00</lastmod>
+    <lastmod>2016-08-02T09:08:51-07:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -440,13 +452,13 @@
   </url>
   <url>
     <loc>//predictionio.incubator.apache.org/sdk/java/</loc>
-    <lastmod>2016-07-25T13:36:22-07:00</lastmod>
+    <lastmod>2016-08-02T09:08:51-07:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>//predictionio.incubator.apache.org/sdk/php/</loc>
-    <lastmod>2016-07-25T13:36:22-07:00</lastmod>
+    <lastmod>2016-08-02T09:08:51-07:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -494,19 +506,19 @@
   </url>
   <url>
     <loc>//predictionio.incubator.apache.org/templates/vanilla/quickstart/</loc>
-    <lastmod>2016-07-25T13:36:22-07:00</lastmod>
+    <lastmod>2016-08-02T09:08:51-07:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>//predictionio.incubator.apache.org/support/</loc>
-    <lastmod>2016-07-25T14:27:56-07:00</lastmod>
+    <lastmod>2016-08-02T09:08:51-07:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>//predictionio.incubator.apache.org/system/anotherdatastore/</loc>
-    <lastmod>2016-07-25T13:36:22-07:00</lastmod>
+    <lastmod>2016-08-03T10:40:26-07:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -524,13 +536,13 @@
   </url>
   <url>
     <loc>//predictionio.incubator.apache.org/templates/classification/add-algorithm/</loc>
-    <lastmod>2016-07-18T10:58:28-07:00</lastmod>
+    <lastmod>2016-08-11T10:14:21-07:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>//predictionio.incubator.apache.org/templates/classification/dase/</loc>
-    <lastmod>2016-07-18T10:58:28-07:00</lastmod>
+    <lastmod>2016-08-11T10:14:21-07:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -542,7 +554,7 @@
   </url>
   <url>
     <loc>//predictionio.incubator.apache.org/templates/classification/quickstart/</loc>
-    <lastmod>2016-07-25T13:36:22-07:00</lastmod>
+    <lastmod>2016-08-11T10:14:21-07:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -566,13 +578,13 @@
   </url>
   <url>
     <loc>//predictionio.incubator.apache.org/templates/complementarypurchase/quickstart/</loc>
-    <lastmod>2016-07-25T13:36:22-07:00</lastmod>
+    <lastmod>2016-08-11T10:14:21-07:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>//predictionio.incubator.apache.org/templates/vanilla/dase/</loc>
-    <lastmod>2016-07-18T10:58:28-07:00</lastmod>
+    <loc>//predictionio.incubator.apache.org/templates/ecommercerecommendation/dase/</loc>
+    <lastmod>2016-08-11T10:14:21-07:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -584,13 +596,13 @@
   </url>
   <url>
     <loc>//predictionio.incubator.apache.org/templates/ecommercerecommendation/quickstart/</loc>
-    <lastmod>2016-07-25T13:36:22-07:00</lastmod>
+    <lastmod>2016-08-11T10:14:21-07:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>//predictionio.incubator.apache.org/templates/ecommercerecommendation/train-with-rate-event/</loc>
-    <lastmod>2016-07-18T10:58:28-07:00</lastmod>
+    <lastmod>2016-08-03T10:40:26-07:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -602,7 +614,7 @@
   </url>
   <url>
     <loc>//predictionio.incubator.apache.org/templates/javaecommercerecommendation/quickstart/</loc>
-    <lastmod>2016-07-25T13:36:22-07:00</lastmod>
+    <lastmod>2016-08-11T10:14:21-07:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -614,25 +626,25 @@
   </url>
   <url>
     <loc>//predictionio.incubator.apache.org/templates/leadscoring/quickstart/</loc>
-    <lastmod>2016-07-25T13:36:22-07:00</lastmod>
+    <lastmod>2016-08-11T10:14:21-07:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>//predictionio.incubator.apache.org/templates/productranking/dase/</loc>
-    <lastmod>2016-07-18T10:58:28-07:00</lastmod>
+    <lastmod>2016-08-11T10:14:21-07:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>//predictionio.incubator.apache.org/templates/productranking/quickstart/</loc>
-    <lastmod>2016-07-25T13:36:22-07:00</lastmod>
+    <lastmod>2016-08-11T10:14:21-07:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>//predictionio.incubator.apache.org/templates/recommendation/batch-evaluator/</loc>
-    <lastmod>2016-07-25T13:36:22-07:00</lastmod>
+    <lastmod>2016-08-02T09:08:51-07:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -644,19 +656,19 @@
   </url>
   <url>
     <loc>//predictionio.incubator.apache.org/templates/recommendation/customize-data-prep/</loc>
-    <lastmod>2016-07-25T13:36:22-07:00</lastmod>
+    <lastmod>2016-08-03T10:40:26-07:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>//predictionio.incubator.apache.org/templates/recommendation/customize-serving/</loc>
-    <lastmod>2016-07-25T13:36:22-07:00</lastmod>
+    <lastmod>2016-08-03T10:40:26-07:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>//predictionio.incubator.apache.org/templates/recommendation/dase/</loc>
-    <lastmod>2016-07-18T10:58:28-07:00</lastmod>
+    <lastmod>2016-08-11T10:14:21-07:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -674,7 +686,7 @@
   </url>
   <url>
     <loc>//predictionio.incubator.apache.org/templates/recommendation/quickstart/</loc>
-    <lastmod>2016-07-25T13:36:22-07:00</lastmod>
+    <lastmod>2016-08-02T09:08:51-07:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -692,7 +704,7 @@
   </url>
   <url>
     <loc>//predictionio.incubator.apache.org/templates/similarproduct/dase/</loc>
-    <lastmod>2016-07-18T10:58:28-07:00</lastmod>
+    <lastmod>2016-08-11T10:14:21-07:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -704,19 +716,13 @@
   </url>
   <url>
     <loc>//predictionio.incubator.apache.org/templates/similarproduct/multi-events-multi-algos/</loc>
-    <lastmod>2016-07-25T13:36:22-07:00</lastmod>
+    <lastmod>2016-08-11T10:14:21-07:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>//predictionio.incubator.apache.org/templates/similarproduct/quickstart/</loc>
-    <lastmod>2016-07-25T13:36:22-07:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>//predictionio.incubator.apache.org/templates/ecommercerecommendation/dase/</loc>
-    <lastmod>2016-07-18T10:58:28-07:00</lastmod>
+    <lastmod>2016-08-11T10:14:21-07:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
