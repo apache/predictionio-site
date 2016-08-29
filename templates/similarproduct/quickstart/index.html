@@ -32,7 +32,7 @@ Your system is all ready to go.
 <span class="o">[</span>INFO] <span class="o">[</span>App<span class="nv">$]</span>               MyApp1 |    1 | 3mZWDzci2D5YsqAnqNnXH9SB6Rg3dsTBs8iHkK6X2i54IQsIZI1eEeQQyMfs7b3F | <span class="o">(</span>all<span class="o">)</span>
 <span class="o">[</span>INFO] <span class="o">[</span>App<span class="nv">$]</span>               MyApp2 |    2 | io5lz6Eg4m3Xe4JZTBFE13GMAf1dhFl6ZteuJfrO84XpdOz9wRCrDU44EUaYuXq5 | <span class="o">(</span>all<span class="o">)</span>
 <span class="o">[</span>INFO] <span class="o">[</span>App<span class="nv">$]</span> Finished listing 2 app<span class="o">(</span>s<span class="o">)</span>.
-</pre></td></tr></tbody></table> </div> <p><a href="#"></a></p> <h2 id='4.-collecting-data' class='header-anchors'>4. Collecting Data</h2><p>Next, let&#39;s collect some training data for the app of this Engine. By default, the Similar Product Engine Template supports 2 types of entities: <strong>user</strong> and <strong>item</strong>, and event <strong>view</strong>. An item has the <strong>categories</strong> property, which is a list of category names (String). A user can view an item. Respectively, this template requires &#39;$set&#39; user event, &#39;$set&#39; item event, and user-view-item events.</p><div class="alert-message info"><p>This template can easily be customized to consider more user events such as <em>buy</em>, <em>rate</em> and <em>like</em>.</p></div><p>You can send these events to PredictionIO Event Server in real-time easily by making a HTTP request or through the provided SDK. Please see <a href="/appintegration/">App Integration Overview</a> for more details how to integrate your app with SDK.</p><p>Let&#39;s try sending events to EventServer with the following <code>curl</code> commands (The corresponding SDK code is showed in other tabs).</p><p>Replace <code>&lt;ACCCESS_KEY&gt;</code> by the Access Key generated in above steps. Note that <code>localhost:7070</code> is the default URL of the Event Server.</p><p>For convenience, set your access key to the shell variable, run:</p><p><code>$ ACCESS_KEY=&lt;ACCESS_KEY&gt;</code></p> <p><a href="#"></a></p> <p>For example, when a new user with id &quot;u0&quot; is created in your app on time <code>2014-11-02T09:39:45.618-08:00</code> (current time will be used if eventTime is not specified), you can send a <code>$set</code> event for this user. To send this event, run the following <code>curl</code> command:</p><div class="tabs"> <ul class="control"> <li data-lang="json"><a href="#tab-16c44b5d-ad4f-41cb-b68e-b881ef8d8f9e">REST API</a></li> <li data-lang="python"><a href="#tab-6ac51179-b0fe-4d4c-9e93-7239156b8cd8">Python SDK</a></li> <li data-lang="php"><a href="#tab-1c996f08-7861-485d-ae94-18e1ee8d5c7f">PHP SDK</a></li> <li data-lang="ruby"><a href="#tab-381d7150-26ac-4a2e-be6a-3f27045c2d46">Ruby SDK</a></li> <li data-lang="java"><a href="#tab-c3f598a3-704f-47d1-9672-3fc071d460ca">Java SDK</a></li> </ul> <div data-tab="REST API" data-lang="json" id="tab-16c44b5d-ad4f-41cb-b68e-b881ef8d8f9e"> <div class="highlight shell"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+</pre></td></tr></tbody></table> </div> <p><a href="#"></a></p> <h2 id='4.-collecting-data' class='header-anchors'>4. Collecting Data</h2><p>Next, let&#39;s collect some training data for the app of this Engine. By default, the Similar Product Engine Template supports 2 types of entities: <strong>user</strong> and <strong>item</strong>, and event <strong>view</strong>. An item has the <strong>categories</strong> property, which is a list of category names (String). A user can view an item. Respectively, this template requires &#39;$set&#39; user event, &#39;$set&#39; item event, and user-view-item events.</p><div class="alert-message info"><p>This template can easily be customized to consider more user events such as <em>buy</em>, <em>rate</em> and <em>like</em>.</p></div><p>You can send these events to PredictionIO Event Server in real-time easily by making a HTTP request or through the provided SDK. Please see <a href="/appintegration/">App Integration Overview</a> for more details how to integrate your app with SDK.</p><p>Let&#39;s try sending events to EventServer with the following <code>curl</code> commands (The corresponding SDK code is showed in other tabs).</p><p>Replace <code>&lt;ACCCESS_KEY&gt;</code> by the Access Key generated in above steps. Note that <code>localhost:7070</code> is the default URL of the Event Server.</p><p>For convenience, set your access key to the shell variable, run:</p><p><code>$ ACCESS_KEY=&lt;ACCESS_KEY&gt;</code></p> <p><a href="#"></a></p> <p>For example, when a new user with id &quot;u0&quot; is created in your app on time <code>2014-11-02T09:39:45.618-08:00</code> (current time will be used if eventTime is not specified), you can send a <code>$set</code> event for this user. To send this event, run the following <code>curl</code> command:</p><div class="tabs"> <ul class="control"> <li data-lang="json"><a href="#tab-d1739a9a-9891-435a-84b3-c0a78f70922f">REST API</a></li> <li data-lang="python"><a href="#tab-9c850eb8-b155-4e30-a25f-d357febdb61b">Python SDK</a></li> <li data-lang="php"><a href="#tab-5c0daf1e-f8cd-4950-801e-a827f2f212bd">PHP SDK</a></li> <li data-lang="ruby"><a href="#tab-b025b1bb-16ad-4f1a-8f1f-6beb77952479">Ruby SDK</a></li> <li data-lang="java"><a href="#tab-3522f338-7d80-4c09-9d57-319370519881">Java SDK</a></li> </ul> <div data-tab="REST API" data-lang="json" id="tab-d1739a9a-9891-435a-84b3-c0a78f70922f"> <div class="highlight shell"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
@@ -47,7 +47,7 @@ Your system is all ready to go.
   "entityId" : "u0",
   "eventTime" : "2014-11-02T09:39:45.618-08:00"
 }'</span>
-</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Python SDK" data-lang="python" id="tab-6ac51179-b0fe-4d4c-9e93-7239156b8cd8"> <div class="highlight python"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Python SDK" data-lang="python" id="tab-9c850eb8-b155-4e30-a25f-d357febdb61b"> <div class="highlight python"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
@@ -86,7 +86,7 @@ Your system is all ready to go.
   <span class="n">event_time</span><span class="o">=</span><span class="n">datetime</span><span class="p">(</span>
     <span class="mi">2014</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mo">02</span><span class="p">,</span> <span class="mi">09</span><span class="p">,</span> <span class="mi">39</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">618000</span><span class="p">,</span> <span class="n">pytz</span><span class="o">.</span><span class="n">timezone</span><span class="p">(</span><span class="s">'US/Pacific'</span><span class="p">)</span>
 <span class="p">)</span>
-</pre></td> </tr></tbody></table> </div> </div> <div data-tab="PHP SDK" data-lang="php" id="tab-1c996f08-7861-485d-ae94-18e1ee8d5c7f"> <div class="highlight php"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+</pre></td> </tr></tbody></table> </div> </div> <div data-tab="PHP SDK" data-lang="php" id="tab-5c0daf1e-f8cd-4950-801e-a827f2f212bd"> <div class="highlight php"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
@@ -111,7 +111,7 @@ Your system is all ready to go.
   <span class="s1">'entityId'</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">USER</span> <span class="nx">ID</span><span class="o">&gt;</span>
 <span class="p">));</span>
 <span class="cp">?&gt;</span>
-</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Ruby SDK" data-lang="ruby" id="tab-381d7150-26ac-4a2e-be6a-3f27045c2d46"> <div class="highlight ruby"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Ruby SDK" data-lang="ruby" id="tab-b025b1bb-16ad-4f1a-8f1f-6beb77952479"> <div class="highlight ruby"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
@@ -128,7 +128,7 @@ Your system is all ready to go.
   <span class="s1">'user'</span><span class="p">,</span>
   <span class="o">&lt;</span><span class="no">USER</span> <span class="no">ID</span><span class="o">&gt;</span>
 <span class="p">)</span>
-</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Java SDK" data-lang="java" id="tab-c3f598a3-704f-47d1-9672-3fc071d460ca"> <div class="highlight java"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Java SDK" data-lang="java" id="tab-3522f338-7d80-4c09-9d57-319370519881"> <div class="highlight java"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
@@ -153,7 +153,7 @@ Your system is all ready to go.
   <span class="o">.</span><span class="na">entityType</span><span class="o">(</span><span class="s">"user"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">entityId</span><span class="o">(&lt;</span><span class="n">USER_ID</span><span class="o">&gt;);</span>
 <span class="n">client</span><span class="o">.</span><span class="na">createEvent</span><span class="o">(</span><span class="n">userEvent</span><span class="o">);</span>
-</pre></td> </tr></tbody></table> </div> </div> </div> <p>When a new item &quot;i0&quot; is created in your app on time <code>2014-11-02T09:39:45.618-08:00</code> (current time will be used if eventTime is not specified), you can send a <code>$set</code> event for the item. Note that the item is set with categories properties: <code>&quot;c1&quot;</code> and <code>&quot;c2&quot;</code>. Run the following <code>curl</code> command:</p><div class="tabs"> <ul class="control"> <li data-lang="json"><a href="#tab-2971261a-7d8e-43ad-b6d4-ec8692f43821">REST API</a></li> <li data-lang="python"><a href="#tab-dbaefbb3-9604-4006-9f9a-f89abb031b1a">Python SDK</a></li> <li data-lang="php"><a href="#tab-f64dd034-d2a2-4aeb-8ae8-708188842331">PHP SDK</a></li> <li data-lang="ruby"><a href="#tab-ec200fe0-90ea-4139-b1c9-1b3aa4d46588">Ruby SDK</a></li> <li data-lang="java"><a href="#tab-d0256e1f-5340-4043-af24-35bbd8410cd1">Java SDK</a></li> </ul> <div data-tab="REST API" data-lang="json" id="tab-2971261a-7d8e-43ad-b6d4-ec8692f43821"> <div class="highlight shell"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+</pre></td> </tr></tbody></table> </div> </div> </div> <p>When a new item &quot;i0&quot; is created in your app on time <code>2014-11-02T09:39:45.618-08:00</code> (current time will be used if eventTime is not specified), you can send a <code>$set</code> event for the item. Note that the item is set with categories properties: <code>&quot;c1&quot;</code> and <code>&quot;c2&quot;</code>. Run the following <code>curl</code> command:</p><div class="tabs"> <ul class="control"> <li data-lang="json"><a href="#tab-99b71271-c6dc-4994-b2dd-78bddf61c255">REST API</a></li> <li data-lang="python"><a href="#tab-c6e434f3-0fd4-43ae-b3c1-d7e14f80f703">Python SDK</a></li> <li data-lang="php"><a href="#tab-65733a69-bcdf-4d71-8a26-898e773543f2">PHP SDK</a></li> <li data-lang="ruby"><a href="#tab-2f28035c-9b8e-48d8-814e-97c7b9bd1829">Ruby SDK</a></li> <li data-lang="java"><a href="#tab-df22545e-c2d6-4fc5-81ce-57ae5fa5a36c">Java SDK</a></li> </ul> <div data-tab="REST API" data-lang="json" id="tab-99b71271-c6dc-4994-b2dd-78bddf61c255"> <div class="highlight shell"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
@@ -174,7 +174,7 @@ Your system is all ready to go.
   }
   "eventTime" : "2014-11-02T09:39:45.618-08:00"
 }'</span>
-</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Python SDK" data-lang="python" id="tab-dbaefbb3-9604-4006-9f9a-f89abb031b1a"> <div class="highlight python"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Python SDK" data-lang="python" id="tab-c6e434f3-0fd4-43ae-b3c1-d7e14f80f703"> <div class="highlight python"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
@@ -193,7 +193,7 @@ Your system is all ready to go.
     <span class="s">"categories"</span> <span class="p">:</span> <span class="p">[</span><span class="s">"&lt;CATEGORY_1&gt;"</span><span class="p">,</span> <span class="s">"&lt;CATEGORY_2&gt;"</span><span class="p">]</span>
   <span class="p">}</span>
 <span class="p">)</span>
-</pre></td> </tr></tbody></table> </div> </div> <div data-tab="PHP SDK" data-lang="php" id="tab-f64dd034-d2a2-4aeb-8ae8-708188842331"> <div class="highlight php"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+</pre></td> </tr></tbody></table> </div> </div> <div data-tab="PHP SDK" data-lang="php" id="tab-65733a69-bcdf-4d71-8a26-898e773543f2"> <div class="highlight php"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
@@ -214,7 +214,7 @@ Your system is all ready to go.
 <span class="p">));</span>
 
 <span class="cp">?&gt;</span>
-</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Ruby SDK" data-lang="ruby" id="tab-ec200fe0-90ea-4139-b1c9-1b3aa4d46588"> <div class="highlight ruby"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Ruby SDK" data-lang="ruby" id="tab-2f28035c-9b8e-48d8-814e-97c7b9bd1829"> <div class="highlight ruby"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
@@ -231,7 +231,7 @@ Your system is all ready to go.
   <span class="p">}</span>
 <span class="p">)</span>
 
-</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Java SDK" data-lang="java" id="tab-d0256e1f-5340-4043-af24-35bbd8410cd1"> <div class="highlight java"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Java SDK" data-lang="java" id="tab-df22545e-c2d6-4fc5-81ce-57ae5fa5a36c"> <div class="highlight java"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
@@ -244,7 +244,7 @@ Your system is all ready to go.
   <span class="o">.</span><span class="na">entityId</span><span class="o">(&lt;</span><span class="n">ITEM_ID</span><span class="o">&gt;)</span>
   <span class="o">.</span><span class="na">property</span><span class="o">(</span><span class="s">"categories"</span><span class="o">,</span> <span class="n">ImmutableList</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="s">"&lt;CATEGORY_1&gt;"</span><span class="o">,</span> <span class="s">"&lt;CATEGORY_2&gt;"</span><span class="o">));</span>
 <span class="n">client</span><span class="o">.</span><span class="na">createEvent</span><span class="o">(</span><span class="n">itemEvent</span><span class="o">)</span>
-</pre></td> </tr></tbody></table> </div> </div> </div> <p>When the user &quot;u0&quot; view item &quot;i0&quot; on time <code>2014-11-10T12:34:56.123-08:00</code> (current time will be used if eventTime is not specified), you can send a view event. Run the following <code>curl</code> command:</p><div class="tabs"> <ul class="control"> <li data-lang="json"><a href="#tab-e4a95a20-20cd-409c-afa9-a3ab80b6c22e">REST API</a></li> <li data-lang="python"><a href="#tab-e9aa2b8b-692b-45b7-9957-0e960b4a4bf8">Python SDK</a></li> <li data-lang="php"><a href="#tab-fd899dd5-7be9-48e8-8594-7b9465354627">PHP SDK</a></li> <li data-lang="ruby"><a href="#tab-3d6739fa-4f3a-42b2-bcaf-b83548fdfa10">Ruby SDK</a></li> <li data-lang="java"><a href="#tab-8cd1f31c-938f-49ea-b442-e83c9afc8d76">Java SDK</a></li> </ul> <div data-tab="REST API" data-lang="json" id="tab-e4a95a20-20cd-409c-afa9-a3ab80b6c22e"> <div class="highlight shell"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+</pre></td> </tr></tbody></table> </div> </div> </div> <p>When the user &quot;u0&quot; view item &quot;i0&quot; on time <code>2014-11-10T12:34:56.123-08:00</code> (current time will be used if eventTime is not specified), you can send a view event. Run the following <code>curl</code> command:</p><div class="tabs"> <ul class="control"> <li data-lang="json"><a href="#tab-e6984432-ba6b-41ef-985d-c88f254fb096">REST API</a></li> <li data-lang="python"><a href="#tab-c71c87d4-706b-4337-b77c-f578b6778824">Python SDK</a></li> <li data-lang="php"><a href="#tab-a0269bcb-420d-4774-9c33-eca4c5f0268c">PHP SDK</a></li> <li data-lang="ruby"><a href="#tab-40c0667e-af1c-44ff-8486-a201065f53b0">Ruby SDK</a></li> <li data-lang="java"><a href="#tab-a76b284d-b459-423e-ade7-07a006401c8a">Java SDK</a></li> </ul> <div data-tab="REST API" data-lang="json" id="tab-e6984432-ba6b-41ef-985d-c88f254fb096"> <div class="highlight shell"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
@@ -263,7 +263,7 @@ Your system is all ready to go.
   "targetEntityId" : "i0",
   "eventTime" : "2014-11-10T12:34:56.123-08:00"
 }'</span>
-</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Python SDK" data-lang="python" id="tab-e9aa2b8b-692b-45b7-9957-0e960b4a4bf8"> <div class="highlight python"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Python SDK" data-lang="python" id="tab-c71c87d4-706b-4337-b77c-f578b6778824"> <div class="highlight python"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
@@ -280,7 +280,7 @@ Your system is all ready to go.
   <span class="n">target_entity_type</span><span class="o">=</span><span class="s">"item"</span><span class="p">,</span>
   <span class="n">target_entity_id</span><span class="o">=&lt;</span><span class="n">ITEM</span> <span class="n">ID</span><span class="o">&gt;</span>
 <span class="p">)</span>
-</pre></td> </tr></tbody></table> </div> </div> <div data-tab="PHP SDK" data-lang="php" id="tab-fd899dd5-7be9-48e8-8594-7b9465354627"> <div class="highlight php"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+</pre></td> </tr></tbody></table> </div> </div> <div data-tab="PHP SDK" data-lang="php" id="tab-a0269bcb-420d-4774-9c33-eca4c5f0268c"> <div class="highlight php"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
@@ -299,7 +299,7 @@ Your system is all ready to go.
    <span class="s1">'targetEntityId'</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">ITEM</span> <span class="nx">ID</span><span class="o">&gt;</span>
 <span class="p">));</span>
 <span class="cp">?&gt;</span>
-</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Ruby SDK" data-lang="ruby" id="tab-3d6739fa-4f3a-42b2-bcaf-b83548fdfa10"> <div class="highlight ruby"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Ruby SDK" data-lang="ruby" id="tab-40c0667e-af1c-44ff-8486-a201065f53b0"> <div class="highlight ruby"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
@@ -316,7 +316,7 @@ Your system is all ready to go.
     <span class="s1">'targetEntityId'</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="no">ITEM</span> <span class="no">ID</span><span class="o">&gt;</span>
   <span class="p">}</span>
 <span class="p">)</span>
-</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Java SDK" data-lang="java" id="tab-8cd1f31c-938f-49ea-b442-e83c9afc8d76"> <div class="highlight java"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Java SDK" data-lang="java" id="tab-a76b284d-b459-423e-ade7-07a006401c8a"> <div class="highlight java"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
@@ -376,19 +376,19 @@ User u10 views item i29
 </pre></td></tr></tbody></table> </div> <p>When the engine is deployed successfully and running, you should see a console message similar to the following:</p><div class="highlight shell"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2</pre></td><td class="code"><pre><span class="o">[</span>INFO] <span class="o">[</span>HttpListener] Bound to /0.0.0.0:8000
 <span class="o">[</span>INFO] <span class="o">[</span>MasterActor] Bind successful. Ready to serve.
-</pre></td></tr></tbody></table> </div> <p>Do not kill the deployed engine process.</p><p>By default, the deployed engine binds to <a href="http://localhost:8000"><a href="http://localhost:8000">http://localhost:8000</a></a>. You can visit that page in your web browser to check its status.</p><p><img alt="Engine Status" src="/images/engine-server-3246414b.png"/></p></p><h2 id='6.-use-the-engine' class='header-anchors'>6. Use the Engine</h2><p>Now, You can retrieve predicted results. To retrieve 4 items which are similar to item ID &quot;i1&quot;. You send this JSON <code>{ &quot;items&quot;: [&quot;i1&quot;], &quot;num&quot;: 4 }</code> to the deployed engine and it will return a JSON of the recommended items. Simply send a query by making a HTTP request or through the <code>EngineClient</code> of an SDK.</p><p>With the deployed engine running, open another temrinal and run the following <code>curl</code> command or use SDK to send the query:</p><div class="tabs"> <ul class="control"> <li data-lang="json"><a href="#tab-4554eeef-db9a-4689-939b-8a603f5ca1f0">REST API</a></li> <li data-lang="python"><a href="#tab-21b51118-39cd-47aa-9f7a-c56d98d4d6f6">Python SDK</a></li> <li data-lang="php"><a href="#tab-b1b03bbf-677a-4e4f-8078-744a1d9a9d61">PHP SDK</a></li> <li data-lang="ruby"><a href="#tab-8b7a6b1a-a68f-4652-93df-567ffa1ce635">Ruby SDK</a></li> <li data-lang="java"><a href="#tab-58e828b7-cab1-4f6f-bb80-93002fbd01b0">Java SDK</a></li> </ul> <div data-tab="REST API" data-lang="json" id="tab-4554eeef-db9a-4689-939b-8a603f5ca1f0"> <div class="highlight shell"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+</pre></td></tr></tbody></table> </div> <p>Do not kill the deployed engine process.</p><p>By default, the deployed engine binds to <a href="http://localhost:8000"><a href="http://localhost:8000">http://localhost:8000</a></a>. You can visit that page in your web browser to check its status.</p><p><img alt="Engine Status" src="/images/engine-server-3246414b.png"/></p></p><h2 id='6.-use-the-engine' class='header-anchors'>6. Use the Engine</h2><p>Now, You can retrieve predicted results. To retrieve 4 items which are similar to item ID &quot;i1&quot;. You send this JSON <code>{ &quot;items&quot;: [&quot;i1&quot;], &quot;num&quot;: 4 }</code> to the deployed engine and it will return a JSON of the recommended items. Simply send a query by making a HTTP request or through the <code>EngineClient</code> of an SDK.</p><p>With the deployed engine running, open another temrinal and run the following <code>curl</code> command or use SDK to send the query:</p><div class="tabs"> <ul class="control"> <li data-lang="json"><a href="#tab-af7d9667-3831-4516-a9e1-575afca24d01">REST API</a></li> <li data-lang="python"><a href="#tab-43017315-058b-4e04-b4f6-574be9e943ee">Python SDK</a></li> <li data-lang="php"><a href="#tab-1b90346d-b338-47f1-a77c-6b74c8d7231c">PHP SDK</a></li> <li data-lang="ruby"><a href="#tab-a38c9484-10f2-4602-8405-60a569089873">Ruby SDK</a></li> <li data-lang="java"><a href="#tab-c59efaf4-5e24-49bb-b638-4b82b3e7e4e6">Java SDK</a></li> </ul> <div data-tab="REST API" data-lang="json" id="tab-af7d9667-3831-4516-a9e1-575afca24d01"> <div class="highlight shell"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4</pre></td> <td class="code"><pre><span class="gp">$ </span>curl -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
 -d <span class="s1">'{ "items": ["i1"], "num": 4 }'</span> <span class="se">\</span>
 http://localhost:8000/queries.json
 
-</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Python SDK" data-lang="python" id="tab-21b51118-39cd-47aa-9f7a-c56d98d4d6f6"> <div class="highlight python"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Python SDK" data-lang="python" id="tab-43017315-058b-4e04-b4f6-574be9e943ee"> <div class="highlight python"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3</pre></td> <td class="code"><pre><span class="kn">import</span> <span class="nn">predictionio</span>
 <span class="n">engine_client</span> <span class="o">=</span> <span class="n">predictionio</span><span class="o">.</span><span class="n">EngineClient</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s">"http://localhost:8000"</span><span class="p">)</span>
 <span class="k">print</span> <span class="n">engine_client</span><span class="o">.</span><span class="n">send_query</span><span class="p">({</span><span class="s">"items"</span><span class="p">:</span> <span class="p">[</span><span class="s">"i1"</span><span class="p">],</span> <span class="s">"num"</span><span class="p">:</span> <span class="mi">4</span><span class="p">})</span>
-</pre></td> </tr></tbody></table> </div> </div> <div data-tab="PHP SDK" data-lang="php" id="tab-b1b03bbf-677a-4e4f-8078-744a1d9a9d61"> <div class="highlight php"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+</pre></td> </tr></tbody></table> </div> </div> <div data-tab="PHP SDK" data-lang="php" id="tab-1b90346d-b338-47f1-a77c-6b74c8d7231c"> <div class="highlight php"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
@@ -407,7 +407,7 @@ http://localhost:8000/queries.json
 <span class="nb">print_r</span><span class="p">(</span><span class="nv">$response</span><span class="p">);</span>
 
 <span class="cp">?&gt;</span>
-</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Ruby SDK" data-lang="ruby" id="tab-8b7a6b1a-a68f-4652-93df-567ffa1ce635"> <div class="highlight ruby"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Ruby SDK" data-lang="ruby" id="tab-a38c9484-10f2-4602-8405-60a569089873"> <div class="highlight ruby"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
@@ -420,7 +420,7 @@ http://localhost:8000/queries.json
 <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">send_query</span><span class="p">(</span><span class="s1">'items'</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">'i1'</span><span class="p">],</span> <span class="s1">'num'</span> <span class="o">=&gt;</span> <span class="mi">4</span><span class="p">)</span>
 
 <span class="nb">puts</span> <span class="n">response</span>
-</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Java SDK" data-lang="java" id="tab-58e828b7-cab1-4f6f-bb80-93002fbd01b0"> <div class="highlight java"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Java SDK" data-lang="java" id="tab-c59efaf4-5e24-49bb-b638-4b82b3e7e4e6"> <div class="highlight java"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
