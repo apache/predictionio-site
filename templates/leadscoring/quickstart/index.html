@@ -32,7 +32,7 @@ Your system is all ready to go.
 <span class="o">[</span>INFO] <span class="o">[</span>App<span class="nv">$]</span>               MyApp1 |    1 | 3mZWDzci2D5YsqAnqNnXH9SB6Rg3dsTBs8iHkK6X2i54IQsIZI1eEeQQyMfs7b3F | <span class="o">(</span>all<span class="o">)</span>
 <span class="o">[</span>INFO] <span class="o">[</span>App<span class="nv">$]</span>               MyApp2 |    2 | io5lz6Eg4m3Xe4JZTBFE13GMAf1dhFl6ZteuJfrO84XpdOz9wRCrDU44EUaYuXq5 | <span class="o">(</span>all<span class="o">)</span>
 <span class="o">[</span>INFO] <span class="o">[</span>App<span class="nv">$]</span> Finished listing 2 app<span class="o">(</span>s<span class="o">)</span>.
-</pre></td></tr></tbody></table> </div> <p><a href="#"></a></p> <h2 id='4.-collecting-data' class='header-anchors'>4. Collecting Data</h2><p>Next, let&#39;s collect training data for this Engine. By default, Lead Scoring Engine Template supports the following entities: <strong>user</strong>, <strong>page</strong>, and <strong>item</strong>. An user views a page, and buys an item.</p><p>Note that a &quot;sessionId&quot; property is required to indicate these events happen in the same session. In the first visit of a user, you should specify the optional &quot;referrral ID&quot; and &quot;browser&quot; information. These are used to determine where the user comes from and the browser information.</p><p>In summary, this template requires user-view-page event and user-buy-item events with the session ID, referrer ID and browser properties.</p><p>You can send these events to PredictionIO Event Server in real-time easily by making a HTTP request or through the provided SDK. Please see <a href="/appintegration/">App Integration Overview</a> for more details how to integrate your app with SDK.</p><p>Let&#39;s try sending events to EventServer with the following <code>curl</code> commands (The corresponding SDK code is showed in other tabs).</p><p>Replace <code>&lt;ACCCESS_KEY&gt;</code> by the Access Key generated in above steps. Note that <code>localhost:7070</code> is the default URL of the Event Server.</p><p>For convenience, set your access key to the shell variable, run:</p><p><code>$ ACCESS_KEY=&lt;ACCESS_KEY&gt;</code></p> <p><a href="#"></a></p> <p>For example, when an user with ID u0 views a URL page &quot;example.com/page0&quot; on time <code>2014-11-02T09:39:45.618-08:00</code>, with session ID &quot;akdj230fj8ass&quot; (current time will be used if eventTime is not specified) you can send the event to Event Server. Run the following <code>curl</code> command:</p><div class="tabs"> <ul class="control"> <li data-lang="json"><a href="#tab-79499da0-5472-4283-bbcf-0d922ae1c3a0">REST API</a></li> <li data-lang="python"><a href="#tab-879ae126-9d65-4ecb-b12a-b04122a8059c">Python SDK</a></li> <li data-lang="php"><a href="#tab-d632f5c4-2c28-4529-8f1f-ff3051e9a83b">PHP SDK</a></li> <li data-lang="ruby"><a href="#tab-e72ca224-dac5-44cd-bef6-c8b7398b63a7">Ruby SDK</a></li> <li data-lang="java"><a href="#tab-40cc510d-8442-4568-9604-fadd99056891">Java SDK</a></li> </ul> <div data-tab="REST API" data-lang="json" id="tab-79499da0-5472-4283-bbcf-0d922ae1c3a0"> <div class="highlight shell"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+</pre></td></tr></tbody></table> </div> <p><a href="#"></a></p> <h2 id='4.-collecting-data' class='header-anchors'>4. Collecting Data</h2><p>Next, let&#39;s collect training data for this Engine. By default, Lead Scoring Engine Template supports the following entities: <strong>user</strong>, <strong>page</strong>, and <strong>item</strong>. An user views a page, and buys an item.</p><p>Note that a &quot;sessionId&quot; property is required to indicate these events happen in the same session. In the first visit of a user, you should specify the optional &quot;referrral ID&quot; and &quot;browser&quot; information. These are used to determine where the user comes from and the browser information.</p><p>In summary, this template requires user-view-page event and user-buy-item events with the session ID, referrer ID and browser properties.</p><p>You can send these events to PredictionIO Event Server in real-time easily by making a HTTP request or through the provided SDK. Please see <a href="/appintegration/">App Integration Overview</a> for more details how to integrate your app with SDK.</p><p>Let&#39;s try sending events to EventServer with the following <code>curl</code> commands (The corresponding SDK code is showed in other tabs).</p><p>Replace <code>&lt;ACCCESS_KEY&gt;</code> by the Access Key generated in above steps. Note that <code>localhost:7070</code> is the default URL of the Event Server.</p><p>For convenience, set your access key to the shell variable, run:</p><p><code>$ ACCESS_KEY=&lt;ACCESS_KEY&gt;</code></p> <p><a href="#"></a></p> <p>For example, when an user with ID u0 views a URL page &quot;example.com/page0&quot; on time <code>2014-11-02T09:39:45.618-08:00</code>, with session ID &quot;akdj230fj8ass&quot; (current time will be used if eventTime is not specified) you can send the event to Event Server. Run the following <code>curl</code> command:</p><div class="tabs"> <ul class="control"> <li data-lang="json"><a href="#tab-fe10ce78-beb2-43e2-9e2c-e9a3861df62a">REST API</a></li> <li data-lang="python"><a href="#tab-9302d4a5-d8f4-4ff6-9c43-1dc573e1acc9">Python SDK</a></li> <li data-lang="php"><a href="#tab-2ad76761-976b-44f7-97cc-4c80ea3dedae">PHP SDK</a></li> <li data-lang="ruby"><a href="#tab-5c0e059d-18a2-496c-baba-7eb8f1551875">Ruby SDK</a></li> <li data-lang="java"><a href="#tab-17ff0189-4f16-4cc7-8ff3-aa21ba13c4b2">Java SDK</a></li> </ul> <div data-tab="REST API" data-lang="json" id="tab-fe10ce78-beb2-43e2-9e2c-e9a3861df62a"> <div class="highlight shell"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
@@ -61,7 +61,7 @@ Your system is all ready to go.
   }
   "eventTime" : "2014-11-02T09:39:45.618-08:00"
 }'</span>
-</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Python SDK" data-lang="python" id="tab-879ae126-9d65-4ecb-b12a-b04122a8059c"> <div class="highlight python"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Python SDK" data-lang="python" id="tab-9302d4a5-d8f4-4ff6-9c43-1dc573e1acc9"> <div class="highlight python"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
@@ -106,7 +106,7 @@ Your system is all ready to go.
     <span class="s">"browser"</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">BROWSER</span><span class="o">&gt;</span> <span class="c"># optinal. but should specify this if you have this information when user views the landing page</span>
   <span class="p">}</span>
 <span class="p">)</span>
-</pre></td> </tr></tbody></table> </div> </div> <div data-tab="PHP SDK" data-lang="php" id="tab-d632f5c4-2c28-4529-8f1f-ff3051e9a83b"> <div class="highlight php"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+</pre></td> </tr></tbody></table> </div> </div> <div data-tab="PHP SDK" data-lang="php" id="tab-2ad76761-976b-44f7-97cc-4c80ea3dedae"> <div class="highlight php"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
@@ -145,7 +145,7 @@ Your system is all ready to go.
   <span class="p">)</span>
 <span class="p">));</span>
 <span class="cp">?&gt;</span>
-</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Ruby SDK" data-lang="ruby" id="tab-e72ca224-dac5-44cd-bef6-c8b7398b63a7"> <div class="highlight ruby"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Ruby SDK" data-lang="ruby" id="tab-5c0e059d-18a2-496c-baba-7eb8f1551875"> <div class="highlight ruby"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
@@ -178,7 +178,7 @@ Your system is all ready to go.
     <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">)</span>
-</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Java SDK" data-lang="java" id="tab-40cc510d-8442-4568-9604-fadd99056891"> <div class="highlight java"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Java SDK" data-lang="java" id="tab-17ff0189-4f16-4cc7-8ff3-aa21ba13c4b2"> <div class="highlight java"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
@@ -213,7 +213,7 @@ Your system is all ready to go.
     <span class="o">.</span><span class="na">property</span><span class="o">(</span><span class="s">"referrerId"</span><span class="o">,</span> <span class="s">"&lt;REFERRER ID&gt;"</span><span class="o">)</span>
     <span class="o">.</span><span class="na">property</span><span class="o">(</span><span class="s">"browser"</span><span class="o">,</span> <span class="s">"&lt;BROWSER&gt;"</span><span class="o">);</span>
 <span class="n">client</span><span class="o">.</span><span class="na">createEvent</span><span class="o">(</span><span class="n">viewEvent</span><span class="o">);</span>
-</pre></td> </tr></tbody></table> </div> </div> </div> <p>In the same browing session &quot;akdj230fj8ass&quot;, the user with ID u0 buys an item i0 on time <code>2014-11-02T09:42:00.123-08:00</code> (current time will be used if eventTime is not specified), you can send the following buy event. Run the following <code>curl</code> command:</p><div class="tabs"> <ul class="control"> <li data-lang="json"><a href="#tab-fc492ab6-f547-43aa-86fb-771e579b8150">REST API</a></li> <li data-lang="python"><a href="#tab-859162e2-86f7-43f5-b54b-9c155dccc0ea">Python SDK</a></li> <li data-lang="php"><a href="#tab-9d679668-689c-466a-aba2-7e057ca38e5e">PHP SDK</a></li> <li data-lang="ruby"><a href="#tab-1a9663e7-7fb0-484f-8f26-c8d287e69ffd">Ruby SDK</a></li> <li data-lang="java"><a href="#tab-8872ab14-d234-45e3-98f0-e4bc74c953d4">Java SDK</a></li> </ul> <div data-tab="REST API" data-lang="json" id="tab-fc492ab6-f547-43aa-86fb-771e579b8150"> <div class="highlight shell"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+</pre></td> </tr></tbody></table> </div> </div> </div> <p>In the same browing session &quot;akdj230fj8ass&quot;, the user with ID u0 buys an item i0 on time <code>2014-11-02T09:42:00.123-08:00</code> (current time will be used if eventTime is not specified), you can send the following buy event. Run the following <code>curl</code> command:</p><div class="tabs"> <ul class="control"> <li data-lang="json"><a href="#tab-379dfbe3-db53-423d-b76d-0d2f536301ce">REST API</a></li> <li data-lang="python"><a href="#tab-d8d9192b-be97-452e-b925-efe2c379107e">Python SDK</a></li> <li data-lang="php"><a href="#tab-1bb5f80a-435d-4f12-9744-17db14d198bd">PHP SDK</a></li> <li data-lang="ruby"><a href="#tab-507c50f7-70dc-43cc-93a9-21a7f49e3bb7">Ruby SDK</a></li> <li data-lang="java"><a href="#tab-1ee6444b-4fad-4368-8546-931b5b76f98a">Java SDK</a></li> </ul> <div data-tab="REST API" data-lang="json" id="tab-379dfbe3-db53-423d-b76d-0d2f536301ce"> <div class="highlight shell"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
@@ -238,7 +238,7 @@ Your system is all ready to go.
   }
   "eventTime" : "2014-11-02T09:42:00.123-08:00"
 }'</span>
-</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Python SDK" data-lang="python" id="tab-859162e2-86f7-43f5-b54b-9c155dccc0ea"> <div class="highlight python"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Python SDK" data-lang="python" id="tab-d8d9192b-be97-452e-b925-efe2c379107e"> <div class="highlight python"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
@@ -261,7 +261,7 @@ Your system is all ready to go.
     <span class="s">"sessionId"</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">SESSION</span> <span class="n">ID</span><span class="o">&gt;</span><span class="p">,</span> <span class="c"># required</span>
   <span class="p">}</span>
 <span class="p">)</span>
-</pre></td> </tr></tbody></table> </div> </div> <div data-tab="PHP SDK" data-lang="php" id="tab-9d679668-689c-466a-aba2-7e057ca38e5e"> <div class="highlight php"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+</pre></td> </tr></tbody></table> </div> </div> <div data-tab="PHP SDK" data-lang="php" id="tab-1bb5f80a-435d-4f12-9744-17db14d198bd"> <div class="highlight php"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
@@ -288,7 +288,7 @@ Your system is all ready to go.
 <span class="p">));</span>
 
 <span class="cp">?&gt;</span>
-</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Ruby SDK" data-lang="ruby" id="tab-1a9663e7-7fb0-484f-8f26-c8d287e69ffd"> <div class="highlight ruby"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Ruby SDK" data-lang="ruby" id="tab-507c50f7-70dc-43cc-93a9-21a7f49e3bb7"> <div class="highlight ruby"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
@@ -311,7 +311,7 @@ Your system is all ready to go.
     <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">)</span>
-</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Java SDK" data-lang="java" id="tab-8872ab14-d234-45e3-98f0-e4bc74c953d4"> <div class="highlight java"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Java SDK" data-lang="java" id="tab-1ee6444b-4fad-4368-8546-931b5b76f98a"> <div class="highlight java"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
@@ -371,7 +371,7 @@ User u5 buys item i5
 </pre></td></tr></tbody></table> </div> <p>When the engine is deployed successfully and running, you should see a console message similar to the following:</p><div class="highlight shell"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2</pre></td><td class="code"><pre><span class="o">[</span>INFO] <span class="o">[</span>HttpListener] Bound to /0.0.0.0:8000
 <span class="o">[</span>INFO] <span class="o">[</span>MasterActor] Bind successful. Ready to serve.
-</pre></td></tr></tbody></table> </div> <p>Do not kill the deployed engine process.</p><p>By default, the deployed engine binds to <a href="http://localhost:8000"><a href="http://localhost:8000">http://localhost:8000</a></a>. You can visit that page in your web browser to check its status.</p><p><img alt="Engine Status" src="/images/engine-server-3246414b.png"/></p></p><h2 id='6.-use-the-engine' class='header-anchors'>6. Use the Engine</h2><p>Now, You can retrieve the results. When a user lands on your page &quot;example.com/page9&quot;, with referrer &quot;referrer10.com&quot; and browser &quot;Firefox&quot;, you can get the predicted lead score by sending this JSON &#39;{ &quot;landingPageId&quot; : &quot;example.com/page9&quot;, &quot;referrerId&quot; : &quot;referrer10.com&quot;, &quot;browser&quot;: &quot;Firefox&quot; }&#39; to the deployed engine. The engine will return a JSON with the score.</p><p>Simply send a query by making a HTTP request or through the <code>EngineClient</code> of an SDK.</p><p>With the deployed engine running, open another temrinal and run the following <code>curl</code> command or use SDK to send the query:</p><div class="tabs"> <ul class="control"> <li data-lang="json"><a href="#tab-c6c71360-4527-4a32-a613-ad354322a570">REST API</a></li> <li data-lang="python"><a href="#tab-3691e891-0b25-4dda-a143-d01a41986c91">Python SDK</a></li> <li data-lang="php"><a href="#tab-1c00455b-9293-424b-ac7b-d6dc4d34aeaf">PHP SDK</a></li> <li data-lang="ruby"><a href="#tab-7e470094-c12b-4d0b-bb98-df8518a35000">Ruby SDK</a></li> <li data-lang="java"><a href="#tab-8c870e34-4dee-45cf-9710-07fdc60a61ba">Java SDK</a></li> </ul> <div data-tab="REST API" data-lang="json" id="tab-c6c71360-4527-4a32-a613-ad354322a570"> <div class="highlight shell"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+</pre></td></tr></tbody></table> </div> <p>Do not kill the deployed engine process.</p><p>By default, the deployed engine binds to <a href="http://localhost:8000"><a href="http://localhost:8000">http://localhost:8000</a></a>. You can visit that page in your web browser to check its status.</p><p><img alt="Engine Status" src="/images/engine-server-3246414b.png"/></p></p><h2 id='6.-use-the-engine' class='header-anchors'>6. Use the Engine</h2><p>Now, You can retrieve the results. When a user lands on your page &quot;example.com/page9&quot;, with referrer &quot;referrer10.com&quot; and browser &quot;Firefox&quot;, you can get the predicted lead score by sending this JSON &#39;{ &quot;landingPageId&quot; : &quot;example.com/page9&quot;, &quot;referrerId&quot; : &quot;referrer10.com&quot;, &quot;browser&quot;: &quot;Firefox&quot; }&#39; to the deployed engine. The engine will return a JSON with the score.</p><p>Simply send a query by making a HTTP request or through the <code>EngineClient</code> of an SDK.</p><p>With the deployed engine running, open another temrinal and run the following <code>curl</code> command or use SDK to send the query:</p><div class="tabs"> <ul class="control"> <li data-lang="json"><a href="#tab-4df2f531-4fa6-4d1e-b451-9c86c743c773">REST API</a></li> <li data-lang="python"><a href="#tab-63845267-5f25-4e4f-9e41-fce53ac827bf">Python SDK</a></li> <li data-lang="php"><a href="#tab-aa7a0e93-7fad-4bbf-87c8-707e4e17b39b">PHP SDK</a></li> <li data-lang="ruby"><a href="#tab-ff64249f-35e1-45c7-8660-6efef91cb4ff">Ruby SDK</a></li> <li data-lang="java"><a href="#tab-30c469e3-9803-448a-b01c-0bbfa8435151">Java SDK</a></li> </ul> <div data-tab="REST API" data-lang="json" id="tab-4df2f531-4fa6-4d1e-b451-9c86c743c773"> <div class="highlight shell"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
@@ -384,7 +384,7 @@ User u5 buys item i5
   "browser": "Firefox" }'</span> <span class="se">\</span>
 http://localhost:8000/queries.json
 
-</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Python SDK" data-lang="python" id="tab-3691e891-0b25-4dda-a143-d01a41986c91"> <div class="highlight python"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Python SDK" data-lang="python" id="tab-63845267-5f25-4e4f-9e41-fce53ac827bf"> <div class="highlight python"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
@@ -397,7 +397,7 @@ http://localhost:8000/queries.json
   <span class="s">"referrerId"</span> <span class="p">:</span> <span class="s">"referrer10.com"</span><span class="p">,</span>
   <span class="s">"browser"</span><span class="p">:</span> <span class="s">"Firefox"</span>
 <span class="p">})</span>
-</pre></td> </tr></tbody></table> </div> </div> <div data-tab="PHP SDK" data-lang="php" id="tab-1c00455b-9293-424b-ac7b-d6dc4d34aeaf"> <div class="highlight php"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+</pre></td> </tr></tbody></table> </div> </div> <div data-tab="PHP SDK" data-lang="php" id="tab-aa7a0e93-7fad-4bbf-87c8-707e4e17b39b"> <div class="highlight php"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
@@ -426,7 +426,7 @@ http://localhost:8000/queries.json
 <span class="nb">print_r</span><span class="p">(</span><span class="nv">$response</span><span class="p">);</span>
 
 <span class="cp">?&gt;</span>
-</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Ruby SDK" data-lang="ruby" id="tab-7e470094-c12b-4d0b-bb98-df8518a35000"> <div class="highlight ruby"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Ruby SDK" data-lang="ruby" id="tab-ff64249f-35e1-45c7-8660-6efef91cb4ff"> <div class="highlight ruby"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
@@ -447,7 +447,7 @@ http://localhost:8000/queries.json
 <span class="p">)</span>
 
 <span class="nb">puts</span> <span class="n">response</span>
-</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Java SDK" data-lang="java" id="tab-8c870e34-4dee-45cf-9710-07fdc60a61ba"> <div class="highlight java"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Java SDK" data-lang="java" id="tab-30c469e3-9803-448a-b01c-0bbfa8435151"> <div class="highlight java"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
