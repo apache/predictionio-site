@@ -32,7 +32,7 @@ Your system is all ready to go.
 <span class="o">[</span>INFO] <span class="o">[</span>App<span class="nv">$]</span>               MyApp1 |    1 | 3mZWDzci2D5YsqAnqNnXH9SB6Rg3dsTBs8iHkK6X2i54IQsIZI1eEeQQyMfs7b3F | <span class="o">(</span>all<span class="o">)</span>
 <span class="o">[</span>INFO] <span class="o">[</span>App<span class="nv">$]</span>               MyApp2 |    2 | io5lz6Eg4m3Xe4JZTBFE13GMAf1dhFl6ZteuJfrO84XpdOz9wRCrDU44EUaYuXq5 | <span class="o">(</span>all<span class="o">)</span>
 <span class="o">[</span>INFO] <span class="o">[</span>App<span class="nv">$]</span> Finished listing 2 app<span class="o">(</span>s<span class="o">)</span>.
-</pre></td></tr></tbody></table> </div> <p><a href="#"></a></p> <h2 id='4.-collecting-data' class='header-anchors'>4. Collecting Data</h2><p>Next, let&#39;s collect some training data. By default, the Classification Engine Template reads 4 properties of a user record: attr0, attr1, attr2 and plan. This templates requires &#39;$set&#39; user events.</p><div class="alert-message info"><p>This template can easily be customized to use different or more number of attributes.</p></div><p>You can send these events to PredictionIO Event Server in real-time easily by making a HTTP request or through the provided SDK. Please see <a href="/appintegration/">App Integration Overview</a> for more details how to integrate your app with SDK.</p><p>Let&#39;s try sending events to EventServer with the following <code>curl</code> commands (The corresponding SDK code is showed in other tabs).</p><p>Replace <code>&lt;ACCCESS_KEY&gt;</code> by the Access Key generated in above steps. Note that <code>localhost:7070</code> is the default URL of the Event Server.</p><p>For convenience, set your access key to the shell variable, run:</p><p><code>$ ACCESS_KEY=&lt;ACCESS_KEY&gt;</code></p> <p><a href="#"></a></p> <p>To set properties &quot;attr0&quot;, &quot;attr1&quot;, &quot;attr2&quot; and &quot;plan&quot; for user &quot;u0&quot; on time <code>2014-11-02T09:39:45.618-08:00</code> (current time will be used if eventTime is not specified), you can send <code>$set</code> event for the user. To send this event, run the following <code>curl</code> command:</p><div class="tabs"> <ul class="control"> <li data-lang="json"><a href="#tab-d3ed698b-de6e-4535-9de3-bca15c35bc0c">REST API</a></li> <li data-lang="python"><a href="#tab-4e9b63a5-516c-4f21-a710-99f85af17250">Python SDK</a></li> <li data-lang="php"><a href="#tab-904b039a-ef0e-4122-98a8-d7b758c56dc2">PHP SDK</a></li> <li data-lang="ruby"><a href="#tab-d259a48e-a239-41d9-9a6f-a3e097e1c976">Ruby SDK</a></li> <li data-lang="java"><a href="#tab-206e927e-8296-47f4-8e3f-a711cb4a2ed0">Java SDK</a></li> </ul> <div data-tab="REST API" data-lang="json" id="tab-d3ed698b-de6e-4535-9de3-bca15c35bc0c"> <div class="highlight shell"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+</pre></td></tr></tbody></table> </div> <p><a href="#"></a></p> <h2 id='4.-collecting-data' class='header-anchors'>4. Collecting Data</h2><p>Next, let&#39;s collect some training data. By default, the Classification Engine Template reads 4 properties of a user record: attr0, attr1, attr2 and plan. This templates requires &#39;$set&#39; user events.</p><div class="alert-message info"><p>This template can easily be customized to use different or more number of attributes.</p></div><p>You can send these events to PredictionIO Event Server in real-time easily by making a HTTP request or through the provided SDK. Please see <a href="/appintegration/">App Integration Overview</a> for more details how to integrate your app with SDK.</p><p>Let&#39;s try sending events to EventServer with the following <code>curl</code> commands (The corresponding SDK code is showed in other tabs).</p><p>Replace <code>&lt;ACCCESS_KEY&gt;</code> by the Access Key generated in above steps. Note that <code>localhost:7070</code> is the default URL of the Event Server.</p><p>For convenience, set your access key to the shell variable, run:</p><p><code>$ ACCESS_KEY=&lt;ACCESS_KEY&gt;</code></p> <p><a href="#"></a></p> <p>To set properties &quot;attr0&quot;, &quot;attr1&quot;, &quot;attr2&quot; and &quot;plan&quot; for user &quot;u0&quot; on time <code>2014-11-02T09:39:45.618-08:00</code> (current time will be used if eventTime is not specified), you can send <code>$set</code> event for the user. To send this event, run the following <code>curl</code> command:</p><div class="tabs"> <ul class="control"> <li data-lang="json"><a href="#tab-1d65e8f0-bf04-420a-93d4-669b663a61a5">REST API</a></li> <li data-lang="python"><a href="#tab-813e2d8f-9768-4591-8484-06da61736f2e">Python SDK</a></li> <li data-lang="php"><a href="#tab-ae14a025-2b0f-4929-a9b6-302f7fbd94fc">PHP SDK</a></li> <li data-lang="ruby"><a href="#tab-89d0f2be-7458-4f86-a1a2-35d473d07529">Ruby SDK</a></li> <li data-lang="java"><a href="#tab-9f6ae075-182b-43fc-ab40-f0163dccf73f">Java SDK</a></li> </ul> <div data-tab="REST API" data-lang="json" id="tab-1d65e8f0-bf04-420a-93d4-669b663a61a5"> <div class="highlight shell"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
@@ -59,7 +59,7 @@ Your system is all ready to go.
   }
   "eventTime" : "2014-11-02T09:39:45.618-08:00"
 }'</span>
-</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Python SDK" data-lang="python" id="tab-4e9b63a5-516c-4f21-a710-99f85af17250"> <div class="highlight python"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Python SDK" data-lang="python" id="tab-813e2d8f-9768-4591-8484-06da61736f2e"> <div class="highlight python"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
@@ -100,7 +100,7 @@ Your system is all ready to go.
       <span class="s">"plan"</span> <span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="o">&lt;</span><span class="n">VALUE</span> <span class="n">OF</span> <span class="n">PLAN</span><span class="o">&gt;</span><span class="p">)</span>
     <span class="p">}</span>
 <span class="p">)</span>
-</pre></td> </tr></tbody></table> </div> </div> <div data-tab="PHP SDK" data-lang="php" id="tab-904b039a-ef0e-4122-98a8-d7b758c56dc2"> <div class="highlight php"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+</pre></td> </tr></tbody></table> </div> </div> <div data-tab="PHP SDK" data-lang="php" id="tab-ae14a025-2b0f-4929-a9b6-302f7fbd94fc"> <div class="highlight php"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
@@ -137,7 +137,7 @@ Your system is all ready to go.
    <span class="p">)</span>
 <span class="p">));</span>
 <span class="cp">?&gt;</span>
-</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Ruby SDK" data-lang="ruby" id="tab-d259a48e-a239-41d9-9a6f-a3e097e1c976"> <div class="highlight ruby"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Ruby SDK" data-lang="ruby" id="tab-89d0f2be-7458-4f86-a1a2-35d473d07529"> <div class="highlight ruby"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
@@ -168,7 +168,7 @@ Your system is all ready to go.
     <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">)</span>
-</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Java SDK" data-lang="java" id="tab-206e927e-8296-47f4-8e3f-a711cb4a2ed0"> <div class="highlight java"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Java SDK" data-lang="java" id="tab-9f6ae075-182b-43fc-ab40-f0163dccf73f"> <div class="highlight java"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
@@ -203,7 +203,7 @@ Your system is all ready to go.
         <span class="s">"plan"</span><span class="o">,</span> <span class="o">&lt;</span><span class="n">VALUE</span> <span class="n">OF</span> <span class="n">PLAN</span><span class="o">&gt;</span>
     <span class="o">));</span>
 <span class="n">client</span><span class="o">.</span><span class="na">createEvent</span><span class="o">(</span><span class="n">event</span><span class="o">);</span>
-</pre></td> </tr></tbody></table> </div> </div> </div> <p>Note that you can also set the properties for the user with multiple <code>$set</code> events (They will be aggregated during engine training).</p><p>To set properties &quot;attr0&quot;, &quot;attr1&quot; and &quot;attr2&quot;, and &quot;plan&quot; for user &quot;u1&quot; at different time, you can send follwing <code>$set</code> events for the user. To send these events, run the following <code>curl</code> command:</p><div class="tabs"> <ul class="control"> <li data-lang="json"><a href="#tab-253fc7de-c931-43ba-b675-646f71d6b473">REST API</a></li> <li data-lang="python"><a href="#tab-8ad5f374-8afc-4deb-b5df-3c4c3475296d">Python SDK</a></li> <li data-lang="php"><a href="#tab-977552c7-81ee-4395-8834-31ec2d357705">PHP SDK</a></li> <li data-lang="ruby"><a href="#tab-eb72af5e-9a91-45c3-96f9-9c6d5a17c435">Ruby SDK</a></li> <li data-lang="java"><a href="#tab-2475d71e-eafb-4383-8006-a65f4b4484cd">Java SDK</a></li> </ul> <div data-tab="REST API" data-lang="json" id="tab-253fc7de-c931-43ba-b675-646f71d6b473"> <div class="highlight shell"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+</pre></td> </tr></tbody></table> </div> </div> </div> <p>Note that you can also set the properties for the user with multiple <code>$set</code> events (They will be aggregated during engine training).</p><p>To set properties &quot;attr0&quot;, &quot;attr1&quot; and &quot;attr2&quot;, and &quot;plan&quot; for user &quot;u1&quot; at different time, you can send follwing <code>$set</code> events for the user. To send these events, run the following <code>curl</code> command:</p><div class="tabs"> <ul class="control"> <li data-lang="json"><a href="#tab-54a5f14c-e058-46b9-84a6-0fd41cf2ed64">REST API</a></li> <li data-lang="python"><a href="#tab-682daf69-c6c4-4764-b15b-203d523080f7">Python SDK</a></li> <li data-lang="php"><a href="#tab-d39c2f9a-44b9-4913-9f3f-91e6b97328d8">PHP SDK</a></li> <li data-lang="ruby"><a href="#tab-2eab3e45-d7fb-4d45-9858-6f9a47b2633d">Ruby SDK</a></li> <li data-lang="java"><a href="#tab-d027c4d2-edbb-4fd9-885e-dc4826813f7c">Java SDK</a></li> </ul> <div data-tab="REST API" data-lang="json" id="tab-54a5f14c-e058-46b9-84a6-0fd41cf2ed64"> <div class="highlight shell"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
@@ -274,7 +274,7 @@ Your system is all ready to go.
   }
   "eventTime" : "2014-11-02T09:39:45.618-08:00"
 }'</span>
-</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Python SDK" data-lang="python" id="tab-8ad5f374-8afc-4deb-b5df-3c4c3475296d"> <div class="highlight python"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Python SDK" data-lang="python" id="tab-682daf69-c6c4-4764-b15b-203d523080f7"> <div class="highlight python"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
@@ -327,7 +327,7 @@ Your system is all ready to go.
       <span class="s">"plan"</span> <span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="o">&lt;</span><span class="n">VALUE</span> <span class="n">OF</span> <span class="n">PLAN</span><span class="o">&gt;</span><span class="p">)</span>
     <span class="p">}</span>
 <span class="p">)</span>
-</pre></td> </tr></tbody></table> </div> </div> <div data-tab="PHP SDK" data-lang="php" id="tab-977552c7-81ee-4395-8834-31ec2d357705"> <div class="highlight php"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+</pre></td> </tr></tbody></table> </div> </div> <div data-tab="PHP SDK" data-lang="php" id="tab-d39c2f9a-44b9-4913-9f3f-91e6b97328d8"> <div class="highlight php"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
@@ -390,7 +390,7 @@ Your system is all ready to go.
 <span class="p">));</span>
 
 <span class="cp">?&gt;</span>
-</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Ruby SDK" data-lang="ruby" id="tab-eb72af5e-9a91-45c3-96f9-9c6d5a17c435"> <div class="highlight ruby"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Ruby SDK" data-lang="ruby" id="tab-2eab3e45-d7fb-4d45-9858-6f9a47b2633d"> <div class="highlight ruby"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
@@ -433,7 +433,7 @@ Your system is all ready to go.
 <span class="p">)</span>
 
 <span class="c1"># Etc...</span>
-</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Java SDK" data-lang="java" id="tab-2475d71e-eafb-4383-8006-a65f4b4484cd"> <div class="highlight java"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Java SDK" data-lang="java" id="tab-d027c4d2-edbb-4fd9-885e-dc4826813f7c"> <div class="highlight java"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
@@ -497,17 +497,17 @@ Your system is all ready to go.
 </pre></td></tr></tbody></table> </div> <p>When the engine is deployed successfully and running, you should see a console message similar to the following:</p><div class="highlight shell"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2</pre></td><td class="code"><pre><span class="o">[</span>INFO] <span class="o">[</span>HttpListener] Bound to /0.0.0.0:8000
 <span class="o">[</span>INFO] <span class="o">[</span>MasterActor] Bind successful. Ready to serve.
-</pre></td></tr></tbody></table> </div> <p>Do not kill the deployed engine process.</p><p>By default, the deployed engine binds to <a href="http://localhost:8000"><a href="http://localhost:8000">http://localhost:8000</a></a>. You can visit that page in your web browser to check its status.</p><p><img alt="Engine Status" src="/images/engine-server-3246414b.png"/></p></p><h2 id='6.-use-the-engine' class='header-anchors'>6. Use the Engine</h2><p>Now, You can try to retrieve predicted results. For example, to predict the label (i.e. <em>plan</em> in this case) of a user with attr0=2, attr1=0 and attr2=0, you send this JSON <code>{ &quot;attr0&quot;:2, &quot;attr1&quot;:0, &quot;attr2&quot;:0 }</code> to the deployed engine and it will return a JSON of the predicted plan. Simply send a query by making a HTTP request or through the <code>EngineClient</code> of an SDK.</p><p>With the deployed engine running, open another temrinal and run the following <code>curl</code> command or use SDK to send the query:</p><div class="tabs"> <ul class="control"> <li data-lang="bash"><a href="#tab-dc59afca-4870-4230-aefb-49859a9dc1e5">REST API</a></li> <li data-lang="python"><a href="#tab-465bbdc2-4c65-47df-a914-2027f04d9d77">Python SDK</a></li> <li data-lang="php"><a href="#tab-0159f5d9-21a9-4b63-90a6-f68913f8da03">PHP SDK</a></li> <li data-lang="ruby"><a href="#tab-9016cd79-ce65-423a-b7d4-9c19c5064102">Ruby SDK</a></li> <li data-lang="java"><a href="#tab-598f94b9-099a-4fff-8027-8cff414e7d64">Java SDK</a></li> </ul> <div data-tab="REST API" data-lang="bash" id="tab-dc59afca-4870-4230-aefb-49859a9dc1e5"> <div class="highlight shell"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+</pre></td></tr></tbody></table> </div> <p>Do not kill the deployed engine process.</p><p>By default, the deployed engine binds to <a href="http://localhost:8000"><a href="http://localhost:8000">http://localhost:8000</a></a>. You can visit that page in your web browser to check its status.</p><p><img alt="Engine Status" src="/images/engine-server-3246414b.png"/></p></p><h2 id='6.-use-the-engine' class='header-anchors'>6. Use the Engine</h2><p>Now, You can try to retrieve predicted results. For example, to predict the label (i.e. <em>plan</em> in this case) of a user with attr0=2, attr1=0 and attr2=0, you send this JSON <code>{ &quot;attr0&quot;:2, &quot;attr1&quot;:0, &quot;attr2&quot;:0 }</code> to the deployed engine and it will return a JSON of the predicted plan. Simply send a query by making a HTTP request or through the <code>EngineClient</code> of an SDK.</p><p>With the deployed engine running, open another temrinal and run the following <code>curl</code> command or use SDK to send the query:</p><div class="tabs"> <ul class="control"> <li data-lang="bash"><a href="#tab-4d07aa7f-2354-4347-a00a-9c448563c36b">REST API</a></li> <li data-lang="python"><a href="#tab-4bb50bb9-cae6-403d-ae14-0a58c4024cba">Python SDK</a></li> <li data-lang="php"><a href="#tab-635d73ca-cb55-4c6d-b7f0-0d62df9a3084">PHP SDK</a></li> <li data-lang="ruby"><a href="#tab-24344d07-e169-4f19-80d3-de17923817b7">Ruby SDK</a></li> <li data-lang="java"><a href="#tab-c7bd89fd-720a-4bcf-aa0e-6f9410812765">Java SDK</a></li> </ul> <div data-tab="REST API" data-lang="bash" id="tab-4d07aa7f-2354-4347-a00a-9c448563c36b"> <div class="highlight shell"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3</pre></td> <td class="code"><pre><span class="gp">$ </span>curl -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
 -d <span class="s1">'{ "attr0":2, "attr1":0, "attr2":0 }'</span> http://localhost:8000/queries.json
 
-</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Python SDK" data-lang="python" id="tab-465bbdc2-4c65-47df-a914-2027f04d9d77"> <div class="highlight python"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Python SDK" data-lang="python" id="tab-4bb50bb9-cae6-403d-ae14-0a58c4024cba"> <div class="highlight python"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3</pre></td> <td class="code"><pre><span class="kn">import</span> <span class="nn">predictionio</span>
 <span class="n">engine_client</span> <span class="o">=</span> <span class="n">predictionio</span><span class="o">.</span><span class="n">EngineClient</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s">"http://localhost:8000"</span><span class="p">)</span>
 <span class="k">print</span> <span class="n">engine_client</span><span class="o">.</span><span class="n">send_query</span><span class="p">({</span><span class="s">"attr0"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="s">"attr1"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="s">"attr2"</span><span class="p">:</span><span class="mi">0</span><span class="p">})</span>
-</pre></td> </tr></tbody></table> </div> </div> <div data-tab="PHP SDK" data-lang="php" id="tab-0159f5d9-21a9-4b63-90a6-f68913f8da03"> <div class="highlight php"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+</pre></td> </tr></tbody></table> </div> </div> <div data-tab="PHP SDK" data-lang="php" id="tab-635d73ca-cb55-4c6d-b7f0-0d62df9a3084"> <div class="highlight php"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
@@ -526,7 +526,7 @@ Your system is all ready to go.
 <span class="nb">print_r</span><span class="p">(</span><span class="nv">$response</span><span class="p">);</span>
 
 <span class="cp">?&gt;</span>
-</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Ruby SDK" data-lang="ruby" id="tab-9016cd79-ce65-423a-b7d4-9c19c5064102"> <div class="highlight ruby"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Ruby SDK" data-lang="ruby" id="tab-24344d07-e169-4f19-80d3-de17923817b7"> <div class="highlight ruby"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
@@ -539,7 +539,7 @@ Your system is all ready to go.
 <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">send_query</span><span class="p">(</span><span class="s1">'attr0'</span> <span class="o">=&gt;</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">'attr1'</span> <span class="o">=&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">'attr2'</span> <span class="o">=&gt;</span> <span class="mi">0</span><span class="p">)</span>
 
 <span class="nb">puts</span> <span class="n">response</span>
-</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Java SDK" data-lang="java" id="tab-598f94b9-099a-4fff-8027-8cff414e7d64"> <div class="highlight java"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Java SDK" data-lang="java" id="tab-c7bd89fd-720a-4bcf-aa0e-6f9410812765"> <div class="highlight java"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
