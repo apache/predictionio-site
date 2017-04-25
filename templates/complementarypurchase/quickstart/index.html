@@ -1,0 +1,438 @@
+<!DOCTYPE html><html><head><title>Quick Start - Complementary Purchase Engine Template</title><meta charset="utf-8"/><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta class="swiftype" name="title" data-type="string" content="Quick Start - Complementary Purchase Engine Template"/><link rel="canonical" href="https://predictionio.incubator.apache.org/templates/complementarypurchase/quickstart/"/><link href="/images/favicon/normal-b330020a.png" rel="shortcut icon"/><link href="/images/favicon/apple-c0febcf2.png" rel="apple-touch-icon"/><link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet"/><link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"/><link href="/stylesheets/application-3a3867f7.css" rel="stylesheet" type="text/css"/><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script src="//use.typekit.net/pqo0itb.js"></script><script>try{Typekit.load({ async: true });}catch(e){}</script></head><body><div id="global"><header><div class="container" id="header-wrapper"><div class="row"><div class="col-sm-12"><div id="logo-wrapper"><span id="drawer-toggle"></span><a href="#"></a><a href="http://predictionio.incubator.apache.org/"><img alt="PredictionIO" id="logo" src="/images/logos/logo-ee2b9bb3.png"/></a></div><div id="menu-wrapper"><div id="pill-wrapper"><a class="pill left" href="/gallery/template-gallery">TEMPLATES</a> <a class="pill right" href="//github.com/apache/incubator-predictionio/">OPEN SOURCE</a></div></div><img class="mobile-search-bar-toggler hidden-md hidden-lg" src="/images/icons/search-glass-704bd4ff.png"/></div></div></div></header><div id="search-bar-row-wrapper"><div class="container-fluid" id="search-bar-row"><div class="row"><div class="col-md-9 col-sm-11 col-xs-11"><div class="hidden-md hidden-lg" id="mobile-page-heading-wrapper"><p>PredictionIO Docs</p><h4>Quick Start - Complementary Purchase Engine Template</h4></div><h4 class="hidden-sm hidden-xs">PredictionIO Docs</h4></div><div class="col-md-3 col-sm-1 col-xs-1 hidden-md hidden-lg"><img id="left-menu-indicator" src="/images/icons/down-arrow-dfe9f7fe.png"/></div><div class="col-md-3 col-sm-12 col-xs-12 swiftype-wrapper"><div class="swiftype"><form class="search-form"><img class="search-box-toggler hidden-xs hidden-sm" src="/images/icons/search-glass-704bd4ff.png"/><div class="search-box"><img src="/images/icons/search-glass-704bd4ff.png"/><input type="text" id="st-search-input" class="st-search-input" placeholder="Search Doc..."/></div><img class="swiftype-row-hider hidden-md hidden-lg" src="/images/icons/drawer-toggle-active-fcbef12a.png"/></form></div></div><div class="mobile-left-menu-toggler hidden-md hidden-lg"></div></div></div></div><div id="page" class="container-fluid"><div class="row"><div id="left-menu-wrapper" class="col-md-3"><nav id="nav-main"><ul><li class="level-1"><a class="expandible" href="/"><span>Apache PredictionIO (incubating) Documentation</span></a><ul><li class="level-2"><a class="final" href="/"><span>Welcome to Apache PredictionIO (incubating)</span></a></li></ul></li><li class="level-1"><a class="expandible" href="#"><span>Getting Started</span></a><ul><li class="level-2"><a class="final" href="/start/"><span>A Quick Intro</span></a></li><li class="level-2"><a class="final" href="/install/"><span>Installing Apache PredictionIO (incubating)</span></a></li><li class="level-2"><a class="final" href="/start/download/"><span>Downloading an Engine Template</span></a></li><li class="level-2"><a class="final" href="/start/deploy/"><span>Deploying Your First Engine</span></a></li><li class="level-2"><a class="final" href="/start/customize/"><span>Customizing the Engine</span></a></li></ul></li><li class="level-1"><a class="expandible" href="#"><span>Integrating with Your App</span></a><ul><li class="level-2"><a class="final" href="/appintegration/"><span>App Integration Overview</span></a></li><li class="level-2"><a class="expandible" href="/sdk/"><span>List of SDKs</span></a><ul><li class="level-3"><a class="final" href="/sdk/java/"><span>Java & Android SDK</span></a></li><li class="level-3"><a class="final" href="/sdk/php/"><span>PHP SDK</span></a></li><li class="level-3"><a class="final" href="/sdk/python/"><span>Python SDK</span></a></li><li class="level-3"><a class="final" href="/sdk/ruby/"><span>Ruby SDK</span></a></li><li class="level-3"><a class="final" href="/sdk/community/"><span>Community Powered SDKs</span></a></li></ul></li></ul></li><li class="level-1"><a class="expandible" href="#"><span>Deploying an Engine</span></a><ul><li class="level-2"><a class="final" href="/deploy/"><span>Deploying as a Web Service</span></a></li><li class="level-2"><a class="final" href="/cli/#engine-commands"><span>Engine Command-line Interface</span></a></li><li class="level-2"><a class="final" href="/deploy/monitoring/"><span>Monitoring Engine</span></a></li><li class="level-2"><a class="final" href="/deploy/engineparams/"><span>Setting Engine Parameters</span></a></li><li class="level-2"><a class="final" href="/deploy/enginevariants/"><span>Deploying Multiple Engine Variants</span></a></li></ul></li><li class="level-1"><a class="expandible" href="#"><span>Customizing an Engine</span></a><ul><li class="level-2"><a class="final" href="/customize/"><span>Learning DASE</span></a></li><li class="level-2"><a class="final" href="/customize/dase/"><span>Implement DASE</span></a></li><li class="level-2"><a class="final" href="/customize/troubleshooting/"><span>Troubleshooting Engine Development</span></a></li><li class="level-2"><a class="final" href="/api/current/#package"><span>Engine Scala APIs</span></a></li></ul></li><li class="level-1"><a class="expandible" href="#"><span>Collecting and Analyzing Data</span></a><ul><li class="level-2"><a class="final" href="/datacollection/"><span>Event Server Overview</span></a></li><li class="level-2"><a class="final" href="/cli/#event-server-commands"><span>Event Server Command-line Interface</span></a></li><li class="level-2"><a class="final" href="/datacollection/eventapi/"><span>Collecting Data with REST/SDKs</span></a></li><li class="level-2"><a class="final" href="/datacollection/eventmodel/"><span>Events Modeling</span></a></li><li class="level-2"><a class="final" href="/datacollection/webhooks/"><span>Unifying Multichannel Data with Webhooks</span></a></li><li class="level-2"><a class="final" href="/datacollection/channel/"><span>Channel</span></a></li><li class="level-2"><a class="final" href="/datacollection/batchimport/"><span>Importing Data in Batch</span></a></li><li class="level-2"><a class="final" href="/datacollection/analytics/"><span>Using Analytics Tools</span></a></li></ul></li><li class="level-1"><a class="expandible" href="#"><span>Choosing an Algorithm(s)</span></a><ul><li class="level-2"><a class="final" href="/algorithm/"><span>Built-in Algorithm Libraries</span></a></li><li class="level-2"><a class="final" href="/algorithm/switch/"><span>Switching to Another Algorithm</span></a></li><li class="level-2"><a class="final" href="/algorithm/multiple/"><span>Combining Multiple Algorithms</span></a></li><li class="level-2"><a class="final" href="/algorithm/custom/"><span>Adding Your Own Algorithms</span></a></li></ul></li><li class="level-1"><a class="expandible" href="#"><span>ML Tuning and Evaluation</span></a><ul><li class="level-2"><a class="final" href="/evaluation/"><span>Overview</span></a></li><li class="level-2"><a class="final" href="/evaluation/paramtuning/"><span>Hyperparameter Tuning</span></a></li><li class="level-2"><a class="final" href="/evaluation/evaluationdashboard/"><span>Evaluation Dashboard</span></a></li><li class="level-2"><a class="final" href="/evaluation/metricchoose/"><span>Choosing Evaluation Metrics</span></a></li><li class="level-2"><a class="final" href="/evaluation/metricbuild/"><span>Building Evaluation Metrics</span></a></li></ul></li><li class="level-1"><a class="expandible" href="#"><span>System Architecture</span></a><ul><li class="level-2"><a class="final" href="/system/"><span>Architecture Overview</span></a></li><li class="level-2"><a class="final" href="/system/anotherdatastore/"><span>Using Another Data Store</span></a></li></ul></li><li class="level-1"><a class="expandible" href="#"><span>PredictionIO Official Templates</span></a><ul><li class="level-2"><a class="final" href="/templates/"><span>Intro</span></a></li><li class="level-2"><a class="expandible" href="#"><span>Recommendation</span></a><ul><li class="level-3"><a class="final" href="/templates/recommendation/quickstart/"><span>Quick Start</span></a></li><li class="level-3"><a class="final" href="/templates/recommendation/dase/"><span>DASE</span></a></li><li class="level-3"><a class="final" href="/templates/recommendation/evaluation/"><span>Evaluation Explained</span></a></li><li class="level-3"><a class="final" href="/templates/recommendation/how-to/"><span>How-To</span></a></li><li class="level-3"><a class="final" href="/templates/recommendation/reading-custom-events/"><span>Read Custom Events</span></a></li><li class="level-3"><a class="final" href="/templates/recommendation/customize-data-prep/"><span>Customize Data Preparator</span></a></li><li class="level-3"><a class="final" href="/templates/recommendation/customize-serving/"><span>Customize Serving</span></a></li><li class="level-3"><a class="final" href="/templates/recommendation/training-with-implicit-preference/"><span>Train with Implicit Preference</span></a></li><li class="level-3"><a class="final" href="/templates/recommendation/blacklist-items/"><span>Filter Recommended Items by Blacklist in Query</span></a></li><li class="level-3"><a class="final" href="/templates/recommendation/batch-evaluator/"><span>Batch Persistable Evaluator</span></a></li></ul></li><li class="level-2"><a class="expandible" href="#"><span>E-Commerce Recommendation</span></a><ul><li class="level-3"><a class="final" href="/templates/ecommercerecommendation/quickstart/"><span>Quick Start</span></a></li><li class="level-3"><a class="final" href="/templates/ecommercerecommendation/dase/"><span>DASE</span></a></li><li class="level-3"><a class="final" href="/templates/ecommercerecommendation/how-to/"><span>How-To</span></a></li><li class="level-3"><a class="final" href="/templates/ecommercerecommendation/train-with-rate-event/"><span>Train with Rate Event</span></a></li></ul></li><li class="level-2"><a class="expandible" href="#"><span>Similar Product</span></a><ul><li class="level-3"><a class="final" href="/templates/similarproduct/quickstart/"><span>Quick Start</span></a></li><li class="level-3"><a class="final" href="/templates/similarproduct/dase/"><span>DASE</span></a></li><li class="level-3"><a class="final" href="/templates/similarproduct/how-to/"><span>How-To</span></a></li><li class="level-3"><a class="final" href="/templates/similarproduct/multi-events-multi-algos/"><span>Multiple Events and Multiple Algorithms</span></a></li></ul></li><li class="level-2"><a class="expandible" href="#"><span>Classfication</span></a><ul><li class="level-3"><a class="final" href="/templates/classification/quickstart/"><span>Quick Start</span></a></li><li class="level-3"><a class="final" href="/templates/classification/dase/"><span>DASE</span></a></li><li class="level-3"><a class="final" href="/templates/classification/how-to/"><span>How-To</span></a></li><li class="level-3"><a class="final" href="/templates/classification/add-algorithm/"><span>Use Alternative Algorithm</span></a></li><li class="level-3"><a class="final" href="/templates/classification/reading-custom-properties/"><span>Read Custom Properties</span></a></li></ul></li></ul></li><li class="level-1"><a class="expandible" href="#"><span>Engine Template Gallery</span></a><ul><li class="level-2"><a class="final" href="/gallery/template-gallery/"><span>Browse</span></a></li><li class="level-2"><a class="final" href="/community/submit-template/"><span>Submit your Engine as a Template</span></a></li></ul></li><li class="level-1"><a class="expandible" href="#"><span>Demo Tutorials</span></a><ul><li class="level-2"><a class="final" href="/demo/tapster/"><span>Comics Recommendation Demo</span></a></li><li class="level-2"><a class="final" href="/demo/community/"><span>Community Contributed Demo</span></a></li><li class="level-2"><a class="final" href="/demo/textclassification/"><span>Text Classification Engine Tutorial</span></a></li></ul></li><li class="level-1"><a class="expandible" href="/community/"><span>Getting Involved</span></a><ul><li class="level-2"><a class="final" href="/community/contribute-code/"><span>Contribute Code</span></a></li><li class="level-2"><a class="final" href="/community/contribute-documentation/"><span>Contribute Documentation</span></a></li><li class="level-2"><a class="final" href="/community/contribute-sdk/"><span>Contribute a SDK</span></a></li><li class="level-2"><a class="final" href="/community/contribute-webhook/"><span>Contribute a Webhook</span></a></li><li class="level-2"><a class="final" href="/community/projects/"><span>Community Projects</span></a></li></ul></li><li class="level-1"><a class="expandible" href="#"><span>Getting Help</span></a><ul><li class="level-2"><a class="final" href="/resources/faq/"><span>FAQs</span></a></li><li class="level-2"><a class="final" href="/support/"><span>Support</span></a></li></ul></li><li class="level-1"><a class="expandible" href="#"><span>Resources</span></a><ul><li class="level-2"><a class="final" href="/resources/intellij/"><span>Developing Engines with IntelliJ IDEA</span></a></li><li class="level-2"><a class="final" href="/resources/upgrade/"><span>Upgrade Instructions</span></a></li><li class="level-2"><a class="final" href="/resources/glossary/"><span>Glossary</span></a></li></ul></li></ul></nav></div><div class="col-md-9 col-sm-12"><div class="content-header hidden-md hidden-lg"><div id="page-title"><h1>Quick Start - Complementary Purchase Engine Template</h1></div></div><div id="table-of-content-wrapper"><h5>On this page</h5><aside id="table-of-contents"><ul> <li> <a href="#overview">Overview</a> </li> <li> <a href="#usage">Usage</a> </li> <li> <a href="#1-install-and-run-predictionio">1. Install and Run PredictionIO</a> </li> <li> <a href="#2-create-a-new-engine-from-an-engine-template">2. Create a new Engine from an Engine Template</a> </li> <li> <a href="#3-generate-an-app-id-and-access-key">3. Generate an App ID and Access Key</a> </li> <li> <a href="#4-collecting-data">4. Collecting Data</a> </li> <li> <a href="#5-deploy-the-engine-as-a-service">5. Deploy the Engine as a Service</a> </li> <li> <a href="#6-use-the-engine">6. Use the Engine</a> </li> </ul> </aside><hr/><a id="edit-page-link" href="https://github.com/apache/incubator-predictionio/tree/livedoc/docs/manual/source/templates/complementarypurchase/quickstart.html.md.erb"><img src="/images/icons/edit-pencil-d6c1bb3d.png"/>Edit this page</a></div><div class="content-header hidden-sm hidden-xs"><div id="page-title"><h1>Quick Start - Complementary Purchase Engine Template</h1></div></div><div class="content"> <h2 id='overview' class='header-anchors'>Overview</h2><p>This engine template recommends the complementary items which most user frequently buy at the same time together with one or more items in the query.</p><h2 id='usage' class='header-anchors'>Usage</h2><h3 id='event-data-requirements' class='header-anchors'>Event Data Requirements</h3><p>By default, the template requires the following events to be collected:</p> <ul> <li>user &#39;buy&#39; item events</li> </ul> <div class="alert-message info"><p>A correct eventTime should be used in order for engine to determine if the items being bought are in the same &#39;basket&#39;.</p></div><div class="alert-message note"><p>You can customize to use other event.</p></div><h3 id='input-query' class='header-anchors'>Input Query</h3> <ul> <li>set of items</li> <li>num of recommends items per condition</li> </ul> <h3 id='output-predictedresult' class='header-anchors'>Output PredictedResult</h3> <ul> <li>array of condition and top n recommended items given the condition. The engine will use each combination of the query items as condition.</li> </ul> <h2 id='1.-install-and-run-predictionio' class='header-anchors'>1. Install and Run PredictionIO</h2> <p>First you need to <a href="/install">install PredictionIO 0.11.0-incubating</a> (if you haven&#39;t done it).</p><p>Let&#39;s say you have installed PredictionIO at <code>/home/yourname/PredictionIO/</code>. For convenience, add PredictionIO&#39;s binary command path to your <code>PATH</code>, i.e. <code>/home/yourname/PredictionIO/bin</code>:</p><div class="highlight shell"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="gp">$ </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:/home/yourname/PredictionIO/bin; <span class="nb">export </span>PATH
+</pre></td></tr></tbody></table> </div> <div class="alert-message note"><p>If you launched <strong>PredictionIO AWS instance</strong>, the path is located at <code>/opt/PredictionIO/bin</code>.</p></div><p>Once you have completed the installation process, please make sure all the components (PredictionIO Event Server, Elasticsearch, and HBase) are up and running.</p><div class="alert-message note"><p>If you launched <strong>PredictionIO AWS instance</strong>, you can skip <code>pio-start-all</code>. All components should have been started automatically.</p></div><p>If you are using PostgreSQL or MySQL, run the following to start PredictionIO Event Server:</p><div class="highlight shell"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="gp">$ </span>pio eventserver &amp;
+</pre></td></tr></tbody></table> </div> <p>If instead you are running HBase and Elasticsearch, run the following to start all PredictionIO Event Server, HBase, and Elasticsearch:</p><div class="highlight shell"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="gp">$ </span>pio-start-all
+</pre></td></tr></tbody></table> </div> <p>You can check the status by running:</p><div class="highlight shell"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="gp">$ </span>pio status
+</pre></td></tr></tbody></table> </div> <p>If everything is OK, you should see the following outputs:</p><div class="highlight shell"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4</pre></td><td class="code"><pre>...
+
+<span class="o">(</span>sleeping 5 seconds <span class="k">for </span>all messages to show up...<span class="o">)</span>
+Your system is all ready to go.
+</pre></td></tr></tbody></table> </div> <div class="alert-message note"><p>To further troubleshoot, please see <a href="/resources/faq/#using-predictionio">FAQ - Using PredictionIO</a>.</p></div> <p><a href="#"></a></p> <h2 id='2.-create-a-new-engine-from-an-engine-template' class='header-anchors'>2. Create a new Engine from an Engine Template</h2> <p>Now let&#39;s create a new engine called <em>MyComplementaryPurchase</em> by downloading the Complementary Purchase Engine Template. Go to a directory where you want to put your engine and run the following:</p><div class="highlight shell"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2</pre></td><td class="code"><pre><span class="gp">$ </span>pio template get PredictionIO/template-scala-parallel-complementarypurchase MyComplementaryPurchase
+<span class="gp">$ </span><span class="nb">cd </span>MyComplementaryPurchase
+</pre></td></tr></tbody></table> </div> <p>A new directory <em>MyComplementaryPurchase</em> is created, where you can find the downloaded engine template.</p> <p><a href="#"></a></p> <h2 id='3.-generate-an-app-id-and-access-key' class='header-anchors'>3. Generate an App ID and Access Key</h2> <p>You will need to create a new App in PredictionIO to store all the data of your app. The data collected will be used for machine learning modeling.</p><p>Let&#39;s assume you want to use this engine in an application named &quot;MyApp1&quot;. Run the following to create a new app &quot;MyApp1&quot;:</p><div class="highlight shell"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="gp">$ </span>pio app new MyApp1
+</pre></td></tr></tbody></table> </div> <p>You should find the following in the console output:</p><div class="highlight shell"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6</pre></td><td class="code"><pre>...
+<span class="o">[</span>INFO] <span class="o">[</span>App<span class="nv">$]</span> Initialized Event Store <span class="k">for </span>this app ID: 1.
+<span class="o">[</span>INFO] <span class="o">[</span>App<span class="nv">$]</span> Created new app:
+<span class="o">[</span>INFO] <span class="o">[</span>App<span class="nv">$]</span>       Name: MyApp1
+<span class="o">[</span>INFO] <span class="o">[</span>App<span class="nv">$]</span>         ID: 1
+<span class="o">[</span>INFO] <span class="o">[</span>App<span class="nv">$]</span> Access Key: 3mZWDzci2D5YsqAnqNnXH9SB6Rg3dsTBs8iHkK6X2i54IQsIZI1eEeQQyMfs7b3F
+</pre></td></tr></tbody></table> </div> <p>Note that <em>App ID</em><em>, **Access Key</em>* are created for this App &quot;MyApp1&quot;. You will need the <strong>Access Key</strong> when you collect data with EventServer for this App.</p><p>You can list all of the apps created its corresponding ID and Access Key by running the following command:</p><div class="highlight shell"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="gp">$ </span>pio app list
+</pre></td></tr></tbody></table> </div> <p>You should see a list of apps created. For example:</p><div class="highlight shell"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4</pre></td><td class="code"><pre><span class="o">[</span>INFO] <span class="o">[</span>App<span class="nv">$]</span>                 Name |   ID |                                                       Access Key | Allowed Event<span class="o">(</span>s<span class="o">)</span>
+<span class="o">[</span>INFO] <span class="o">[</span>App<span class="nv">$]</span>               MyApp1 |    1 | 3mZWDzci2D5YsqAnqNnXH9SB6Rg3dsTBs8iHkK6X2i54IQsIZI1eEeQQyMfs7b3F | <span class="o">(</span>all<span class="o">)</span>
+<span class="o">[</span>INFO] <span class="o">[</span>App<span class="nv">$]</span>               MyApp2 |    2 | io5lz6Eg4m3Xe4JZTBFE13GMAf1dhFl6ZteuJfrO84XpdOz9wRCrDU44EUaYuXq5 | <span class="o">(</span>all<span class="o">)</span>
+<span class="o">[</span>INFO] <span class="o">[</span>App<span class="nv">$]</span> Finished listing 2 app<span class="o">(</span>s<span class="o">)</span>.
+</pre></td></tr></tbody></table> </div> <p><a href="#"></a></p> <h2 id='4.-collecting-data' class='header-anchors'>4. Collecting Data</h2><p>Next, let&#39;s collect training data for this Engine. By default, Complementary Purchase Engine Template supports the following entities: <strong>user</strong>, <strong>item</strong>. A user buys an item. This template requires user-buy-item events.</p><p>Note that the engine requires correct buy event time being used in order to determine if the items being bought are in the same &#39;basket&#39;, which is configured by the &#39;basketWindow&#39; parameter. Using an unreal event time for the buy events will cause an incorrect model. If you use SDK, the current time is used as event time by default.</p><div class="alert-message warning"><p>In particular, make sure correct event time is specified if you import data in batch (i.e. not in real time). If the event time is omitted, the SDK will use <strong>current time</strong> as event time which is not the actual time of the buy event in this case!</p></div> <p>You can send these events to PredictionIO Event Server in real-time easily by making a HTTP request or through the provided SDK. Please see <a href="/appintegration/">App Integration Overview</a> for more details how to integrate your app with SDK.</p><p>Let&#39;s try sending events to EventServer with the following <code>curl</code> commands (The corresponding SDK code is showed in other tabs).</p><p>Replace <code>&lt;ACCCESS_KEY&gt;</code> by the Access Key generated in above steps. Note that <code>localhost:7070</code> is the default URL of the Event Server.</p><p>For convenience, set your access key to the shell variable, run:</p><p><code>$ ACCESS_KEY=&lt;ACCESS_KEY&gt;</code></p> <p><a href="#"></a></p> <p>When an user u0 buys item i0 on time <code>2014-11-02T09:39:45.618-08:00</code> (current time will be used if eventTime is not specified), you can send a buy event. Run the following <code>curl</code> command:</p><div class="tabs"> <ul class="control"> <li data-lang="json"><a href="#tab-2a2b598c-1ac8-442c-9356-fcd943ba41c0">REST API</a></li> <li data-lang="python"><a href="#tab-922c0d93-7bfa-4f32-80d4-f0096a9edd6c">Python SDK</a></li> <li data-lang="php"><a href="#tab-90f4ad1b-9549-4a76-81b7-59a9af4d830c">PHP SDK</a></li> <li data-lang="ruby"><a href="#tab-5563d820-cead-48a5-8d21-37fdcee0262a">Ruby SDK</a></li> <li data-lang="java"><a href="#tab-8a2b192c-caea-4801-9f43-12e5d6f6e883">Java SDK</a></li> </ul> <div data-tab="REST API" data-lang="json" id="tab-2a2b598c-1ac8-442c-9356-fcd943ba41c0"> <div class="highlight shell"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10</pre></td> <td class="code"><pre><span class="gp">$ </span>curl -i -X POST http://localhost:7070/events.json?accessKey<span class="o">=</span><span class="nv">$ACCESS_KEY</span> <span class="se">\</span>
+-H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+-d <span class="s1">'{
+  "event" : "buy",
+  "entityType" : "user",
+  "entityId" : "u0",
+  "targetEntityType" : "item",
+  "targetEntityId" : "i0",
+  "eventTime" : "2014-11-02T09:39:45.618-08:00"
+}'</span>
+</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Python SDK" data-lang="python" id="tab-922c0d93-7bfa-4f32-80d4-f0096a9edd6c"> <div class="highlight python"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27</pre></td> <td class="code"><pre><span class="kn">import</span> <span class="nn">predictionio</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">predictionio</span><span class="o">.</span><span class="n">EventClient</span><span class="p">(</span>
+  <span class="n">access_key</span><span class="o">=&lt;</span><span class="n">ACCESS</span> <span class="n">KEY</span><span class="o">&gt;</span><span class="p">,</span>
+  <span class="n">url</span><span class="o">=&lt;</span><span class="n">URL</span> <span class="n">OF</span> <span class="n">EVENTSERVER</span><span class="o">&gt;</span><span class="p">,</span>
+  <span class="n">threads</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+  <span class="n">qsize</span><span class="o">=</span><span class="mi">500</span>
+<span class="p">)</span>
+
+<span class="c"># A user buys an item (use current time as event time)</span>
+<span class="n">client</span><span class="o">.</span><span class="n">create_event</span><span class="p">(</span>
+  <span class="n">event</span><span class="o">=</span><span class="s">"buy"</span><span class="p">,</span>
+  <span class="n">entity_type</span><span class="o">=</span><span class="s">"user"</span><span class="p">,</span>
+  <span class="n">entity_id</span><span class="o">=&lt;</span><span class="n">USER</span> <span class="n">ID</span><span class="o">&gt;</span><span class="p">,</span>
+  <span class="n">target_entity_type</span><span class="o">=</span><span class="s">"item"</span><span class="p">,</span>
+  <span class="n">target_entity_id</span><span class="o">=&lt;</span><span class="n">ITEM</span> <span class="n">ID</span><span class="o">&gt;</span>
+<span class="p">)</span>
+
+<span class="c"># A user buys an item (explicitly specify event time)</span>
+<span class="n">client</span><span class="o">.</span><span class="n">create_event</span><span class="p">(</span>
+  <span class="n">event</span><span class="o">=</span><span class="s">"buy"</span><span class="p">,</span>
+  <span class="n">entity_type</span><span class="o">=</span><span class="s">"user"</span><span class="p">,</span>
+  <span class="n">entity_id</span><span class="o">=&lt;</span><span class="n">USER</span> <span class="n">ID</span><span class="o">&gt;</span><span class="p">,</span>
+  <span class="n">target_entity_type</span><span class="o">=</span><span class="s">"item"</span><span class="p">,</span>
+  <span class="n">target_entity_id</span><span class="o">=&lt;</span><span class="n">ITEM</span> <span class="n">ID</span><span class="o">&gt;</span><span class="p">,</span>
+  <span class="n">event_time</span><span class="o">=&lt;</span><span class="n">EVENT_TIME</span><span class="o">&gt;</span>
+<span class="p">)</span>
+</pre></td> </tr></tbody></table> </div> </div> <div data-tab="PHP SDK" data-lang="php" id="tab-90f4ad1b-9549-4a76-81b7-59a9af4d830c"> <div class="highlight php"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26</pre></td> <td class="code"><pre><span class="cp">&lt;?php</span>
+<span class="k">require_once</span><span class="p">(</span><span class="s2">"vendor/autoload.php"</span><span class="p">);</span>
+<span class="k">use</span> <span class="nx">predictionio\EventClient</span><span class="p">;</span>
+
+<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EventClient</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">ACCESS</span> <span class="nx">KEY</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="nx">URL</span> <span class="nx">OF</span> <span class="nx">EVENTSERVER</span><span class="o">&gt;</span><span class="p">);</span>
+
+<span class="c1">// A user buys an item (use current time as event time)
+</span><span class="nv">$client</span><span class="o">-&gt;</span><span class="na">createEvent</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
+  <span class="s1">'event'</span> <span class="o">=&gt;</span> <span class="s1">'buy'</span><span class="p">,</span>
+  <span class="s1">'entityType'</span> <span class="o">=&gt;</span> <span class="s1">'user'</span><span class="p">,</span>
+  <span class="s1">'entityId'</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">USER</span> <span class="nx">ID</span><span class="o">&gt;</span><span class="p">,</span>
+  <span class="s1">'targetEntityType'</span> <span class="o">=&gt;</span> <span class="s1">'item'</span><span class="p">,</span>
+  <span class="s1">'targetEntityId'</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">ITEM</span> <span class="nx">ID</span><span class="o">&gt;</span>
+<span class="p">));</span>
+
+<span class="c1">// A user buys an item (explicitly specify event time)
+</span><span class="nv">$client</span><span class="o">-&gt;</span><span class="na">createEvent</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
+  <span class="s1">'event'</span> <span class="o">=&gt;</span> <span class="s1">'buy'</span><span class="p">,</span>
+  <span class="s1">'entityType'</span> <span class="o">=&gt;</span> <span class="s1">'user'</span><span class="p">,</span>
+  <span class="s1">'entityId'</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">USER</span> <span class="nx">ID</span><span class="o">&gt;</span><span class="p">,</span>
+  <span class="s1">'targetEntityType'</span> <span class="o">=&gt;</span> <span class="s1">'item'</span><span class="p">,</span>
+  <span class="s1">'targetEntityId'</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">ITEM</span> <span class="nx">ID</span><span class="o">&gt;</span><span class="p">,</span>
+  <span class="s1">'eventTime'</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">EVENT_TIME</span><span class="o">&gt;</span>
+<span class="p">));</span>
+
+<span class="cp">?&gt;</span>
+</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Ruby SDK" data-lang="ruby" id="tab-5563d820-cead-48a5-8d21-37fdcee0262a"> <div class="highlight ruby"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23</pre></td> <td class="code"><pre><span class="c1"># Create a client object.</span>
+<span class="n">client</span> <span class="o">=</span> <span class="no">PredictionIO</span><span class="o">::</span><span class="no">EventClient</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="o">&lt;</span><span class="no">ACCESS</span> <span class="no">KEY</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="no">URL</span> <span class="no">OF</span> <span class="no">EVENTSERVER</span><span class="o">&gt;</span><span class="p">)</span>
+
+<span class="c1"># A user buys an item (use current time as event time)</span>
+<span class="n">client</span><span class="p">.</span><span class="nf">create_event</span><span class="p">(</span>
+  <span class="s1">'buy'</span><span class="p">,</span>
+  <span class="s1">'user'</span><span class="p">,</span>
+  <span class="o">&lt;</span><span class="no">USER</span> <span class="no">ID</span><span class="o">&gt;</span><span class="p">,</span> <span class="p">{</span>
+    <span class="s1">'targetEntityType'</span> <span class="o">=&gt;</span> <span class="s1">'item'</span><span class="p">,</span>
+    <span class="s1">'targetEntityId'</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="no">ITEM</span> <span class="no">ID</span><span class="o">&gt;</span>
+  <span class="p">}</span>
+<span class="p">)</span>
+
+<span class="c1"># A user buys an item (explicitly specify event time)</span>
+<span class="n">client</span><span class="p">.</span><span class="nf">create_event</span><span class="p">(</span>
+  <span class="s1">'buy'</span><span class="p">,</span>
+  <span class="s1">'user'</span><span class="p">,</span>
+  <span class="o">&lt;</span><span class="no">USER</span> <span class="no">ID</span><span class="o">&gt;</span><span class="p">,</span> <span class="p">{</span>
+    <span class="s1">'targetEntityType'</span> <span class="o">=&gt;</span> <span class="s1">'item'</span><span class="p">,</span>
+    <span class="s1">'targetEntityId'</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="no">ITEM</span> <span class="no">ID</span><span class="o">&gt;</span><span class="p">,</span>
+    <span class="s1">'eventTime'</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="no">EVENT_TIME</span><span class="o">&gt;</span>
+  <span class="p">}</span>
+<span class="p">)</span>
+</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Java SDK" data-lang="java" id="tab-8a2b192c-caea-4801-9f43-12e5d6f6e883"> <div class="highlight java"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25</pre></td> <td class="code"><pre><span class="kn">import</span> <span class="nn">org.apache.predictionio.Event</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.predictionio.EventClient</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">com.google.common.collect.ImmutableList</span><span class="o">;</span>
+
+<span class="n">EventClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">EventClient</span><span class="o">(&lt;</span><span class="n">ACCESS</span> <span class="n">KEY</span><span class="o">&gt;,</span> <span class="o">&lt;</span><span class="n">URL</span> <span class="n">OF</span> <span class="n">EVENTSERVER</span><span class="o">&gt;);</span>
+
+<span class="c1">// A user buys an item (use current time as event time)</span>
+<span class="n">Event</span> <span class="n">buyEvent</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Event</span><span class="o">()</span>
+    <span class="o">.</span><span class="na">event</span><span class="o">(</span><span class="s">"buy"</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">entityType</span><span class="o">(</span><span class="s">"user"</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">entityId</span><span class="o">(&lt;</span><span class="n">USER_ID</span><span class="o">&gt;)</span>
+    <span class="o">.</span><span class="na">targetEntityType</span><span class="o">(</span><span class="s">"item"</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">targetEntityId</span><span class="o">(&lt;</span><span class="n">ITEM_ID</span><span class="o">&gt;)</span>
+<span class="n">client</span><span class="o">.</span><span class="na">createEvent</span><span class="o">(</span><span class="n">buyEvent</span><span class="o">);</span>
+
+<span class="c1">// A user buys an item (explicitly specify event time)</span>
+<span class="n">Event</span> <span class="n">buyEvent</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Event</span><span class="o">()</span>
+    <span class="o">.</span><span class="na">event</span><span class="o">(</span><span class="s">"buy"</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">entityType</span><span class="o">(</span><span class="s">"user"</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">entityId</span><span class="o">(&lt;</span><span class="n">USER_ID</span><span class="o">&gt;)</span>
+    <span class="o">.</span><span class="na">targetEntityType</span><span class="o">(</span><span class="s">"item"</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">targetEntityId</span><span class="o">(&lt;</span><span class="n">ITEM_ID</span><span class="o">&gt;)</span>
+    <span class="o">.</span><span class="na">eventTime</span><span class="o">(&lt;</span><span class="n">EVENT_TIME</span><span class="o">&gt;)</span>
+<span class="n">client</span><span class="o">.</span><span class="na">createEvent</span><span class="o">(</span><span class="n">buyEvent</span><span class="o">);</span>
+</pre></td> </tr></tbody></table> </div> </div> </div> <p><h3 id='query-event-server' class='header-anchors'>Query Event Server</h3><p>Now let&#39;s query the EventServer and see if these events are imported successfully.</p><p>Go to following URL with your browser:</p><p><code><a href="http://localhost:7070/events.json?accessKey=&amp;lt;YOUR_ACCESS_KEY">http://localhost:7070/events.json?accessKey=&amp;lt;YOUR_ACCESS_KEY</a>&gt;</code></p><p>or run the following command in terminal:</p><div class="highlight shell"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="gp">$ </span>curl -i -X GET <span class="s2">&quot;<a href="http://localhost:7070/events.json?accessKey=">http://localhost:7070/events.json?accessKey=</a></span><span class="nv">$ACCESS_KEY</span><span class="s2">&quot;</span>
+</pre></td></tr></tbody></table> </div> <div class="alert-message note"><p>Note that you should quote the entire URL by using single or double quotes when you run the <code>curl</code> command.</p></div><p>It should return the imported events in JSON format. You can refer to <a href="/datacollection/eventapi/#debugging-recipes">Event Server Debugging Recipes</a> for more different ways to query Event Server.</p></p><h3 id='import-more-sample-data' class='header-anchors'>Import More Sample Data</h3> <p>This engine requires more data in order to train a useful model. Instead of sending more events one by one in real time, for quickstart demonstration purpose, we are going to use a script to import more events in batch.</p> <p>A Python import script <code>import_eventserver.py</code> is provided to import sample data. The script generates some frequent item sets (prefix with &quot;s&quot;), some other random items (prefix with &quot;i&quot;) and a few popular items (prefix with &quot;p&quot;). Then each user (with user ID &quot;u1&quot; to &quot;u10&quot;) performs 5 buy transactions (buy events are within 10 seconds in each transcation). In each transcation, the user may or may not buy some random items, always buy one of the popular items and buy 2 or more items in one of the frequent item sets.</p> <p>First, you will need to install Python SDK in order to run the sample data import script. To install Python SDK, run:</p><div class="highlight shell"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="gp">$ </span>pip install predictionio
+</pre></td></tr></tbody></table> </div> <p>or</p><div class="highlight shell"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="gp">$ </span>easy_install predictionio
+</pre></td></tr></tbody></table> </div> <div class="alert-message note"><p>You may need <code>sudo</code> access if you have permission issue. (ie. <code>sudo pip install predictionio</code>)</p></div> <p><a href="#"></a></p> <p>Make sure you are under the <code>MyComplementaryPurchase</code> directory. Execute the following to import the data (Replace the value of access_key parameter with your <strong>Access Key</strong>):</p><div class="highlight shell"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2</pre></td><td class="code"><pre><span class="gp">$ </span><span class="nb">cd </span>MyComplementaryPurchase
+<span class="gp">$ </span>python data/import_eventserver.py --access_key 3mZWDzci2D5YsqAnqNnXH9SB6Rg3dsTBs8iHkK6X2i54IQsIZI1eEeQQyMfs7b3F
+</pre></td></tr></tbody></table> </div> <p>You should see the following output:</p><div class="highlight shell"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7</pre></td><td class="code"><pre>...
+User u10 buys item i20 at 2014-10-19 15:42:35.618000-07:53
+User u10 buys item i5 at 2014-10-19 15:42:45.618000-07:53
+User u10 buys item p3 at 2014-10-19 15:42:55.618000-07:53
+User u10 buys item s2i3 at 2014-10-19 15:43:05.618000-07:53
+User u10 buys item s2i1 at 2014-10-19 15:43:15.618000-07:53
+225 events are imported.
+</pre></td></tr></tbody></table> </div> <p><a href="#"></a></p><div class="alert-message warning"><p>If you see error <strong>TypeError: <strong>init</strong>() got an unexpected keyword argument &#39;access_key&#39;</strong>, please update the Python SDK to the latest version.</p></div><p>You can query the event server again as described previously to check the imported events.</p> <h2 id='5.-deploy-the-engine-as-a-service' class='header-anchors'>5. Deploy the Engine as a Service</h2> <p>Now you can build, train, and deploy the engine. First, make sure you are under the <code>MyComplementaryPurchase</code> directory.</p><div class="highlight shell"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="gp">$ </span><span class="nb">cd </span>MyComplementaryPurchase
+</pre></td></tr></tbody></table> </div> <h3 id='engine.json' class='header-anchors'>Engine.json</h3><p>Under the directory, you should find an <code>engine.json</code> file; this is where you specify parameters for the engine.</p><div class="alert-message warning"><p>Modify this file to make sure the <code>appName</code> parameter match your <strong>App Name</strong> you created earlier (e.g. &quot;MyApp1&quot; if you follow the quickstart).</p></div><div class="highlight shell"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7</pre></td><td class="code"><pre>  ...
+  <span class="s2">"datasource"</span>: <span class="o">{</span>
+    <span class="s2">"params"</span> : <span class="o">{</span>
+      <span class="s2">"appName"</span>: <span class="s2">"MyApp1"</span>
+    <span class="o">}</span>
+  <span class="o">}</span>,
+  ...
+</pre></td></tr></tbody></table> </div> <div class="alert-message note"><p>You may see <code>appId</code> in engine.json instead, which means you are using old template. In this case, make sure the <code>appId</code> defined in the file match your <strong>App ID</strong>. Alternatively, you can download the latest version of the template or follow our <a href="/resources/upgrade/#upgrade-to-0.9.2">upgrade instructions</a> to modify the template to use <code>appName</code> as parameter.</p></div> <p><a href="#"></a></p> <p><h3 id='building' class='header-anchors'>Building</h3><p>Start with building your <em>MyComplementaryPurchase</em> engine. Run the following command:</p><div class="highlight shell"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="gp">$ </span>pio build --verbose
+</pre></td></tr></tbody></table> </div> <p>This command should take few minutes for the first time; all subsequent builds should be less than a minute. You can also run it without <code>--verbose</code> if you don&#39;t want to see all the log messages.</p><p>Upon successful build, you should see a console message similar to the following.</p><div class="highlight shell"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="o">[</span>INFO] <span class="o">[</span>Console<span class="nv">$]</span> Your engine is ready <span class="k">for </span>training.
+</pre></td></tr></tbody></table> </div> <h3 id='training-the-predictive-model' class='header-anchors'>Training the Predictive Model</h3><p>To train your engine, run the following command:</p><div class="highlight shell"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="gp">$ </span>pio train
+</pre></td></tr></tbody></table> </div> <p>When your engine is trained successfully, you should see a console message similar to the following.</p><div class="highlight shell"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="o">[</span>INFO] <span class="o">[</span>CoreWorkflow<span class="nv">$]</span> Training completed successfully.
+</pre></td></tr></tbody></table> </div> <h3 id='deploying-the-engine' class='header-anchors'>Deploying the Engine</h3><p>Now your engine is ready to deploy. Run:</p><div class="highlight shell"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="gp">$ </span>pio deploy
+</pre></td></tr></tbody></table> </div> <p>When the engine is deployed successfully and running, you should see a console message similar to the following:</p><div class="highlight shell"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2</pre></td><td class="code"><pre><span class="o">[</span>INFO] <span class="o">[</span>HttpListener] Bound to /0.0.0.0:8000
+<span class="o">[</span>INFO] <span class="o">[</span>MasterActor] Bind successful. Ready to serve.
+</pre></td></tr></tbody></table> </div> <p>Do not kill the deployed engine process.</p><p>By default, the deployed engine binds to <a href="http://localhost:8000"><a href="http://localhost:8000">http://localhost:8000</a></a>. You can visit that page in your web browser to check its status.</p><p><img alt="Engine Status" src="/images/engine-server-3246414b.png"/></p></p><h2 id='6.-use-the-engine' class='header-anchors'>6. Use the Engine</h2><p>Now, You can query the engine. For example, return top 3 items which are frequently bought with item &quot;s2i1&quot;. You can sending this JSON &#39;{ &quot;items&quot; : [&quot;s2i1&quot;], &quot;num&quot; : 3 }&#39; to the deployed engine. The engine will return a JSON with the recommeded items.</p><p>If you include one or more items in the query, the engine will use each combination of the query items as condition, and return recommended items if there is any for this condition. For example, if you query items are [&quot;A&quot;, &quot;B&quot;], then the engine will use [&quot;A&quot;], [&quot;B&quot;], and [&quot;A&quot;, &quot;B&quot;] as condition and try to find top n recommended items for each combination.</p><p>You can simply send a query by making a HTTP request or through the <code>EngineClient</code> of an SDK.</p><p>With the deployed engine running, open another terminal and run the following <code>curl</code> command or use SDK to send the query:</p><div class="tabs"> <ul class="control"> <li data-lang="json"><a href="#tab-646fae0a-7864-4591-bd15-8aa9e1225f82">REST API</a></li> <li data-lang="python"><a href="#tab-06d77fad-a8d5-415d-8529-7133d0973ec8">Python SDK</a></li> <li data-lang="php"><a href="#tab-a5da68bf-fa37-4bb8-8b28-1ba67fde03da">PHP SDK</a></li> <li data-lang="ruby"><a href="#tab-c7191216-540e-4786-8600-5de313e7a38f">Ruby SDK</a></li> <li data-lang="java"><a href="#tab-d11b4b93-aeff-477e-af52-6713e5051aa2">Java SDK</a></li> </ul> <div data-tab="REST API" data-lang="json" id="tab-646fae0a-7864-4591-bd15-8aa9e1225f82"> <div class="highlight shell"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7</pre></td> <td class="code"><pre><span class="gp">$ </span>curl -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+-d <span class="s1">'{
+  "items" : ["s2i1"],
+  "num" : 3
+}'</span> <span class="se">\</span>
+http://localhost:8000/queries.json
+
+</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Python SDK" data-lang="python" id="tab-06d77fad-a8d5-415d-8529-7133d0973ec8"> <div class="highlight python"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6</pre></td> <td class="code"><pre><span class="kn">import</span> <span class="nn">predictionio</span>
+<span class="n">engine_client</span> <span class="o">=</span> <span class="n">predictionio</span><span class="o">.</span><span class="n">EngineClient</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s">"http://localhost:8000"</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">engine_client</span><span class="o">.</span><span class="n">send_query</span><span class="p">({</span>
+  <span class="s">"items"</span> <span class="p">:</span> <span class="p">[</span><span class="s">"s2i1"</span><span class="p">],</span>
+  <span class="s">"num"</span> <span class="p">:</span> <span class="mi">3</span>
+<span class="p">})</span>
+</pre></td> </tr></tbody></table> </div> </div> <div data-tab="PHP SDK" data-lang="php" id="tab-a5da68bf-fa37-4bb8-8b28-1ba67fde03da"> <div class="highlight php"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14</pre></td> <td class="code"><pre><span class="cp">&lt;?php</span>
+<span class="k">require_once</span><span class="p">(</span><span class="s2">"vendor/autoload.php"</span><span class="p">);</span>
+<span class="k">use</span> <span class="nx">predictionio\EngineClient</span><span class="p">;</span>
+
+<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EngineClient</span><span class="p">(</span><span class="s1">'http://localhost:8000'</span><span class="p">);</span>
+
+<span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">sendQuery</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
+  <span class="s1">'items'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s1">'s2i1'</span><span class="p">),</span>
+  <span class="s1">'num'</span> <span class="o">=&gt;</span> <span class="mi">3</span>
+<span class="p">));</span>
+
+<span class="nb">print_r</span><span class="p">(</span><span class="nv">$response</span><span class="p">);</span>
+
+<span class="cp">?&gt;</span>
+</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Ruby SDK" data-lang="ruby" id="tab-c7191216-540e-4786-8600-5de313e7a38f"> <div class="highlight ruby"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10</pre></td> <td class="code"><pre><span class="c1"># Create client object.</span>
+<span class="n">client</span> <span class="o">=</span> <span class="no">PredictionIO</span><span class="o">::</span><span class="no">EngineClient</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s1">'http://localhost:8000'</span><span class="p">)</span>
+
+<span class="c1"># Query PredictionIO.</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">send_query</span><span class="p">(</span>
+  <span class="s1">'items'</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">'s2i1'</span><span class="p">],</span>
+  <span class="s1">'num'</span> <span class="o">=&gt;</span> <span class="mi">3</span>
+<span class="p">)</span>
+
+<span class="nb">puts</span> <span class="n">response</span>
+</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Java SDK" data-lang="java" id="tab-d11b4b93-aeff-477e-af52-6713e5051aa2"> <div class="highlight java"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15</pre></td> <td class="code"><pre><span class="kn">import</span> <span class="nn">com.google.common.collect.ImmutableMap</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.google.common.collect.ImmutableList</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.google.gson.JsonObject</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.apache.predictionio.EngineClient</span><span class="o">;</span>
+
+<span class="c1">// create client object</span>
+<span class="n">EngineClient</span> <span class="n">engineClient</span> <span class="o">=</span> <span class="k">new</span> <span class="n">EngineClient</span><span class="o">(</span><span class="s">"http://localhost:8000"</span><span class="o">);</span>
+
+<span class="c1">// query</span>
+
+<span class="n">JsonObject</span> <span class="n">response</span> <span class="o">=</span> <span class="n">engineClient</span><span class="o">.</span><span class="na">sendQuery</span><span class="o">(</span><span class="n">ImmutableMap</span><span class="o">.&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;</span><span class="n">of</span><span class="o">(</span>
+  <span class="s">"items"</span><span class="o">,</span> <span class="n">ImmutableList</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="s">"s2i1"</span><span class="o">),</span>
+  <span class="s">"num"</span><span class="o">,</span> <span class="mi">3</span>
+<span class="o">));</span>
+</pre></td> </tr></tbody></table> </div> </div> </div> <p>The following is sample JSON response. The <code>cond</code> field is one of the combination of query items used as condition to determine other frequently bought items with this condition, followed by top items. If there are multiple conditions with recommended items found, the <code>rules</code> array will contain mutliple elements, and each correspond to the condition.</p><div class="highlight shell"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</pre></td><td class="code"><pre><span class="o">{</span>
+  <span class="s2">"rules"</span>:[
+    <span class="o">{</span>
+      <span class="s2">"cond"</span>:[<span class="s2">"s2i1"</span><span class="o">]</span>,
+      <span class="s2">"itemScores"</span>:[
+        <span class="o">{</span>
+          <span class="s2">"item"</span>:<span class="s2">"s2i2"</span>,
+          <span class="s2">"support"</span>:0.2,
+          <span class="s2">"confidence"</span>:0.9090909090909091,
+          <span class="s2">"lift"</span>:3.787878787878788
+        <span class="o">}</span>,
+        <span class="o">{</span>
+          <span class="s2">"item"</span>:<span class="s2">"s2i3"</span>,
+          <span class="s2">"support"</span>:0.14,
+          <span class="s2">"confidence"</span>:0.6363636363636364,
+          <span class="s2">"lift"</span>:3.535353535353535
+        <span class="o">}</span>
+      <span class="o">]</span>
+    <span class="o">}</span>
+  <span class="o">]</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table> </div> <p><em>MyComplementaryPurchase</em> is now running.</p> <div class="alert-message info"><p>To update the model periodically with new data, simply set up a cron job to call <code>pio train</code> and <code>pio deploy</code>. The engine will continue to serve prediction results during the re-train process. After the training is completed, <code>pio deploy</code> will automatically shutdown the existing engine server and bring up a new process on the same port.</p></div><div class="alert-message info"><p><strong>Note that if you import a <em>large</em> data set</strong> and the training seems to be taking forever or getting stuck, it&#39;s likely that there is not enough executor memory. It&#39;s recommended to setup a Spark standalone cluster, you&#39;ll need to specify more driver and executor memory when training with a large data set. Please see <a href="/resources/faq/#engine-training">FAQ here</a> for instructions.</p></div> <h4 id='<a-href="/templates/complementarypurchase/dase/">next:-dase-components-explained</a>' class='header-anchors' ><a href="/templates/complementarypurchase/dase/">Next: DASE Components Explained</a></h4></div></div></div></div><footer><div class="container"><div class="seperator"></div><div class="row"><div class="col-md-6 col-xs-6 footer-link-column"><div class="footer-link-column-row"><h4>Community</h4><ul><li><a href="//predictionio.incubator.apache.org/install/" target="blank">Download</a></li><li><a href="//predictionio.incubator.apache.org/" target="blank">Docs</a></li><li><a href="//github.com/apache/incubator-predictionio" target="blank">GitHub</a></li><li><a href="mailto:user-subscribe@predictionio.incubator.apache.org" target="blank">Subscribe to User Mailing List</a></li><li><a href="//stackoverflow.com/questions/tagged/predictionio" target="blank">Stackoverflow</a></li></ul></div></div><div class="col-md-6 col-xs-6 footer-link-column"><div class="footer-link-column-row"><h4>Contribute</h4><ul><li><a href="//predictionio.incubator.apache.org/community/contribute-code/" target="blank">Contribute</a></li><li><a href="//github.com/apache/incubator-predictionio" target="blank">Source Code</a></li><li><a href="//issues.apache.org/jira/browse/PIO" target="blank">Bug Tracker</a></li><li><a href="mailto:dev-subscribe@predictionio.incubator.apache.org" target="blank">Subscribe to Development Mailing List</a></li></ul></div></div></div></div><div id="footer-bottom"><div class="container"><div class="row"><div class="col-md-12"><div id="footer-logo-wrapper"><img alt="PredictionIO" src="/images/logos/logo-white-d1e9c6e6.png"/></div><div id="social-icons-wrapper"><a class="github-button" href="https://github.com/apache/incubator-predictionio" data-style="mega" data-count-href="/apache/incubator-predictionio/stargazers" data-count-api="/repos/apache/incubator-predictionio#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star apache/incubator-predictionio on GitHub">Star</a> <a class="github-button" href="https://github.com/apache/incubator-predictionio/fork" data-icon="octicon-git-branch" data-style="mega" data-count-href="/apache/incubator-predictionio/network" data-count-api="/repos/apache/incubator-predictionio#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork apache/incubator-predictionio on GitHub">Fork</a> <script id="github-bjs" async="" defer="" src="https://buttons.github.io/buttons.js"></script><a href="https://twitter.com/predictionio" target="blank"><img alt="PredictionIO on Twitter" src="/images/icons/twitter-ea9dc152.png"/></a> <a href="https://www.facebook.com/predictionio" target="blank"><img alt="PredictionIO on Facebook" src="/images/icons/facebook-5c57939c.png"/></a> </div></div></div></div></div></footer></div><script>(function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+(w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+})(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+_st('install','HaUfpXXV87xoB_zzCQ45');</script><script src="/javascripts/application-a6acb1f5.js"></script></body></html>
