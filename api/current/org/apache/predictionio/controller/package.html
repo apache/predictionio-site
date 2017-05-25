@@ -1,0 +1,1149 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+        <head>
+          <title>controller - PredictionIO Scala API 0.11.0-incubating - org.apache.predictionio.controller</title>
+          <meta name="description" content="controller - PredictionIO Scala API 0.11.0 - incubating - org.apache.predictionio.controller" />
+          <meta name="keywords" content="controller PredictionIO Scala API 0.11.0 incubating org.apache.predictionio.controller" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../index.html';
+            var hash = 'org.apache.predictionio.controller.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img src="../../../../lib/package_big.png" />
+        <p id="owner"><a href="../../../package.html" class="extype" name="org">org</a>.<a href="../../package.html" class="extype" name="org.apache">apache</a>.<a href="../package.html" class="extype" name="org.apache.predictionio">predictionio</a></p>
+        <h1>controller</h1>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">controller</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Provides building blocks for writing a complete prediction engine
+consisting of DataSource, Preparator, Algorithm, Serving, and Evaluation.</p><h4> Start Building an Engine </h4><p>The starting point of a prediction engine is the <a href="Engine.html" class="extype" name="org.apache.predictionio.controller.Engine">Engine</a> class.</p><h4> The DASE Paradigm </h4><p>The building blocks together form the DASE paradigm. Learn more about DASE
+<a href="http://predictionio.incubator.apache.org/customize/" target="_blank">here</a>.</p><h4> Types of Building Blocks </h4><p>Depending on the problem you are solving, you would need to pick appropriate
+flavors of building blocks.</p><h5> Engines </h5><p>There are 3 typical engine configurations:</p><ol class="decimal"><li><a href="PDataSource.html" class="extype" name="org.apache.predictionio.controller.PDataSource">PDataSource</a>, <a href="PPreparator.html" class="extype" name="org.apache.predictionio.controller.PPreparator">PPreparator</a>, <a href="P2LAlgorithm.html" class="extype" name="org.apache.predictionio.controller.P2LAlgorithm">P2LAlgorithm</a>, <a href="LServing.html" class="extype" name="org.apache.predictionio.controller.LServing">LServing</a>
+ 2. <a href="PDataSource.html" class="extype" name="org.apache.predictionio.controller.PDataSource">PDataSource</a>, <a href="PPreparator.html" class="extype" name="org.apache.predictionio.controller.PPreparator">PPreparator</a>, <a href="PAlgorithm.html" class="extype" name="org.apache.predictionio.controller.PAlgorithm">PAlgorithm</a>, <a href="LServing.html" class="extype" name="org.apache.predictionio.controller.LServing">LServing</a>
+ 3. <a href="LDataSource.html" class="extype" name="org.apache.predictionio.controller.LDataSource">LDataSource</a>, <a href="LPreparator.html" class="extype" name="org.apache.predictionio.controller.LPreparator">LPreparator</a>, <a href="LAlgorithm.html" class="extype" name="org.apache.predictionio.controller.LAlgorithm">LAlgorithm</a>, <a href="LServing.html" class="extype" name="org.apache.predictionio.controller.LServing">LServing</a></li></ol><p>In both configurations 1 and 2, data is sourced and prepared in a
+parallelized fashion, with data type as RDD.</p><p>The difference between configurations 1 and 2 come at the algorithm stage.
+In configuration 1, the algorithm operates on potentially large data as RDDs
+in the Spark cluster, and eventually outputs a model that is small enough to
+fit in a single machine.</p><p>On the other hand, configuration 2 outputs a model that is potentially too
+large to fit in a single machine, and must reside in the Spark cluster as
+RDD(s).</p><p>With configuration 1 (<a href="P2LAlgorithm.html" class="extype" name="org.apache.predictionio.controller.P2LAlgorithm">P2LAlgorithm</a>), PredictionIO will automatically
+try to persist the model to local disk or HDFS if the model is serializable.</p><p>With configuration 2 (<a href="PAlgorithm.html" class="extype" name="org.apache.predictionio.controller.PAlgorithm">PAlgorithm</a>), PredictionIO will not automatically
+try to persist the model, unless the model implements the <a href="PersistentModel.html" class="extype" name="org.apache.predictionio.controller.PersistentModel">PersistentModel</a>
+trait.</p><p>In special circumstances where both the data and the model are small,
+configuration 3 may be used. Beware that RDDs cannot be used with
+configuration 3.</p><h5> Data Source </h5><p><a href="PDataSource.html" class="extype" name="org.apache.predictionio.controller.PDataSource">PDataSource</a> is probably the most used data source base class with the
+ability to process RDD-based data. <a href="LDataSource.html" class="extype" name="org.apache.predictionio.controller.LDataSource">LDataSource</a> <b>cannot</b> handle
+RDD-based data. Use only when you have a special requirement.</p><h5> Preparator </h5><p>With <a href="PDataSource.html" class="extype" name="org.apache.predictionio.controller.PDataSource">PDataSource</a>, you must pick <a href="PPreparator.html" class="extype" name="org.apache.predictionio.controller.PPreparator">PPreparator</a>. The same applies to
+<a href="LDataSource.html" class="extype" name="org.apache.predictionio.controller.LDataSource">LDataSource</a> and <a href="LPreparator.html" class="extype" name="org.apache.predictionio.controller.LPreparator">LPreparator</a>.</p><h5> Algorithm </h5><p>The workhorse of the engine comes in 3 different flavors.</p><h6> P2LAlgorithm </h6><p>Produces a model that is small enough to fit in a single machine from
+<a href="PDataSource.html" class="extype" name="org.apache.predictionio.controller.PDataSource">PDataSource</a> and <a href="PPreparator.html" class="extype" name="org.apache.predictionio.controller.PPreparator">PPreparator</a>. The model <b>cannot</b> contain any RDD.
+If the produced model is serializable, PredictionIO will try to
+automatically persist it. In addition, P2LAlgorithm.batchPredict is
+already implemented for <a href="Evaluation.html" class="extype" name="org.apache.predictionio.controller.Evaluation">Evaluation</a> purpose.</p><h6> PAlgorithm </h6><p>Produces a model that could contain RDDs from <a href="PDataSource.html" class="extype" name="org.apache.predictionio.controller.PDataSource">PDataSource</a> and
+<a href="PPreparator.html" class="extype" name="org.apache.predictionio.controller.PPreparator">PPreparator</a>. PredictionIO will not try to persist it automatically
+unless the model implements <a href="PersistentModel.html" class="extype" name="org.apache.predictionio.controller.PersistentModel">PersistentModel</a>. <a href="PAlgorithm.html#batchPredict(m:M,qs:org.apache.spark.rdd.RDD[(Long,Q)]):org.apache.spark.rdd.RDD[(Long,P)]" class="extmbr" name="org.apache.predictionio.controller.PAlgorithm#batchPredict">PAlgorithm.batchPredict</a>
+must be implemented for <a href="Evaluation.html" class="extype" name="org.apache.predictionio.controller.Evaluation">Evaluation</a>.</p><h6> LAlgorithm </h6><p>Produces a model that is small enough to fit in a single machine from
+<a href="LDataSource.html" class="extype" name="org.apache.predictionio.controller.LDataSource">LDataSource</a> and <a href="LPreparator.html" class="extype" name="org.apache.predictionio.controller.LPreparator">LPreparator</a>. The model <b>cannot</b> contain any RDD.
+If the produced model is serializable, PredictionIO will try to
+automatically persist it. In addition, LAlgorithm.batchPredict is
+already implemented for <a href="Evaluation.html" class="extype" name="org.apache.predictionio.controller.Evaluation">Evaluation</a> purpose.</p><h5> Serving </h5><p>The serving component comes with only 1 flavor--<a href="LServing.html" class="extype" name="org.apache.predictionio.controller.LServing">LServing</a>. At the serving
+stage, it is assumed that the result being served is already at a human-
+consumable size.</p><h4> Model Persistence </h4><p>PredictionIO tries its best to persist trained models automatically. Please
+refer to <a href="LAlgorithm.html#makePersistentModel(sc:org.apache.spark.SparkContext,modelId:String,algoParams:org.apache.predictionio.controller.Params,bm:Any):Any" class="extmbr" name="org.apache.predictionio.controller.LAlgorithm#makePersistentModel">LAlgorithm.makePersistentModel</a>,
+<a href="P2LAlgorithm.html#makePersistentModel(sc:org.apache.spark.SparkContext,modelId:String,algoParams:org.apache.predictionio.controller.Params,bm:Any):Any" class="extmbr" name="org.apache.predictionio.controller.P2LAlgorithm#makePersistentModel">P2LAlgorithm.makePersistentModel</a>, and <a href="PAlgorithm.html#makePersistentModel(sc:org.apache.spark.SparkContext,modelId:String,algoParams:org.apache.predictionio.controller.Params,bm:Any):Any" class="extmbr" name="org.apache.predictionio.controller.PAlgorithm#makePersistentModel">PAlgorithm.makePersistentModel</a>
+for descriptions on different strategies.
+</p></div><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+        </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                <li class="group out"><span>Grouped</span></li>
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="org.apache.predictionio.controller"><span>controller</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show all</span></li>
+            </ol>
+            <a href="http://docs.scala-lang.org/overviews/scaladoc/usage.html#members" target="_blank">Learn more about member selection</a>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="org.apache.predictionio.controller.AverageMetric" visbl="pub" data-isabs="true" fullComment="no" group="Evaluation">
+      <a id="AverageMetric[EI,Q,P,A]extendsMetric[EI,Q,P,A,Double]withStatsMetricHelper[EI,Q,P,A]withQPAMetric[Q,P,A,Double]"></a>
+      <a id="AverageMetric[EI,Q,P,A]:AverageMetric[EI,Q,P,A]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="AverageMetric.html"><span class="name">AverageMetric</span></a><span class="tparams">[<span name="EI">EI</span>, <span name="Q">Q</span>, <span name="P">P</span>, <span name="A">A</span>]</span><span class="result"> extends <a href="Metric.html" class="extype" name="org.apache.predictionio.controller.Metric">Metric</a>[<span class="extype" name="org.apache.predictionio.controller.AverageMetric.EI">EI</span>, <span class="extype" name="org.apache.predictionio.controller.AverageMetric.Q">Q</span>, <span class="extype" name="org.apache.predictionio.controller.AverageMetric.P">P</span>, <span class="extype" name="org.apache.predictionio.controller.AverageMetric.A">A</span>, <a href="http://www.scala-lang.org/api/2.10.6/index.html#scala.Double" class="extype" target="_top">Double</a>] with <span class="extype" name="org.apache.predictionio.controller.StatsMetricHelper">StatsMetricHelper</span>[<span class="extype" name="org.apache.predictionio.controller.AverageMetric.EI">EI</span>, <span class="extype" name="org.apache.predictionio.controller.AverageMetric.Q">Q</span>, <span class="extype" name="org.apache.predictionio.controller.AverageMetric.P">P</span>, <span class="extype" name="org.apache.predictionio.controller.AverageMetric.A">A</span>] with <a href="QPAMetric.html" class="extype" name="org.apache.predictionio.controller.QPAMetric">QPAMetric</a>[<span class="extype" name="org.apache.predictionio.controller.AverageMetric.Q">Q</span>, <span class="extype" name="org.apache.predictionio.controller.AverageMetric.P">P</span>, <span class="extype" name="org.apache.predictionio.controller.AverageMetric.A">A</span>, <a href="http://www.scala-lang.org/api/2.10.6/index.html#scala.Double" class="extype" target="_top">Double</a>]</span>
+      </span>
+      </h4>
+      <p class="comment cmt">Returns the global average of the score returned by the calculate method.</p>
+    </li><li name="org.apache.predictionio.controller.CustomQuerySerializer" visbl="pub" data-isabs="true" fullComment="no" group="Helper">
+      <a id="CustomQuerySerializerextendsBaseQuerySerializer"></a>
+      <a id="CustomQuerySerializer:CustomQuerySerializer"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="CustomQuerySerializer.html"><span class="name">CustomQuerySerializer</span></a><span class="result"> extends <a href="../core/BaseQuerySerializer.html" class="extype" name="org.apache.predictionio.core.BaseQuerySerializer">BaseQuerySerializer</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">If your query class cannot be automatically serialized/deserialized to/from
+JSON, implement a trait by extending this trait, and overriding the
+<code>querySerializer</code> member with your
+<a href="https://github.com/json4s/json4s#serializing-non-supported-types" target="_blank">custom JSON4S serializer</a>.</p>
+    </li><li name="org.apache.predictionio.controller.Deployment" visbl="pub" data-isabs="true" fullComment="no" group="Engine">
+      <a id="DeploymentextendsEngineFactory"></a>
+      <a id="Deployment:Deployment"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Deployment.html"><span class="name">Deployment</span></a><span class="result"> extends <a href="EngineFactory.html" class="extype" name="org.apache.predictionio.controller.EngineFactory">EngineFactory</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Defines a deployment that contains an <a href="Engine.html" class="extype" name="org.apache.predictionio.controller.Engine">Engine</a>
+</p>
+    </li><li name="org.apache.predictionio.controller.EmptyActualResult" visbl="pub" data-isabs="false" fullComment="no" group="Helper">
+      <a id="EmptyActualResult=org.apache.predictionio.controller.package.SerializableClass"></a>
+      <a id="EmptyActualResult:EmptyActualResult"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">EmptyActualResult</span><span class="result"> = <a href="package$$SerializableClass.html" class="extype" name="org.apache.predictionio.controller.SerializableClass">SerializableClass</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Empty actual result.</p>
+    </li><li name="org.apache.predictionio.controller.EmptyAlgorithmParams" visbl="pub" data-isabs="false" fullComment="no" group="Helper">
+      <a id="EmptyAlgorithmParams=org.apache.predictionio.controller.EmptyParams"></a>
+      <a id="EmptyAlgorithmParams:EmptyAlgorithmParams"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">EmptyAlgorithmParams</span><span class="result"> = <a href="EmptyParams.html" class="extype" name="org.apache.predictionio.controller.EmptyParams">EmptyParams</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Empty algorithm parameters.</p>
+    </li><li name="org.apache.predictionio.controller.EmptyDataParams" visbl="pub" data-isabs="false" fullComment="no" group="Helper">
+      <a id="EmptyDataParams=org.apache.predictionio.controller.EmptyParams"></a>
+      <a id="EmptyDataParams:EmptyDataParams"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">EmptyDataParams</span><span class="result"> = <a href="EmptyParams.html" class="extype" name="org.apache.predictionio.controller.EmptyParams">EmptyParams</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Empty data parameters.</p>
+    </li><li name="org.apache.predictionio.controller.EmptyDataSourceParams" visbl="pub" data-isabs="false" fullComment="no" group="Helper">
+      <a id="EmptyDataSourceParams=org.apache.predictionio.controller.EmptyParams"></a>
+      <a id="EmptyDataSourceParams:EmptyDataSourceParams"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">EmptyDataSourceParams</span><span class="result"> = <a href="EmptyParams.html" class="extype" name="org.apache.predictionio.controller.EmptyParams">EmptyParams</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Empty data source parameters.</p>
+    </li><li name="org.apache.predictionio.controller.EmptyEvaluationInfo" visbl="pub" data-isabs="false" fullComment="no" group="Helper">
+      <a id="EmptyEvaluationInfo=org.apache.predictionio.controller.package.SerializableClass"></a>
+      <a id="EmptyEvaluationInfo:EmptyEvaluationInfo"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">EmptyEvaluationInfo</span><span class="result"> = <a href="package$$SerializableClass.html" class="extype" name="org.apache.predictionio.controller.SerializableClass">SerializableClass</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Empty evaluation info.</p>
+    </li><li name="org.apache.predictionio.controller.EmptyMetricsParams" visbl="pub" data-isabs="false" fullComment="no" group="Helper">
+      <a id="EmptyMetricsParams=org.apache.predictionio.controller.EmptyParams"></a>
+      <a id="EmptyMetricsParams:EmptyMetricsParams"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">EmptyMetricsParams</span><span class="result"> = <a href="EmptyParams.html" class="extype" name="org.apache.predictionio.controller.EmptyParams">EmptyParams</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Empty metrics parameters.</p>
+    </li><li name="org.apache.predictionio.controller.EmptyModel" visbl="pub" data-isabs="false" fullComment="no" group="Helper">
+      <a id="EmptyModel=org.apache.predictionio.controller.package.SerializableClass"></a>
+      <a id="EmptyModel:EmptyModel"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">EmptyModel</span><span class="result"> = <a href="package$$SerializableClass.html" class="extype" name="org.apache.predictionio.controller.SerializableClass">SerializableClass</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Empty model.</p>
+    </li><li name="org.apache.predictionio.controller.EmptyParams" visbl="pub" data-isabs="false" fullComment="no" group="Helper">
+      <a id="EmptyParamsextendsParamswithProductwithSerializable"></a>
+      <a id="EmptyParams:EmptyParams"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="EmptyParams.html"><span class="name">EmptyParams</span></a><span class="params">()</span><span class="result"> extends <a href="Params.html" class="extype" name="org.apache.predictionio.controller.Params">Params</a> with <a href="http://www.scala-lang.org/api/2.10.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.10.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">A concrete implementation of <a href="Params.html" class="extype" name="org.apache.predictionio.controller.Params">Params</a> representing empty parameters.</p>
+    </li><li name="org.apache.predictionio.controller.EmptyPreparatorParams" visbl="pub" data-isabs="false" fullComment="no" group="Helper">
+      <a id="EmptyPreparatorParams=org.apache.predictionio.controller.EmptyParams"></a>
+      <a id="EmptyPreparatorParams:EmptyPreparatorParams"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">EmptyPreparatorParams</span><span class="result"> = <a href="EmptyParams.html" class="extype" name="org.apache.predictionio.controller.EmptyParams">EmptyParams</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Empty preparator parameters.</p>
+    </li><li name="org.apache.predictionio.controller.EmptyPreparedData" visbl="pub" data-isabs="false" fullComment="no" group="Helper">
+      <a id="EmptyPreparedData=org.apache.predictionio.controller.package.SerializableClass"></a>
+      <a id="EmptyPreparedData:EmptyPreparedData"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">EmptyPreparedData</span><span class="result"> = <a href="package$$SerializableClass.html" class="extype" name="org.apache.predictionio.controller.SerializableClass">SerializableClass</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Empty prepared data.</p>
+    </li><li name="org.apache.predictionio.controller.EmptyServingParams" visbl="pub" data-isabs="false" fullComment="no" group="Helper">
+      <a id="EmptyServingParams=org.apache.predictionio.controller.EmptyParams"></a>
+      <a id="EmptyServingParams:EmptyServingParams"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">EmptyServingParams</span><span class="result"> = <a href="EmptyParams.html" class="extype" name="org.apache.predictionio.controller.EmptyParams">EmptyParams</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Empty serving parameters.</p>
+    </li><li name="org.apache.predictionio.controller.EmptyTrainingData" visbl="pub" data-isabs="false" fullComment="no" group="Helper">
+      <a id="EmptyTrainingData=org.apache.predictionio.controller.package.SerializableClass"></a>
+      <a id="EmptyTrainingData:EmptyTrainingData"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">EmptyTrainingData</span><span class="result"> = <a href="package$$SerializableClass.html" class="extype" name="org.apache.predictionio.controller.SerializableClass">SerializableClass</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Empty training data.</p>
+    </li><li name="org.apache.predictionio.controller.Engine" visbl="pub" data-isabs="false" fullComment="no" group="Engine">
+      <a id="Engine[TD,EI,PD,Q,P,A]extendsBaseEngine[EI,Q,P,A]"></a>
+      <a id="Engine[TD,EI,PD,Q,P,A]:Engine[TD,EI,PD,Q,P,A]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="Engine.html"><span class="name">Engine</span></a><span class="tparams">[<span name="TD">TD</span>, <span name="EI">EI</span>, <span name="PD">PD</span>, <span name="Q">Q</span>, <span name="P">P</span>, <span name="A">A</span>]</span><span class="result"> extends <a href="../core/BaseEngine.html" class="extype" name="org.apache.predictionio.core.BaseEngine">BaseEngine</a>[<span class="extype" name="org.apache.predictionio.controller.Engine.EI">EI</span>, <span class="extype" name="org.apache.predictionio.controller.Engine.Q">Q</span>, <span class="extype" name="org.apache.predictionio.controller.Engine.P">P</span>, <span class="extype" name="org.apache.predictionio.controller.Engine.A">A</span>]</span>
+      </span>
+      </h4>
+      <p class="comment cmt">This class chains up the entire data process.</p>
+    </li><li name="org.apache.predictionio.controller.EngineFactory" visbl="pub" data-isabs="true" fullComment="no" group="Engine">
+      <a id="EngineFactoryextendsAnyRef"></a>
+      <a id="EngineFactory:EngineFactory"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="EngineFactory.html"><span class="name">EngineFactory</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">If you intend to let PredictionIO create workflow and deploy serving
+automatically, you will need to implement an object that extends this class
+and return an <a href="Engine.html" class="extype" name="org.apache.predictionio.controller.Engine">Engine</a>.</p>
+    </li><li name="org.apache.predictionio.controller.EngineParams" visbl="pub" data-isabs="false" fullComment="no" group="Engine">
+      <a id="EngineParamsextendsSerializable"></a>
+      <a id="EngineParams:EngineParams"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="EngineParams.html"><span class="name">EngineParams</span></a><span class="result"> extends <a href="http://www.scala-lang.org/api/2.10.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">This class serves as a logical grouping of all required engine's parameters.</p>
+    </li><li name="org.apache.predictionio.controller.EngineParamsGenerator" visbl="pub" data-isabs="true" fullComment="no" group="Evaluation">
+      <a id="EngineParamsGeneratorextendsAnyRef"></a>
+      <a id="EngineParamsGenerator:EngineParamsGenerator"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="EngineParamsGenerator.html"><span class="name">EngineParamsGenerator</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Defines an engine parameters generator.</p>
+    </li><li name="org.apache.predictionio.controller.Evaluation" visbl="pub" data-isabs="true" fullComment="no" group="Evaluation">
+      <a id="EvaluationextendsEngineFactorywithDeployment"></a>
+      <a id="Evaluation:Evaluation"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Evaluation.html"><span class="name">Evaluation</span></a><span class="result"> extends <a href="EngineFactory.html" class="extype" name="org.apache.predictionio.controller.EngineFactory">EngineFactory</a> with <a href="Deployment.html" class="extype" name="org.apache.predictionio.controller.Deployment">Deployment</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Defines an evaluation that contains an engine and a metric.</p>
+    </li><li name="org.apache.predictionio.controller.FastEvalEngine" visbl="pub" data-isabs="false" fullComment="no" group="Evaluation">
+      <a id="FastEvalEngine[TD,EI,PD,Q,P,A]extendsEngine[TD,EI,PD,Q,P,A]"></a>
+      <a id="FastEvalEngine[TD,EI,PD,Q,P,A]:FastEvalEngine[TD,EI,PD,Q,P,A]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="FastEvalEngine.html"><span class="name">FastEvalEngine</span></a><span class="tparams">[<span name="TD">TD</span>, <span name="EI">EI</span>, <span name="PD">PD</span>, <span name="Q">Q</span>, <span name="P">P</span>, <span name="A">A</span>]</span><span class="result"> extends <a href="Engine.html" class="extype" name="org.apache.predictionio.controller.Engine">Engine</a>[<span class="extype" name="org.apache.predictionio.controller.FastEvalEngine.TD">TD</span>, <span class="extype" name="org.apache.predictionio.controller.FastEvalEngine.EI">EI</span>, <span class="extype" name="org.apache.predictionio.controller.FastEvalEngine.PD">PD</span>, <span class="extype" name="org.apache.predictionio.controller.FastEvalEngine.Q">Q</span>, <span class="extype" name="org.apache.predictionio.controller.FastEvalEngine.P">P</span>, <span class="extype" name="org.apache.predictionio.controller.FastEvalEngine.A">A</span>]</span>
+      </span>
+      </h4>
+      <p class="comment cmt">:: Experimental ::
+FastEvalEngine is a subclass of <a href="Engine.html" class="extype" name="org.apache.predictionio.controller.Engine">Engine</a> that exploits the immutability of
+controllers to optimize the evaluation process
+</p>
+    </li><li name="org.apache.predictionio.controller.FastEvalEngineWorkflow" visbl="pub" data-isabs="false" fullComment="no" group="Evaluation">
+      <a id="FastEvalEngineWorkflow[TD,EI,PD,Q,P,A]extendsSerializable"></a>
+      <a id="FastEvalEngineWorkflow[TD,EI,PD,Q,P,A]:FastEvalEngineWorkflow[TD,EI,PD,Q,P,A]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="FastEvalEngineWorkflow.html"><span class="name">FastEvalEngineWorkflow</span></a><span class="tparams">[<span name="TD">TD</span>, <span name="EI">EI</span>, <span name="PD">PD</span>, <span name="Q">Q</span>, <span name="P">P</span>, <span name="A">A</span>]</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.10.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">:: Experimental ::
+Workflow based on <a href="FastEvalEngine.html" class="extype" name="org.apache.predictionio.controller.FastEvalEngine">FastEvalEngine</a>
+</p>
+    </li><li name="org.apache.predictionio.controller.IdentityPreparator" visbl="pub" data-isabs="false" fullComment="no" group="Preparator">
+      <a id="IdentityPreparator[TD]extendsBasePreparator[TD,TD]"></a>
+      <a id="IdentityPreparator[TD]:IdentityPreparator[TD]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="IdentityPreparator.html"><span class="name">IdentityPreparator</span></a><span class="tparams">[<span name="TD">TD</span>]</span><span class="result"> extends <a href="../core/BasePreparator.html" class="extype" name="org.apache.predictionio.core.BasePreparator">BasePreparator</a>[<span class="extype" name="org.apache.predictionio.controller.IdentityPreparator.TD">TD</span>, <span class="extype" name="org.apache.predictionio.controller.IdentityPreparator.TD">TD</span>]</span>
+      </span>
+      </h4>
+      <p class="comment cmt">A helper concrete implementation of <a href="../core/BasePreparator.html" class="extype" name="org.apache.predictionio.core.BasePreparator">org.apache.predictionio.core.BasePreparator</a>
+that passes training data through without any special preparation.</p>
+    </li><li name="org.apache.predictionio.controller.LAlgorithm" visbl="pub" data-isabs="true" fullComment="no" group="Algorithm">
+      <a id="LAlgorithm[PD,M,Q,P]extendsBaseAlgorithm[org.apache.spark.rdd.RDD[PD],org.apache.spark.rdd.RDD[M],Q,P]"></a>
+      <a id="LAlgorithm[PD,M,Q,P]:LAlgorithm[PD,M,Q,P]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="LAlgorithm.html"><span class="name">LAlgorithm</span></a><span class="tparams">[<span name="PD">PD</span>, <span name="M">M</span>, <span name="Q">Q</span>, <span name="P">P</span>]</span><span class="result"> extends <a href="../core/BaseAlgorithm.html" class="extype" name="org.apache.predictionio.core.BaseAlgorithm">BaseAlgorithm</a>[<span class="extype" name="org.apache.spark.rdd.RDD">RDD</span>[<span class="extype" name="org.apache.predictionio.controller.LAlgorithm.PD">PD</span>], <span class="extype" name="org.apache.spark.rdd.RDD">RDD</span>[<span class="extype" name="org.apache.predictionio.controller.LAlgorithm.M">M</span>], <span class="extype" name="org.apache.predictionio.controller.LAlgorithm.Q">Q</span>, <span class="extype" name="org.apache.predictionio.controller.LAlgorithm.P">P</span>]</span>
+      </span>
+      </h4>
+      <p class="comment cmt">Base class of a local algorithm.</p>
+    </li><li name="org.apache.predictionio.controller.LAverageServing" visbl="pub" data-isabs="false" fullComment="no" group="Serving">
+      <a id="LAverageServing[Q]extendsLServing[Q,Double]"></a>
+      <a id="LAverageServing[Q]:LAverageServing[Q]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="LAverageServing.html"><span class="name">LAverageServing</span></a><span class="tparams">[<span name="Q">Q</span>]</span><span class="result"> extends <a href="LServing.html" class="extype" name="org.apache.predictionio.controller.LServing">LServing</a>[<span class="extype" name="org.apache.predictionio.controller.LAverageServing.Q">Q</span>, <a href="http://www.scala-lang.org/api/2.10.6/index.html#scala.Double" class="extype" target="_top">Double</a>]</span>
+      </span>
+      </h4>
+      <p class="comment cmt">A concrete implementation of <a href="LServing.html" class="extype" name="org.apache.predictionio.controller.LServing">LServing</a> returning the average of all
+algorithms' predictions, where their classes are expected to be all Double.</p>
+    </li><li name="org.apache.predictionio.controller.LDataSource" visbl="pub" data-isabs="true" fullComment="no" group="Data Source">
+      <a id="LDataSource[TD,EI,Q,A]extendsBaseDataSource[org.apache.spark.rdd.RDD[TD],EI,Q,A]"></a>
+      <a id="LDataSource[TD,EI,Q,A]:LDataSource[TD,EI,Q,A]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="LDataSource.html"><span class="name">LDataSource</span></a><span class="tparams">[<span name="TD">TD</span>, <span name="EI">EI</span>, <span name="Q">Q</span>, <span name="A">A</span>]</span><span class="result"> extends <a href="../core/BaseDataSource.html" class="extype" name="org.apache.predictionio.core.BaseDataSource">BaseDataSource</a>[<span class="extype" name="org.apache.spark.rdd.RDD">RDD</span>[<span class="extype" name="org.apache.predictionio.controller.LDataSource.TD">TD</span>], <span class="extype" name="org.apache.predictionio.controller.LDataSource.EI">EI</span>, <span class="extype" name="org.apache.predictionio.controller.LDataSource.Q">Q</span>, <span class="extype" name="org.apache.predictionio.controller.LDataSource.A">A</span>]</span>
+      </span>
+      </h4>
+      <p class="comment cmt">Base class of a local data source.</p>
+    </li><li name="org.apache.predictionio.controller.LFirstServing" visbl="pub" data-isabs="false" fullComment="no" group="Serving">
+      <a id="LFirstServing[Q,P]extendsLServing[Q,P]"></a>
+      <a id="LFirstServing[Q,P]:LFirstServing[Q,P]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="LFirstServing.html"><span class="name">LFirstServing</span></a><span class="tparams">[<span name="Q">Q</span>, <span name="P">P</span>]</span><span class="result"> extends <a href="LServing.html" class="extype" name="org.apache.predictionio.controller.LServing">LServing</a>[<span class="extype" name="org.apache.predictionio.controller.LFirstServing.Q">Q</span>, <span class="extype" name="org.apache.predictionio.controller.LFirstServing.P">P</span>]</span>
+      </span>
+      </h4>
+      <p class="comment cmt">A concrete implementation of <a href="LServing.html" class="extype" name="org.apache.predictionio.controller.LServing">LServing</a> returning the first algorithm's
+prediction result directly without any modification.</p>
+    </li><li name="org.apache.predictionio.controller.LIdentityPreparator" visbl="pub" data-isabs="false" fullComment="no" group="Preparator">
+      <a id="LIdentityPreparator[TD]extendsIdentityPreparator[TD]"></a>
+      <a id="LIdentityPreparator[TD]:LIdentityPreparator[TD]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="LIdentityPreparator.html"><span class="name">LIdentityPreparator</span></a><span class="tparams">[<span name="TD">TD</span>]</span><span class="result"> extends <a href="IdentityPreparator.html" class="extype" name="org.apache.predictionio.controller.IdentityPreparator">IdentityPreparator</a>[<span class="extype" name="org.apache.predictionio.controller.LIdentityPreparator.TD">TD</span>]</span>
+      </span>
+      </h4>
+      <p class="comment cmt">DEPRECATED.</p>
+    </li><li name="org.apache.predictionio.controller.LPreparator" visbl="pub" data-isabs="true" fullComment="no" group="Preparator">
+      <a id="LPreparator[TD,PD]extendsBasePreparator[org.apache.spark.rdd.RDD[TD],org.apache.spark.rdd.RDD[PD]]"></a>
+      <a id="LPreparator[TD,PD]:LPreparator[TD,PD]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="LPreparator.html"><span class="name">LPreparator</span></a><span class="tparams">[<span name="TD">TD</span>, <span name="PD">PD</span>]</span><span class="result"> extends <a href="../core/BasePreparator.html" class="extype" name="org.apache.predictionio.core.BasePreparator">BasePreparator</a>[<span class="extype" name="org.apache.spark.rdd.RDD">RDD</span>[<span class="extype" name="org.apache.predictionio.controller.LPreparator.TD">TD</span>], <span class="extype" name="org.apache.spark.rdd.RDD">RDD</span>[<span class="extype" name="org.apache.predictionio.controller.LPreparator.PD">PD</span>]]</span>
+      </span>
+      </h4>
+      <p class="comment cmt">Base class of a local preparator.</p>
+    </li><li name="org.apache.predictionio.controller.LServing" visbl="pub" data-isabs="true" fullComment="no" group="Serving">
+      <a id="LServing[Q,P]extendsBaseServing[Q,P]"></a>
+      <a id="LServing[Q,P]:LServing[Q,P]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="LServing.html"><span class="name">LServing</span></a><span class="tparams">[<span name="Q">Q</span>, <span name="P">P</span>]</span><span class="result"> extends <a href="../core/BaseServing.html" class="extype" name="org.apache.predictionio.core.BaseServing">BaseServing</a>[<span class="extype" name="org.apache.predictionio.controller.LServing.Q">Q</span>, <span class="extype" name="org.apache.predictionio.controller.LServing.P">P</span>]</span>
+      </span>
+      </h4>
+      <p class="comment cmt">Base class of serving.</p>
+    </li><li name="org.apache.predictionio.controller.LocalFileSystemPersistentModel" visbl="pub" data-isabs="true" fullComment="no" group="Algorithm">
+      <a id="LocalFileSystemPersistentModel[AP&lt;:org.apache.predictionio.controller.Params]extendsPersistentModel[AP]"></a>
+      <a id="LocalFileSystemPersistentModel[AP&lt;:Params]:LocalFileSystemPersistentModel[AP]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="LocalFileSystemPersistentModel.html"><span class="name">LocalFileSystemPersistentModel</span></a><span class="tparams">[<span name="AP">AP &lt;: <a href="Params.html" class="extype" name="org.apache.predictionio.controller.Params">Params</a></span>]</span><span class="result"> extends <a href="PersistentModel.html" class="extype" name="org.apache.predictionio.controller.PersistentModel">PersistentModel</a>[<span class="extype" name="org.apache.predictionio.controller.LocalFileSystemPersistentModel.AP">AP</span>]</span>
+      </span>
+      </h4>
+      <p class="comment cmt">This trait is a convenience helper for persisting your model to the local
+filesystem.</p>
+    </li><li name="org.apache.predictionio.controller.LocalFileSystemPersistentModelLoader" visbl="pub" data-isabs="true" fullComment="no" group="Algorithm">
+      <a id="LocalFileSystemPersistentModelLoader[AP&lt;:org.apache.predictionio.controller.Params,M]extendsPersistentModelLoader[AP,M]"></a>
+      <a id="LocalFileSystemPersistentModelLoader[AP&lt;:Params,M]:LocalFileSystemPersistentModelLoader[AP,M]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="LocalFileSystemPersistentModelLoader.html"><span class="name">LocalFileSystemPersistentModelLoader</span></a><span class="tparams">[<span name="AP">AP &lt;: <a href="Params.html" class="extype" name="org.apache.predictionio.controller.Params">Params</a></span>, <span name="M">M</span>]</span><span class="result"> extends <a href="PersistentModelLoader.html" class="extype" name="org.apache.predictionio.controller.PersistentModelLoader">PersistentModelLoader</a>[<span class="extype" name="org.apache.predictionio.controller.LocalFileSystemPersistentModelLoader.AP">AP</span>, <span class="extype" name="org.apache.predictionio.controller.LocalFileSystemPersistentModelLoader.M">M</span>]</span>
+      </span>
+      </h4>
+      <p class="comment cmt">Implement an object that extends this trait for PredictionIO to support
+loading a persisted model from local filesystem during serving deployment.</p>
+    </li><li name="org.apache.predictionio.controller.Metric" visbl="pub" data-isabs="true" fullComment="no" group="Evaluation">
+      <a id="Metric[EI,Q,P,A,R]extendsSerializable"></a>
+      <a id="Metric[EI,Q,P,A,R]:Metric[EI,Q,P,A,R]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="Metric.html"><span class="name">Metric</span></a><span class="tparams">[<span name="EI">EI</span>, <span name="Q">Q</span>, <span name="P">P</span>, <span name="A">A</span>, <span name="R">R</span>]</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.10.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Base class of a <a href="Metric.html" class="extype" name="org.apache.predictionio.controller.Metric">Metric</a>.</p>
+    </li><li name="org.apache.predictionio.controller.MetricEvaluator" visbl="pub" data-isabs="false" fullComment="no" group="Evaluation">
+      <a id="MetricEvaluator[EI,Q,P,A,R]extendsBaseEvaluator[EI,Q,P,A,org.apache.predictionio.controller.MetricEvaluatorResult[R]]"></a>
+      <a id="MetricEvaluator[EI,Q,P,A,R]:MetricEvaluator[EI,Q,P,A,R]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="MetricEvaluator.html"><span class="name">MetricEvaluator</span></a><span class="tparams">[<span name="EI">EI</span>, <span name="Q">Q</span>, <span name="P">P</span>, <span name="A">A</span>, <span name="R">R</span>]</span><span class="result"> extends <a href="../core/BaseEvaluator.html" class="extype" name="org.apache.predictionio.core.BaseEvaluator">BaseEvaluator</a>[<span class="extype" name="org.apache.predictionio.controller.MetricEvaluator.EI">EI</span>, <span class="extype" name="org.apache.predictionio.controller.MetricEvaluator.Q">Q</span>, <span class="extype" name="org.apache.predictionio.controller.MetricEvaluator.P">P</span>, <span class="extype" name="org.apache.predictionio.controller.MetricEvaluator.A">A</span>, <a href="MetricEvaluatorResult.html" class="extype" name="org.apache.predictionio.controller.MetricEvaluatorResult">MetricEvaluatorResult</a>[<span class="extype" name="org.apache.predictionio.controller.MetricEvaluator.R">R</span>]]</span>
+      </span>
+      </h4>
+      <p class="comment cmt">:: DeveloperApi ::
+Do no use this directly.</p>
+    </li><li name="org.apache.predictionio.controller.MetricEvaluatorResult" visbl="pub" data-isabs="false" fullComment="no" group="Evaluation">
+      <a id="MetricEvaluatorResult[R]extendsBaseEvaluatorResultwithProductwithSerializable"></a>
+      <a id="MetricEvaluatorResult[R]:MetricEvaluatorResult[R]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="MetricEvaluatorResult.html"><span class="name">MetricEvaluatorResult</span></a><span class="tparams">[<span name="R">R</span>]</span><span class="params">(<span name="bestScore">bestScore: <a href="MetricScores.html" class="extype" name="org.apache.predictionio.controller.MetricScores">MetricScores</a>[<span class="extype" name="org.apache.predictionio.controller.MetricEvaluatorResult.R">R</span>]</span>, <span name="bestEngineParams">bestEngineParams: <a href="EngineParams.html" class="extype" name="org.apache.predictionio.controller.EngineParams">EngineParams</a></span>, <span name="bestIdx">bestIdx: <a href="http://www.scala-lang.org/api/2.10.6/index.html#scala.Int" class="extype" target="_top">Int</a></span>, <span name="metricHeader">metricHeader: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="otherMetricHeaders">otherMetricHeaders: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>, <span name="engineParamsScores">engineParamsScores: <span class="extype" name="scala.Seq">Seq</span>[(<a href="EngineParams.html" class="extype" name="org.apache.predictionio.controller.EngineParams">EngineParams</a>, <a href="MetricScores.html" class="extype" name="org.apache.predictionio.controller.MetricScores">MetricScores</a>[<span class="extype" name="org.apache.predictionio.controller.MetricEvaluatorResult.R">R</span>])]</span>, <span name="outputPath">outputPath: <a href="http://www.scala-lang.org/api/2.10.6/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="scala.Predef.String">String</span>]</span>)</span><span class="result"> extends <a href="../core/BaseEvaluatorResult.html" class="extype" name="org.apache.predictionio.core.BaseEvaluatorResult">BaseEvaluatorResult</a> with <a href="http://www.scala-lang.org/api/2.10.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.10.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Contains all results of a <a href="MetricEvaluator.html" class="extype" name="org.apache.predictionio.controller.MetricEvaluator">MetricEvaluator</a>
+</p>
+    </li><li name="org.apache.predictionio.controller.MetricScores" visbl="pub" data-isabs="false" fullComment="no" group="Evaluation">
+      <a id="MetricScores[R]extendsProductwithSerializable"></a>
+      <a id="MetricScores[R]:MetricScores[R]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="MetricScores.html"><span class="name">MetricScores</span></a><span class="tparams">[<span name="R">R</span>]</span><span class="params">(<span name="score">score: <span class="extype" name="org.apache.predictionio.controller.MetricScores.R">R</span></span>, <span name="otherScores">otherScores: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Any">Any</span>]</span>)</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.10.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.10.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Case class storing a primary score, and other scores
+</p>
+    </li><li name="org.apache.predictionio.controller.OptionAverageMetric" visbl="pub" data-isabs="true" fullComment="no" group="Evaluation">
+      <a id="OptionAverageMetric[EI,Q,P,A]extendsMetric[EI,Q,P,A,Double]withStatsOptionMetricHelper[EI,Q,P,A]withQPAMetric[Q,P,A,Option[Double]]"></a>
+      <a id="OptionAverageMetric[EI,Q,P,A]:OptionAverageMetric[EI,Q,P,A]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="OptionAverageMetric.html"><span class="name">OptionAverageMetric</span></a><span class="tparams">[<span name="EI">EI</span>, <span name="Q">Q</span>, <span name="P">P</span>, <span name="A">A</span>]</span><span class="result"> extends <a href="Metric.html" class="extype" name="org.apache.predictionio.controller.Metric">Metric</a>[<span class="extype" name="org.apache.predictionio.controller.OptionAverageMetric.EI">EI</span>, <span class="extype" name="org.apache.predictionio.controller.OptionAverageMetric.Q">Q</span>, <span class="extype" name="org.apache.predictionio.controller.OptionAverageMetric.P">P</span>, <span class="extype" name="org.apache.predictionio.controller.OptionAverageMetric.A">A</span>, <a href="http://www.scala-lang.org/api/2.10.6/index.html#scala.Double" class="extype" target="_top">Double</a>] with <span class="extype" name="org.apache.predictionio.controller.StatsOptionMetricHelper">StatsOptionMetricHelper</span>[<span class="extype" name="org.apache.predictionio.controller.OptionAverageMetric.EI">EI</span>, <span class="extype" name="org.apache.predictionio.controller.OptionAverageMetric.Q">Q</span>, <span class="extype" name="org.apache.predictionio.controller.OptionAverageMetric.P">P</span>, <span class="extype" name="org.apache.predictionio.controller.OptionAverageMetric.A">A</span>] with <a href="QPAMetric.html" class="extype" name="org.apache.predictionio.controller.QPAMetric">QPAMetric</a>[<span class="extype" name="org.apache.predictionio.controller.OptionAverageMetric.Q">Q</span>, <span class="extype" name="org.apache.predictionio.controller.OptionAverageMetric.P">P</span>, <span class="extype" name="org.apache.predictionio.controller.OptionAverageMetric.A">A</span>, <a href="http://www.scala-lang.org/api/2.10.6/index.html#scala.Option" class="extype" target="_top">Option</a>[<a href="http://www.scala-lang.org/api/2.10.6/index.html#scala.Double" class="extype" target="_top">Double</a>]]</span>
+      </span>
+      </h4>
+      <p class="comment cmt">Returns the global average of the non-None score returned by the calculate
+method.</p>
+    </li><li name="org.apache.predictionio.controller.OptionStdevMetric" visbl="pub" data-isabs="true" fullComment="no" group="Evaluation">
+      <a id="OptionStdevMetric[EI,Q,P,A]extendsMetric[EI,Q,P,A,Double]withStatsOptionMetricHelper[EI,Q,P,A]withQPAMetric[Q,P,A,Option[Double]]"></a>
+      <a id="OptionStdevMetric[EI,Q,P,A]:OptionStdevMetric[EI,Q,P,A]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="OptionStdevMetric.html"><span class="name">OptionStdevMetric</span></a><span class="tparams">[<span name="EI">EI</span>, <span name="Q">Q</span>, <span name="P">P</span>, <span name="A">A</span>]</span><span class="result"> extends <a href="Metric.html" class="extype" name="org.apache.predictionio.controller.Metric">Metric</a>[<span class="extype" name="org.apache.predictionio.controller.OptionStdevMetric.EI">EI</span>, <span class="extype" name="org.apache.predictionio.controller.OptionStdevMetric.Q">Q</span>, <span class="extype" name="org.apache.predictionio.controller.OptionStdevMetric.P">P</span>, <span class="extype" name="org.apache.predictionio.controller.OptionStdevMetric.A">A</span>, <a href="http://www.scala-lang.org/api/2.10.6/index.html#scala.Double" class="extype" target="_top">Double</a>] with <span class="extype" name="org.apache.predictionio.controller.StatsOptionMetricHelper">StatsOptionMetricHelper</span>[<span class="extype" name="org.apache.predictionio.controller.OptionStdevMetric.EI">EI</span>, <span class="extype" name="org.apache.predictionio.controller.OptionStdevMetric.Q">Q</span>, <span class="extype" name="org.apache.predictionio.controller.OptionStdevMetric.P">P</span>, <span class="extype" name="org.apache.predictionio.controller.OptionStdevMetric.A">A</span>] with <a href="QPAMetric.html" class="extype" name="org.apache.predictionio.controller.QPAMetric">QPAMetric</a>[<span class="extype" name="org.apache.predictionio.controller.OptionStdevMetric.Q">Q</span>, <span class="extype" name="org.apache.predictionio.controller.OptionStdevMetric.P">P</span>, <span class="extype" name="org.apache.predictionio.controller.OptionStdevMetric.A">A</span>, <a href="http://www.scala-lang.org/api/2.10.6/index.html#scala.Option" class="extype" target="_top">Option</a>[<a href="http://www.scala-lang.org/api/2.10.6/index.html#scala.Double" class="extype" target="_top">Double</a>]]</span>
+      </span>
+      </h4>
+      <p class="comment cmt">Returns the global standard deviation of the non-None score returned by the calculate method</p>
+    </li><li name="org.apache.predictionio.controller.P2LAlgorithm" visbl="pub" data-isabs="true" fullComment="no" group="Algorithm">
+      <a id="P2LAlgorithm[PD,M,Q,P]extendsBaseAlgorithm[PD,M,Q,P]"></a>
+      <a id="P2LAlgorithm[PD,M,Q,P]:P2LAlgorithm[PD,M,Q,P]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="P2LAlgorithm.html"><span class="name">P2LAlgorithm</span></a><span class="tparams">[<span name="PD">PD</span>, <span name="M">M</span>, <span name="Q">Q</span>, <span name="P">P</span>]</span><span class="result"> extends <a href="../core/BaseAlgorithm.html" class="extype" name="org.apache.predictionio.core.BaseAlgorithm">BaseAlgorithm</a>[<span class="extype" name="org.apache.predictionio.controller.P2LAlgorithm.PD">PD</span>, <span class="extype" name="org.apache.predictionio.controller.P2LAlgorithm.M">M</span>, <span class="extype" name="org.apache.predictionio.controller.P2LAlgorithm.Q">Q</span>, <span class="extype" name="org.apache.predictionio.controller.P2LAlgorithm.P">P</span>]</span>
+      </span>
+      </h4>
+      <p class="comment cmt">Base class of a parallel-to-local algorithm.</p>
+    </li><li name="org.apache.predictionio.controller.PAlgorithm" visbl="pub" data-isabs="true" fullComment="no" group="Algorithm">
+      <a id="PAlgorithm[PD,M,Q,P]extendsBaseAlgorithm[PD,M,Q,P]"></a>
+      <a id="PAlgorithm[PD,M,Q,P]:PAlgorithm[PD,M,Q,P]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="PAlgorithm.html"><span class="name">PAlgorithm</span></a><span class="tparams">[<span name="PD">PD</span>, <span name="M">M</span>, <span name="Q">Q</span>, <span name="P">P</span>]</span><span class="result"> extends <a href="../core/BaseAlgorithm.html" class="extype" name="org.apache.predictionio.core.BaseAlgorithm">BaseAlgorithm</a>[<span class="extype" name="org.apache.predictionio.controller.PAlgorithm.PD">PD</span>, <span class="extype" name="org.apache.predictionio.controller.PAlgorithm.M">M</span>, <span class="extype" name="org.apache.predictionio.controller.PAlgorithm.Q">Q</span>, <span class="extype" name="org.apache.predictionio.controller.PAlgorithm.P">P</span>]</span>
+      </span>
+      </h4>
+      <p class="comment cmt">Base class of a parallel algorithm.</p>
+    </li><li name="org.apache.predictionio.controller.PDataSource" visbl="pub" data-isabs="true" fullComment="no" group="Data Source">
+      <a id="PDataSource[TD,EI,Q,A]extendsBaseDataSource[TD,EI,Q,A]"></a>
+      <a id="PDataSource[TD,EI,Q,A]:PDataSource[TD,EI,Q,A]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="PDataSource.html"><span class="name">PDataSource</span></a><span class="tparams">[<span name="TD">TD</span>, <span name="EI">EI</span>, <span name="Q">Q</span>, <span name="A">A</span>]</span><span class="result"> extends <a href="../core/BaseDataSource.html" class="extype" name="org.apache.predictionio.core.BaseDataSource">BaseDataSource</a>[<span class="extype" name="org.apache.predictionio.controller.PDataSource.TD">TD</span>, <span class="extype" name="org.apache.predictionio.controller.PDataSource.EI">EI</span>, <span class="extype" name="org.apache.predictionio.controller.PDataSource.Q">Q</span>, <span class="extype" name="org.apache.predictionio.controller.PDataSource.A">A</span>]</span>
+      </span>
+      </h4>
+      <p class="comment cmt">Base class of a parallel data source.</p>
+    </li><li name="org.apache.predictionio.controller.PIdentityPreparator" visbl="pub" data-isabs="false" fullComment="no" group="Preparator">
+      <a id="PIdentityPreparator[TD]extendsIdentityPreparator[TD]"></a>
+      <a id="PIdentityPreparator[TD]:PIdentityPreparator[TD]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="PIdentityPreparator.html"><span class="name">PIdentityPreparator</span></a><span class="tparams">[<span name="TD">TD</span>]</span><span class="result"> extends <a href="IdentityPreparator.html" class="extype" name="org.apache.predictionio.controller.IdentityPreparator">IdentityPreparator</a>[<span class="extype" name="org.apache.predictionio.controller.PIdentityPreparator.TD">TD</span>]</span>
+      </span>
+      </h4>
+      <p class="comment cmt">DEPRECATED.</p>
+    </li><li name="org.apache.predictionio.controller.PPreparator" visbl="pub" data-isabs="true" fullComment="no" group="Preparator">
+      <a id="PPreparator[TD,PD]extendsBasePreparator[TD,PD]"></a>
+      <a id="PPreparator[TD,PD]:PPreparator[TD,PD]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="PPreparator.html"><span class="name">PPreparator</span></a><span class="tparams">[<span name="TD">TD</span>, <span name="PD">PD</span>]</span><span class="result"> extends <a href="../core/BasePreparator.html" class="extype" name="org.apache.predictionio.core.BasePreparator">BasePreparator</a>[<span class="extype" name="org.apache.predictionio.controller.PPreparator.TD">TD</span>, <span class="extype" name="org.apache.predictionio.controller.PPreparator.PD">PD</span>]</span>
+      </span>
+      </h4>
+      <p class="comment cmt">Base class of a parallel preparator.</p>
+    </li><li name="org.apache.predictionio.controller.Params" visbl="pub" data-isabs="true" fullComment="no" group="Helper">
+      <a id="ParamsextendsSerializable"></a>
+      <a id="Params:Params"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Params.html"><span class="name">Params</span></a><span class="result"> extends <a href="http://www.scala-lang.org/api/2.10.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Base trait for all kinds of parameters that will be passed to constructors
+of different controller classes.</p>
+    </li><li name="org.apache.predictionio.controller.PersistentModel" visbl="pub" data-isabs="true" fullComment="no" group="Algorithm">
+      <a id="PersistentModel[AP&lt;:org.apache.predictionio.controller.Params]extendsAnyRef"></a>
+      <a id="PersistentModel[AP&lt;:Params]:PersistentModel[AP]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="PersistentModel.html"><span class="name">PersistentModel</span></a><span class="tparams">[<span name="AP">AP &lt;: <a href="Params.html" class="extype" name="org.apache.predictionio.controller.Params">Params</a></span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Mix in and implement this trait if your model cannot be persisted by
+PredictionIO automatically.</p>
+    </li><li name="org.apache.predictionio.controller.PersistentModelLoader" visbl="pub" data-isabs="true" fullComment="no" group="Algorithm">
+      <a id="PersistentModelLoader[AP&lt;:org.apache.predictionio.controller.Params,M]extendsAnyRef"></a>
+      <a id="PersistentModelLoader[AP&lt;:Params,M]:PersistentModelLoader[AP,M]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="PersistentModelLoader.html"><span class="name">PersistentModelLoader</span></a><span class="tparams">[<span name="AP">AP &lt;: <a href="Params.html" class="extype" name="org.apache.predictionio.controller.Params">Params</a></span>, <span name="M">M</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Implement an object that extends this trait for PredictionIO to support
+loading a persisted model during serving deployment.</p>
+    </li><li name="org.apache.predictionio.controller.QPAMetric" visbl="pub" data-isabs="true" fullComment="no" group="Evaluation">
+      <a id="QPAMetric[Q,P,A,R]extendsAnyRef"></a>
+      <a id="QPAMetric[Q,P,A,R]:QPAMetric[Q,P,A,R]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="QPAMetric.html"><span class="name">QPAMetric</span></a><span class="tparams">[<span name="Q">Q</span>, <span name="P">P</span>, <span name="A">A</span>, <span name="R">R</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Trait for metric which returns a score based on Query, PredictedResult,
+and ActualResult
+</p>
+    </li><li name="org.apache.predictionio.controller.SanityCheck" visbl="pub" data-isabs="true" fullComment="no" group="Helper">
+      <a id="SanityCheckextendsAnyRef"></a>
+      <a id="SanityCheck:SanityCheck"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="SanityCheck.html"><span class="name">SanityCheck</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Extends a data class with this trait if you want PredictionIO to
+automatically perform sanity check on your data classes during training.</p>
+    </li><li name="org.apache.predictionio.controller.SerializableClass" visbl="pub" data-isabs="false" fullComment="no" group="Helper">
+      <a id="SerializableClassextendsSerializable"></a>
+      <a id="SerializableClass:SerializableClass"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="package$$SerializableClass.html"><span class="name">SerializableClass</span></a><span class="result"> extends <a href="http://www.scala-lang.org/api/2.10.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Base class of several helper types that represent emptiness
+</p>
+    </li><li name="org.apache.predictionio.controller.SimpleEngine" visbl="pub" data-isabs="false" fullComment="no" group="Engine">
+      <a id="SimpleEngine[TD,EI,Q,P,A]extendsEngine[TD,EI,TD,Q,P,A]"></a>
+      <a id="SimpleEngine[TD,EI,Q,P,A]:SimpleEngine[TD,EI,Q,P,A]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="SimpleEngine.html"><span class="name">SimpleEngine</span></a><span class="tparams">[<span name="TD">TD</span>, <span name="EI">EI</span>, <span name="Q">Q</span>, <span name="P">P</span>, <span name="A">A</span>]</span><span class="result"> extends <a href="Engine.html" class="extype" name="org.apache.predictionio.controller.Engine">Engine</a>[<span class="extype" name="org.apache.predictionio.controller.SimpleEngine.TD">TD</span>, <span class="extype" name="org.apache.predictionio.controller.SimpleEngine.EI">EI</span>, <span class="extype" name="org.apache.predictionio.controller.SimpleEngine.TD">TD</span>, <span class="extype" name="org.apache.predictionio.controller.SimpleEngine.Q">Q</span>, <span class="extype" name="org.apache.predictionio.controller.SimpleEngine.P">P</span>, <span class="extype" name="org.apache.predictionio.controller.SimpleEngine.A">A</span>]</span>
+      </span>
+      </h4>
+      <p class="comment cmt">SimpleEngine has only one algorithm, and uses default preparator and serving
+layer.</p>
+    </li><li name="org.apache.predictionio.controller.SimpleEngineParams" visbl="pub" data-isabs="false" fullComment="no" group="Engine">
+      <a id="SimpleEngineParamsextendsEngineParams"></a>
+      <a id="SimpleEngineParams:SimpleEngineParams"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="SimpleEngineParams.html"><span class="name">SimpleEngineParams</span></a><span class="result"> extends <a href="EngineParams.html" class="extype" name="org.apache.predictionio.controller.EngineParams">EngineParams</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">This shorthand class serves the <code>SimpleEngine</code> class.</p>
+    </li><li name="org.apache.predictionio.controller.StdevMetric" visbl="pub" data-isabs="true" fullComment="no" group="Evaluation">
+      <a id="StdevMetric[EI,Q,P,A]extendsMetric[EI,Q,P,A,Double]withStatsMetricHelper[EI,Q,P,A]withQPAMetric[Q,P,A,Double]"></a>
+      <a id="StdevMetric[EI,Q,P,A]:StdevMetric[EI,Q,P,A]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="StdevMetric.html"><span class="name">StdevMetric</span></a><span class="tparams">[<span name="EI">EI</span>, <span name="Q">Q</span>, <span name="P">P</span>, <span name="A">A</span>]</span><span class="result"> extends <a href="Metric.html" class="extype" name="org.apache.predictionio.controller.Metric">Metric</a>[<span class="extype" name="org.apache.predictionio.controller.StdevMetric.EI">EI</span>, <span class="extype" name="org.apache.predictionio.controller.StdevMetric.Q">Q</span>, <span class="extype" name="org.apache.predictionio.controller.StdevMetric.P">P</span>, <span class="extype" name="org.apache.predictionio.controller.StdevMetric.A">A</span>, <a href="http://www.scala-lang.org/api/2.10.6/index.html#scala.Double" class="extype" target="_top">Double</a>] with <span class="extype" name="org.apache.predictionio.controller.StatsMetricHelper">StatsMetricHelper</span>[<span class="extype" name="org.apache.predictionio.controller.StdevMetric.EI">EI</span>, <span class="extype" name="org.apache.predictionio.controller.StdevMetric.Q">Q</span>, <span class="extype" name="org.apache.predictionio.controller.StdevMetric.P">P</span>, <span class="extype" name="org.apache.predictionio.controller.StdevMetric.A">A</span>] with <a href="QPAMetric.html" class="extype" name="org.apache.predictionio.controller.QPAMetric">QPAMetric</a>[<span class="extype" name="org.apache.predictionio.controller.StdevMetric.Q">Q</span>, <span class="extype" name="org.apache.predictionio.controller.StdevMetric.P">P</span>, <span class="extype" name="org.apache.predictionio.controller.StdevMetric.A">A</span>, <a href="http://www.scala-lang.org/api/2.10.6/index.html#scala.Double" class="extype" target="_top">Double</a>]</span>
+      </span>
+      </h4>
+      <p class="comment cmt">Returns the global standard deviation of the score returned by the calculate method</p>
+    </li><li name="org.apache.predictionio.controller.SumMetric" visbl="pub" data-isabs="true" fullComment="no" group="Evaluation">
+      <a id="SumMetric[EI,Q,P,A,R]extendsMetric[EI,Q,P,A,R]withQPAMetric[Q,P,A,R]"></a>
+      <a id="SumMetric[EI,Q,P,A,R]:SumMetric[EI,Q,P,A,R]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="SumMetric.html"><span class="name">SumMetric</span></a><span class="tparams">[<span name="EI">EI</span>, <span name="Q">Q</span>, <span name="P">P</span>, <span name="A">A</span>, <span name="R">R</span>]</span><span class="result"> extends <a href="Metric.html" class="extype" name="org.apache.predictionio.controller.Metric">Metric</a>[<span class="extype" name="org.apache.predictionio.controller.SumMetric.EI">EI</span>, <span class="extype" name="org.apache.predictionio.controller.SumMetric.Q">Q</span>, <span class="extype" name="org.apache.predictionio.controller.SumMetric.P">P</span>, <span class="extype" name="org.apache.predictionio.controller.SumMetric.A">A</span>, <span class="extype" name="org.apache.predictionio.controller.SumMetric.R">R</span>] with <a href="QPAMetric.html" class="extype" name="org.apache.predictionio.controller.QPAMetric">QPAMetric</a>[<span class="extype" name="org.apache.predictionio.controller.SumMetric.Q">Q</span>, <span class="extype" name="org.apache.predictionio.controller.SumMetric.P">P</span>, <span class="extype" name="org.apache.predictionio.controller.SumMetric.A">A</span>, <span class="extype" name="org.apache.predictionio.controller.SumMetric.R">R</span>]</span>
+      </span>
+      </h4>
+      <p class="comment cmt">Returns the sum of the score returned by the calculate method.</p>
+    </li><li name="org.apache.predictionio.controller.ZeroMetric" visbl="pub" data-isabs="false" fullComment="no" group="Evaluation">
+      <a id="ZeroMetric[EI,Q,P,A]extendsMetric[EI,Q,P,A,Double]"></a>
+      <a id="ZeroMetric[EI,Q,P,A]:ZeroMetric[EI,Q,P,A]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ZeroMetric.html"><span class="name">ZeroMetric</span></a><span class="tparams">[<span name="EI">EI</span>, <span name="Q">Q</span>, <span name="P">P</span>, <span name="A">A</span>]</span><span class="result"> extends <a href="Metric.html" class="extype" name="org.apache.predictionio.controller.Metric">Metric</a>[<span class="extype" name="org.apache.predictionio.controller.ZeroMetric.EI">EI</span>, <span class="extype" name="org.apache.predictionio.controller.ZeroMetric.Q">Q</span>, <span class="extype" name="org.apache.predictionio.controller.ZeroMetric.P">P</span>, <span class="extype" name="org.apache.predictionio.controller.ZeroMetric.A">A</span>, <a href="http://www.scala-lang.org/api/2.10.6/index.html#scala.Double" class="extype" target="_top">Double</a>]</span>
+      </span>
+      </h4>
+      <p class="comment cmt">Returns zero.</p>
+    </li><li name="org.apache.predictionio.controller.IEngineFactory" visbl="pub" data-isabs="true" fullComment="no" group="Engine">
+      <a id="IEngineFactoryextendsEngineFactory"></a>
+      <a id="IEngineFactory:IEngineFactory"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="IEngineFactory.html"><span class="name deprecated" title="Deprecated: (Since version 0.9.2) Use EngineFactory instead.">IEngineFactory</span></a><span class="result"> extends <a href="EngineFactory.html" class="extype" name="org.apache.predictionio.controller.EngineFactory">EngineFactory</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">DEPRECATED.</p>
+    </li><li name="org.apache.predictionio.controller.IFSPersistentModel" visbl="pub" data-isabs="true" fullComment="no" group="Algorithm">
+      <a id="IFSPersistentModel[AP&lt;:org.apache.predictionio.controller.Params]extendsLocalFileSystemPersistentModel[AP]"></a>
+      <a id="IFSPersistentModel[AP&lt;:Params]:IFSPersistentModel[AP]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="IFSPersistentModel.html"><span class="name deprecated" title="Deprecated: (Since version 0.9.2) Use LocalFileSystemPersistentModel instead.">IFSPersistentModel</span></a><span class="tparams">[<span name="AP">AP &lt;: <a href="Params.html" class="extype" name="org.apache.predictionio.controller.Params">Params</a></span>]</span><span class="result"> extends <a href="LocalFileSystemPersistentModel.html" class="extype" name="org.apache.predictionio.controller.LocalFileSystemPersistentModel">LocalFileSystemPersistentModel</a>[<span class="extype" name="org.apache.predictionio.controller.IFSPersistentModel.AP">AP</span>]</span>
+      </span>
+      </h4>
+      <p class="comment cmt">DEPRECATED.</p>
+    </li><li name="org.apache.predictionio.controller.IFSPersistentModelLoader" visbl="pub" data-isabs="true" fullComment="no" group="Algorithm">
+      <a id="IFSPersistentModelLoader[AP&lt;:org.apache.predictionio.controller.Params,M]extendsLocalFileSystemPersistentModelLoader[AP,M]"></a>
+      <a id="IFSPersistentModelLoader[AP&lt;:Params,M]:IFSPersistentModelLoader[AP,M]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="IFSPersistentModelLoader.html"><span class="name deprecated" title="Deprecated: (Since version 0.9.2) Use LocalFileSystemPersistentModelLoader instead.">IFSPersistentModelLoader</span></a><span class="tparams">[<span name="AP">AP &lt;: <a href="Params.html" class="extype" name="org.apache.predictionio.controller.Params">Params</a></span>, <span name="M">M</span>]</span><span class="result"> extends <a href="LocalFileSystemPersistentModelLoader.html" class="extype" name="org.apache.predictionio.controller.LocalFileSystemPersistentModelLoader">LocalFileSystemPersistentModelLoader</a>[<span class="extype" name="org.apache.predictionio.controller.IFSPersistentModelLoader.AP">AP</span>, <span class="extype" name="org.apache.predictionio.controller.IFSPersistentModelLoader.M">M</span>]</span>
+      </span>
+      </h4>
+      <p class="comment cmt">DEPRECATED.</p>
+    </li><li name="org.apache.predictionio.controller.IPersistentModel" visbl="pub" data-isabs="true" fullComment="no" group="Algorithm">
+      <a id="IPersistentModel[AP&lt;:org.apache.predictionio.controller.Params]extendsPersistentModel[AP]"></a>
+      <a id="IPersistentModel[AP&lt;:Params]:IPersistentModel[AP]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="IPersistentModel.html"><span class="name deprecated" title="Deprecated: (Since version 0.9.2) Use PersistentModel instead.">IPersistentModel</span></a><span class="tparams">[<span name="AP">AP &lt;: <a href="Params.html" class="extype" name="org.apache.predictionio.controller.Params">Params</a></span>]</span><span class="result"> extends <a href="PersistentModel.html" class="extype" name="org.apache.predictionio.controller.PersistentModel">PersistentModel</a>[<span class="extype" name="org.apache.predictionio.controller.IPersistentModel.AP">AP</span>]</span>
+      </span>
+      </h4>
+      <p class="comment cmt">DEPRECATED.</p>
+    </li><li name="org.apache.predictionio.controller.IPersistentModelLoader" visbl="pub" data-isabs="true" fullComment="no" group="Algorithm">
+      <a id="IPersistentModelLoader[AP&lt;:org.apache.predictionio.controller.Params,M]extendsPersistentModelLoader[AP,M]"></a>
+      <a id="IPersistentModelLoader[AP&lt;:Params,M]:IPersistentModelLoader[AP,M]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="IPersistentModelLoader.html"><span class="name deprecated" title="Deprecated: (Since version 0.9.2) Use PersistentModelLoader instead.">IPersistentModelLoader</span></a><span class="tparams">[<span name="AP">AP &lt;: <a href="Params.html" class="extype" name="org.apache.predictionio.controller.Params">Params</a></span>, <span name="M">M</span>]</span><span class="result"> extends <a href="PersistentModelLoader.html" class="extype" name="org.apache.predictionio.controller.PersistentModelLoader">PersistentModelLoader</a>[<span class="extype" name="org.apache.predictionio.controller.IPersistentModelLoader.AP">AP</span>, <span class="extype" name="org.apache.predictionio.controller.IPersistentModelLoader.M">M</span>]</span>
+      </span>
+      </h4>
+      <p class="comment cmt">DEPRECATED.</p>
+    </li><li name="org.apache.predictionio.controller.WithPrId" visbl="pub" data-isabs="true" fullComment="no" group="Helper">
+      <a id="WithPrIdextendsAnyRef"></a>
+      <a id="WithPrId:WithPrId"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="WithPrId.html"><span class="name deprecated" title="Deprecated: (Since version 0.9.2) To be removed in future releases.">WithPrId</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Mix in this trait for queries that contain prId (PredictedResultId).</p>
+    </li><li name="org.apache.predictionio.controller.WithQuerySerializer" visbl="pub" data-isabs="true" fullComment="no" group="Helper">
+      <a id="WithQuerySerializerextendsCustomQuerySerializer"></a>
+      <a id="WithQuerySerializer:WithQuerySerializer"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="WithQuerySerializer.html"><span class="name deprecated" title="Deprecated: (Since version 0.9.2) Use CustomQuerySerializer instead.">WithQuerySerializer</span></a><span class="result"> extends <a href="CustomQuerySerializer.html" class="extype" name="org.apache.predictionio.controller.CustomQuerySerializer">CustomQuerySerializer</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">DEPRECATED.</p>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="org.apache.predictionio.controller.Engine" visbl="pub" data-isabs="false" fullComment="no" group="Engine">
+      <a id="Engine"></a>
+      <a id="Engine:Engine"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Engine$.html"><span class="name">Engine</span></a><span class="result"> extends <a href="http://www.scala-lang.org/api/2.10.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">This object contains concrete implementation for some methods of the
+<a href="Engine.html" class="extype" name="org.apache.predictionio.controller.Engine">Engine</a> class.</p>
+    </li><li name="org.apache.predictionio.controller.EngineParams" visbl="pub" data-isabs="false" fullComment="no" group="Engine">
+      <a id="EngineParams"></a>
+      <a id="EngineParams:EngineParams"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="EngineParams$.html"><span class="name">EngineParams</span></a><span class="result"> extends <a href="http://www.scala-lang.org/api/2.10.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Companion object for creating <a href="EngineParams.html" class="extype" name="org.apache.predictionio.controller.EngineParams">EngineParams</a> instances.</p>
+    </li><li name="org.apache.predictionio.controller.FastEvalEngineWorkflow" visbl="pub" data-isabs="false" fullComment="no" group="Evaluation">
+      <a id="FastEvalEngineWorkflow"></a>
+      <a id="FastEvalEngineWorkflow:FastEvalEngineWorkflow"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="FastEvalEngineWorkflow$.html"><span class="name">FastEvalEngineWorkflow</span></a><span class="result"> extends <a href="http://www.scala-lang.org/api/2.10.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">:: Experimental ::
+Workflow based on <a href="FastEvalEngine.html" class="extype" name="org.apache.predictionio.controller.FastEvalEngine">FastEvalEngine</a>
+</p>
+    </li><li name="org.apache.predictionio.controller.IdentityPreparator" visbl="pub" data-isabs="false" fullComment="no" group="Preparator">
+      <a id="IdentityPreparator"></a>
+      <a id="IdentityPreparator:IdentityPreparator"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="IdentityPreparator$.html"><span class="name">IdentityPreparator</span></a><span class="result"> extends <a href="http://www.scala-lang.org/api/2.10.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Companion object of <a href="IdentityPreparator.html" class="extype" name="org.apache.predictionio.controller.IdentityPreparator">IdentityPreparator</a> that conveniently returns an
+instance of the class of <a href="IdentityPreparator.html" class="extype" name="org.apache.predictionio.controller.IdentityPreparator">IdentityPreparator</a> for use with
+<a href="EngineFactory.html" class="extype" name="org.apache.predictionio.controller.EngineFactory">EngineFactory</a>.</p>
+    </li><li name="org.apache.predictionio.controller.LAverageServing" visbl="pub" data-isabs="false" fullComment="no" group="Serving">
+      <a id="LAverageServing"></a>
+      <a id="LAverageServing:LAverageServing"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="LAverageServing$.html"><span class="name">LAverageServing</span></a><span class="result"> extends <a href="http://www.scala-lang.org/api/2.10.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">A concrete implementation of <a href="LServing.html" class="extype" name="org.apache.predictionio.controller.LServing">LServing</a> returning the average of all
+algorithms' predictions, where their classes are expected to be all Double.</p>
+    </li><li name="org.apache.predictionio.controller.LFirstServing" visbl="pub" data-isabs="false" fullComment="no" group="Serving">
+      <a id="LFirstServing"></a>
+      <a id="LFirstServing:LFirstServing"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="LFirstServing$.html"><span class="name">LFirstServing</span></a><span class="result"> extends <a href="http://www.scala-lang.org/api/2.10.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">A concrete implementation of <a href="LServing.html" class="extype" name="org.apache.predictionio.controller.LServing">LServing</a> returning the first algorithm's
+prediction result directly without any modification.</p>
+    </li><li name="org.apache.predictionio.controller.LIdentityPreparator" visbl="pub" data-isabs="false" fullComment="no" group="Preparator">
+      <a id="LIdentityPreparator"></a>
+      <a id="LIdentityPreparator:LIdentityPreparator"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="LIdentityPreparator$.html"><span class="name">LIdentityPreparator</span></a><span class="result"> extends <a href="http://www.scala-lang.org/api/2.10.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">DEPRECATED.</p>
+    </li><li name="org.apache.predictionio.controller.MetricEvaluator" visbl="pub" data-isabs="false" fullComment="no" group="Evaluation">
+      <a id="MetricEvaluator"></a>
+      <a id="MetricEvaluator:MetricEvaluator"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="MetricEvaluator$.html"><span class="name">MetricEvaluator</span></a><span class="result"> extends <a href="http://www.scala-lang.org/api/2.10.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Companion object of <a href="MetricEvaluator.html" class="extype" name="org.apache.predictionio.controller.MetricEvaluator">MetricEvaluator</a>
+</p>
+    </li><li name="org.apache.predictionio.controller.PIdentityPreparator" visbl="pub" data-isabs="false" fullComment="no" group="Preparator">
+      <a id="PIdentityPreparator"></a>
+      <a id="PIdentityPreparator:PIdentityPreparator"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="PIdentityPreparator$.html"><span class="name">PIdentityPreparator</span></a><span class="result"> extends <a href="http://www.scala-lang.org/api/2.10.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">DEPRECATED.</p>
+    </li><li name="org.apache.predictionio.controller.Utils" visbl="pub" data-isabs="false" fullComment="no" group="Helper">
+      <a id="Utils"></a>
+      <a id="Utils:Utils"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Utils$.html"><span class="name">Utils</span></a>
+      </span>
+      </h4>
+      <p class="comment cmt">Controller utilities.</p>
+    </li><li name="org.apache.predictionio.controller.ZeroMetric" visbl="pub" data-isabs="false" fullComment="no" group="Evaluation">
+      <a id="ZeroMetric"></a>
+      <a id="ZeroMetric:ZeroMetric"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ZeroMetric$.html"><span class="name">ZeroMetric</span></a><span class="result"> extends <a href="http://www.scala-lang.org/api/2.10.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Companion object of <a href="ZeroMetric.html" class="extype" name="org.apache.predictionio.controller.ZeroMetric">ZeroMetric</a>
+</p>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Algorithm">
+              <h3>Algorithm</h3>
+              
+            </div><div class="group" name="Data Source">
+              <h3>Data Source</h3>
+              
+            </div><div class="group" name="Engine">
+              <h3>Engine</h3>
+              
+            </div><div class="group" name="Evaluation">
+              <h3>Evaluation</h3>
+              
+            </div><div class="group" name="Helper">
+              <h3>Helper</h3>
+              
+            </div><div class="group" name="Preparator">
+              <h3>Preparator</h3>
+              
+            </div><div class="group" name="Serving">
+              <h3>Serving</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+      <script defer="defer" type="text/javascript" id="jquery-js" src="../../../../lib/jquery.js"></script><script defer="defer" type="text/javascript" id="jquery-ui-js" src="../../../../lib/jquery-ui.js"></script><script defer="defer" type="text/javascript" id="tools-tooltip-js" src="../../../../lib/tools.tooltip.js"></script><script defer="defer" type="text/javascript" id="template-js" src="../../../../lib/template.js"></script>
+    </body>
+      </html>
