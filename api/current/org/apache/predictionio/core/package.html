@@ -1,0 +1,312 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+        <head>
+          <title>core - PredictionIO Scala API 0.11.0-incubating - org.apache.predictionio.core</title>
+          <meta name="description" content="core - PredictionIO Scala API 0.11.0 - incubating - org.apache.predictionio.core" />
+          <meta name="keywords" content="core PredictionIO Scala API 0.11.0 incubating org.apache.predictionio.core" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../index.html';
+            var hash = 'org.apache.predictionio.core.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img src="../../../../lib/package_big.png" />
+        <p id="owner"><a href="../../../package.html" class="extype" name="org">org</a>.<a href="../../package.html" class="extype" name="org.apache">apache</a>.<a href="../package.html" class="extype" name="org.apache.predictionio">predictionio</a></p>
+        <h1>core</h1>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">core</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Core base classes of PredictionIO controller components. Engine developers
+should not use these directly.
+</p></div><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+        </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="org.apache.predictionio.core"><span>core</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show all</span></li>
+            </ol>
+            <a href="http://docs.scala-lang.org/overviews/scaladoc/usage.html#members" target="_blank">Learn more about member selection</a>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="org.apache.predictionio.core.AbstractDoer" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="AbstractDoerextendsSerializable"></a>
+      <a id="AbstractDoer:AbstractDoer"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="AbstractDoer.html"><span class="name">AbstractDoer</span></a><span class="result"> extends <a href="http://www.scala-lang.org/api/2.10.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">:: DeveloperApi ::
+Base class for all controllers
+</p>
+    </li><li name="org.apache.predictionio.core.BaseAlgorithm" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="BaseAlgorithm[PD,M,Q,P]extendsAbstractDoerwithBaseQuerySerializer"></a>
+      <a id="BaseAlgorithm[PD,M,Q,P]:BaseAlgorithm[PD,M,Q,P]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="BaseAlgorithm.html"><span class="name">BaseAlgorithm</span></a><span class="tparams">[<span name="PD">PD</span>, <span name="M">M</span>, <span name="Q">Q</span>, <span name="P">P</span>]</span><span class="result"> extends <a href="AbstractDoer.html" class="extype" name="org.apache.predictionio.core.AbstractDoer">AbstractDoer</a> with <a href="BaseQuerySerializer.html" class="extype" name="org.apache.predictionio.core.BaseQuerySerializer">BaseQuerySerializer</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">:: DeveloperApi ::
+Base class of all algorithm controllers
+</p>
+    </li><li name="org.apache.predictionio.core.BaseDataSource" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="BaseDataSource[TD,EI,Q,A]extendsAbstractDoer"></a>
+      <a id="BaseDataSource[TD,EI,Q,A]:BaseDataSource[TD,EI,Q,A]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="BaseDataSource.html"><span class="name">BaseDataSource</span></a><span class="tparams">[<span name="TD">TD</span>, <span name="EI">EI</span>, <span name="Q">Q</span>, <span name="A">A</span>]</span><span class="result"> extends <a href="AbstractDoer.html" class="extype" name="org.apache.predictionio.core.AbstractDoer">AbstractDoer</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">:: DeveloperApi ::
+Base class of all data source controllers
+</p>
+    </li><li name="org.apache.predictionio.core.BaseEngine" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="BaseEngine[EI,Q,P,A]extendsSerializable"></a>
+      <a id="BaseEngine[EI,Q,P,A]:BaseEngine[EI,Q,P,A]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="BaseEngine.html"><span class="name">BaseEngine</span></a><span class="tparams">[<span name="EI">EI</span>, <span name="Q">Q</span>, <span name="P">P</span>, <span name="A">A</span>]</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.10.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">:: DeveloperApi ::
+Base class of all engine controller classes
+</p>
+    </li><li name="org.apache.predictionio.core.BaseEvaluator" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="BaseEvaluator[EI,Q,P,A,ER&lt;:org.apache.predictionio.core.BaseEvaluatorResult]extendsAbstractDoer"></a>
+      <a id="BaseEvaluator[EI,Q,P,A,ER&lt;:BaseEvaluatorResult]:BaseEvaluator[EI,Q,P,A,ER]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="BaseEvaluator.html"><span class="name">BaseEvaluator</span></a><span class="tparams">[<span name="EI">EI</span>, <span name="Q">Q</span>, <span name="P">P</span>, <span name="A">A</span>, <span name="ER">ER &lt;: <a href="BaseEvaluatorResult.html" class="extype" name="org.apache.predictionio.core.BaseEvaluatorResult">BaseEvaluatorResult</a></span>]</span><span class="result"> extends <a href="AbstractDoer.html" class="extype" name="org.apache.predictionio.core.AbstractDoer">AbstractDoer</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">:: DeveloperApi ::
+Base class of all evaluator controller classes
+</p>
+    </li><li name="org.apache.predictionio.core.BaseEvaluatorResult" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="BaseEvaluatorResultextendsSerializable"></a>
+      <a id="BaseEvaluatorResult:BaseEvaluatorResult"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="BaseEvaluatorResult.html"><span class="name">BaseEvaluatorResult</span></a><span class="result"> extends <a href="http://www.scala-lang.org/api/2.10.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Base trait of evaluator result</p>
+    </li><li name="org.apache.predictionio.core.BasePreparator" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="BasePreparator[TD,PD]extendsAbstractDoer"></a>
+      <a id="BasePreparator[TD,PD]:BasePreparator[TD,PD]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="BasePreparator.html"><span class="name">BasePreparator</span></a><span class="tparams">[<span name="TD">TD</span>, <span name="PD">PD</span>]</span><span class="result"> extends <a href="AbstractDoer.html" class="extype" name="org.apache.predictionio.core.AbstractDoer">AbstractDoer</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">:: DeveloperApi ::
+Base class of all preparator controller classes</p>
+    </li><li name="org.apache.predictionio.core.BaseQuerySerializer" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="BaseQuerySerializerextendsAnyRef"></a>
+      <a id="BaseQuerySerializer:BaseQuerySerializer"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="BaseQuerySerializer.html"><span class="name">BaseQuerySerializer</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">:: DeveloperApi ::
+Base trait with default custom query serializer, exposed to engine developer
+via <a href="../controller/CustomQuerySerializer.html" class="extype" name="org.apache.predictionio.controller.CustomQuerySerializer">org.apache.predictionio.controller.CustomQuerySerializer</a>
+</p>
+    </li><li name="org.apache.predictionio.core.BaseServing" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="BaseServing[Q,P]extendsAbstractDoer"></a>
+      <a id="BaseServing[Q,P]:BaseServing[Q,P]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="BaseServing.html"><span class="name">BaseServing</span></a><span class="tparams">[<span name="Q">Q</span>, <span name="P">P</span>]</span><span class="result"> extends <a href="AbstractDoer.html" class="extype" name="org.apache.predictionio.core.AbstractDoer">AbstractDoer</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">:: DeveloperApi ::
+Base class of all serving controller classes
+</p>
+    </li><li name="org.apache.predictionio.core.EventWindow" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="EventWindowextendsProductwithSerializable"></a>
+      <a id="EventWindow:EventWindow"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="EventWindow.html"><span class="name">EventWindow</span></a><span class="params">(<span name="duration">duration: <a href="http://www.scala-lang.org/api/2.10.6/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="removeDuplicates">removeDuplicates: <a href="http://www.scala-lang.org/api/2.10.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a> = <span class="symbol">false</span></span>, <span name="compressProperties">compressProperties: <a href="http://www.scala-lang.org/api/2.10.6/index.html#scala.Boolean" class="extype" target="_top">Boolean</a> = <span class="symbol">false</span></span>)</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.10.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.10.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.apache.predictionio.core.SelfCleaningDataSource" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="SelfCleaningDataSourceextendsAnyRef"></a>
+      <a id="SelfCleaningDataSource:SelfCleaningDataSource"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="SelfCleaningDataSource.html"><span class="name">SelfCleaningDataSource</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">:: DeveloperApi ::
+Base class of cleaned data source.</p>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="org.apache.predictionio.core.BuildInfo" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BuildInfo"></a>
+      <a id="BuildInfo:BuildInfo"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="BuildInfo$.html"><span class="name">BuildInfo</span></a><span class="result"> extends <a href="http://www.scala-lang.org/api/2.10.6/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.10.6/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">This object was generated by sbt-buildinfo.</p>
+    </li><li name="org.apache.predictionio.core.Doer" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Doer"></a>
+      <a id="Doer:Doer"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Doer$.html"><span class="name">Doer</span></a><span class="result"> extends <span class="extype" name="grizzled.slf4j.Logging">Logging</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">:: DeveloperApi ::
+Provides facility to instantiate controller classes
+</p>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+      <script defer="defer" type="text/javascript" id="jquery-js" src="../../../../lib/jquery.js"></script><script defer="defer" type="text/javascript" id="jquery-ui-js" src="../../../../lib/jquery-ui.js"></script><script defer="defer" type="text/javascript" id="tools-tooltip-js" src="../../../../lib/tools.tooltip.js"></script><script defer="defer" type="text/javascript" id="template-js" src="../../../../lib/template.js"></script>
+    </body>
+      </html>
