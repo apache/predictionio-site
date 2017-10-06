@@ -1,0 +1,291 @@
+<!DOCTYPE html><html><head><title>Evaluation Explained (Recommendation)</title><meta charset="utf-8"/><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta class="swiftype" name="title" data-type="string" content="Evaluation Explained (Recommendation)"/><link rel="canonical" href="https://predictionio.incubator.apache.org/templates/recommendation/evaluation/"/><link href="/images/favicon/normal-b330020a.png" rel="shortcut icon"/><link href="/images/favicon/apple-c0febcf2.png" rel="apple-touch-icon"/><link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet"/><link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"/><link href="/stylesheets/application-3a3867f7.css" rel="stylesheet" type="text/css"/><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script src="//use.typekit.net/pqo0itb.js"></script><script>try{Typekit.load({ async: true });}catch(e){}</script></head><body><div id="global"><header><div class="container" id="header-wrapper"><div class="row"><div class="col-sm-12"><div id="logo-wrapper"><span id="drawer-toggle"></span><a href="#"></a><a href="http://predictionio.incubator.apache.org/"><img alt="PredictionIO" id="logo" src="/images/logos/logo-ee2b9bb3.png"/></a></div><div id="menu-wrapper"><div id="pill-wrapper"><a class="pill left" href="/gallery/template-gallery">TEMPLATES</a> <a class="pill right" href="//github.com/apache/incubator-predictionio/">OPEN SOURCE</a></div></div><img class="mobile-search-bar-toggler hidden-md hidden-lg" src="/images/icons/search-glass-704bd4ff.png"/></div></div></div></header><div id="search-bar-row-wrapper"><div class="container-fluid" id="search-bar-row"><div class="row"><div class="col-md-9 col-sm-11 col-xs-11"><div class="hidden-md hidden-lg" id="mobile-page-heading-wrapper"><p>PredictionIO Docs</p><h4>Evaluation Explained (Recommendation)</h4></div><h4 class="hidden-sm hidden-xs">PredictionIO Docs</h4></div><div class="col-md-3 col-sm-1 col-xs-1 hidden-md hidden-lg"><img id="left-menu-indicator" src="/images/icons/down-arrow-dfe9f7fe.png"/></div><div class="col-md-3 col-sm-12 col-xs-12 swiftype-wrapper"><div class="swiftype"><form class="search-form"><img class="search-box-toggler hidden-xs hidden-sm" src="/images/icons/search-glass-704bd4ff.png"/><div class="search-box"><img src="/images/icons/search-glass-704bd4ff.png"/><input type="text" id="st-search-input" class="st-search-input" placeholder="Search Doc..."/></div><img class="swiftype-row-hider hidden-md hidden-lg" src="/images/icons/drawer-toggle-active-fcbef12a.png"/></form></div></div><div class="mobile-left-menu-toggler hidden-md hidden-lg"></div></div></div></div><div id="page" class="container-fluid"><div class="row"><div id="left-menu-wrapper" class="col-md-3"><nav id="nav-main"><ul><li class="level-1"><a class="expandible" href="/"><span>Apache PredictionIO (incubating) Documentation</span></a><ul><li class="level-2"><a class="final" href="/"><span>Welcome to Apache PredictionIO (incubating)</span></a></li></ul></li><li class="level-1"><a class="expandible" href="#"><span>Getting Started</span></a><ul><li class="level-2"><a class="final" href="/start/"><span>A Quick Intro</span></a></li><li class="level-2"><a class="final" href="/install/"><span>Installing Apache PredictionIO (incubating)</span></a></li><li class="level-2"><a class="final" href="/start/download/"><span>Downloading an Engine Template</span></a></li><li class="level-2"><a class="final" href="/start/deploy/"><span>Deploying Your First Engine</span></a></li><li class="level-2"><a class="final" href="/start/customize/"><span>Customizing the Engine</span></a></li></ul></li><li class="level-1"><a class="expandible" href="#"><span>Integrating with Your App</span></a><ul><li class="level-2"><a class="final" href="/appintegration/"><span>App Integration Overview</span></a></li><li class="level-2"><a class="expandible" href="/sdk/"><span>List of SDKs</span></a><ul><li class="level-3"><a class="final" href="/sdk/java/"><span>Java & Android SDK</span></a></li><li class="level-3"><a class="final" href="/sdk/php/"><span>PHP SDK</span></a></li><li class="level-3"><a class="final" href="/sdk/python/"><span>Python SDK</span></a></li><li class="level-3"><a class="final" href="/sdk/ruby/"><span>Ruby SDK</span></a></li><li class="level-3"><a class="final" href="/sdk/community/"><span>Community Powered SDKs</span></a></li></ul></li></ul></li><li class="level-1"><a class="expandible" href="#"><span>Deploying an Engine</span></a><ul><li class="level-2"><a class="final" href="/deploy/"><span>Deploying as a Web Service</span></a></li><li class="level-2"><a class="final" href="/batchpredict/"><span>Batch Predictions</span></a></li><li class="level-2"><a class="final" href="/deploy/monitoring/"><span>Monitoring Engine</span></a></li><li class="level-2"><a class="final" href="/deploy/engineparams/"><span>Setting Engine Parameters</span></a></li><li class="level-2"><a class="final" href="/deploy/enginevariants/"><span>Deploying Multiple Engine Variants</span></a></li><li class="level-2"><a class="final" href="/deploy/plugin/"><span>Engine Server Plugin</span></a></li></ul></li><li class="level-1"><a class="expandible" href="#"><span>Customizing an Engine</span></a><ul><li class="level-2"><a class="final" href="/customize/"><span>Learning DASE</span></a></li><li class="level-2"><a class="final" href="/customize/dase/"><span>Implement DASE</span></a></li><li class="level-2"><a class="final" href="/customize/troubleshooting/"><span>Troubleshooting Engine Development</span></a></li><li class="level-2"><a class="final" href="/api/current/#package"><span>Engine Scala APIs</span></a></li></ul></li><li class="level-1"><a class="expandible" href="#"><span>Collecting and Analyzing Data</span></a><ul><li class="level-2"><a class="final" href="/datacollection/"><span>Event Server Overview</span></a></li><li class="level-2"><a class="final" href="/datacollection/eventapi/"><span>Collecting Data with REST/SDKs</span></a></li><li class="level-2"><a class="final" href="/datacollection/eventmodel/"><span>Events Modeling</span></a></li><li class="level-2"><a class="final" href="/datacollection/webhooks/"><span>Unifying Multichannel Data with Webhooks</span></a></li><li class="level-2"><a class="final" href="/datacollection/channel/"><span>Channel</span></a></li><li class="level-2"><a class="final" href="/datacollection/batchimport/"><span>Importing Data in Batch</span></a></li><li class="level-2"><a class="final" href="/datacollection/analytics/"><span>Using Analytics Tools</span></a></li><li class="level-2"><a class="final" href="/datacollection/plugin/"><span>Event Server Plugin</span></a></li></ul></li><li class="level-1"><a class="expandible" href="#"><span>Choosing an Algorithm(s)</span></a><ul><li class="level-2"><a class="final" href="/algorithm/"><span>Built-in Algorithm Libraries</span></a></li><li class="level-2"><a class="final" href="/algorithm/switch/"><span>Switching to Another Algorithm</span></a></li><li class="level-2"><a class="final" href="/algorithm/multiple/"><span>Combining Multiple Algorithms</span></a></li><li class="level-2"><a class="final" href="/algorithm/custom/"><span>Adding Your Own Algorithms</span></a></li></ul></li><li class="level-1"><a class="expandible" href="#"><span>ML Tuning and Evaluation</span></a><ul><li class="level-2"><a class="final" href="/evaluation/"><span>Overview</span></a></li><li class="level-2"><a class="final" href="/evaluation/paramtuning/"><span>Hyperparameter Tuning</span></a></li><li class="level-2"><a class="final" href="/evaluation/evaluationdashboard/"><span>Evaluation Dashboard</span></a></li><li class="level-2"><a class="final" href="/evaluation/metricchoose/"><span>Choosing Evaluation Metrics</span></a></li><li class="level-2"><a class="final" href="/evaluation/metricbuild/"><span>Building Evaluation Metrics</span></a></li></ul></li><li class="level-1"><a class="expandible" href="#"><span>System Architecture</span></a><ul><li class="level-2"><a class="final" href="/system/"><span>Architecture Overview</span></a></li><li class="level-2"><a class="final" href="/system/anotherdatastore/"><span>Using Another Data Store</span></a></li></ul></li><li class="level-1"><a class="expandible" href="#"><span>PredictionIO Official Templates</span></a><ul><li class="level-2"><a class="final" href="/templates/"><span>Intro</span></a></li><li class="level-2"><a class="expandible" href="#"><span>Recommendation</span></a><ul><li class="level-3"><a class="final" href="/templates/recommendation/quickstart/"><span>Quick Start</span></a></li><li class="level-3"><a class="final" href="/templates/recommendation/dase/"><span>DASE</span></a></li><li class="level-3"><a class="final active" href="/templates/recommendation/evaluation/"><span>Evaluation Explained</span></a></li><li class="level-3"><a class="final" href="/templates/recommendation/how-to/"><span>How-To</span></a></li><li class="level-3"><a class="final" href="/templates/recommendation/reading-custom-events/"><span>Read Custom Events</span></a></li><li class="level-3"><a class="final" href="/templates/recommendation/customize-data-prep/"><span>Customize Data Preparator</span></a></li><li class="level-3"><a class="final" href="/templates/recommendation/customize-serving/"><span>Customize Serving</span></a></li><li class="level-3"><a class="final" href="/templates/recommendation/training-with-implicit-preference/"><span>Train with Implicit Preference</span></a></li><li class="level-3"><a class="final" href="/templates/recommendation/blacklist-items/"><span>Filter Recommended Items by Blacklist in Query</span></a></li><li class="level-3"><a class="final" href="/templates/recommendation/batch-evaluator/"><span>Batch Persistable Evaluator</span></a></li></ul></li><li class="level-2"><a class="expandible" href="#"><span>E-Commerce Recommendation</span></a><ul><li class="level-3"><a class="final" href="/templates/ecommercerecommendation/quickstart/"><span>Quick Start</span></a></li><li class="level-3"><a class="final" href="/templates/ecommercerecommendation/dase/"><span>DASE</span></a></li><li class="level-3"><a class="final" href="/templates/ecommercerecommendation/how-to/"><span>How-To</span></a></li><li class="level-3"><a class="final" href="/templates/ecommercerecommendation/train-with-rate-event/"><span>Train with Rate Event</span></a></li><li class="level-3"><a class="final" href="/templates/ecommercerecommendation/adjust-score/"><span>Adjust Score</span></a></li></ul></li><li class="level-2"><a class="expandible" href="#"><span>Similar Product</span></a><ul><li class="level-3"><a class="final" href="/templates/similarproduct/quickstart/"><span>Quick Start</span></a></li><li class="level-3"><a class="final" href="/templates/similarproduct/dase/"><span>DASE</span></a></li><li class="level-3"><a class="final" href="/templates/similarproduct/how-to/"><span>How-To</span></a></li><li class="level-3"><a class="final" href="/templates/similarproduct/multi-events-multi-algos/"><span>Multiple Events and Multiple Algorithms</span></a></li><li class="level-3"><a class="final" href="/templates/similarproduct/return-item-properties/"><span>Returns Item Properties</span></a></li><li class="level-3"><a class="final" href="/templates/similarproduct/train-with-rate-event/"><span>Train with Rate Event</span></a></li><li class="level-3"><a class="final" href="/templates/similarproduct/rid-user-set-event/"><span>Get Rid of Events for Users</span></a></li><li class="level-3"><a class="final" href="/templates/similarproduct/recommended-user/"><span>Recommend Users</span></a></li></ul></li><li class="level-2"><a class="expandible" href="#"><span>Classification</span></a><ul><li class="level-3"><a class="final" href="/templates/classification/quickstart/"><span>Quick Start</span></a></li><li class="level-3"><a class="final" href="/templates/classification/dase/"><span>DASE</span></a></li><li class="level-3"><a class="final" href="/templates/classification/how-to/"><span>How-To</span></a></li><li class="level-3"><a class="final" href="/templates/classification/add-algorithm/"><span>Use Alternative Algorithm</span></a></li><li class="level-3"><a class="final" href="/templates/classification/reading-custom-properties/"><span>Read Custom Properties</span></a></li></ul></li></ul></li><li class="level-1"><a class="expandible" href="#"><span>Engine Template Gallery</span></a><ul><li class="level-2"><a class="final" href="/gallery/template-gallery/"><span>Browse</span></a></li><li class="level-2"><a class="final" href="/community/submit-template/"><span>Submit your Engine as a Template</span></a></li></ul></li><li class="level-1"><a class="expandible" href="#"><span>Demo Tutorials</span></a><ul><li class="level-2"><a class="final" href="/demo/tapster/"><span>Comics Recommendation Demo</span></a></li><li class="level-2"><a class="final" href="/demo/community/"><span>Community Contributed Demo</span></a></li><li class="level-2"><a class="final" href="/demo/textclassification/"><span>Text Classification Engine Tutorial</span></a></li></ul></li><li class="level-1"><a class="expandible" href="/community/"><span>Getting Involved</span></a><ul><li class="level-2"><a class="final" href="/community/contribute-code/"><span>Contribute Code</span></a></li><li class="level-2"><a class="final" href="/community/contribute-documentation/"><span>Contribute Documentation</span></a></li><li class="level-2"><a class="final" href="/community/contribute-sdk/"><span>Contribute a SDK</span></a></li><li class="level-2"><a class="final" href="/community/contribute-webhook/"><span>Contribute a Webhook</span></a></li><li class="level-2"><a class="final" href="/community/projects/"><span>Community Projects</span></a></li></ul></li><li class="level-1"><a class="expandible" href="#"><span>Getting Help</span></a><ul><li class="level-2"><a class="final" href="/resources/faq/"><span>FAQs</span></a></li><li class="level-2"><a class="final" href="/support/"><span>Support</span></a></li></ul></li><li class="level-1"><a class="expandible" href="#"><span>Resources</span></a><ul><li class="level-2"><a class="final" href="/cli/"><span>Command-line Interface</span></a></li><li class="level-2"><a class="final" href="/resources/release/"><span>Release Cadence</span></a></li><li class="level-2"><a class="final" href="/resources/intellij/"><span>Developing Engines with IntelliJ IDEA</span></a></li><li class="level-2"><a class="final" href="/resources/upgrade/"><span>Upgrade Instructions</span></a></li><li class="level-2"><a class="final" href="/resources/glossary/"><span>Glossary</span></a></li></ul></li><li class="level-1"><a class="expandible" href="#"><span>Apache Software Foundation</span></a><ul><li class="level-2"><a class="final" href="https://www.apache.org/"><span>Apache Homepage</span></a></li><li class="level-2"><a class="final" href="https://www.apache.org/licenses/"><span>License</span></a></li><li class="level-2"><a class="final" href="https://www.apache.org/foundation/sponsorship.html"><span>Sponsorship</span></a></li><li class="level-2"><a class="final" href="https://www.apache.org/foundation/thanks.html"><span>Thanks</span></a></li><li class="level-2"><a class="final" href="https://www.apache.org/security/"><span>Security</span></a></li></ul></li></ul></nav></div><div class="col-md-9 col-sm-12"><div class="content-header hidden-md hidden-lg"><div id="breadcrumbs" class="hidden-sm hidden xs"><ul><li><a href="#">PredictionIO Official Templates</a><span class="spacer">&gt;</span></li><li><a href="#">Recommendation</a><span class="spacer">&gt;</span></li><li><span class="last">Evaluation Explained</span></li></ul></div><div id="page-title"><h1>Evaluation Explained (Recommendation)</h1></div></div><div id="table-of-content-wrapper"><h5>On this page</h5><aside id="table-of-contents"><ul> <li> <a href="#evaluation-quick-start">Evaluation Quick Start</a> </li> <li> <a href="#the-evaluation-design">The Evaluation Design</a> </li> <li> <a href="#evaluation-data-generation">Evaluation Data Generation</a> </li> <li> <a href="#evaluation-metrics">Evaluation Metrics</a> </li> </ul> </aside><hr/><a id="edit-page-link" href="https://github.com/apache/incubator-predictionio/tree/livedoc/docs/manual/source/templates/recommendation/evaluation.html.md.erb"><img src="/images/icons/edit-pencil-d6c1bb3d.png"/>Edit this page</a></div><div class="content-header hidden-sm hidden-xs"><div id="breadcrumbs" class="hidden-sm hidden xs"><ul><li><a href="#">PredictionIO Official Templates</a><span class="spacer">&gt;</span></li><li><a href="#">Recommendation</a><span class="spacer">&gt;</span></li><li><span class="last">Evaluation Explained</span></li></ul></div><div id="page-title"><h1>Evaluation Explained (Recommendation)</h1></div></div><div class="content"> <p>A PredictionIO engine is instantiated by a set of parameters, these parameters determines which algorithm is used as well as the parameter for the algorithm. It naturally raises a question of how to choose the best set of parameters. The evaluation module streamlines the process of tuning the engine to the best parameter set and deploy it.</p><h2 id='evaluation-quick-start' class='header-anchors'>Evaluation Quick Start</h2><p>We assume you have run the <a href="/templates/recommendation/quickstart/">Recommendation Quick Start</a> will skip the data collection / import instructions.</p><h3 id='edit-the-appname' class='header-anchors'>Edit the AppName</h3><p>Edit MyRecommendation/src/main/scala/<strong><em>Evaluation.scala</em></strong> to specify the <em>appName</em> you used to import the data.</p><div class="highlight scala"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8</pre></td><td class="code"><pre><span class="k">object</span> <span class="nc">ParamsList</span> <span class="k">extends</span> <span class="nc">EngineParamsGenerator</span> <span class="o">{</span>
+  <span class="k">private</span><span class="o">[</span><span class="kt">this</span><span class="o">]</span> <span class="k">val</span> <span class="n">baseEP</span> <span class="k">=</span> <span class="nc">EngineParams</span><span class="o">(</span>
+    <span class="n">dataSourceParams</span> <span class="k">=</span> <span class="nc">DataSourceParams</span><span class="o">(</span>
+      <span class="n">appName</span> <span class="k">=</span> <span class="s">"MyApp1"</span><span class="o">,</span>
+      <span class="o">...</span>
+      <span class="o">)</span>
+  <span class="o">...</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table> </div> <h3 id='build-and-run-the-evaluation' class='header-anchors'>Build and run the evaluation</h3><p>To run evaluation, the command <code>pio eval</code> is used. It takes two mandatory parameter, 1. the <code>Evaluation</code> object, it tells PredictionIO the engine and metric we use for the evaluation; and 2. the <code>EngineParamsGenerator</code>, it contains a list of engine params to test against. The following command kickstarts the evaluation workflow for the classification template (replace &quot;org.template&quot; with your package).</p><div class="highlight shell"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4</pre></td><td class="code"><pre><span class="gp">$ </span>pio build
+...
+<span class="gp">$ </span>pio <span class="nb">eval </span>org.template.RecommendationEvaluation <span class="se">\</span>
+    org.template.EngineParamsList
+</pre></td></tr></tbody></table> </div> <p>You will see the following output:</p><div class="highlight shell"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46</pre></td><td class="code"><pre>...
+<span class="o">[</span>INFO 2015-03-31 00:31:53,934] <span class="o">[</span>CoreWorkflow<span class="nv">$]</span> runEvaluation started
+...
+<span class="o">[</span>INFO 2015-03-31 00:35:56,782] <span class="o">[</span>CoreWorkflow<span class="nv">$]</span> Updating evaluation instance with result: MetricEvaluatorResult:
+  <span class="c"># engine params evaluated: 3</span>
+Optimal Engine Params:
+  <span class="o">{</span>
+  <span class="s2">"dataSourceParams"</span>:<span class="o">{</span>
+    <span class="s2">""</span>:<span class="o">{</span>
+      <span class="s2">"appName"</span>:<span class="s2">"MyApp1"</span>,
+      <span class="s2">"evalParams"</span>:<span class="o">{</span>
+        <span class="s2">"kFold"</span>:5,
+        <span class="s2">"queryNum"</span>:10
+      <span class="o">}</span>
+    <span class="o">}</span>
+  <span class="o">}</span>,
+  <span class="s2">"preparatorParams"</span>:<span class="o">{</span>
+    <span class="s2">""</span>:<span class="o">{</span>
+
+    <span class="o">}</span>
+  <span class="o">}</span>,
+  <span class="s2">"algorithmParamsList"</span>:[
+    <span class="o">{</span>
+      <span class="s2">"als"</span>:<span class="o">{</span>
+        <span class="s2">"rank"</span>:10,
+        <span class="s2">"numIterations"</span>:40,
+        <span class="s2">"lambda"</span>:0.01,
+        <span class="s2">"seed"</span>:3
+      <span class="o">}</span>
+    <span class="o">}</span>
+  <span class="o">]</span>,
+  <span class="s2">"servingParams"</span>:<span class="o">{</span>
+    <span class="s2">""</span>:<span class="o">{</span>
+
+    <span class="o">}</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+Metrics:
+  Precision@K <span class="o">(</span><span class="nv">k</span><span class="o">=</span>10, <span class="nv">threshold</span><span class="o">=</span>4.0<span class="o">)</span>: 0.15205820105820103
+  PositiveCount <span class="o">(</span><span class="nv">threshold</span><span class="o">=</span>4.0<span class="o">)</span>: 5.753333333333333
+  Precision@K <span class="o">(</span><span class="nv">k</span><span class="o">=</span>10, <span class="nv">threshold</span><span class="o">=</span>2.0<span class="o">)</span>: 0.1542777777777778
+  PositiveCount <span class="o">(</span><span class="nv">threshold</span><span class="o">=</span>2.0<span class="o">)</span>: 6.833333333333333
+  Precision@K <span class="o">(</span><span class="nv">k</span><span class="o">=</span>10, <span class="nv">threshold</span><span class="o">=</span>1.0<span class="o">)</span>: 0.15068518518518517
+  PositiveCount <span class="o">(</span><span class="nv">threshold</span><span class="o">=</span>1.0<span class="o">)</span>: 10.006666666666666
+<span class="o">[</span>INFO 2015-03-31 00:36:01,516] <span class="o">[</span>CoreWorkflow<span class="nv">$]</span> runEvaluation completed
+
+</pre></td></tr></tbody></table> </div> <p>The console prints out the evaluation meric score of each engine params, and finally pretty print the optimal engine params. Amongs the 3 engine params we evaluate, the best Prediction@k has a score of ~0.1521.</p><h2 id='the-evaluation-design' class='header-anchors'>The Evaluation Design</h2><p>We assume you have read the <a href="/evaluation">Tuning and Evaluation</a> section. We will cover the evaluation aspects which are specific to the recommendation engine.</p><p>In recommendation evaluation, the raw data is a sequence of known ratings. A rating has 3 components: user, item, and a score. We use the $k-fold$ method for evaluation, the raw data is sliced into a sequence of (training, validation) data tuple.</p><p>In the validation data, we construct a query for <em>each user</em>, and get a list of recommended items from the engine. It is vastly different from the classification tutorial, where there is a one-to-one corresponding between the training data point and the validation data point. In this evaluation, our unit of evaluation is <em>user</em>, we evaluate the quality of an engine using the known rating of a user.</p><h3 id='key-assumptions' class='header-anchors'>Key assumptions</h3><p>There are multiple assumptions we have to make when we evaluate a recommendation engine:</p> <ul> <li><p>Definition of &#39;good&#39;. We want to quantify if the engine is able to recommend items which the user likes, we need to define what is meant by &#39;good&#39;. In this examle, we have two kinds of events: &#39;rate&#39; and &#39;buy&#39;. The &#39;rate&#39; event is associated with a rating value which ranges between 1 to 4, and the &#39;buy&#39; event is mapped to a rating of 4. When we implement the metric, we have to specify a rating threshold, only the rating above the threshold is considered &#39;good&#39;.</p></li> <li><p>The absense of complete rating. It is extremely unlikely that the training data contains rating for all user-item tuples. In contrast, of a system containing 1000 items, a user may only have rated 20 of them, leaving 980 items unrated. There is no way for us to certainly tell if the user likes an unrated product. When we examine the evaluation result, it is important for us to keep in mind that the final metric is only an approximation of the actual result.</p></li> <li><p>Recommendation affects user behavior. Suppose you are a e-commerce company and would like to use the recommendation engine to personalize the landing page, the item you show in the langing page directly impacts what the user is going to purchase. This is different from weather prediction, whatever the weather forecast engine predicts, tomorrow&#39;s weather won&#39;t be affected. Therefore, when we conduct offline evaluation for recommendation engines, it is possible that the final user behavior is dramatically different from the evaluation result. However, in the evaluation, for simplicity, we have to assume that user behavior is homogenous.</p></li> </ul> <h2 id='evaluation-data-generation' class='header-anchors'>Evaluation Data Generation</h2><h3 id='actual-result' class='header-anchors'>Actual Result</h3><p>In MyRecommendation/src/main/scala/<strong><em>Engine.scala</em></strong>, we define the <code>ActualResult</code> which represents the user rating for validation. It stores the list of ratings in the validation set for a user.</p><div class="highlight scala"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3</pre></td><td class="code"><pre><span class="k">case</span> <span class="k">class</span> <span class="nc">ActualResult</span><span class="o">(</span>
+  <span class="n">ratings</span><span class="k">:</span> <span class="kt">Array</span><span class="o">[</span><span class="kt">Rating</span><span class="o">]</span>
+<span class="o">)</span>
+</pre></td></tr></tbody></table> </div> <h3 id='implement-data-generate-method-in-datasource' class='header-anchors'>Implement Data Generate Method in DataSource</h3><p>In MyRecommendation/src/main/scala/<strong><em>DataSource.scala</em></strong>, the method <code>readEval</code> method reads, and selects, data from datastore and returns a sequence of (training, validation) data.</p><div class="highlight scala"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70</pre></td><td class="code"><pre><span class="k">case</span> <span class="k">class</span> <span class="nc">DataSourceEvalParams</span><span class="o">(</span><span class="n">kFold</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">queryNum</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span>
+
+<span class="k">case</span> <span class="k">class</span> <span class="nc">DataSourceParams</span><span class="o">(</span>
+  <span class="n">appName</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span>
+  <span class="n">evalParams</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[</span><span class="kt">DataSourceEvalParams</span><span class="o">])</span> <span class="k">extends</span> <span class="nc">Params</span>
+
+<span class="k">class</span> <span class="nc">DataSource</span><span class="o">(</span><span class="k">val</span> <span class="n">dsp</span><span class="k">:</span> <span class="kt">DataSourceParams</span><span class="o">)</span>
+  <span class="k">extends</span> <span class="nc">PDataSource</span><span class="o">[</span><span class="kt">TrainingData</span>,
+      <span class="kt">EmptyEvaluationInfo</span>, <span class="kt">Query</span>, <span class="kt">ActualResult</span><span class="o">]</span> <span class="o">{</span>
+
+  <span class="nd">@transient</span> <span class="k">lazy</span> <span class="k">val</span> <span class="n">logger</span> <span class="k">=</span> <span class="nc">Logger</span><span class="o">[</span><span class="kt">this.</span><span class="k">type</span><span class="o">]</span>
+
+  <span class="k">def</span> <span class="n">getRatings</span><span class="o">(</span><span class="n">sc</span><span class="k">:</span> <span class="kt">SparkContext</span><span class="o">)</span><span class="k">:</span> <span class="kt">RDD</span><span class="o">[</span><span class="kt">Rating</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span>
+
+    <span class="k">val</span> <span class="n">eventsRDD</span><span class="k">:</span> <span class="kt">RDD</span><span class="o">[</span><span class="kt">Event</span><span class="o">]</span> <span class="k">=</span> <span class="nc">PEventStore</span><span class="o">.</span><span class="n">find</span><span class="o">(</span>
+      <span class="n">appName</span> <span class="k">=</span> <span class="n">dsp</span><span class="o">.</span><span class="n">appName</span><span class="o">,</span>
+      <span class="n">entityType</span> <span class="k">=</span> <span class="nc">Some</span><span class="o">(</span><span class="s">"user"</span><span class="o">),</span>
+      <span class="n">eventNames</span> <span class="k">=</span> <span class="nc">Some</span><span class="o">(</span><span class="nc">List</span><span class="o">(</span><span class="s">"rate"</span><span class="o">,</span> <span class="s">"buy"</span><span class="o">)),</span> <span class="c1">// read "rate" and "buy" event
+</span>      <span class="c1">// targetEntityType is optional field of an event.
+</span>      <span class="n">targetEntityType</span> <span class="k">=</span> <span class="nc">Some</span><span class="o">(</span><span class="nc">Some</span><span class="o">(</span><span class="s">"item"</span><span class="o">)))(</span><span class="n">sc</span><span class="o">)</span>
+
+    <span class="k">val</span> <span class="n">ratingsRDD</span><span class="k">:</span> <span class="kt">RDD</span><span class="o">[</span><span class="kt">Rating</span><span class="o">]</span> <span class="k">=</span> <span class="n">eventsRDD</span><span class="o">.</span><span class="n">map</span> <span class="o">{</span> <span class="n">event</span> <span class="k">=&gt;</span>
+      <span class="k">val</span> <span class="n">rating</span> <span class="k">=</span> <span class="k">try</span> <span class="o">{</span>
+        <span class="k">val</span> <span class="n">ratingValue</span><span class="k">:</span> <span class="kt">Double</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">event</span> <span class="k">match</span> <span class="o">{</span>
+          <span class="k">case</span> <span class="s">"rate"</span> <span class="k">=&gt;</span> <span class="n">event</span><span class="o">.</span><span class="n">properties</span><span class="o">.</span><span class="n">get</span><span class="o">[</span><span class="kt">Double</span><span class="o">](</span><span class="s">"rating"</span><span class="o">)</span>
+          <span class="k">case</span> <span class="s">"buy"</span> <span class="k">=&gt;</span> <span class="mf">4.0</span> <span class="c1">// map buy event to rating value of 4
+</span>          <span class="k">case</span> <span class="k">_</span> <span class="k">=&gt;</span> <span class="k">throw</span> <span class="k">new</span> <span class="nc">Exception</span><span class="o">(</span><span class="n">s</span><span class="s">"Unexpected event ${event} is read."</span><span class="o">)</span>
+        <span class="o">}</span>
+        <span class="c1">// entityId and targetEntityId is String
+</span>        <span class="nc">Rating</span><span class="o">(</span><span class="n">event</span><span class="o">.</span><span class="n">entityId</span><span class="o">,</span>
+          <span class="n">event</span><span class="o">.</span><span class="n">targetEntityId</span><span class="o">.</span><span class="n">get</span><span class="o">,</span>
+          <span class="n">ratingValue</span><span class="o">)</span>
+      <span class="o">}</span> <span class="k">catch</span> <span class="o">{</span>
+        <span class="k">case</span> <span class="n">e</span><span class="k">:</span> <span class="kt">Exception</span> <span class="o">=&gt;</span> <span class="o">{</span>
+          <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="o">(</span><span class="n">s</span><span class="s">"Cannot convert ${event} to Rating. Exception: ${e}."</span><span class="o">)</span>
+          <span class="k">throw</span> <span class="n">e</span>
+        <span class="o">}</span>
+      <span class="o">}</span>
+      <span class="n">rating</span>
+    <span class="o">}.</span><span class="n">cache</span><span class="o">()</span>
+
+    <span class="n">ratingsRDD</span>
+  <span class="o">}</span>
+
+  <span class="o">...</span>
+
+  <span class="k">override</span>
+  <span class="k">def</span> <span class="n">readEval</span><span class="o">(</span><span class="n">sc</span><span class="k">:</span> <span class="kt">SparkContext</span><span class="o">)</span>
+  <span class="k">:</span> <span class="kt">Seq</span><span class="o">[(</span><span class="kt">TrainingData</span>, <span class="kt">EmptyEvaluationInfo</span>, <span class="kt">RDD</span><span class="o">[(</span><span class="kt">Query</span>, <span class="kt">ActualResult</span><span class="o">)])]</span> <span class="k">=</span> <span class="o">{</span>
+    <span class="n">require</span><span class="o">(!</span><span class="n">dsp</span><span class="o">.</span><span class="n">evalParams</span><span class="o">.</span><span class="n">isEmpty</span><span class="o">,</span> <span class="s">"Must specify evalParams"</span><span class="o">)</span>
+    <span class="k">val</span> <span class="n">evalParams</span> <span class="k">=</span> <span class="n">dsp</span><span class="o">.</span><span class="n">evalParams</span><span class="o">.</span><span class="n">get</span>
+
+    <span class="k">val</span> <span class="n">kFold</span> <span class="k">=</span> <span class="n">evalParams</span><span class="o">.</span><span class="n">kFold</span>
+    <span class="k">val</span> <span class="n">ratings</span><span class="k">:</span> <span class="kt">RDD</span><span class="o">[(</span><span class="kt">Rating</span>, <span class="kt">Long</span><span class="o">)]</span> <span class="k">=</span> <span class="n">getRatings</span><span class="o">(</span><span class="n">sc</span><span class="o">).</span><span class="n">zipWithUniqueId</span>
+
+    <span class="o">(</span><span class="mi">0</span> <span class="n">until</span> <span class="n">kFold</span><span class="o">).</span><span class="n">map</span> <span class="o">{</span> <span class="n">idx</span> <span class="k">=&gt;</span> <span class="o">{</span>
+      <span class="k">val</span> <span class="n">trainingRatings</span> <span class="k">=</span> <span class="n">ratings</span><span class="o">.</span><span class="n">filter</span><span class="o">(</span><span class="k">_</span><span class="o">.</span><span class="n">_2</span> <span class="o">%</span> <span class="n">kFold</span> <span class="o">!=</span> <span class="n">idx</span><span class="o">).</span><span class="n">map</span><span class="o">(</span><span class="k">_</span><span class="o">.</span><span class="n">_1</span><span class="o">)</span>
+      <span class="k">val</span> <span class="n">testingRatings</span> <span class="k">=</span> <span class="n">ratings</span><span class="o">.</span><span class="n">filter</span><span class="o">(</span><span class="k">_</span><span class="o">.</span><span class="n">_2</span> <span class="o">%</span> <span class="n">kFold</span> <span class="o">==</span> <span class="n">idx</span><span class="o">).</span><span class="n">map</span><span class="o">(</span><span class="k">_</span><span class="o">.</span><span class="n">_1</span><span class="o">)</span>
+
+      <span class="k">val</span> <span class="n">testingUsers</span><span class="k">:</span> <span class="kt">RDD</span><span class="o">[(</span><span class="kt">String</span>, <span class="kt">Iterable</span><span class="o">[</span><span class="kt">Rating</span><span class="o">])]</span> <span class="k">=</span> <span class="n">testingRatings</span><span class="o">.</span><span class="n">groupBy</span><span class="o">(</span><span class="k">_</span><span class="o">.</span><span class="n">user</span><span class="o">)</span>
+
+      <span class="o">(</span><span class="k">new</span> <span class="nc">TrainingData</span><span class="o">(</span><span class="n">trainingRatings</span><span class="o">),</span>
+        <span class="k">new</span> <span class="nc">EmptyEvaluationInfo</span><span class="o">(),</span>
+        <span class="n">testingUsers</span><span class="o">.</span><span class="n">map</span> <span class="o">{</span>
+          <span class="k">case</span> <span class="o">(</span><span class="n">user</span><span class="o">,</span> <span class="n">ratings</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="o">(</span><span class="nc">Query</span><span class="o">(</span><span class="n">user</span><span class="o">,</span> <span class="n">evalParams</span><span class="o">.</span><span class="n">queryNum</span><span class="o">),</span> <span class="nc">ActualResult</span><span class="o">(</span><span class="n">ratings</span><span class="o">.</span><span class="n">toArray</span><span class="o">))</span>
+        <span class="o">}</span>
+      <span class="o">)</span>
+    <span class="o">}}</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table> </div> <p>The evaluation data generate is controlled by two parameters in the <code>DataSourceEvalParams</code>. The first parameter <code>kFold</code> is the number of fold we use for evaluation, the second parameter <code>queryNum</code> is used for query construction.</p><p>The <code>getRating</code> method is factored out from the <code>readTraining</code> method as they both serve the same function of reading from data source and perform a user-item action into a rating (lines 22 - 40).</p><p>The <code>readEval</code> method is a k-fold evaluation implementation. We annotate each rating in the raw data by an index (line 54), then in each fold, the rating goes to either the training or testing set based on the modulus value. We group ratings by user, and one query is constructed <em>for each user</em> (line 60).</p><h2 id='evaluation-metrics' class='header-anchors'>Evaluation Metrics</h2><p>In the <a href="/evaluation/">evaluation and tuning tutorial</a>, we use <strong><em>Metric</em></strong> to compute the quality of an engine variant. However, in actual use cases like recommendation, as we have made many assumptions in our model, using a single metric may lead to a biased evaluation. We will discuss using multiple <strong><em>Metrics</em></strong> to generate a comprehensive evaluation, to generate a more global view of the engine.</p><h3 id='precision@k' class='header-anchors'>Precision@K</h3><p>Precision@K measures the portion of <em>relevant</em> items amongst the first <em>k</em> items. Recommendation engine usually wants to make sure the top few items recommended are appealing to the user. Think about Google search, we usually give up after looking at the first and second result pages.</p><h3 id='precision@k-parameters' class='header-anchors'>Precision@K Parameters</h3><p>There are two questions associated with it.</p> <ol> <li>How do we define <em>relevant</em>?</li> <li>What is a good value of <em>k</em>?</li> </ol> <p>Before we answer these questions, we need to understand what constitute a good metric. It is like exams, if everyone get full scores, the exam fails its goal to determine what the candidates don&#39;t know; if everyone fails, the exam fails its goal to determine what the candidates know. A good metric should be able to distinguish the good from the bad.</p><p>A way to define relevant is to use the notion of rating threshold. If the user rating for an item is higher than a certain threshold, we say it is relevant. However, without looking at the data, it is hard to pick a reasonable threshold. We can set the threshold be as high as the maximum rating of 4.0, but it may severely limit the relevant set size, and the precision scores will be close to zero or undefined (precision is undefined if there is no relevant data). On the other hand, we can set the threshold be as low as the minimum rating, but it makes the precision metric uninformative as well since all scores will be close to 1. Similar argument applies to picking a good value of <em>k</em> too.</p><p>A method to choose a good parameter is <em>not</em> to choose one, but instead test out <em>a whole sprectrum of parameters</em>. If an engine variant is good, it should robustly perform well across different metric parameters. The evaluation module supports multiple metrics. The following code snippets demonstrates a sample usage.</p><div class="highlight scala"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13</pre></td><td class="code"><pre><span class="k">object</span> <span class="nc">ComprehensiveRecommendationEvaluation</span> <span class="k">extends</span> <span class="nc">Evaluation</span> <span class="o">{</span>
+  <span class="k">val</span> <span class="n">ratingThresholds</span> <span class="k">=</span> <span class="nc">Seq</span><span class="o">(</span><span class="mf">0.0</span><span class="o">,</span> <span class="mf">2.0</span><span class="o">,</span> <span class="mf">4.0</span><span class="o">)</span>
+  <span class="k">val</span> <span class="n">ks</span> <span class="k">=</span> <span class="nc">Seq</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">10</span><span class="o">)</span>
+
+  <span class="n">engineEvaluator</span> <span class="k">=</span> <span class="o">(</span>
+    <span class="nc">RecommendationEngine</span><span class="o">(),</span>
+    <span class="nc">MetricEvaluator</span><span class="o">(</span>
+      <span class="n">metric</span> <span class="k">=</span> <span class="nc">PrecisionAtK</span><span class="o">(</span><span class="n">k</span> <span class="k">=</span> <span class="mi">3</span><span class="o">,</span> <span class="n">ratingThreshold</span> <span class="k">=</span> <span class="mf">2.0</span><span class="o">),</span>
+      <span class="n">otherMetrics</span> <span class="k">=</span> <span class="o">(</span>
+        <span class="o">(</span><span class="k">for</span> <span class="o">(</span><span class="n">r</span> <span class="k">&lt;-</span> <span class="n">ratingThresholds</span><span class="o">)</span> <span class="k">yield</span> <span class="nc">PositiveCount</span><span class="o">(</span><span class="n">ratingThreshold</span> <span class="k">=</span> <span class="n">r</span><span class="o">))</span> <span class="o">++</span>
+        <span class="o">(</span><span class="k">for</span> <span class="o">(</span><span class="n">r</span> <span class="k">&lt;-</span> <span class="n">ratingThresholds</span><span class="o">;</span> <span class="n">k</span> <span class="k">&lt;-</span> <span class="n">ks</span><span class="o">)</span> <span class="k">yield</span> <span class="nc">PrecisionAtK</span><span class="o">(</span><span class="n">k</span> <span class="k">=</span> <span class="n">k</span><span class="o">,</span> <span class="n">ratingThreshold</span> <span class="k">=</span> <span class="n">r</span><span class="o">))</span>
+      <span class="o">)))</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table> </div> <p>We have two types of <code>Metric</code>s.</p> <ul> <li><p><code>PositiveCount</code> is a helper metrics that returns the average number of positive samples for a specific rating threshold, therefore we get some idea about the <em>demographic</em> of the data. If <code>PositiveCount</code> is too low or too high for certain threshold, we know that it should not be used. We have three thresholds (line 2), and three instances of <code>PositiveCount</code> metric are instantiated (line 10), one for each threshold.</p></li> <li><p><code>Precision@K</code> is the actual metrics we use. We have two lists of parameters (lines 2 to 3): <code>ratingThreshold</code> defines what rating is good, and <code>k</code> defines how many items we evaluate in the <code>PredictedResult</code>. We generate a list of all combinations (line 11).</p></li> </ul> <p>These metrics are specified as <code>otherMetrics</code> (lines 9 to 11), they will be calculated and generated on the evaluation UI.</p><p>To run this evaluation, you can:</p><div class="highlight shell"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2</pre></td><td class="code"><pre><span class="gp">$ </span>pio <span class="nb">eval </span>org.template.ComprehensiveRecommendationEvaluation <span class="se">\</span>
+  org.template.EngineParamsList
+</pre></td></tr></tbody></table> </div> </div></div></div></div><footer><div class="container"><div class="seperator"></div><div class="row"><div class="col-md-6 footer-link-column"><div class="footer-link-column-row"><h4>Community</h4><ul><li><a href="//predictionio.incubator.apache.org/install/" target="blank">Download</a></li><li><a href="//predictionio.incubator.apache.org/" target="blank">Docs</a></li><li><a href="//github.com/apache/incubator-predictionio" target="blank">GitHub</a></li><li><a href="mailto:user-subscribe@predictionio.incubator.apache.org" target="blank">Subscribe to User Mailing List</a></li><li><a href="//stackoverflow.com/questions/tagged/predictionio" target="blank">Stackoverflow</a></li></ul></div></div><div class="col-md-6 footer-link-column"><div class="footer-link-column-row"><h4>Contribute</h4><ul><li><a href="//predictionio.incubator.apache.org/community/contribute-code/" target="blank">Contribute</a></li><li><a href="//github.com/apache/incubator-predictionio" target="blank">Source Code</a></li><li><a href="//issues.apache.org/jira/browse/PIO" target="blank">Bug Tracker</a></li><li><a href="mailto:dev-subscribe@predictionio.incubator.apache.org" target="blank">Subscribe to Development Mailing List</a></li></ul></div></div></div><div class="row"><div class="col-md-12 footer-link-column"><a class="pull-right" href="http://incubator.apache.org/projects/predictionio.html"><img alt="Apache Incubator" src="/images/logos/apache_incubator-6954bd16.png"/></a><span>Apache PredictionIO is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</span></div></div></div><div id="footer-bottom"><div class="container"><div class="row"><div class="col-md-12"><div id="footer-logo-wrapper"><img alt="PredictionIO" src="/images/logos/logo-white-d1e9c6e6.png"/></div><div id="social-icons-wrapper"><a class="github-button" href="https://github.com/apache/incubator-predictionio" data-style="mega" data-count-href="/apache/incubator-predictionio/stargazers" data-count-api="/repos/apache/incubator-predictionio#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star apache/incubator-predictionio on GitHub">Star</a> <a class="github-button" href="https://github.com/apache/incubator-predictionio/fork" data-icon="octicon-git-branch" data-style="mega" data-count-href="/apache/incubator-predictionio/network" data-count-api="/repos/apache/incubator-predictionio#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork apache/incubator-predictionio on GitHub">Fork</a> <script id="github-bjs" async="" defer="" src="https://buttons.github.io/buttons.js"></script><a href="https://twitter.com/predictionio" target="blank"><img alt="PredictionIO on Twitter" src="/images/icons/twitter-ea9dc152.png"/></a> <a href="https://www.facebook.com/predictionio" target="blank"><img alt="PredictionIO on Facebook" src="/images/icons/facebook-5c57939c.png"/></a> </div></div></div></div></div></footer></div><script>(function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+(w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+})(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+_st('install','HaUfpXXV87xoB_zzCQ45');</script><script src="/javascripts/application-3058a372.js"></script></body></html>
