@@ -1,0 +1,657 @@
+<!DOCTYPE html><html><head><title>DASE Components Explained (Product Ranking)</title><meta charset="utf-8"/><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta class="swiftype" name="title" data-type="string" content="DASE Components Explained (Product Ranking)"/><link rel="canonical" href="https://predictionio.incubator.apache.org/templates/productranking/dase/"/><link href="/images/favicon/normal-b330020a.png" rel="shortcut icon"/><link href="/images/favicon/apple-c0febcf2.png" rel="apple-touch-icon"/><link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet"/><link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"/><link href="/stylesheets/application-eccfc6cb.css" rel="stylesheet" type="text/css"/><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script src="//use.typekit.net/pqo0itb.js"></script><script>try{Typekit.load({ async: true });}catch(e){}</script></head><body><div id="global"><header><div class="container" id="header-wrapper"><div class="row"><div class="col-sm-12"><div id="logo-wrapper"><span id="drawer-toggle"></span><a href="#"></a><a href="http://predictionio.incubator.apache.org/"><img alt="PredictionIO" id="logo" src="/images/logos/logo-ee2b9bb3.png"/></a><span>™</span></div><div id="menu-wrapper"><div id="pill-wrapper"><a class="pill left" href="/gallery/template-gallery">TEMPLATES</a> <a class="pill right" href="//github.com/apache/incubator-predictionio/">OPEN SOURCE</a></div></div><img class="mobile-search-bar-toggler hidden-md hidden-lg" src="/images/icons/search-glass-704bd4ff.png"/></div></div></div></header><div id="search-bar-row-wrapper"><div class="container-fluid" id="search-bar-row"><div class="row"><div class="col-md-9 col-sm-11 col-xs-11"><div class="hidden-md hidden-lg" id="mobile-page-heading-wrapper"><p>PredictionIO Docs</p><h4>DASE Components Explained (Product Ranking)</h4></div><h4 class="hidden-sm hidden-xs">PredictionIO Docs</h4></div><div class="col-md-3 col-sm-1 col-xs-1 hidden-md hidden-lg"><img id="left-menu-indicator" src="/images/icons/down-arrow-dfe9f7fe.png"/></div><div class="col-md-3 col-sm-12 col-xs-12 swiftype-wrapper"><div class="swiftype"><form class="search-form"><img class="search-box-toggler hidden-xs hidden-sm" src="/images/icons/search-glass-704bd4ff.png"/><div class="search-box"><img src="/images/icons/search-glass-704bd4ff.png"/><input type="text" id="st-search-input" class="st-search-input" placeholder="Search Doc..."/></div><img class="swiftype-row-hider hidden-md hidden-lg" src="/images/icons/drawer-toggle-active-fcbef12a.png"/></form></div></div><div class="mobile-left-menu-toggler hidden-md hidden-lg"></div></div></div></div><div id="page" class="container-fluid"><div class="row"><div id="left-menu-wrapper" class="col-md-3"><nav id="nav-main"><ul><li class="level-1"><a class="expandible" href="/"><span>Apache PredictionIO™ (incubating) Documentation</span></a><ul><li class="level-2"><a class="final" href="/"><span>Welcome to Apache PredictionIO (incubating)</span></a></li></ul></li><li class="level-1"><a class="expandible" href="#"><span>Getting Started</span></a><ul><li class="level-2"><a class="final" href="/start/"><span>A Quick Intro</span></a></li><li class="level-2"><a class="final" href="/install/"><span>Installing Apache PredictionIO (incubating)</span></a></li><li class="level-2"><a class="final" href="/start/download/"><span>Downloading an Engine Template</span></a></li><li class="level-2"><a class="final" href="/start/deploy/"><span>Deploying Your First Engine</span></a></li><li class="level-2"><a class="final" href="/start/customize/"><span>Customizing the Engine</span></a></li></ul></li><li class="level-1"><a class="expandible" href="#"><span>Integrating with Your App</span></a><ul><li class="level-2"><a class="final" href="/appintegration/"><span>App Integration Overview</span></a></li><li class="level-2"><a class="expandible" href="/sdk/"><span>List of SDKs</span></a><ul><li class="level-3"><a class="final" href="/sdk/java/"><span>Java & Android SDK</span></a></li><li class="level-3"><a class="final" href="/sdk/php/"><span>PHP SDK</span></a></li><li class="level-3"><a class="final" href="/sdk/python/"><span>Python SDK</span></a></li><li class="level-3"><a class="final" href="/sdk/ruby/"><span>Ruby SDK</span></a></li><li class="level-3"><a class="final" href="/sdk/community/"><span>Community Powered SDKs</span></a></li></ul></li></ul></li><li class="level-1"><a class="expandible" href="#"><span>Deploying an Engine</span></a><ul><li class="level-2"><a class="final" href="/deploy/"><span>Deploying as a Web Service</span></a></li><li class="level-2"><a class="final" href="/batchpredict/"><span>Batch Predictions</span></a></li><li class="level-2"><a class="final" href="/deploy/monitoring/"><span>Monitoring Engine</span></a></li><li class="level-2"><a class="final" href="/deploy/engineparams/"><span>Setting Engine Parameters</span></a></li><li class="level-2"><a class="final" href="/deploy/enginevariants/"><span>Deploying Multiple Engine Variants</span></a></li><li class="level-2"><a class="final" href="/deploy/plugin/"><span>Engine Server Plugin</span></a></li></ul></li><li class="level-1"><a class="expandible" href="#"><span>Customizing an Engine</span></a><ul><li class="level-2"><a class="final" href="/customize/"><span>Learning DASE</span></a></li><li class="level-2"><a class="final" href="/customize/dase/"><span>Implement DASE</span></a></li><li class="level-2"><a class="final" href="/customize/troubleshooting/"><span>Troubleshooting Engine Development</span></a></li><li class="level-2"><a class="final" href="/api/current/#package"><span>Engine Scala APIs</span></a></li></ul></li><li class="level-1"><a class="expandible" href="#"><span>Collecting and Analyzing Data</span></a><ul><li class="level-2"><a class="final" href="/datacollection/"><span>Event Server Overview</span></a></li><li class="level-2"><a class="final" href="/datacollection/eventapi/"><span>Collecting Data with REST/SDKs</span></a></li><li class="level-2"><a class="final" href="/datacollection/eventmodel/"><span>Events Modeling</span></a></li><li class="level-2"><a class="final" href="/datacollection/webhooks/"><span>Unifying Multichannel Data with Webhooks</span></a></li><li class="level-2"><a class="final" href="/datacollection/channel/"><span>Channel</span></a></li><li class="level-2"><a class="final" href="/datacollection/batchimport/"><span>Importing Data in Batch</span></a></li><li class="level-2"><a class="final" href="/datacollection/analytics/"><span>Using Analytics Tools</span></a></li><li class="level-2"><a class="final" href="/datacollection/plugin/"><span>Event Server Plugin</span></a></li></ul></li><li class="level-1"><a class="expandible" href="#"><span>Choosing an Algorithm(s)</span></a><ul><li class="level-2"><a class="final" href="/algorithm/"><span>Built-in Algorithm Libraries</span></a></li><li class="level-2"><a class="final" href="/algorithm/switch/"><span>Switching to Another Algorithm</span></a></li><li class="level-2"><a class="final" href="/algorithm/multiple/"><span>Combining Multiple Algorithms</span></a></li><li class="level-2"><a class="final" href="/algorithm/custom/"><span>Adding Your Own Algorithms</span></a></li></ul></li><li class="level-1"><a class="expandible" href="#"><span>ML Tuning and Evaluation</span></a><ul><li class="level-2"><a class="final" href="/evaluation/"><span>Overview</span></a></li><li class="level-2"><a class="final" href="/evaluation/paramtuning/"><span>Hyperparameter Tuning</span></a></li><li class="level-2"><a class="final" href="/evaluation/evaluationdashboard/"><span>Evaluation Dashboard</span></a></li><li class="level-2"><a class="final" href="/evaluation/metricchoose/"><span>Choosing Evaluation Metrics</span></a></li><li class="level-2"><a class="final" href="/evaluation/metricbuild/"><span>Building Evaluation Metrics</span></a></li></ul></li><li class="level-1"><a class="expandible" href="#"><span>System Architecture</span></a><ul><li class="level-2"><a class="final" href="/system/"><span>Architecture Overview</span></a></li><li class="level-2"><a class="final" href="/system/anotherdatastore/"><span>Using Another Data Store</span></a></li></ul></li><li class="level-1"><a class="expandible" href="#"><span>PredictionIO Official Templates</span></a><ul><li class="level-2"><a class="final" href="/templates/"><span>Intro</span></a></li><li class="level-2"><a class="expandible" href="#"><span>Recommendation</span></a><ul><li class="level-3"><a class="final" href="/templates/recommendation/quickstart/"><span>Quick Start</span></a></li><li class="level-3"><a class="final" href="/templates/recommendation/dase/"><span>DASE</span></a></li><li class="level-3"><a class="final" href="/templates/recommendation/evaluation/"><span>Evaluation Explained</span></a></li><li class="level-3"><a class="final" href="/templates/recommendation/how-to/"><span>How-To</span></a></li><li class="level-3"><a class="final" href="/templates/recommendation/reading-custom-events/"><span>Read Custom Events</span></a></li><li class="level-3"><a class="final" href="/templates/recommendation/customize-data-prep/"><span>Customize Data Preparator</span></a></li><li class="level-3"><a class="final" href="/templates/recommendation/customize-serving/"><span>Customize Serving</span></a></li><li class="level-3"><a class="final" href="/templates/recommendation/training-with-implicit-preference/"><span>Train with Implicit Preference</span></a></li><li class="level-3"><a class="final" href="/templates/recommendation/blacklist-items/"><span>Filter Recommended Items by Blacklist in Query</span></a></li><li class="level-3"><a class="final" href="/templates/recommendation/batch-evaluator/"><span>Batch Persistable Evaluator</span></a></li></ul></li><li class="level-2"><a class="expandible" href="#"><span>E-Commerce Recommendation</span></a><ul><li class="level-3"><a class="final" href="/templates/ecommercerecommendation/quickstart/"><span>Quick Start</span></a></li><li class="level-3"><a class="final" href="/templates/ecommercerecommendation/dase/"><span>DASE</span></a></li><li class="level-3"><a class="final" href="/templates/ecommercerecommendation/how-to/"><span>How-To</span></a></li><li class="level-3"><a class="final" href="/templates/ecommercerecommendation/train-with-rate-event/"><span>Train with Rate Event</span></a></li><li class="level-3"><a class="final" href="/templates/ecommercerecommendation/adjust-score/"><span>Adjust Score</span></a></li></ul></li><li class="level-2"><a class="expandible" href="#"><span>Similar Product</span></a><ul><li class="level-3"><a class="final" href="/templates/similarproduct/quickstart/"><span>Quick Start</span></a></li><li class="level-3"><a class="final" href="/templates/similarproduct/dase/"><span>DASE</span></a></li><li class="level-3"><a class="final" href="/templates/similarproduct/how-to/"><span>How-To</span></a></li><li class="level-3"><a class="final" href="/templates/similarproduct/multi-events-multi-algos/"><span>Multiple Events and Multiple Algorithms</span></a></li><li class="level-3"><a class="final" href="/templates/similarproduct/return-item-properties/"><span>Returns Item Properties</span></a></li><li class="level-3"><a class="final" href="/templates/similarproduct/train-with-rate-event/"><span>Train with Rate Event</span></a></li><li class="level-3"><a class="final" href="/templates/similarproduct/rid-user-set-event/"><span>Get Rid of Events for Users</span></a></li><li class="level-3"><a class="final" href="/templates/similarproduct/recommended-user/"><span>Recommend Users</span></a></li></ul></li><li class="level-2"><a class="expandible" href="#"><span>Classification</span></a><ul><li class="level-3"><a class="final" href="/templates/classification/quickstart/"><span>Quick Start</span></a></li><li class="level-3"><a class="final" href="/templates/classification/dase/"><span>DASE</span></a></li><li class="level-3"><a class="final" href="/templates/classification/how-to/"><span>How-To</span></a></li><li class="level-3"><a class="final" href="/templates/classification/add-algorithm/"><span>Use Alternative Algorithm</span></a></li><li class="level-3"><a class="final" href="/templates/classification/reading-custom-properties/"><span>Read Custom Properties</span></a></li></ul></li></ul></li><li class="level-1"><a class="expandible" href="#"><span>Engine Template Gallery</span></a><ul><li class="level-2"><a class="final" href="/gallery/template-gallery/"><span>Browse</span></a></li><li class="level-2"><a class="final" href="/community/submit-template/"><span>Submit your Engine as a Template</span></a></li></ul></li><li class="level-1"><a class="expandible" href="#"><span>Demo Tutorials</span></a><ul><li class="level-2"><a class="final" href="/demo/tapster/"><span>Comics Recommendation Demo</span></a></li><li class="level-2"><a class="final" href="/demo/community/"><span>Community Contributed Demo</span></a></li><li class="level-2"><a class="final" href="/demo/textclassification/"><span>Text Classification Engine Tutorial</span></a></li></ul></li><li class="level-1"><a class="expandible" href="/community/"><span>Getting Involved</span></a><ul><li class="level-2"><a class="final" href="/community/contribute-code/"><span>Contribute Code</span></a></li><li class="level-2"><a class="final" href="/community/contribute-documentation/"><span>Contribute Documentation</span></a></li><li class="level-2"><a class="final" href="/community/contribute-sdk/"><span>Contribute a SDK</span></a></li><li class="level-2"><a class="final" href="/community/contribute-webhook/"><span>Contribute a Webhook</span></a></li><li class="level-2"><a class="final" href="/community/projects/"><span>Community Projects</span></a></li></ul></li><li class="level-1"><a class="expandible" href="#"><span>Getting Help</span></a><ul><li class="level-2"><a class="final" href="/resources/faq/"><span>FAQs</span></a></li><li class="level-2"><a class="final" href="/support/"><span>Support</span></a></li></ul></li><li class="level-1"><a class="expandible" href="#"><span>Resources</span></a><ul><li class="level-2"><a class="final" href="/cli/"><span>Command-line Interface</span></a></li><li class="level-2"><a class="final" href="/resources/release/"><span>Release Cadence</span></a></li><li class="level-2"><a class="final" href="/resources/intellij/"><span>Developing Engines with IntelliJ IDEA</span></a></li><li class="level-2"><a class="final" href="/resources/upgrade/"><span>Upgrade Instructions</span></a></li><li class="level-2"><a class="final" href="/resources/glossary/"><span>Glossary</span></a></li></ul></li><li class="level-1"><a class="expandible" href="#"><span>Apache Software Foundation</span></a><ul><li class="level-2"><a class="final" href="https://www.apache.org/"><span>Apache Homepage</span></a></li><li class="level-2"><a class="final" href="https://www.apache.org/licenses/"><span>License</span></a></li><li class="level-2"><a class="final" href="https://www.apache.org/foundation/sponsorship.html"><span>Sponsorship</span></a></li><li class="level-2"><a class="final" href="https://www.apache.org/foundation/thanks.html"><span>Thanks</span></a></li><li class="level-2"><a class="final" href="https://www.apache.org/security/"><span>Security</span></a></li></ul></li></ul></nav></div><div class="col-md-9 col-sm-12"><div class="content-header hidden-md hidden-lg"><div id="page-title"><h1>DASE Components Explained (Product Ranking)</h1></div></div><div id="table-of-content-wrapper"><h5>On this page</h5><aside id="table-of-contents"><ul> <li> <a href="#the-engine-design">The Engine Design</a> </li> <li> <a href="#data">Data</a> </li> <li> <a href="#algorithm">Algorithm</a> </li> <li> <a href="#serving">Serving</a> </li> </ul> </aside><hr/><a id="edit-page-link" href="https://github.com/apache/incubator-predictionio/tree/livedoc/docs/manual/source/templates/productranking/dase.html.md.erb"><img src="/images/icons/edit-pencil-d6c1bb3d.png"/>Edit this page</a></div><div class="content-header hidden-sm hidden-xs"><div id="page-title"><h1>DASE Components Explained (Product Ranking)</h1></div></div><div class="content"> <p>PredictionIO&#39;s DASE architecture brings the separation-of-concerns design principle to predictive engine development. DASE stands for the following components of an engine:</p> <ul> <li><strong>D</strong>ata - includes Data Source and Data Preparator</li> <li><strong>A</strong>lgorithm(s)</li> <li><strong>S</strong>erving</li> <li><strong>E</strong>valuator</li> </ul> <p><p>Let&#39;s look at the code and see how you can customize the engine you built from the Product Ranking Template.</p><div class="alert-message note"><p>Evaluator will not be covered in this tutorial.</p></div></p><h2 id='the-engine-design' class='header-anchors'>The Engine Design</h2><p>As you can see from the Quick Start, <em>MyProductRanking</em> takes a JSON prediction query, e.g. <code>{ &quot;user&quot;: &quot;u2&quot;, &quot;items&quot;: [&quot;i1&quot;, &quot;i3&quot;, &quot;i10&quot;, &quot;i2&quot;, &quot;i5&quot;, &quot;i31&quot;, &quot;i9&quot;] }</code>, and return a JSON predicted result. In MyProductRanking/src/main/scala/<strong><em>Engine.scala</em></strong>, the <code>Query</code> case class defines the format of such <strong>query</strong>:</p><div class="highlight scala"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4</pre></td><td class="code"><pre><span class="k">case</span> <span class="k">class</span> <span class="nc">Query</span><span class="o">(</span>
+  <span class="n">user</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span>
+  <span class="n">items</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">String</span><span class="o">]</span>
+<span class="o">)</span> <span class="k">extends</span> <span class="nc">Serializable</span>
+</pre></td></tr></tbody></table> </div> <p>The <code>PredictedResult</code> case class defines the format of <strong>predicted result</strong>, such as</p><div class="highlight json"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9</pre></td><td class="code"><pre><span class="p">{</span><span class="s2">"itemScores"</span><span class="p">:[</span><span class="w">
+  </span><span class="p">{</span><span class="s2">"item"</span><span class="p">:</span><span class="s2">"i5"</span><span class="p">,</span><span class="s2">"score"</span><span class="p">:</span><span class="mf">1.0038217983580324</span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="s2">"item"</span><span class="p">:</span><span class="s2">"i3"</span><span class="p">,</span><span class="s2">"score"</span><span class="p">:</span><span class="mf">0.00598658734782459</span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="s2">"item"</span><span class="p">:</span><span class="s2">"i2"</span><span class="p">,</span><span class="s2">"score"</span><span class="p">:</span><span class="mf">0.004048103059012265</span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="s2">"item"</span><span class="p">:</span><span class="s2">"i9"</span><span class="p">,</span><span class="s2">"score"</span><span class="p">:</span><span class="mf">-1.966935819737517E-4</span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="s2">"item"</span><span class="p">:</span><span class="s2">"i1"</span><span class="p">,</span><span class="s2">"score"</span><span class="p">:</span><span class="mf">-0.0016841195307744916</span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="s2">"item"</span><span class="p">:</span><span class="s2">"i31"</span><span class="p">,</span><span class="s2">"score"</span><span class="p">:</span><span class="mf">-0.0019770986240634503</span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="s2">"item"</span><span class="p">:</span><span class="s2">"i10"</span><span class="p">,</span><span class="s2">"score"</span><span class="p">:</span><span class="mf">-0.0031498317618844918</span><span class="p">}],</span><span class="w">
+  </span><span class="s2">"isOriginal"</span><span class="p">:</span><span class="kc">false</span><span class="p">}</span><span class="w">
+</span></pre></td></tr></tbody></table> </div> <p>with:</p><div class="highlight scala"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9</pre></td><td class="code"><pre><span class="k">case</span> <span class="k">class</span> <span class="nc">PredictedResult</span><span class="o">(</span>
+  <span class="n">itemScores</span><span class="k">:</span> <span class="kt">Array</span><span class="o">[</span><span class="kt">ItemScore</span><span class="o">],</span>
+  <span class="n">isOriginal</span><span class="k">:</span> <span class="kt">Boolean</span> <span class="c1">// set to true if the items are not ranked at all.
+</span><span class="o">)</span> <span class="k">extends</span> <span class="nc">Serializable</span>
+
+<span class="k">case</span> <span class="k">class</span> <span class="nc">ItemScore</span><span class="o">(</span>
+  <span class="n">item</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span>
+  <span class="n">score</span><span class="k">:</span> <span class="kt">Double</span>
+<span class="o">)</span> <span class="k">extends</span> <span class="nc">Serializable</span>
+</pre></td></tr></tbody></table> </div> <p>Finally, <code>ProductRankingEngine</code> is the <em>Engine Factory</em> that defines the components this engine will use: Data Source, Data Preparator, Algorithm(s) and Serving components.</p><div class="highlight scala"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9</pre></td><td class="code"><pre><span class="k">object</span> <span class="nc">ProductRankingEngine</span> <span class="k">extends</span> <span class="nc">IEngineFactory</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="n">apply</span><span class="o">()</span> <span class="k">=</span> <span class="o">{</span>
+    <span class="k">new</span> <span class="nc">Engine</span><span class="o">(</span>
+      <span class="n">classOf</span><span class="o">[</span><span class="kt">DataSource</span><span class="o">],</span>
+      <span class="n">classOf</span><span class="o">[</span><span class="kt">Preparator</span><span class="o">],</span>
+      <span class="nc">Map</span><span class="o">(</span><span class="s">"als"</span> <span class="o">-&gt;</span> <span class="n">classOf</span><span class="o">[</span><span class="kt">ALSAlgorithm</span><span class="o">]),</span>
+      <span class="n">classOf</span><span class="o">[</span><span class="kt">Serving</span><span class="o">])</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table> </div> <h3 id='spark-mllib' class='header-anchors'>Spark MLlib</h3><p>The PredictionIO Product Ranking Engine Template integrates Spark&#39;s MLlib ALS algorithm under the DASE architecture. We will take a closer look at the DASE code below.</p><p>The MLlib ALS algorithm takes training data of RDD type, i.e. <code>RDD[Rating]</code> and train a model, which is a <code>MatrixFactorizationModel</code> object.</p><p>You can visit <a href="https://spark.apache.org/docs/latest/mllib-collaborative-filtering.html">here</a> to learn more about MLlib&#39;s ALS collaborative filtering algorithm.</p><h2 id='data' class='header-anchors'>Data</h2><p>In the DASE architecture, data is prepared by 2 components sequentially: <em>DataSource</em> and <em>DataPreparator</em>. They take data from the data store and prepare them for Algorithm.</p><h3 id='data-source' class='header-anchors'>Data Source</h3><p>In MyProductRanking/src/main/scala/<strong><em>DataSource.scala</em></strong>, the <code>readTraining</code> method of class <code>DataSource</code> reads and selects data from the <em>Event Store</em> (data store of the <em>Event Server</em>). It returns <code>TrainingData</code>.</p><div class="highlight scala"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27</pre></td><td class="code"><pre><span class="k">case</span> <span class="k">class</span> <span class="nc">DataSourceParams</span><span class="o">(</span><span class="n">appName</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span> <span class="k">extends</span> <span class="nc">Params</span>
+
+<span class="k">class</span> <span class="nc">DataSource</span><span class="o">(</span><span class="k">val</span> <span class="n">dsp</span><span class="k">:</span> <span class="kt">DataSourceParams</span><span class="o">)</span>
+  <span class="k">extends</span> <span class="nc">PDataSource</span><span class="o">[</span><span class="kt">TrainingData</span>,
+      <span class="kt">EmptyEvaluationInfo</span>, <span class="kt">Query</span>, <span class="kt">EmptyActualResult</span><span class="o">]</span> <span class="o">{</span>
+
+  <span class="nd">@transient</span> <span class="k">lazy</span> <span class="k">val</span> <span class="n">logger</span> <span class="k">=</span> <span class="nc">Logger</span><span class="o">[</span><span class="kt">this.</span><span class="k">type</span><span class="o">]</span>
+
+  <span class="k">override</span>
+  <span class="k">def</span> <span class="n">readTraining</span><span class="o">(</span><span class="n">sc</span><span class="k">:</span> <span class="kt">SparkContext</span><span class="o">)</span><span class="k">:</span> <span class="kt">TrainingData</span> <span class="o">=</span> <span class="o">{</span>
+
+    <span class="c1">// create a RDD of (entityID, User)
+</span>    <span class="k">val</span> <span class="n">usersRDD</span><span class="k">:</span> <span class="kt">RDD</span><span class="o">[(</span><span class="kt">String</span>, <span class="kt">User</span><span class="o">)]</span> <span class="k">=</span> <span class="nc">PEventStore</span><span class="o">.</span><span class="n">aggregateProperties</span><span class="o">(...)</span> <span class="o">...</span>
+
+    <span class="c1">// create a RDD of (entityID, Item)
+</span>    <span class="k">val</span> <span class="n">itemsRDD</span><span class="k">:</span> <span class="kt">RDD</span><span class="o">[(</span><span class="kt">String</span>, <span class="kt">Item</span><span class="o">)]</span> <span class="k">=</span> <span class="nc">PEventStore</span><span class="o">.</span><span class="n">aggregateProperties</span><span class="o">(...)</span> <span class="o">...</span>
+
+    <span class="c1">// get all "user" "view" "item" events
+</span>    <span class="k">val</span> <span class="n">viewEventsRDD</span><span class="k">:</span> <span class="kt">RDD</span><span class="o">[</span><span class="kt">ViewEvent</span><span class="o">]</span> <span class="k">=</span> <span class="nc">PEventStore</span><span class="o">.</span><span class="n">find</span><span class="o">(...)</span> <span class="o">...</span>
+
+    <span class="k">new</span> <span class="nc">TrainingData</span><span class="o">(</span>
+      <span class="n">users</span> <span class="k">=</span> <span class="n">usersRDD</span><span class="o">,</span>
+      <span class="n">items</span> <span class="k">=</span> <span class="n">itemsRDD</span><span class="o">,</span>
+      <span class="n">viewEvents</span> <span class="k">=</span> <span class="n">viewEventsRDD</span>
+    <span class="o">)</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table> </div> <p>PredictionIO automatically loads the parameters of <em>datasource</em> specified in MyProductRanking/<strong><em>engine.json</em></strong>, including <em>appName</em>, to <code>dsp</code>.</p><p>In <strong><em>engine.json</em></strong>:</p><div class="highlight shell"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9</pre></td><td class="code"><pre><span class="o">{</span>
+  ...
+  <span class="s2">"datasource"</span>: <span class="o">{</span>
+    <span class="s2">"params"</span> : <span class="o">{</span>
+      <span class="s2">"appName"</span>: <span class="s2">"MyApp1"</span>
+    <span class="o">}</span>
+  <span class="o">}</span>,
+  ...
+<span class="o">}</span>
+</pre></td></tr></tbody></table> </div> <p>In <code>readTraining()</code>, <code>PEventStore</code> is an object which provides function to access data that is collected by PredictionIO Event Server.</p><p>This Product Ranking Engine Template requires &quot;user&quot; and &quot;item&quot; entities that are set by events.</p><p><code>PEventStore.aggregateProperties(...)</code> aggregates properties of the <code>user</code> and <code>item</code> that are set, unset, or delete by special events <strong>$set</strong>, <strong>$unset</strong> and <strong>$delete</strong>. Please refer to <a href="/datacollection/eventapi/#note-about-properties">Event API</a> for more details of using these events.</p><p>The following code aggregates the properties of <code>user</code> and then map each result to a <code>User()</code> object.</p><div class="highlight scala"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></td><td class="code"><pre>
+    <span class="c1">// create a RDD of (entityID, User)
+</span>    <span class="k">val</span> <span class="n">usersRDD</span><span class="k">:</span> <span class="kt">RDD</span><span class="o">[(</span><span class="kt">String</span>, <span class="kt">User</span><span class="o">)]</span> <span class="k">=</span> <span class="nc">PEventStore</span><span class="o">.</span><span class="n">aggregateProperties</span><span class="o">(</span>
+      <span class="n">appName</span> <span class="k">=</span> <span class="n">dsp</span><span class="o">.</span><span class="n">appName</span><span class="o">,</span>
+      <span class="n">entityType</span> <span class="k">=</span> <span class="s">"user"</span>
+    <span class="o">)(</span><span class="n">sc</span><span class="o">).</span><span class="n">map</span> <span class="o">{</span> <span class="k">case</span> <span class="o">(</span><span class="n">entityId</span><span class="o">,</span> <span class="n">properties</span><span class="o">)</span> <span class="k">=&gt;</span>
+      <span class="k">val</span> <span class="n">user</span> <span class="k">=</span> <span class="k">try</span> <span class="o">{</span>
+        <span class="c1">// placeholder for expanding user properties
+</span>        <span class="nc">User</span><span class="o">()</span>
+      <span class="o">}</span> <span class="k">catch</span> <span class="o">{</span>
+        <span class="k">case</span> <span class="n">e</span><span class="k">:</span> <span class="kt">Exception</span> <span class="o">=&gt;</span> <span class="o">{</span>
+          <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="o">(</span><span class="n">s</span><span class="s">"Failed to get properties ${properties} of"</span> <span class="o">+</span>
+            <span class="n">s</span><span class="s">" user ${entityId}. Exception: ${e}."</span><span class="o">)</span>
+          <span class="k">throw</span> <span class="n">e</span>
+        <span class="o">}</span>
+      <span class="o">}</span>
+      <span class="o">(</span><span class="n">entityId</span><span class="o">,</span> <span class="n">user</span><span class="o">)</span>
+    <span class="o">}.</span><span class="n">cache</span><span class="o">()</span>
+
+</pre></td></tr></tbody></table> </div> <p>In the template, <code>User()</code> object is a simple dummy as a placeholder for you to customize and expand.</p><p>Similarly, the following code aggregates the properties of <code>item</code> and then map each result to a <code>Item()</code> object.</p><div class="highlight scala"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17</pre></td><td class="code"><pre>    <span class="c1">// create a RDD of (entityID, Item)
+</span>    <span class="k">val</span> <span class="n">itemsRDD</span><span class="k">:</span> <span class="kt">RDD</span><span class="o">[(</span><span class="kt">String</span>, <span class="kt">Item</span><span class="o">)]</span> <span class="k">=</span> <span class="nc">PEventStore</span><span class="o">.</span><span class="n">aggregateProperties</span><span class="o">(</span>
+      <span class="n">appName</span> <span class="k">=</span> <span class="n">dsp</span><span class="o">.</span><span class="n">appName</span><span class="o">,</span>
+      <span class="n">entityType</span> <span class="k">=</span> <span class="s">"item"</span>
+    <span class="o">)(</span><span class="n">sc</span><span class="o">).</span><span class="n">map</span> <span class="o">{</span> <span class="k">case</span> <span class="o">(</span><span class="n">entityId</span><span class="o">,</span> <span class="n">properties</span><span class="o">)</span> <span class="k">=&gt;</span>
+      <span class="k">val</span> <span class="n">item</span> <span class="k">=</span> <span class="k">try</span> <span class="o">{</span>
+        <span class="c1">// placeholder for expanding item properties
+</span>        <span class="nc">Item</span><span class="o">()</span>
+      <span class="o">}</span> <span class="k">catch</span> <span class="o">{</span>
+        <span class="k">case</span> <span class="n">e</span><span class="k">:</span> <span class="kt">Exception</span> <span class="o">=&gt;</span> <span class="o">{</span>
+          <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="o">(</span><span class="n">s</span><span class="s">"Failed to get properties ${properties} of"</span> <span class="o">+</span>
+            <span class="n">s</span><span class="s">" item ${entityId}. Exception: ${e}."</span><span class="o">)</span>
+          <span class="k">throw</span> <span class="n">e</span>
+        <span class="o">}</span>
+      <span class="o">}</span>
+      <span class="o">(</span><span class="n">entityId</span><span class="o">,</span> <span class="n">item</span><span class="o">)</span>
+    <span class="o">}.</span><span class="n">cache</span><span class="o">()</span>
+</pre></td></tr></tbody></table> </div> <p>In the template, <code>Item()</code> object is a simple dummy as a placeholder for you to customize and expand.</p><p><code>PEventStore.find(...)</code> specifies the events that you want to read. In this case, &quot;user view item&quot; events are read and then each is mapped to a <code>ViewEvent()</code> object.</p><div class="highlight scala"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28</pre></td><td class="code"><pre>
+    <span class="c1">// get all "user" "view" "item" events
+</span>    <span class="k">val</span> <span class="n">viewEventsRDD</span><span class="k">:</span> <span class="kt">RDD</span><span class="o">[</span><span class="kt">ViewEvent</span><span class="o">]</span> <span class="k">=</span> <span class="nc">PEventStore</span><span class="o">.</span><span class="n">find</span><span class="o">(</span>
+      <span class="n">appName</span> <span class="k">=</span> <span class="n">dsp</span><span class="o">.</span><span class="n">appName</span><span class="o">,</span>
+      <span class="n">entityType</span> <span class="k">=</span> <span class="nc">Some</span><span class="o">(</span><span class="s">"user"</span><span class="o">),</span>
+      <span class="n">eventNames</span> <span class="k">=</span> <span class="nc">Some</span><span class="o">(</span><span class="nc">List</span><span class="o">(</span><span class="s">"view"</span><span class="o">)),</span>
+      <span class="c1">// targetEntityType is optional field of an event.
+</span>      <span class="n">targetEntityType</span> <span class="k">=</span> <span class="nc">Some</span><span class="o">(</span><span class="nc">Some</span><span class="o">(</span><span class="s">"item"</span><span class="o">)))(</span><span class="n">sc</span><span class="o">)</span>
+      <span class="c1">// PEventStore.find() returns RDD[Event]
+</span>      <span class="o">.</span><span class="n">map</span> <span class="o">{</span> <span class="n">event</span> <span class="k">=&gt;</span>
+        <span class="k">val</span> <span class="n">viewEvent</span> <span class="k">=</span> <span class="k">try</span> <span class="o">{</span>
+          <span class="n">event</span><span class="o">.</span><span class="n">event</span> <span class="k">match</span> <span class="o">{</span>
+            <span class="k">case</span> <span class="s">"view"</span> <span class="k">=&gt;</span> <span class="nc">ViewEvent</span><span class="o">(</span>
+              <span class="n">user</span> <span class="k">=</span> <span class="n">event</span><span class="o">.</span><span class="n">entityId</span><span class="o">,</span>
+              <span class="n">item</span> <span class="k">=</span> <span class="n">event</span><span class="o">.</span><span class="n">targetEntityId</span><span class="o">.</span><span class="n">get</span><span class="o">,</span>
+              <span class="n">t</span> <span class="k">=</span> <span class="n">event</span><span class="o">.</span><span class="n">eventTime</span><span class="o">.</span><span class="n">getMillis</span><span class="o">)</span>
+            <span class="k">case</span> <span class="k">_</span> <span class="k">=&gt;</span> <span class="k">throw</span> <span class="k">new</span> <span class="nc">Exception</span><span class="o">(</span><span class="n">s</span><span class="s">"Unexpected event ${event} is read."</span><span class="o">)</span>
+          <span class="o">}</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">{</span>
+          <span class="k">case</span> <span class="n">e</span><span class="k">:</span> <span class="kt">Exception</span> <span class="o">=&gt;</span> <span class="o">{</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="o">(</span><span class="n">s</span><span class="s">"Cannot convert ${event} to ViewEvent."</span> <span class="o">+</span>
+              <span class="n">s</span><span class="s">" Exception: ${e}."</span><span class="o">)</span>
+            <span class="k">throw</span> <span class="n">e</span>
+          <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="n">viewEvent</span>
+      <span class="o">}.</span><span class="n">cache</span><span class="o">()</span>
+
+</pre></td></tr></tbody></table> </div> <p><code>ViewEvent</code> case class is defined as:</p><div class="highlight scala"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="k">case</span> <span class="k">class</span> <span class="nc">ViewEvent</span><span class="o">(</span><span class="n">user</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">item</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">t</span><span class="k">:</span> <span class="kt">Long</span><span class="o">)</span>
+</pre></td></tr></tbody></table> </div> <div class="alert-message info"><p>For flexibility, this template is designed to support user ID and item ID in String.</p></div><p><code>TrainingData</code> contains an RDD of <code>User</code>, <code>Item</code> and <code>ViewEvent</code> objects. The class definition of <code>TrainingData</code> is:</p><div class="highlight scala"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5</pre></td><td class="code"><pre><span class="k">class</span> <span class="nc">TrainingData</span><span class="o">(</span>
+  <span class="k">val</span> <span class="n">users</span><span class="k">:</span> <span class="kt">RDD</span><span class="o">[(</span><span class="kt">String</span>, <span class="kt">User</span><span class="o">)],</span>
+  <span class="k">val</span> <span class="n">items</span><span class="k">:</span> <span class="kt">RDD</span><span class="o">[(</span><span class="kt">String</span>, <span class="kt">Item</span><span class="o">)],</span>
+  <span class="k">val</span> <span class="n">viewEvents</span><span class="k">:</span> <span class="kt">RDD</span><span class="o">[</span><span class="kt">ViewEvent</span><span class="o">]</span>
+<span class="o">)</span> <span class="k">extends</span> <span class="nc">Serializable</span> <span class="o">{</span> <span class="o">...</span> <span class="o">}</span>
+</pre></td></tr></tbody></table> </div> <p>PredictionIO then passes the returned <code>TrainingData</code> object to <em>Data Preparator</em>.</p><h3 id='data-preparator' class='header-anchors'>Data Preparator</h3><p>In MyProductRanking/src/main/scala/<strong><em>Preparator.scala</em></strong>, the <code>prepare</code> method of class <code>Preparator</code> takes <code>TrainingData</code> as its input and performs any necessary feature selection and data processing tasks. At the end, it returns <code>PreparedData</code> which should contain the data <em>Algorithm</em> needs.</p><p>By default, <code>prepare</code> simply copies the unprocessed <code>TrainingData</code> data to <code>PreparedData</code>:</p><div class="highlight scala"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16</pre></td><td class="code"><pre><span class="k">class</span> <span class="nc">Preparator</span>
+  <span class="k">extends</span> <span class="nc">PPreparator</span><span class="o">[</span><span class="kt">TrainingData</span>, <span class="kt">PreparedData</span><span class="o">]</span> <span class="o">{</span>
+
+  <span class="k">def</span> <span class="n">prepare</span><span class="o">(</span><span class="n">sc</span><span class="k">:</span> <span class="kt">SparkContext</span><span class="o">,</span> <span class="n">trainingData</span><span class="k">:</span> <span class="kt">TrainingData</span><span class="o">)</span><span class="k">:</span> <span class="kt">PreparedData</span> <span class="o">=</span> <span class="o">{</span>
+    <span class="k">new</span> <span class="nc">PreparedData</span><span class="o">(</span>
+      <span class="n">users</span> <span class="k">=</span> <span class="n">trainingData</span><span class="o">.</span><span class="n">users</span><span class="o">,</span>
+      <span class="n">items</span> <span class="k">=</span> <span class="n">trainingData</span><span class="o">.</span><span class="n">items</span><span class="o">,</span>
+      <span class="n">viewEvents</span> <span class="k">=</span> <span class="n">trainingData</span><span class="o">.</span><span class="n">viewEvents</span><span class="o">)</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="k">class</span> <span class="nc">PreparedData</span><span class="o">(</span>
+  <span class="k">val</span> <span class="n">users</span><span class="k">:</span> <span class="kt">RDD</span><span class="o">[(</span><span class="kt">String</span>, <span class="kt">User</span><span class="o">)],</span>
+  <span class="k">val</span> <span class="n">items</span><span class="k">:</span> <span class="kt">RDD</span><span class="o">[(</span><span class="kt">String</span>, <span class="kt">Item</span><span class="o">)],</span>
+  <span class="k">val</span> <span class="n">viewEvents</span><span class="k">:</span> <span class="kt">RDD</span><span class="o">[</span><span class="kt">ViewEvent</span><span class="o">]</span>
+<span class="o">)</span> <span class="k">extends</span> <span class="nc">Serializable</span>
+</pre></td></tr></tbody></table> </div> <p>PredictionIO passes the returned <code>PreparedData</code> object to Algorithm&#39;s <code>train</code> function.</p><h2 id='algorithm' class='header-anchors'>Algorithm</h2><p>In MyProductRanking/src/main/scala/<strong><em>ALSAlgorithm.scala</em></strong>, the two methods of the algorithm class are <code>train</code> and <code>predict</code>. <code>train</code> is responsible for training the predictive model;<code>predict</code> is responsible for using this model to make prediction.</p><h3 id='train(...)' class='header-anchors'>train(...)</h3><p><code>train</code> is called when you run <strong>pio train</strong>. This is where MLlib ALS algorithm, i.e. <code>ALS.trainImplicit()</code>, is used to train a predictive model.</p><div class="highlight scala"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57</pre></td><td class="code"><pre>  <span class="k">def</span> <span class="n">train</span><span class="o">(</span><span class="n">sc</span><span class="k">:</span> <span class="kt">SparkContext</span><span class="o">,</span> <span class="n">data</span><span class="k">:</span> <span class="kt">PreparedData</span><span class="o">)</span><span class="k">:</span> <span class="kt">ALSModel</span> <span class="o">=</span> <span class="o">{</span>
+
+    <span class="o">...</span>
+
+    <span class="c1">// create User and item's String ID to integer index BiMap
+</span>    <span class="k">val</span> <span class="n">userStringIntMap</span> <span class="k">=</span> <span class="nc">BiMap</span><span class="o">.</span><span class="n">stringInt</span><span class="o">(</span><span class="n">data</span><span class="o">.</span><span class="n">users</span><span class="o">.</span><span class="n">keys</span><span class="o">)</span>
+    <span class="k">val</span> <span class="n">itemStringIntMap</span> <span class="k">=</span> <span class="nc">BiMap</span><span class="o">.</span><span class="n">stringInt</span><span class="o">(</span><span class="n">data</span><span class="o">.</span><span class="n">items</span><span class="o">.</span><span class="n">keys</span><span class="o">)</span>
+
+    <span class="k">val</span> <span class="n">mllibRatings</span> <span class="k">=</span> <span class="n">data</span><span class="o">.</span><span class="n">viewEvents</span>
+      <span class="o">.</span><span class="n">map</span> <span class="o">{</span> <span class="n">r</span> <span class="k">=&gt;</span>
+        <span class="c1">// Convert user and item String IDs to Int index for MLlib
+</span>        <span class="k">val</span> <span class="n">uindex</span> <span class="k">=</span> <span class="n">userStringIntMap</span><span class="o">.</span><span class="n">getOrElse</span><span class="o">(</span><span class="n">r</span><span class="o">.</span><span class="n">user</span><span class="o">,</span> <span class="o">-</span><span class="mi">1</span><span class="o">)</span>
+        <span class="k">val</span> <span class="n">iindex</span> <span class="k">=</span> <span class="n">itemStringIntMap</span><span class="o">.</span><span class="n">getOrElse</span><span class="o">(</span><span class="n">r</span><span class="o">.</span><span class="n">item</span><span class="o">,</span> <span class="o">-</span><span class="mi">1</span><span class="o">)</span>
+
+        <span class="k">if</span> <span class="o">(</span><span class="n">uindex</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="o">)</span>
+          <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="o">(</span><span class="n">s</span><span class="s">"Couldn't convert nonexistent user ID ${r.user}"</span>
+            <span class="o">+</span> <span class="s">" to Int index."</span><span class="o">)</span>
+
+        <span class="k">if</span> <span class="o">(</span><span class="n">iindex</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="o">)</span>
+          <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="o">(</span><span class="n">s</span><span class="s">"Couldn't convert nonexistent item ID ${r.item}"</span>
+            <span class="o">+</span> <span class="s">" to Int index."</span><span class="o">)</span>
+
+        <span class="o">((</span><span class="n">uindex</span><span class="o">,</span> <span class="n">iindex</span><span class="o">),</span> <span class="mi">1</span><span class="o">)</span>
+      <span class="o">}.</span><span class="n">filter</span> <span class="o">{</span> <span class="k">case</span> <span class="o">((</span><span class="n">u</span><span class="o">,</span> <span class="n">i</span><span class="o">),</span> <span class="n">v</span><span class="o">)</span> <span class="k">=&gt;</span>
+        <span class="c1">// keep events with valid user and item index
+</span>        <span class="o">(</span><span class="n">u</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="o">(</span><span class="n">i</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="o">)</span>
+      <span class="o">}.</span><span class="n">reduceByKey</span><span class="o">(</span><span class="k">_</span> <span class="o">+</span> <span class="k">_</span><span class="o">)</span> <span class="c1">// aggregate all view events of same user-item pair
+</span>      <span class="o">.</span><span class="n">map</span> <span class="o">{</span> <span class="k">case</span> <span class="o">((</span><span class="n">u</span><span class="o">,</span> <span class="n">i</span><span class="o">),</span> <span class="n">v</span><span class="o">)</span> <span class="k">=&gt;</span>
+        <span class="c1">// MLlibRating requires integer index for user and item
+</span>        <span class="nc">MLlibRating</span><span class="o">(</span><span class="n">u</span><span class="o">,</span> <span class="n">i</span><span class="o">,</span> <span class="n">v</span><span class="o">)</span>
+      <span class="o">}</span>
+
+    <span class="c1">// MLLib ALS cannot handle empty training data.
+</span>    <span class="n">require</span><span class="o">(!</span><span class="n">mllibRatings</span><span class="o">.</span><span class="n">take</span><span class="o">(</span><span class="mi">1</span><span class="o">).</span><span class="n">isEmpty</span><span class="o">,</span>
+      <span class="n">s</span><span class="s">"mllibRatings cannot be empty."</span> <span class="o">+</span>
+      <span class="s">" Please check if your events contain valid user and item ID."</span><span class="o">)</span>
+
+    <span class="c1">// seed for MLlib ALS
+</span>    <span class="k">val</span> <span class="n">seed</span> <span class="k">=</span> <span class="n">ap</span><span class="o">.</span><span class="n">seed</span><span class="o">.</span><span class="n">getOrElse</span><span class="o">(</span><span class="nc">System</span><span class="o">.</span><span class="n">nanoTime</span><span class="o">)</span>
+
+    <span class="k">val</span> <span class="n">m</span> <span class="k">=</span> <span class="nc">ALS</span><span class="o">.</span><span class="n">trainImplicit</span><span class="o">(</span>
+      <span class="n">ratings</span> <span class="k">=</span> <span class="n">mllibRatings</span><span class="o">,</span>
+      <span class="n">rank</span> <span class="k">=</span> <span class="n">ap</span><span class="o">.</span><span class="n">rank</span><span class="o">,</span>
+      <span class="n">iterations</span> <span class="k">=</span> <span class="n">ap</span><span class="o">.</span><span class="n">numIterations</span><span class="o">,</span>
+      <span class="n">lambda</span> <span class="k">=</span> <span class="n">ap</span><span class="o">.</span><span class="n">lambda</span><span class="o">,</span>
+      <span class="n">blocks</span> <span class="k">=</span> <span class="o">-</span><span class="mi">1</span><span class="o">,</span>
+      <span class="n">alpha</span> <span class="k">=</span> <span class="mf">1.0</span><span class="o">,</span>
+      <span class="n">seed</span> <span class="k">=</span> <span class="n">seed</span><span class="o">)</span>
+
+    <span class="k">new</span> <span class="nc">ALSModel</span><span class="o">(</span>
+      <span class="n">rank</span> <span class="k">=</span> <span class="n">m</span><span class="o">.</span><span class="n">rank</span><span class="o">,</span>
+      <span class="n">userFeatures</span> <span class="k">=</span> <span class="n">m</span><span class="o">.</span><span class="n">userFeatures</span><span class="o">.</span><span class="n">collectAsMap</span><span class="o">.</span><span class="n">toMap</span><span class="o">,</span>
+      <span class="n">productFeatures</span> <span class="k">=</span> <span class="n">m</span><span class="o">.</span><span class="n">productFeatures</span><span class="o">.</span><span class="n">collectAsMap</span><span class="o">.</span><span class="n">toMap</span><span class="o">,</span>
+      <span class="n">userStringIntMap</span> <span class="k">=</span> <span class="n">userStringIntMap</span><span class="o">,</span>
+      <span class="n">itemStringIntMap</span> <span class="k">=</span> <span class="n">itemStringIntMap</span>
+    <span class="o">)</span>
+  <span class="o">}</span>
+</pre></td></tr></tbody></table> </div> <h4 id='working-with-spark-mllib&#39;s-als.trainimplicit(....)' class='header-anchors'>Working with Spark MLlib&#39;s ALS.trainImplicit(....)</h4><p>MLlib ALS does not support <code>String</code> user ID and item ID. <code>ALS.trainImplicit</code> thus also assumes int-only <code>Rating</code> object. First, you can rename MLlib&#39;s Integer-only <code>Rating</code> to <code>MLlibRating</code> for clarity:</p><div class="highlight shell"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre>import org.apache.spark.mllib.recommendation.<span class="o">{</span>Rating <span class="o">=</span>&gt; MLlibRating<span class="o">}</span>
+</pre></td></tr></tbody></table> </div> <p>In order to use MLlib&#39;s ALS algorithm, we need to convert the <code>viewEvents</code> into <code>MLlibRating</code>. There are two things we need to handle:</p> <ol> <li>Map user and item String ID of the ViewEvent into Integer ID, as required by <code>MLlibRating</code>.</li> <li><code>ViewEvent</code> object is an implicit event that does not have an explicit rating value. <code>ALS.trainImplicit()</code> supports implicit preference. If the <code>MLlibRating</code> has higher rating value, it means higher confidence that the user prefers the item. Hence we can aggregate how many times the user has viewed the item to indicate the confidence level that the user may prefer the item.</li> </ol> <p>You create a bi-directional map with <code>BiMap.stringInt</code> which maps each String record to an Integer index.</p><div class="highlight scala"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2</pre></td><td class="code"><pre><span class="k">val</span> <span class="n">userStringIntMap</span> <span class="k">=</span> <span class="nc">BiMap</span><span class="o">.</span><span class="n">stringInt</span><span class="o">(</span><span class="n">data</span><span class="o">.</span><span class="n">users</span><span class="o">.</span><span class="n">keys</span><span class="o">)</span>
+<span class="k">val</span> <span class="n">itemStringIntMap</span> <span class="k">=</span> <span class="nc">BiMap</span><span class="o">.</span><span class="n">stringInt</span><span class="o">(</span><span class="n">data</span><span class="o">.</span><span class="n">items</span><span class="o">.</span><span class="n">keys</span><span class="o">)</span>
+</pre></td></tr></tbody></table> </div> <p>Then convert the user and item String ID in each ViewEvent to Int with these BiMaps. We use default -1 if the user or item String ID couldn&#39;t be found in the BiMap and filter out these events with invalid user and item ID later. After filtering, we use <code>reduceByKey()</code> to add up all values for the same key (uindex, iindex) and then finally map to <code>MLlibRating</code> object.</p><div class="highlight scala"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25</pre></td><td class="code"><pre>
+<span class="k">val</span> <span class="n">mllibRatings</span> <span class="k">=</span> <span class="n">data</span><span class="o">.</span><span class="n">viewEvents</span>
+  <span class="o">.</span><span class="n">map</span> <span class="o">{</span> <span class="n">r</span> <span class="k">=&gt;</span>
+    <span class="c1">// Convert user and item String IDs to Int index for MLlib
+</span>    <span class="k">val</span> <span class="n">uindex</span> <span class="k">=</span> <span class="n">userStringIntMap</span><span class="o">.</span><span class="n">getOrElse</span><span class="o">(</span><span class="n">r</span><span class="o">.</span><span class="n">user</span><span class="o">,</span> <span class="o">-</span><span class="mi">1</span><span class="o">)</span>
+    <span class="k">val</span> <span class="n">iindex</span> <span class="k">=</span> <span class="n">itemStringIntMap</span><span class="o">.</span><span class="n">getOrElse</span><span class="o">(</span><span class="n">r</span><span class="o">.</span><span class="n">item</span><span class="o">,</span> <span class="o">-</span><span class="mi">1</span><span class="o">)</span>
+
+    <span class="k">if</span> <span class="o">(</span><span class="n">uindex</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="o">)</span>
+      <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="o">(</span><span class="n">s</span><span class="s">"Couldn't convert nonexistent user ID ${r.user}"</span>
+        <span class="o">+</span> <span class="s">" to Int index."</span><span class="o">)</span>
+
+    <span class="k">if</span> <span class="o">(</span><span class="n">iindex</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="o">)</span>
+      <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="o">(</span><span class="n">s</span><span class="s">"Couldn't convert nonexistent item ID ${r.item}"</span>
+        <span class="o">+</span> <span class="s">" to Int index."</span><span class="o">)</span>
+
+    <span class="o">((</span><span class="n">uindex</span><span class="o">,</span> <span class="n">iindex</span><span class="o">),</span> <span class="mi">1</span><span class="o">)</span>
+  <span class="o">}.</span><span class="n">filter</span> <span class="o">{</span> <span class="k">case</span> <span class="o">((</span><span class="n">u</span><span class="o">,</span> <span class="n">i</span><span class="o">),</span> <span class="n">v</span><span class="o">)</span> <span class="k">=&gt;</span>
+    <span class="c1">// keep events with valid user and item index
+</span>    <span class="o">(</span><span class="n">u</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="o">(</span><span class="n">i</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="o">)</span>
+  <span class="o">}.</span><span class="n">reduceByKey</span><span class="o">(</span><span class="k">_</span> <span class="o">+</span> <span class="k">_</span><span class="o">)</span> <span class="c1">// aggregate all view events of same user-item pair
+</span>  <span class="o">.</span><span class="n">map</span> <span class="o">{</span> <span class="k">case</span> <span class="o">((</span><span class="n">u</span><span class="o">,</span> <span class="n">i</span><span class="o">),</span> <span class="n">v</span><span class="o">)</span> <span class="k">=&gt;</span>
+    <span class="c1">// MLlibRating requires integer index for user and item
+</span>    <span class="nc">MLlibRating</span><span class="o">(</span><span class="n">u</span><span class="o">,</span> <span class="n">i</span><span class="o">,</span> <span class="n">v</span><span class="o">)</span>
+  <span class="o">}</span>
+
+</pre></td></tr></tbody></table> </div> <p>In addition to <code>RDD[MLlibRating]</code>, <code>ALS.trainImplicit</code> takes the following parameters: <em>rank</em>, <em>iterations</em>, <em>lambda</em> and <em>seed</em>.</p><p>The values of these parameters are specified in <em>algorithms</em> of MyProductRanking/<strong><em>engine.json</em></strong>:</p><div class="highlight shell"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15</pre></td><td class="code"><pre><span class="o">{</span>
+  ...
+  <span class="s2">"algorithms"</span>: <span class="o">[</span>
+    <span class="o">{</span>
+      <span class="s2">"name"</span>: <span class="s2">"als"</span>,
+      <span class="s2">"params"</span>: <span class="o">{</span>
+        <span class="s2">"rank"</span>: 10,
+        <span class="s2">"numIterations"</span>: 20,
+        <span class="s2">"lambda"</span>: 0.01,
+        <span class="s2">"seed"</span>: 3
+      <span class="o">}</span>
+    <span class="o">}</span>
+  <span class="o">]</span>
+  ...
+<span class="o">}</span>
+</pre></td></tr></tbody></table> </div> <p>PredictionIO will automatically loads these values into the constructor <code>ap</code>, which has a corresponding case class <code>ALSAlgorithmParams</code>:</p><div class="highlight scala"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5</pre></td><td class="code"><pre><span class="k">case</span> <span class="k">class</span> <span class="nc">ALSAlgorithmParams</span><span class="o">(</span>
+  <span class="n">rank</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span>
+  <span class="n">numIterations</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span>
+  <span class="n">lambda</span><span class="k">:</span> <span class="kt">Double</span><span class="o">,</span>
+  <span class="n">seed</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[</span><span class="kt">Long</span><span class="o">])</span> <span class="k">extends</span> <span class="nc">Params</span>
+</pre></td></tr></tbody></table> </div> <p>The <code>seed</code> parameter is an optional parameter, which is used by MLlib ALS algorithm internally to generate random values. If the <code>seed</code> is not specified, current system time would be used and hence each train may produce different reuslts. Specify a fixed value for the <code>seed</code> if you want to have deterministic result (For example, when you are testing).</p><p><code>ALS.trainImplicit()</code> then returns a <code>MatrixFactorizationModel</code> model which contains two RDDs: userFeatures and productFeatures. They correspond to the user X latent features matrix and item X latent features matrix, respectively. In this case, we will make use of both userFeatures and productFeatures matrix to rank the items for the user. These matrixes are stored as local model. You could see the <code>ALSModel</code> class is defined as:</p><div class="highlight scala"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7</pre></td><td class="code"><pre><span class="k">class</span> <span class="nc">ALSModel</span><span class="o">(</span>
+  <span class="k">val</span> <span class="n">rank</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span>
+  <span class="k">val</span> <span class="n">userFeatures</span><span class="k">:</span> <span class="kt">Map</span><span class="o">[</span><span class="kt">Int</span>, <span class="kt">Array</span><span class="o">[</span><span class="kt">Double</span><span class="o">]],</span>
+  <span class="k">val</span> <span class="n">productFeatures</span><span class="k">:</span> <span class="kt">Map</span><span class="o">[</span><span class="kt">Int</span>, <span class="kt">Array</span><span class="o">[</span><span class="kt">Double</span><span class="o">]],</span>
+  <span class="k">val</span> <span class="n">userStringIntMap</span><span class="k">:</span> <span class="kt">BiMap</span><span class="o">[</span><span class="kt">String</span>, <span class="kt">Int</span><span class="o">],</span>
+  <span class="k">val</span> <span class="n">itemStringIntMap</span><span class="k">:</span> <span class="kt">BiMap</span><span class="o">[</span><span class="kt">String</span>, <span class="kt">Int</span><span class="o">]</span>
+<span class="o">)</span> <span class="k">extends</span> <span class="nc">Serializable</span> <span class="o">{</span> <span class="o">...</span> <span class="o">}</span>
+</pre></td></tr></tbody></table> </div> <p>PredictionIO will automatically store the returned model, i.e. <code>ALSModel</code> in this example.</p><h3 id='predict(...)' class='header-anchors'>predict(...)</h3><p><code>predict</code> is called when you send a JSON query to <a href="http://localhost:8000/queries.json">http://localhost:8000/queries.json</a>. PredictionIO converts the query, such as <code>{ &quot;user&quot;: &quot;u2&quot;, &quot;items&quot;: [&quot;i1&quot;, &quot;i3&quot;, &quot;i10&quot;, &quot;i2&quot;, &quot;i5&quot;, &quot;i31&quot;, &quot;i9&quot;] }</code> to the <code>Query</code> class you defined previously.</p><p>To rank the calculated the ranked scores of the items, we first look up the feature vector of this user (if the user exists). Then we look up the feature vectors of the items in query (if the items exist). The score is the dot product of the user and item feature vectors. The items are then sorted by the score.</p><div class="highlight scala"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62</pre></td><td class="code"><pre>
+  <span class="k">def</span> <span class="n">predict</span><span class="o">(</span><span class="n">model</span><span class="k">:</span> <span class="kt">ALSModel</span><span class="o">,</span> <span class="n">query</span><span class="k">:</span> <span class="kt">Query</span><span class="o">)</span><span class="k">:</span> <span class="kt">PredictedResult</span> <span class="o">=</span> <span class="o">{</span>
+
+    <span class="k">val</span> <span class="n">itemStringIntMap</span> <span class="k">=</span> <span class="n">model</span><span class="o">.</span><span class="n">itemStringIntMap</span>
+    <span class="k">val</span> <span class="n">productFeatures</span> <span class="k">=</span> <span class="n">model</span><span class="o">.</span><span class="n">productFeatures</span>
+
+    <span class="c1">// default itemScores array if items are not ranked at all
+</span>    <span class="k">lazy</span> <span class="k">val</span> <span class="n">notRankedItemScores</span> <span class="k">=</span>
+      <span class="n">query</span><span class="o">.</span><span class="n">items</span><span class="o">.</span><span class="n">map</span><span class="o">(</span><span class="n">i</span> <span class="k">=&gt;</span> <span class="nc">ItemScore</span><span class="o">(</span><span class="n">i</span><span class="o">,</span> <span class="mi">0</span><span class="o">)).</span><span class="n">toArray</span>
+
+    <span class="n">model</span><span class="o">.</span><span class="n">userStringIntMap</span><span class="o">.</span><span class="n">get</span><span class="o">(</span><span class="n">query</span><span class="o">.</span><span class="n">user</span><span class="o">).</span><span class="n">map</span> <span class="o">{</span> <span class="n">userIndex</span> <span class="k">=&gt;</span>
+      <span class="c1">// lookup userFeature for the user
+</span>      <span class="n">model</span><span class="o">.</span><span class="n">userFeatures</span><span class="o">.</span><span class="n">get</span><span class="o">(</span><span class="n">userIndex</span><span class="o">)</span>
+    <span class="o">}.</span><span class="n">flatten</span> <span class="c1">// flatten Option[Option[Array[Double]]] to Option[Array[Double]]
+</span>    <span class="o">.</span><span class="n">map</span> <span class="o">{</span> <span class="n">userFeature</span> <span class="k">=&gt;</span>
+      <span class="k">val</span> <span class="n">scores</span><span class="k">:</span> <span class="kt">Vector</span><span class="o">[</span><span class="kt">Option</span><span class="o">[</span><span class="kt">Double</span><span class="o">]]</span> <span class="k">=</span> <span class="n">query</span><span class="o">.</span><span class="n">items</span><span class="o">.</span><span class="n">toVector</span>
+        <span class="o">.</span><span class="n">par</span> <span class="c1">// convert to parallel collection for parallel lookup
+</span>        <span class="o">.</span><span class="n">map</span> <span class="o">{</span> <span class="n">iid</span> <span class="k">=&gt;</span>
+          <span class="c1">// convert query item id to index
+</span>          <span class="k">val</span> <span class="n">featureOpt</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[</span><span class="kt">Array</span><span class="o">[</span><span class="kt">Double</span><span class="o">]]</span> <span class="k">=</span> <span class="n">itemStringIntMap</span><span class="o">.</span><span class="n">get</span><span class="o">(</span><span class="n">iid</span><span class="o">)</span>
+            <span class="c1">// productFeatures may not contain the item
+</span>            <span class="o">.</span><span class="n">map</span> <span class="o">(</span><span class="n">index</span> <span class="k">=&gt;</span> <span class="n">productFeatures</span><span class="o">.</span><span class="n">get</span><span class="o">(</span><span class="n">index</span><span class="o">))</span>
+            <span class="c1">// flatten Option[Option[Array[Double]]] to Option[Array[Double]]
+</span>            <span class="o">.</span><span class="n">flatten</span>
+
+          <span class="n">featureOpt</span><span class="o">.</span><span class="n">map</span><span class="o">(</span><span class="n">f</span> <span class="k">=&gt;</span> <span class="n">dotProduct</span><span class="o">(</span><span class="n">f</span><span class="o">,</span> <span class="n">userFeature</span><span class="o">))</span>
+        <span class="o">}.</span><span class="n">seq</span> <span class="c1">// convert back to sequential collection
+</span>
+      <span class="c1">// check if all scores is None (get rid of all None and see if empty)
+</span>      <span class="k">val</span> <span class="n">isAllNone</span> <span class="k">=</span> <span class="n">scores</span><span class="o">.</span><span class="n">flatten</span><span class="o">.</span><span class="n">isEmpty</span>
+
+      <span class="k">if</span> <span class="o">(</span><span class="n">isAllNone</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="o">(</span><span class="n">s</span><span class="s">"No productFeature for all items ${query.items}."</span><span class="o">)</span>
+        <span class="nc">PredictedResult</span><span class="o">(</span>
+          <span class="n">itemScores</span> <span class="k">=</span> <span class="n">notRankedItemScores</span><span class="o">,</span>
+          <span class="n">isOriginal</span> <span class="k">=</span> <span class="kc">true</span>
+        <span class="o">)</span>
+      <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+        <span class="c1">// sort the score
+</span>        <span class="k">val</span> <span class="n">ord</span> <span class="k">=</span> <span class="nc">Ordering</span><span class="o">.</span><span class="n">by</span><span class="o">[</span><span class="kt">ItemScore</span>, <span class="kt">Double</span><span class="o">](</span><span class="k">_</span><span class="o">.</span><span class="n">score</span><span class="o">).</span><span class="n">reverse</span>
+        <span class="k">val</span> <span class="n">sorted</span> <span class="k">=</span> <span class="n">query</span><span class="o">.</span><span class="n">items</span><span class="o">.</span><span class="n">zip</span><span class="o">(</span><span class="n">scores</span><span class="o">).</span><span class="n">map</span><span class="o">{</span> <span class="k">case</span> <span class="o">(</span><span class="n">iid</span><span class="o">,</span> <span class="n">scoreOpt</span><span class="o">)</span> <span class="k">=&gt;</span>
+          <span class="nc">ItemScore</span><span class="o">(</span>
+            <span class="n">item</span> <span class="k">=</span> <span class="n">iid</span><span class="o">,</span>
+            <span class="n">score</span> <span class="k">=</span> <span class="n">scoreOpt</span><span class="o">.</span><span class="n">getOrElse</span><span class="o">[</span><span class="kt">Double</span><span class="o">](</span><span class="mi">0</span><span class="o">)</span>
+          <span class="o">)</span>
+        <span class="o">}.</span><span class="n">sorted</span><span class="o">(</span><span class="n">ord</span><span class="o">).</span><span class="n">toArray</span>
+
+        <span class="nc">PredictedResult</span><span class="o">(</span>
+          <span class="n">itemScores</span> <span class="k">=</span> <span class="n">sorted</span><span class="o">,</span>
+          <span class="n">isOriginal</span> <span class="k">=</span> <span class="kc">false</span>
+        <span class="o">)</span>
+      <span class="o">}</span>
+    <span class="o">}.</span><span class="n">getOrElse</span> <span class="o">{</span>
+      <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="o">(</span><span class="n">s</span><span class="s">"No userFeature found for user ${query.user}."</span><span class="o">)</span>
+      <span class="nc">PredictedResult</span><span class="o">(</span>
+        <span class="n">itemScores</span> <span class="k">=</span> <span class="n">notRankedItemScores</span><span class="o">,</span>
+        <span class="n">isOriginal</span> <span class="k">=</span> <span class="kc">true</span>
+      <span class="o">)</span>
+    <span class="o">}</span>
+
+  <span class="o">}</span>
+
+</pre></td></tr></tbody></table> </div> <p>PredictionIO passes the returned <code>PredictedResult</code> object to <em>Serving</em>.</p><h2 id='serving' class='header-anchors'>Serving</h2><p>The <code>serve</code> method of class <code>Serving</code> processes predicted result. It is also responsible for combining multiple predicted results into one if you have more than one predictive model. <em>Serving</em> then returns the final predicted result. PredictionIO will convert it to a JSON response automatically.</p><p>In MyProductRanking/src/main/scala/<strong><em>Serving.scala</em></strong>,</p><div class="highlight scala"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9</pre></td><td class="code"><pre><span class="k">class</span> <span class="nc">Serving</span>
+  <span class="k">extends</span> <span class="nc">LServing</span><span class="o">[</span><span class="kt">Query</span>, <span class="kt">PredictedResult</span><span class="o">]</span> <span class="o">{</span>
+
+  <span class="k">override</span>
+  <span class="k">def</span> <span class="n">serve</span><span class="o">(</span><span class="n">query</span><span class="k">:</span> <span class="kt">Query</span><span class="o">,</span>
+    <span class="n">predictedResults</span><span class="k">:</span> <span class="kt">Seq</span><span class="o">[</span><span class="kt">PredictedResult</span><span class="o">])</span><span class="k">:</span> <span class="kt">PredictedResult</span> <span class="o">=</span> <span class="o">{</span>
+    <span class="n">predictedResults</span><span class="o">.</span><span class="n">head</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table> </div> <p>When you send a JSON query to <a href="http://localhost:8000/queries.json">http://localhost:8000/queries.json</a>, <code>PredictedResult</code> from all models will be passed to <code>serve</code> as a sequence, i.e. <code>Seq[PredictedResult]</code>.</p> <blockquote> <p>An engine can train multiple models if you specify more than one Algorithm component in <code>object RecommendationEngine</code> inside <strong><em>Engine.scala</em></strong>. Since only one <code>ALSAlgorithm</code> is implemented by default, this <code>Seq</code> contains one element.</p></blockquote> </div></div></div></div><footer><div class="container"><div class="seperator"></div><div class="row"><div class="col-md-6 footer-link-column"><div class="footer-link-column-row"><h4>Community</h4><ul><li><a href="//predictionio.incubator.apache.org/install/" target="blank">Download</a></li><li><a href="//predictionio.incubator.apache.org/" target="blank">Docs</a></li><li><a href="//github.com/apache/incubator-predictionio" target="blank">GitHub</a></li><li><a href="mailto:user-subscribe@predictionio.incubator.apache.org" target="blank">Subscribe to User Mailing List</a></li><li><a href="//stackoverflow.com/questions/tagged/predictionio" target="blank">Stackoverflow</a></li></ul></div></div><div class="col-md-6 footer-link-column"><div class="footer-link-column-row"><h4>Contribute</h4><ul><li><a href="//predictionio.incubator.apache.org/community/contribute-code/" target="blank">Contribute</a></li><li><a href="//github.com/apache/incubator-predictionio" target="blank">Source Code</a></li><li><a href="//issues.apache.org/jira/browse/PIO" target="blank">Bug Tracker</a></li><li><a href="mailto:dev-subscribe@predictionio.incubator.apache.org" target="blank">Subscribe to Development Mailing List</a></li></ul></div></div></div><div class="row"><div class="col-md-12 footer-link-column"><p>Apache PredictionIO, PredictionIO, Apache, the Apache feather logo, and the Apache PredictionIO project logo are either registered trademarks or trademarks of The Apache Software Foundation in the United States and other countries.</p><p>All other marks mentioned may be trademarks or registered trademarks of their respective owners.</p></div></div><div class="row"><div class="col-md-12 footer-link-column"><a class="pull-right" href="http://incubator.apache.org/projects/predictionio.html"><img alt="Apache Incubator" src="/images/logos/apache_incubator-6954bd16.png"/></a><span>Apache PredictionIO is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</span></div></div></div><div id="footer-bottom"><div class="container"><div class="row"><div class="col-md-12"><div id="footer-logo-wrapper"><img alt="PredictionIO" src="/images/logos/logo-white-d1e9c6e6.png"/><span>™</span></div><div id="social-icons-wrapper"><a class="github-button" href="https://github.com/apache/incubator-predictionio" data-style="mega" data-count-href="/apache/incubator-predictionio/stargazers" data-count-api="/repos/apache/incubator-predictionio#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star apache/incubator-predictionio on GitHub">Star</a> <a class="github-button" href="https://github.com/apache/incubator-predictionio/fork" data-icon="octicon-git-branch" data-style="mega" data-count-href="/apache/incubator-predictionio/network" data-count-api="/repos/apache/incubator-predictionio#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork apache/incubator-predictionio on GitHub">Fork</a> <script id="github-bjs" async="" defer="" src="https://buttons.github.io/buttons.js"></script><a href="https://twitter.com/predictionio" target="blank"><img alt="PredictionIO on Twitter" src="/images/icons/twitter-ea9dc152.png"/></a> <a href="https://www.facebook.com/predictionio" target="blank"><img alt="PredictionIO on Facebook" src="/images/icons/facebook-5c57939c.png"/></a> </div></div></div></div></div></footer></div><script>(function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+(w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+})(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+_st('install','HaUfpXXV87xoB_zzCQ45');</script><script src="/javascripts/application-a6acb1f5.js"></script></body></html>
