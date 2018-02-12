@@ -22,7 +22,7 @@ Content-Length: 18
 <span class="o">[</span>INFO] <span class="o">[</span>App<span class="nv">$]</span>         Name: MyTestApp
 <span class="o">[</span>INFO] <span class="o">[</span>App<span class="nv">$]</span>           ID: 6
 <span class="o">[</span>INFO] <span class="o">[</span>App<span class="nv">$]</span>   Access Key: WPgcXKd42FPQpZHVbVeMyqF4CQJUnXQmIMTHhX3ZUrSzvy1KXJjdFUrslifa9rnB
-</pre></td></tr></tbody></table> </div> <h3 id='creating-your-first-event' class='header-anchors'>Creating Your First Event</h3><p>You may connect to the Event Server with HTTP request or by using one of many <strong>Apache PredictionIO SDKs</strong>.</p><p>For example, the following shows how one can create an event involving a single entity. Replace the value of <code>accessKey</code> by the <em>Access Key</em> generated for your App.</p><div class="tabs"> <ul class="control"> <li data-lang="bash"><a href="#tab-9dbd1a8f-f437-49f7-a6e4-c6195917ed40">Raw HTTP</a></li> <li data-lang="php"><a href="#tab-4bd69ecb-bac4-41a1-8620-09e6d0c907b6">PHP SDK</a></li> <li data-lang="python"><a href="#tab-fc027d8d-6692-49d1-93b0-5b94426627a6">Python SDK</a></li> <li data-lang="ruby"><a href="#tab-47f3c211-6b14-4beb-86ef-4852b0d72b21">Ruby SDK</a></li> <li data-lang="java"><a href="#tab-7e76a301-d58b-42c4-bed6-93220987e678">Java SDK</a></li> </ul> <div data-tab="Raw HTTP" data-lang="bash" id="tab-9dbd1a8f-f437-49f7-a6e4-c6195917ed40"> <div class="highlight shell"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+</pre></td></tr></tbody></table> </div> <h3 id='creating-your-first-event' class='header-anchors'>Creating Your First Event</h3><p>You may connect to the Event Server with HTTP request or by using one of many <strong>Apache PredictionIO SDKs</strong>.</p><p>For example, the following shows how one can create an event involving a single entity. Replace the value of <code>accessKey</code> by the <em>Access Key</em> generated for your App.</p><div class="tabs"> <ul class="control"> <li data-lang="bash"><a href="#tab-0b9a3328-a84b-4668-8e6e-a454f35df325">Raw HTTP</a></li> <li data-lang="php"><a href="#tab-e377f581-8dc5-4ad3-8bd5-8225aac914e6">PHP SDK</a></li> <li data-lang="python"><a href="#tab-175f1d9c-2262-4861-81a6-7523e9b389e6">Python SDK</a></li> <li data-lang="ruby"><a href="#tab-76ee9a23-4ce0-4cc5-8d2e-71c25d33c1d6">Ruby SDK</a></li> <li data-lang="java"><a href="#tab-20710724-e822-4f4d-b49a-4cb43c11070e">Java SDK</a></li> </ul> <div data-tab="Raw HTTP" data-lang="bash" id="tab-0b9a3328-a84b-4668-8e6e-a454f35df325"> <div class="highlight shell"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
@@ -53,7 +53,7 @@ Content-Length: 18
   }
   "eventTime" : "2004-12-13T21:39:45.618-07:00"
 }'</span>
-</pre></td> </tr></tbody></table> </div> </div> <div data-tab="PHP SDK" data-lang="php" id="tab-4bd69ecb-bac4-41a1-8620-09e6d0c907b6"> <div class="highlight php"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+</pre></td> </tr></tbody></table> </div> </div> <div data-tab="PHP SDK" data-lang="php" id="tab-e377f581-8dc5-4ad3-8bd5-8225aac914e6"> <div class="highlight php"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
@@ -94,7 +94,7 @@ Content-Length: 18
                         <span class="s1">'eventTime'</span> <span class="o">=&gt;</span> <span class="s1">'2004-12-13T21:39:45.618-07:00'</span>
                        <span class="p">));</span>
 <span class="cp">?&gt;</span>
-</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Python SDK" data-lang="python" id="tab-fc027d8d-6692-49d1-93b0-5b94426627a6"> <div class="highlight python"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Python SDK" data-lang="python" id="tab-175f1d9c-2262-4861-81a6-7523e9b389e6"> <div class="highlight python"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
@@ -137,7 +137,7 @@ Content-Length: 18
     <span class="n">properties</span><span class="o">=</span><span class="n">first_event_properties</span><span class="p">,</span>
     <span class="n">event_time</span><span class="o">=</span><span class="n">first_event_time</span><span class="p">,</span>
 <span class="p">)</span>
-</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Ruby SDK" data-lang="ruby" id="tab-47f3c211-6b14-4beb-86ef-4852b0d72b21"> <div class="highlight ruby"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Ruby SDK" data-lang="ruby" id="tab-76ee9a23-4ce0-4cc5-8d2e-71c25d33c1d6"> <div class="highlight ruby"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
@@ -158,8 +158,8 @@ Content-Length: 18
                                             <span class="s1">'prop4'</span> <span class="o">=&gt;</span> <span class="kp">true</span><span class="p">,</span>
                                             <span class="s1">'prop5'</span> <span class="o">=&gt;</span> <span class="sx">%w(a b c)</span><span class="p">,</span>
                                             <span class="s1">'prop6'</span> <span class="o">=&gt;</span> <span class="mi">4</span><span class="o">.</span><span class="mi">56</span> <span class="p">})</span>
-</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Java SDK" data-lang="java" id="tab-7e76a301-d58b-42c4-bed6-93220987e678"> <div class="highlight java"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td> <td class="code"><pre><span class="o">(</span><span class="n">coming</span> <span class="n">soon</span><span class="o">)</span>
-</pre></td> </tr></tbody></table> </div> </div> </div> <p>For example, the following shows how one can create an event involving two entities (with <code>targetEntity</code>).</p><div class="tabs"> <ul class="control"> <li data-lang="bash"><a href="#tab-36d701c5-cdf5-4631-a3b1-5b0d680f3c07">Raw HTTP</a></li> <li data-lang="php"><a href="#tab-ce527806-32ea-4bf6-8ba3-b7c78893ac2d">PHP SDK</a></li> <li data-lang="python"><a href="#tab-a0502f03-1554-4892-8c69-203424cd5455">Python SDK</a></li> <li data-lang="ruby"><a href="#tab-97544bbd-fe0f-4e4d-b101-5f6253fa7c18">Ruby SDK</a></li> <li data-lang="java"><a href="#tab-5cd3f752-8cf6-449f-b15e-287c39405f7f">Java SDK</a></li> </ul> <div data-tab="Raw HTTP" data-lang="bash" id="tab-36d701c5-cdf5-4631-a3b1-5b0d680f3c07"> <div class="highlight shell"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Java SDK" data-lang="java" id="tab-20710724-e822-4f4d-b49a-4cb43c11070e"> <div class="highlight java"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td> <td class="code"><pre><span class="o">(</span><span class="n">coming</span> <span class="n">soon</span><span class="o">)</span>
+</pre></td> </tr></tbody></table> </div> </div> </div> <p>For example, the following shows how one can create an event involving two entities (with <code>targetEntity</code>).</p><div class="tabs"> <ul class="control"> <li data-lang="bash"><a href="#tab-1ded8adc-ec05-4935-a2e9-01715f7d40e9">Raw HTTP</a></li> <li data-lang="php"><a href="#tab-67cd0de2-682d-4e86-9d1f-ba43b69ac1aa">PHP SDK</a></li> <li data-lang="python"><a href="#tab-5c03a3af-457d-4900-9ab5-a87eb03fda1b">Python SDK</a></li> <li data-lang="ruby"><a href="#tab-01a62101-69d3-47a6-a02c-3c7ca523b699">Ruby SDK</a></li> <li data-lang="java"><a href="#tab-e3bdd4fe-ea5d-46a4-bd80-b6d78c8f978e">Java SDK</a></li> </ul> <div data-tab="Raw HTTP" data-lang="bash" id="tab-1ded8adc-ec05-4935-a2e9-01715f7d40e9"> <div class="highlight shell"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
@@ -186,7 +186,7 @@ Content-Length: 18
   },
   "eventTime" : "2004-12-13T21:39:45.618Z"
 }'</span>
-</pre></td> </tr></tbody></table> </div> </div> <div data-tab="PHP SDK" data-lang="php" id="tab-ce527806-32ea-4bf6-8ba3-b7c78893ac2d"> <div class="highlight php"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+</pre></td> </tr></tbody></table> </div> </div> <div data-tab="PHP SDK" data-lang="php" id="tab-67cd0de2-682d-4e86-9d1f-ba43b69ac1aa"> <div class="highlight php"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
@@ -221,7 +221,7 @@ Content-Length: 18
                         <span class="s1">'eventTime'</span> <span class="o">=&gt;</span> <span class="s1">'2004-12-13T21:39:45.618Z'</span>
                        <span class="p">));</span>
 <span class="cp">?&gt;</span>
-</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Python SDK" data-lang="python" id="tab-a0502f03-1554-4892-8c69-203424cd5455"> <div class="highlight python"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Python SDK" data-lang="python" id="tab-5c03a3af-457d-4900-9ab5-a87eb03fda1b"> <div class="highlight python"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
@@ -246,7 +246,7 @@ Content-Length: 18
     <span class="n">target_entity_id</span><span class="o">=</span><span class="s">"iid"</span><span class="p">,</span>
     <span class="n">properties</span><span class="o">=</span><span class="n">second_event_properties</span><span class="p">,</span>
     <span class="n">event_time</span><span class="o">=</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2014</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">38</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">618000</span><span class="p">,</span> <span class="n">pytz</span><span class="o">.</span><span class="n">utc</span><span class="p">))</span>
-</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Ruby SDK" data-lang="ruby" id="tab-97544bbd-fe0f-4e4d-b101-5f6253fa7c18"> <div class="highlight ruby"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Ruby SDK" data-lang="ruby" id="tab-01a62101-69d3-47a6-a02c-3c7ca523b699"> <div class="highlight ruby"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
@@ -263,7 +263,7 @@ Content-Length: 18
                           <span class="s1">'eventTime'</span> <span class="o">=&gt;</span> <span class="s1">'2004-12-13T21:39:45.618Z'</span><span class="p">,</span>
                           <span class="s1">'properties'</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="s1">'someProperty'</span> <span class="o">=&gt;</span> <span class="s1">'value1'</span><span class="p">,</span>
                                             <span class="s1">'anotherProperty'</span> <span class="o">=&gt;</span> <span class="s1">'value2'</span> <span class="p">})</span>
-</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Java SDK" data-lang="java" id="tab-5cd3f752-8cf6-449f-b15e-287c39405f7f"> <div class="highlight java"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td> <td class="code"><pre><span class="o">(</span><span class="n">coming</span> <span class="n">soon</span><span class="o">)</span>
+</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Java SDK" data-lang="java" id="tab-e3bdd4fe-ea5d-46a4-bd80-b6d78c8f978e"> <div class="highlight java"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td> <td class="code"><pre><span class="o">(</span><span class="n">coming</span> <span class="n">soon</span><span class="o">)</span>
 </pre></td> </tr></tbody></table> </div> </div> </div> <p>Sample response:</p><div class="highlight shell"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
