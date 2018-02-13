@@ -1,0 +1,255 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>predictionio - PredictionIO Scala API 0.12.0-incubating - org.apache.predictionio</title>
+          <meta name="description" content="predictionio - PredictionIO Scala API 0.12.0 - incubating - org.apache.predictionio" />
+          <meta name="keywords" content="predictionio PredictionIO Scala API 0.12.0 incubating org.apache.predictionio" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../index.html';
+            var hash = 'org.apache.predictionio.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../../lib/package_big.png" />
+        <p id="owner"><a href="../../package.html" class="extype" name="org">org</a>.<a href="../package.html" class="extype" name="org.apache">apache</a></p>
+        <h1>predictionio</h1><span class="permalink">
+      <a href="../../../index.html#org.apache.predictionio.package" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">predictionio</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>PredictionIO Scala API</p></div><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a>, <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Any" class="extype" target="_top">Any</a></div>
+        </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By Inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="org.apache.predictionio"><span>predictionio</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show All</span></li>
+            </ol>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="org.apache.predictionio.controller" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="controller"></a>
+      <a id="controller:controller"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="controller/package.html"><span class="name">controller</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.apache.predictionio.package@controller" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Provides building blocks for writing a complete prediction engine
+consisting of DataSource, Preparator, Algorithm, Serving, and Evaluation.</p><div class="fullcomment"><div class="comment cmt"><p>Provides building blocks for writing a complete prediction engine
+consisting of DataSource, Preparator, Algorithm, Serving, and Evaluation.</p><h4> Start Building an Engine </h4><p>The starting point of a prediction engine is the <a href="controller/Engine.html" class="extype" name="org.apache.predictionio.controller.Engine">Engine</a> class.</p><h4> The DASE Paradigm </h4><p>The building blocks together form the DASE paradigm. Learn more about DASE
+<a href="http://predictionio.apache.org/customize/" target="_blank">here</a>.</p><h4> Types of Building Blocks </h4><p>Depending on the problem you are solving, you would need to pick appropriate
+flavors of building blocks.</p><h5> Engines </h5><p>There are 3 typical engine configurations:</p><ol class="decimal"><li><a href="controller/PDataSource.html" class="extype" name="org.apache.predictionio.controller.PDataSource">PDataSource</a>, <a href="controller/PPreparator.html" class="extype" name="org.apache.predictionio.controller.PPreparator">PPreparator</a>, <a href="controller/P2LAlgorithm.html" class="extype" name="org.apache.predictionio.controller.P2LAlgorithm">P2LAlgorithm</a>, <a href="controller/LServing.html" class="extype" name="org.apache.predictionio.controller.LServing">LServing</a>
+ 2. <a href="controller/PDataSource.html" class="extype" name="org.apache.predictionio.controller.PDataSource">PDataSource</a>, <a href="controller/PPreparator.html" class="extype" name="org.apache.predictionio.controller.PPreparator">PPreparator</a>, <a href="controller/PAlgorithm.html" class="extype" name="org.apache.predictionio.controller.PAlgorithm">PAlgorithm</a>, <a href="controller/LServing.html" class="extype" name="org.apache.predictionio.controller.LServing">LServing</a>
+ 3. <a href="controller/LDataSource.html" class="extype" name="org.apache.predictionio.controller.LDataSource">LDataSource</a>, <a href="controller/LPreparator.html" class="extype" name="org.apache.predictionio.controller.LPreparator">LPreparator</a>, <a href="controller/LAlgorithm.html" class="extype" name="org.apache.predictionio.controller.LAlgorithm">LAlgorithm</a>, <a href="controller/LServing.html" class="extype" name="org.apache.predictionio.controller.LServing">LServing</a></li></ol><p>In both configurations 1 and 2, data is sourced and prepared in a
+parallelized fashion, with data type as RDD.</p><p>The difference between configurations 1 and 2 come at the algorithm stage.
+In configuration 1, the algorithm operates on potentially large data as RDDs
+in the Spark cluster, and eventually outputs a model that is small enough to
+fit in a single machine.</p><p>On the other hand, configuration 2 outputs a model that is potentially too
+large to fit in a single machine, and must reside in the Spark cluster as
+RDD(s).</p><p>With configuration 1 (<a href="controller/P2LAlgorithm.html" class="extype" name="org.apache.predictionio.controller.P2LAlgorithm">P2LAlgorithm</a>), PredictionIO will automatically
+try to persist the model to local disk or HDFS if the model is serializable.</p><p>With configuration 2 (<a href="controller/PAlgorithm.html" class="extype" name="org.apache.predictionio.controller.PAlgorithm">PAlgorithm</a>), PredictionIO will not automatically
+try to persist the model, unless the model implements the <a href="controller/PersistentModel.html" class="extype" name="org.apache.predictionio.controller.PersistentModel">PersistentModel</a>
+trait.</p><p>In special circumstances where both the data and the model are small,
+configuration 3 may be used. Beware that RDDs cannot be used with
+configuration 3.</p><h5> Data Source </h5><p><a href="controller/PDataSource.html" class="extype" name="org.apache.predictionio.controller.PDataSource">PDataSource</a> is probably the most used data source base class with the
+ability to process RDD-based data. <a href="controller/LDataSource.html" class="extype" name="org.apache.predictionio.controller.LDataSource">LDataSource</a> <b>cannot</b> handle
+RDD-based data. Use only when you have a special requirement.</p><h5> Preparator </h5><p>With <a href="controller/PDataSource.html" class="extype" name="org.apache.predictionio.controller.PDataSource">PDataSource</a>, you must pick <a href="controller/PPreparator.html" class="extype" name="org.apache.predictionio.controller.PPreparator">PPreparator</a>. The same applies to
+<a href="controller/LDataSource.html" class="extype" name="org.apache.predictionio.controller.LDataSource">LDataSource</a> and <a href="controller/LPreparator.html" class="extype" name="org.apache.predictionio.controller.LPreparator">LPreparator</a>.</p><h5> Algorithm </h5><p>The workhorse of the engine comes in 3 different flavors.</p><h6> P2LAlgorithm </h6><p>Produces a model that is small enough to fit in a single machine from
+<a href="controller/PDataSource.html" class="extype" name="org.apache.predictionio.controller.PDataSource">PDataSource</a> and <a href="controller/PPreparator.html" class="extype" name="org.apache.predictionio.controller.PPreparator">PPreparator</a>. The model <b>cannot</b> contain any RDD.
+If the produced model is serializable, PredictionIO will try to
+automatically persist it. In addition, P2LAlgorithm.batchPredict is
+already implemented for <a href="controller/Evaluation.html" class="extype" name="org.apache.predictionio.controller.Evaluation">Evaluation</a> purpose.</p><h6> PAlgorithm </h6><p>Produces a model that could contain RDDs from <a href="controller/PDataSource.html" class="extype" name="org.apache.predictionio.controller.PDataSource">PDataSource</a> and
+<a href="controller/PPreparator.html" class="extype" name="org.apache.predictionio.controller.PPreparator">PPreparator</a>. PredictionIO will not try to persist it automatically
+unless the model implements <a href="controller/PersistentModel.html" class="extype" name="org.apache.predictionio.controller.PersistentModel">PersistentModel</a>. <a href="controller/PAlgorithm.html#batchPredict(m:M,qs:org.apache.spark.rdd.RDD[(Long,Q)]):org.apache.spark.rdd.RDD[(Long,P)]" class="extmbr" name="org.apache.predictionio.controller.PAlgorithm#batchPredict">PAlgorithm.batchPredict</a>
+must be implemented for <a href="controller/Evaluation.html" class="extype" name="org.apache.predictionio.controller.Evaluation">Evaluation</a>.</p><h6> LAlgorithm </h6><p>Produces a model that is small enough to fit in a single machine from
+<a href="controller/LDataSource.html" class="extype" name="org.apache.predictionio.controller.LDataSource">LDataSource</a> and <a href="controller/LPreparator.html" class="extype" name="org.apache.predictionio.controller.LPreparator">LPreparator</a>. The model <b>cannot</b> contain any RDD.
+If the produced model is serializable, PredictionIO will try to
+automatically persist it. In addition, LAlgorithm.batchPredict is
+already implemented for <a href="controller/Evaluation.html" class="extype" name="org.apache.predictionio.controller.Evaluation">Evaluation</a> purpose.</p><h5> Serving </h5><p>The serving component comes with only 1 flavor--<a href="controller/LServing.html" class="extype" name="org.apache.predictionio.controller.LServing">LServing</a>. At the serving
+stage, it is assumed that the result being served is already at a human-
+consumable size.</p><h4> Model Persistence </h4><p>PredictionIO tries its best to persist trained models automatically. Please
+refer to <a href="controller/LAlgorithm.html#makePersistentModel(sc:org.apache.spark.SparkContext,modelId:String,algoParams:org.apache.predictionio.controller.Params,bm:Any):Any" class="extmbr" name="org.apache.predictionio.controller.LAlgorithm#makePersistentModel">LAlgorithm.makePersistentModel</a>,
+<a href="controller/P2LAlgorithm.html#makePersistentModel(sc:org.apache.spark.SparkContext,modelId:String,algoParams:org.apache.predictionio.controller.Params,bm:Any):Any" class="extmbr" name="org.apache.predictionio.controller.P2LAlgorithm#makePersistentModel">P2LAlgorithm.makePersistentModel</a>, and <a href="controller/PAlgorithm.html#makePersistentModel(sc:org.apache.spark.SparkContext,modelId:String,algoParams:org.apache.predictionio.controller.Params,bm:Any):Any" class="extmbr" name="org.apache.predictionio.controller.PAlgorithm#makePersistentModel">PAlgorithm.makePersistentModel</a>
+for descriptions on different strategies.
+</p></div></div>
+    </li><li name="org.apache.predictionio.core" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="core"></a>
+      <a id="core:core"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="core/package.html"><span class="name">core</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.apache.predictionio.package@core" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Core base classes of PredictionIO controller components.</p><div class="fullcomment"><div class="comment cmt"><p>Core base classes of PredictionIO controller components. Engine developers
+should not use these directly.
+</p></div></div>
+    </li><li name="org.apache.predictionio.data" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="data"></a>
+      <a id="data:data"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="data/package.html"><span class="name">data</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.apache.predictionio.package@data" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Provides data access for PredictionIO and any engines running on top of
+PredictionIO
+</p>
+    </li><li name="org.apache.predictionio.e2" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="e2"></a>
+      <a id="e2:e2"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="e2/package.html"><span class="name">e2</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.apache.predictionio.package@e2" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Independent library of code that is useful for engine development and
+evaluation
+</p>
+    </li><li name="org.apache.predictionio.workflow" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="workflow"></a>
+      <a id="workflow:workflow"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="workflow/package.html"><span class="name">workflow</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#org.apache.predictionio.package@workflow" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Any" class="extype" target="_top">Any</a></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>

@@ -1,0 +1,787 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>workflow - PredictionIO Scala API 0.12.0-incubating - org.apache.predictionio.workflow</title>
+          <meta name="description" content="workflow - PredictionIO Scala API 0.12.0 - incubating - org.apache.predictionio.workflow" />
+          <meta name="keywords" content="workflow PredictionIO Scala API 0.12.0 incubating org.apache.predictionio.workflow" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../index.html';
+            var hash = 'org.apache.predictionio.workflow.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../../../lib/package_big.png" />
+        <p id="owner"><a href="../../../package.html" class="extype" name="org">org</a>.<a href="../../package.html" class="extype" name="org.apache">apache</a>.<a href="../package.html" class="extype" name="org.apache.predictionio">predictionio</a></p>
+        <h1>workflow</h1><span class="permalink">
+      <a href="../../../../index.html#org.apache.predictionio.workflow.package" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">workflow</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                <li class="group out"><span>Grouped</span></li>
+                <li class="alpha in"><span>Alphabetic</span></li>
+                
+              </ol>
+            </div>
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="org.apache.predictionio.workflow.BatchPredictConfig" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BatchPredictConfigextendsProductwithSerializable"></a>
+      <a id="BatchPredictConfig:BatchPredictConfig"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="BatchPredictConfig.html"><span class="name">BatchPredictConfig</span></a><span class="params">(<span name="inputFilePath">inputFilePath: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">&quot;batchpredict-input.json&quot;</span></span>, <span name="outputFilePath">outputFilePath: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">&quot;batchpredict-output.json&quot;</span></span>, <span name="queryPartitions">queryPartitions: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Option" class="extype" target="_top">Option</a>[<a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Int" class="extype" target="_top">Int</a>] = <span class="symbol">None</span></span>, <span name="engineInstanceId">engineInstanceId: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">&quot;&quot;</span></span>, <span name="engineId">engineId: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>, <span name="engineVersion">engineVersion: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>, <span name="engineVariant">engineVariant: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">&quot;&quot;</span></span>, <span name="env">env: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>, <span name="verbose">verbose: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a> = <span class="symbol">false</span></span>, <span name="debug">debug: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a> = <span class="symbol">false</span></span>, <span name="jsonExtractor">jsonExtractor: <a href="JsonExtractorOption$.html#JsonExtractorOption=org.apache.predictionio.workflow.JsonExtractorOption.Value" class="extmbr" name="org.apache.predictionio.workflow.JsonExtractorOption.JsonExtractorOption">JsonExtractorOption.JsonExtractorOption</a> = <span class="symbol"><span class="name"><a href="JsonExtractorOption$.html">JsonExtractorOption.Both</a></span></span></span>)</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#org.apache.predictionio.workflow.package@BatchPredictConfigextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="org.apache.predictionio.workflow.BindServer" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BindServerextendsProductwithSerializable"></a>
+      <a id="BindServer:BindServer"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="BindServer.html"><span class="name">BindServer</span></a><span class="params">()</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#org.apache.predictionio.workflow.package@BindServerextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="org.apache.predictionio.workflow.EngineServerPlugin" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="EngineServerPluginextendsAnyRef"></a>
+      <a id="EngineServerPlugin:EngineServerPlugin"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="EngineServerPlugin.html"><span class="name">EngineServerPlugin</span></a><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#org.apache.predictionio.workflow.package@EngineServerPluginextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="org.apache.predictionio.workflow.EngineServerPluginContext" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="EngineServerPluginContextextendsAnyRef"></a>
+      <a id="EngineServerPluginContext:EngineServerPluginContext"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="EngineServerPluginContext.html"><span class="name">EngineServerPluginContext</span></a><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#org.apache.predictionio.workflow.package@EngineServerPluginContextextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="org.apache.predictionio.workflow.FakeRun" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="FakeRunextendsEngineFactorywithEvaluationwithEngineParamsGenerator"></a>
+      <a id="FakeRun:FakeRun"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="FakeRun.html"><span class="name">FakeRun</span></a><span class="result"> extends <a href="../controller/EngineFactory.html" class="extype" name="org.apache.predictionio.controller.EngineFactory">EngineFactory</a> with <a href="../controller/Evaluation.html" class="extype" name="org.apache.predictionio.controller.Evaluation">Evaluation</a> with <a href="../controller/EngineParamsGenerator.html" class="extype" name="org.apache.predictionio.controller.EngineParamsGenerator">EngineParamsGenerator</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#org.apache.predictionio.workflow.package@FakeRunextendsEngineFactorywithEvaluationwithEngineParamsGenerator" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">FakeRun allows user to implement custom function under the exact enviroment
+as other PredictionIO workflow.</p><div class="fullcomment"><div class="comment cmt"><p>FakeRun allows user to implement custom function under the exact enviroment
+as other PredictionIO workflow.</p><p>Useful for developing new features. Only need to extend this trait and
+implement a function: (SparkContext =&gt; Unit). For example, the code below
+can be run with <code>pio eval HelloWorld</code>.</p><pre><span class="kw">object</span> HelloWorld <span class="kw">extends</span> FakeRun {
+  <span class="cmt">// func defines the function pio runs, must have signature (SparkContext => Unit).</span>
+  func = f
+
+  <span class="kw">def</span> f(sc: SparkContext): <span class="std">Unit</span> {
+    <span class="kw">val</span> logger = Logger[<span class="kw">this</span>.<span class="kw">type</span>]
+    logger.info(<span class="lit">"HelloWorld"</span>)
+  }
+}</pre></div><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@Experimental</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="org.apache.predictionio.workflow.KryoInstantiator" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="KryoInstantiatorextendsScalaKryoInstantiator"></a>
+      <a id="KryoInstantiator:KryoInstantiator"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="KryoInstantiator.html"><span class="name">KryoInstantiator</span></a><span class="result"> extends <span class="extype" name="com.twitter.chill.ScalaKryoInstantiator">ScalaKryoInstantiator</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#org.apache.predictionio.workflow.package@KryoInstantiatorextendsScalaKryoInstantiator" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="org.apache.predictionio.workflow.MasterActor" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MasterActorextendsActorwithSSLConfigurationwithKeyAuthentication"></a>
+      <a id="MasterActor:MasterActor"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="MasterActor.html"><span class="name">MasterActor</span></a><span class="result"> extends <a href="http://doc.akka.io/api/akka/2.4.17/index.html#akka.actor.Actor" class="extype" target="_top">Actor</a> with <span class="extype" name="org.apache.predictionio.configuration.SSLConfiguration">SSLConfiguration</span> with <span class="extype" name="org.apache.predictionio.authentication.KeyAuthentication">KeyAuthentication</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#org.apache.predictionio.workflow.package@MasterActorextendsActorwithSSLConfigurationwithKeyAuthentication" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="org.apache.predictionio.workflow.NameParams" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="NameParamsextendsProductwithSerializable"></a>
+      <a id="NameParams:NameParams"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="NameParams.html"><span class="name">NameParams</span></a><span class="params">(<span name="name">name: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="params">params: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="org.json4s.JsonAST.JValue">JValue</span>]</span>)</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#org.apache.predictionio.workflow.package@NameParamsextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="org.apache.predictionio.workflow.NameParamsSerializer" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="NameParamsSerializerextendsCustomSerializer[org.apache.predictionio.workflow.NameParams]"></a>
+      <a id="NameParamsSerializer:NameParamsSerializer"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="NameParamsSerializer.html"><span class="name">NameParamsSerializer</span></a><span class="result"> extends <span class="extype" name="org.json4s.CustomSerializer">CustomSerializer</span>[<a href="NameParams.html" class="extype" name="org.apache.predictionio.workflow.NameParams">NameParams</a>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#org.apache.predictionio.workflow.package@NameParamsSerializerextendsCustomSerializer[org.apache.predictionio.workflow.NameParams]" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="org.apache.predictionio.workflow.PersistentModelManifest" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="PersistentModelManifestextendsProductwithSerializable"></a>
+      <a id="PersistentModelManifest:PersistentModelManifest"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="PersistentModelManifest.html"><span class="name">PersistentModelManifest</span></a><span class="params">(<span name="className">className: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#org.apache.predictionio.workflow.package@PersistentModelManifestextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="org.apache.predictionio.workflow.PluginsActor" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="PluginsActorextendsActor"></a>
+      <a id="PluginsActor:PluginsActor"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="PluginsActor.html"><span class="name">PluginsActor</span></a><span class="result"> extends <a href="http://doc.akka.io/api/akka/2.4.17/index.html#akka.actor.Actor" class="extype" target="_top">Actor</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#org.apache.predictionio.workflow.package@PluginsActorextendsActor" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="org.apache.predictionio.workflow.ReloadServer" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ReloadServerextendsProductwithSerializable"></a>
+      <a id="ReloadServer:ReloadServer"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ReloadServer.html"><span class="name">ReloadServer</span></a><span class="params">()</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#org.apache.predictionio.workflow.package@ReloadServerextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="org.apache.predictionio.workflow.ServerActor" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ServerActor[Q,P]extendsActorwithHttpServicewithKeyAuthentication"></a>
+      <a id="ServerActor[Q,P]:ServerActor[Q,P]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="ServerActor.html"><span class="name">ServerActor</span></a><span class="tparams">[<span name="Q">Q</span>, <span name="P">P</span>]</span><span class="result"> extends <a href="http://doc.akka.io/api/akka/2.4.17/index.html#akka.actor.Actor" class="extype" target="_top">Actor</a> with <span class="extype" name="spray.routing.HttpService">HttpService</span> with <span class="extype" name="org.apache.predictionio.authentication.KeyAuthentication">KeyAuthentication</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#org.apache.predictionio.workflow.package@ServerActor[Q,P]extendsActorwithHttpServicewithKeyAuthentication" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="org.apache.predictionio.workflow.ServerConfig" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ServerConfigextendsProductwithSerializable"></a>
+      <a id="ServerConfig:ServerConfig"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ServerConfig.html"><span class="name">ServerConfig</span></a><span class="params">(<span name="batch">batch: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">&quot;&quot;</span></span>, <span name="engineInstanceId">engineInstanceId: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">&quot;&quot;</span></span>, <span name="engineId">engineId: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>, <span name="engineVersion">engineVersion: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>, <span name="engineVariant">engineVariant: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">&quot;&quot;</span></span>, <span name="env">env: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>, <span name="ip">ip: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">&quot;0.0.0.0&quot;</span></span>, <span name="port">port: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Int" class="extype" target="_top">Int</a> = <span class="symbol">8000</span></span>, <span name="feedback">feedback: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a> = <span class="symbol">false</span></span>, <span name="eventServerIp">eventServerIp: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">&quot;0.0.0.0&quot;</span></span>, <span name="eventServerPort">eventServerPort: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Int" class="extype" target="_top">Int</a> = <span class="symbol">7070</span></span>, <span name="accessKey">accessKey: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>, <span name="logUrl">logUrl: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>, <span name="logPrefix">logPrefix: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>, <span name="logFile">logFile: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>, <span name="verbose">verbose: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a> = <span class="symbol">false</span></span>, <span name="debug">debug: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a> = <span class="symbol">false</span></span>, <span name="jsonExtractor">jsonExtractor: <a href="JsonExtractorOption$.html#JsonExtractorOption=org.apache.predictionio.workflow.JsonExtractorOption.Value" class="extmbr" name="org.apache.predictionio.workflow.JsonExtractorOption.JsonExtractorOption">JsonExtractorOption.JsonExtractorOption</a> = <span class="symbol"><span class="name"><a href="JsonExtractorOption$.html">JsonExtractorOption.Both</a></span></span></span>)</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#org.apache.predictionio.workflow.package@ServerConfigextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="org.apache.predictionio.workflow.StartServer" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="StartServerextendsProductwithSerializable"></a>
+      <a id="StartServer:StartServer"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="StartServer.html"><span class="name">StartServer</span></a><span class="params">()</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#org.apache.predictionio.workflow.package@StartServerextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="org.apache.predictionio.workflow.StopAfterPrepareInterruption" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="StopAfterPrepareInterruptionextendsWorkflowInterruptionwithProductwithSerializable"></a>
+      <a id="StopAfterPrepareInterruption:StopAfterPrepareInterruption"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="StopAfterPrepareInterruption.html"><span class="name">StopAfterPrepareInterruption</span></a><span class="params">()</span><span class="result"> extends <a href="WorkflowInterruption.html" class="extype" name="org.apache.predictionio.workflow.WorkflowInterruption">WorkflowInterruption</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#org.apache.predictionio.workflow.package@StopAfterPrepareInterruptionextendsWorkflowInterruptionwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="org.apache.predictionio.workflow.StopAfterReadInterruption" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="StopAfterReadInterruptionextendsWorkflowInterruptionwithProductwithSerializable"></a>
+      <a id="StopAfterReadInterruption:StopAfterReadInterruption"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="StopAfterReadInterruption.html"><span class="name">StopAfterReadInterruption</span></a><span class="params">()</span><span class="result"> extends <a href="WorkflowInterruption.html" class="extype" name="org.apache.predictionio.workflow.WorkflowInterruption">WorkflowInterruption</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#org.apache.predictionio.workflow.package@StopAfterReadInterruptionextendsWorkflowInterruptionwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="org.apache.predictionio.workflow.StopServer" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="StopServerextendsProductwithSerializable"></a>
+      <a id="StopServer:StopServer"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="StopServer.html"><span class="name">StopServer</span></a><span class="params">()</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#org.apache.predictionio.workflow.package@StopServerextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="org.apache.predictionio.workflow.WorkflowInterruption" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="WorkflowInterruptionextendsException"></a>
+      <a id="WorkflowInterruption:WorkflowInterruption"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="WorkflowInterruption.html"><span class="name">WorkflowInterruption</span></a><span class="result"> extends <span class="extype" name="scala.Exception">Exception</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#org.apache.predictionio.workflow.package@WorkflowInterruptionextendsException" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="org.apache.predictionio.workflow.WorkflowParams" visbl="pub" data-isabs="false" fullComment="yes" group="Workflow">
+      <a id="WorkflowParamsextendsProductwithSerializable"></a>
+      <a id="WorkflowParams:WorkflowParams"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="WorkflowParams.html"><span class="name">WorkflowParams</span></a><span class="params">(<span name="batch">batch: <span class="extype" name="scala.Predef.String">String</span> = <span class="symbol">&quot;&quot;</span></span>, <span name="verbose">verbose: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Int" class="extype" target="_top">Int</a> = <span class="symbol">2</span></span>, <span name="saveModel">saveModel: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a> = <span class="symbol">true</span></span>, <span name="sparkEnv">sparkEnv: <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Predef.String">String</span>] = <span class="defval" name="Map[String, String](&quot;spark.executor.extraClassPath&quot; -&gt; &quot;.&quot;)">...</span></span>, <span name="skipSanityCheck">skipSanityCheck: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a> = <span class="symbol">false</span></span>, <span name="stopAfterRead">stopAfterRead: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a> = <span class="symbol">false</span></span>, <span name="stopAfterPrepare">stopAfterPrepare: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a> = <span class="symbol">false</span></span>)</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#org.apache.predictionio.workflow.package@WorkflowParamsextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Workflow parameters.</p><div class="fullcomment"><div class="comment cmt"><p>Workflow parameters.
+</p></div><dl class="paramcmts block"><dt class="param">batch</dt><dd class="cmt"><p>Batch label of the run.</p></dd><dt class="param">verbose</dt><dd class="cmt"><p>Verbosity level.</p></dd><dt class="param">saveModel</dt><dd class="cmt"><p>Controls whether trained models are persisted.</p></dd><dt class="param">sparkEnv</dt><dd class="cmt"><p>Spark properties that will be set in SparkConf.setAll().</p></dd><dt class="param">skipSanityCheck</dt><dd class="cmt"><p>Skips all data sanity check.</p></dd><dt class="param">stopAfterRead</dt><dd class="cmt"><p>Stops workflow after reading from data source.</p></dd><dt class="param">stopAfterPrepare</dt><dd class="cmt"><p>Stops workflow after data preparation.</p></dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="org.apache.predictionio.workflow.BatchPredict" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BatchPredict"></a>
+      <a id="BatchPredict:BatchPredict"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="BatchPredict$.html"><span class="name">BatchPredict</span></a><span class="result"> extends <span class="extype" name="grizzled.slf4j.Logging">Logging</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#org.apache.predictionio.workflow.package@BatchPredict" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="org.apache.predictionio.workflow.CleanupFunctions" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="CleanupFunctions"></a>
+      <a id="CleanupFunctions:CleanupFunctions"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="CleanupFunctions$.html"><span class="name">CleanupFunctions</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#org.apache.predictionio.workflow.package@CleanupFunctions" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">:: DeveloperApi ::
+Singleton object that collects anonymous functions to be
+executed to allow the process to end gracefully.</p><div class="fullcomment"><div class="comment cmt"><p>:: DeveloperApi ::
+Singleton object that collects anonymous functions to be
+executed to allow the process to end gracefully.</p><p>For example, the Elasticsearch REST storage client
+maintains an internal connection pool that must
+be closed to allow the process to exit.
+</p></div></div>
+    </li><li name="org.apache.predictionio.workflow.CoreWorkflow" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CoreWorkflow"></a>
+      <a id="CoreWorkflow:CoreWorkflow"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="CoreWorkflow$.html"><span class="name">CoreWorkflow</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#org.apache.predictionio.workflow.package@CoreWorkflow" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">CoreWorkflow handles PredictionIO metadata and environment variables of
+training and evaluation.</p>
+    </li><li name="org.apache.predictionio.workflow.CreateServer" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CreateServer"></a>
+      <a id="CreateServer:CreateServer"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="CreateServer$.html"><span class="name">CreateServer</span></a><span class="result"> extends <span class="extype" name="grizzled.slf4j.Logging">Logging</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#org.apache.predictionio.workflow.package@CreateServer" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="org.apache.predictionio.workflow.CreateWorkflow" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CreateWorkflow"></a>
+      <a id="CreateWorkflow:CreateWorkflow"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="CreateWorkflow$.html"><span class="name">CreateWorkflow</span></a><span class="result"> extends <span class="extype" name="grizzled.slf4j.Logging">Logging</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#org.apache.predictionio.workflow.package@CreateWorkflow" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="org.apache.predictionio.workflow.EngineLanguage" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="EngineLanguage"></a>
+      <a id="EngineLanguage:EngineLanguage"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="EngineLanguage$.html"><span class="name">EngineLanguage</span></a><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Enumeration" class="extype" target="_top">Enumeration</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#org.apache.predictionio.workflow.package@EngineLanguage" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="org.apache.predictionio.workflow.EngineServerJson4sSupport" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="EngineServerJson4sSupport"></a>
+      <a id="EngineServerJson4sSupport:EngineServerJson4sSupport"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="EngineServerJson4sSupport$.html"><span class="name">EngineServerJson4sSupport</span></a><span class="result"> extends <span class="extype" name="spray.httpx.Json4sSupport">Json4sSupport</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#org.apache.predictionio.workflow.package@EngineServerJson4sSupport" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="org.apache.predictionio.workflow.EngineServerPlugin" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="EngineServerPlugin"></a>
+      <a id="EngineServerPlugin:EngineServerPlugin"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="EngineServerPlugin$.html"><span class="name">EngineServerPlugin</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#org.apache.predictionio.workflow.package@EngineServerPlugin" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="org.apache.predictionio.workflow.EngineServerPluginContext" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="EngineServerPluginContext"></a>
+      <a id="EngineServerPluginContext:EngineServerPluginContext"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="EngineServerPluginContext$.html"><span class="name">EngineServerPluginContext</span></a><span class="result"> extends <span class="extype" name="grizzled.slf4j.Logging">Logging</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#org.apache.predictionio.workflow.package@EngineServerPluginContext" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="org.apache.predictionio.workflow.EvaluationWorkflow" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="EvaluationWorkflow"></a>
+      <a id="EvaluationWorkflow:EvaluationWorkflow"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="EvaluationWorkflow$.html"><span class="name">EvaluationWorkflow</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#org.apache.predictionio.workflow.package@EvaluationWorkflow" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="org.apache.predictionio.workflow.JsonExtractor" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="JsonExtractor"></a>
+      <a id="JsonExtractor:JsonExtractor"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="JsonExtractor$.html"><span class="name">JsonExtractor</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#org.apache.predictionio.workflow.package@JsonExtractor" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="org.apache.predictionio.workflow.JsonExtractorOption" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="JsonExtractorOption"></a>
+      <a id="JsonExtractorOption:JsonExtractorOption"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="JsonExtractorOption$.html"><span class="name">JsonExtractorOption</span></a><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Enumeration" class="extype" target="_top">Enumeration</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#org.apache.predictionio.workflow.package@JsonExtractorOption" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="org.apache.predictionio.workflow.KryoInstantiator" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="KryoInstantiator"></a>
+      <a id="KryoInstantiator:KryoInstantiator"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="KryoInstantiator$.html"><span class="name">KryoInstantiator</span></a><span class="result"> extends <span class="extype" name="java.io.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#org.apache.predictionio.workflow.package@KryoInstantiator" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="org.apache.predictionio.workflow.PluginsActor" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="PluginsActor"></a>
+      <a id="PluginsActor:PluginsActor"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="PluginsActor$.html"><span class="name">PluginsActor</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#org.apache.predictionio.workflow.package@PluginsActor" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="org.apache.predictionio.workflow.SparkWorkflowUtils" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="SparkWorkflowUtils"></a>
+      <a id="SparkWorkflowUtils:SparkWorkflowUtils"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="SparkWorkflowUtils$.html"><span class="name">SparkWorkflowUtils</span></a><span class="result"> extends <span class="extype" name="grizzled.slf4j.Logging">Logging</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#org.apache.predictionio.workflow.package@SparkWorkflowUtils" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Collection of reusable workflow related utilities that touch on Apache
+Spark.</p><div class="fullcomment"><div class="comment cmt"><p>Collection of reusable workflow related utilities that touch on Apache
+Spark. They are separated to avoid compilation problems with certain code.
+</p></div></div>
+    </li><li name="org.apache.predictionio.workflow.Workflow" visbl="pub" data-isabs="false" fullComment="no" group="Workflow">
+      <a id="Workflow"></a>
+      <a id="Workflow:Workflow"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Workflow$.html"><span class="name">Workflow</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#org.apache.predictionio.workflow.package@Workflow" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Collection of workflow creation methods.</p>
+    </li><li name="org.apache.predictionio.workflow.WorkflowContext" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="WorkflowContext"></a>
+      <a id="WorkflowContext:WorkflowContext"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="WorkflowContext$.html"><span class="name">WorkflowContext</span></a><span class="result"> extends <span class="extype" name="grizzled.slf4j.Logging">Logging</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#org.apache.predictionio.workflow.package@WorkflowContext" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="org.apache.predictionio.workflow.WorkflowUtils" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="WorkflowUtils"></a>
+      <a id="WorkflowUtils:WorkflowUtils"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="WorkflowUtils$.html"><span class="name">WorkflowUtils</span></a><span class="result"> extends <span class="extype" name="grizzled.slf4j.Logging">Logging</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#org.apache.predictionio.workflow.package@WorkflowUtils" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Collection of reusable workflow related utilities.</p>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Workflow">
+              <h3>Workflow</h3>
+              
+            </div><div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>
