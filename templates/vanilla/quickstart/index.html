@@ -54,17 +54,17 @@ Your system is all ready to go.
 </pre></td></tr></tbody></table> </div> <p>When the engine is deployed successfully and running, you should see a console message similar to the following:</p><div class="highlight shell"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2</pre></td><td class="code"><pre><span class="o">[</span>INFO] <span class="o">[</span>HttpListener] Bound to /0.0.0.0:8000
 <span class="o">[</span>INFO] <span class="o">[</span>MasterActor] Bind successful. Ready to serve.
-</pre></td></tr></tbody></table> </div> <p>Do not kill the deployed engine process.</p><p>By default, the deployed engine binds to <a href="http://localhost:8000"><a href="http://localhost:8000">http://localhost:8000</a></a>. You can visit that page in your web browser to check its status.</p><p><img alt="Engine Status" src="/images/engine-server-3246414b.png"/></p></p><h2 id='6.-use-the-engine' class='header-anchors'>6. Use the Engine</h2><p>Now, You can try to retrieve predicted results. The engine accepts JSON query with the field &#39;q&#39;: <code>{ &quot;q&quot; : &quot;foo&quot; }</code>. A prefix is added to the query data and return as PredictedResult.</p><p>With the deployed engine running, open another terminal and run the following <code>curl</code> command or use SDK to send the query:</p><div class="tabs"> <ul class="control"> <li data-lang="json"><a href="#tab-187e5768-a9ec-4b1a-86ea-ff8580c9151a">REST API</a></li> <li data-lang="python"><a href="#tab-894fceb7-d17f-4c8f-9560-dfeacd13098d">Python SDK</a></li> <li data-lang="php"><a href="#tab-207e417e-4e05-4196-a1c0-6ab77d59fae1">PHP SDK</a></li> <li data-lang="ruby"><a href="#tab-dd3be1c0-b8f4-4c4e-bc46-b53ec75114f3">Ruby SDK</a></li> <li data-lang="java"><a href="#tab-9d6d86c6-6515-4f28-a772-0294fb7dafe0">Java SDK</a></li> </ul> <div data-tab="REST API" data-lang="json" id="tab-187e5768-a9ec-4b1a-86ea-ff8580c9151a"> <div class="highlight shell"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+</pre></td></tr></tbody></table> </div> <p>Do not kill the deployed engine process.</p><p>By default, the deployed engine binds to <a href="http://localhost:8000"><a href="http://localhost:8000">http://localhost:8000</a></a>. You can visit that page in your web browser to check its status.</p><p><img alt="Engine Status" src="/images/engine-server-3246414b.png"/></p></p><h2 id='6.-use-the-engine' class='header-anchors'>6. Use the Engine</h2><p>Now, You can try to retrieve predicted results. The engine accepts JSON query with the field &#39;q&#39;: <code>{ &quot;q&quot; : &quot;foo&quot; }</code>. A prefix is added to the query data and return as PredictedResult.</p><p>With the deployed engine running, open another terminal and run the following <code>curl</code> command or use SDK to send the query:</p><div class="tabs"> <ul class="control"> <li data-lang="json"><a href="#tab-2540332c-d194-4870-9738-cbc02e480d34">REST API</a></li> <li data-lang="python"><a href="#tab-81ff185a-e84f-435e-a9de-cc12265bc038">Python SDK</a></li> <li data-lang="php"><a href="#tab-3a0f3e78-6620-4e3c-bb1a-73ae789d736d">PHP SDK</a></li> <li data-lang="ruby"><a href="#tab-a772ca70-55ca-498c-8c8f-8bc119ab598c">Ruby SDK</a></li> <li data-lang="java"><a href="#tab-13156930-f2e2-409e-8357-8e5b03b6d6c8">Java SDK</a></li> </ul> <div data-tab="REST API" data-lang="json" id="tab-2540332c-d194-4870-9738-cbc02e480d34"> <div class="highlight shell"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3</pre></td> <td class="code"><pre><span class="gp">$ </span>curl -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
 -d <span class="s1">'{ "q": "foo" }'</span> http://localhost:8000/queries.json
 
-</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Python SDK" data-lang="python" id="tab-894fceb7-d17f-4c8f-9560-dfeacd13098d"> <div class="highlight python"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Python SDK" data-lang="python" id="tab-81ff185a-e84f-435e-a9de-cc12265bc038"> <div class="highlight python"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3</pre></td> <td class="code"><pre><span class="kn">import</span> <span class="nn">predictionio</span>
 <span class="n">engine_client</span> <span class="o">=</span> <span class="n">predictionio</span><span class="o">.</span><span class="n">EngineClient</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s">"http://localhost:8000"</span><span class="p">)</span>
 <span class="k">print</span> <span class="n">engine_client</span><span class="o">.</span><span class="n">send_query</span><span class="p">({</span> <span class="s">"q"</span><span class="p">:</span> <span class="s">"foo"</span> <span class="p">})</span>
-</pre></td> </tr></tbody></table> </div> </div> <div data-tab="PHP SDK" data-lang="php" id="tab-207e417e-4e05-4196-a1c0-6ab77d59fae1"> <div class="highlight php"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+</pre></td> </tr></tbody></table> </div> </div> <div data-tab="PHP SDK" data-lang="php" id="tab-3a0f3e78-6620-4e3c-bb1a-73ae789d736d"> <div class="highlight php"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
@@ -83,7 +83,7 @@ Your system is all ready to go.
 <span class="nb">print_r</span><span class="p">(</span><span class="nv">$response</span><span class="p">);</span>
 
 <span class="cp">?&gt;</span>
-</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Ruby SDK" data-lang="ruby" id="tab-dd3be1c0-b8f4-4c4e-bc46-b53ec75114f3"> <div class="highlight ruby"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Ruby SDK" data-lang="ruby" id="tab-a772ca70-55ca-498c-8c8f-8bc119ab598c"> <div class="highlight ruby"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
@@ -96,7 +96,7 @@ Your system is all ready to go.
 <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">send_query</span><span class="p">(</span><span class="s1">'q'</span> <span class="o">=&gt;</span> <span class="s1">'foo'</span><span class="p">)</span>
 
 <span class="nb">puts</span> <span class="n">response</span>
-</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Java SDK" data-lang="java" id="tab-9d6d86c6-6515-4f28-a772-0294fb7dafe0"> <div class="highlight java"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
+</pre></td> </tr></tbody></table> </div> </div> <div data-tab="Java SDK" data-lang="java" id="tab-13156930-f2e2-409e-8357-8e5b03b6d6c8"> <div class="highlight java"> <table style="border-spacing: 0"><tbody><tr> <td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
