@@ -12,11 +12,9 @@
 </pre></td></tr></tbody></table> </div> <p>Once we define a metric, we tell PredictionIO we are using it in the <code>Evaluation</code> object. We can run the following command to kick start the evaluation.</p><div class="highlight shell"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
-4
-5</pre></td><td class="code"><pre><span class="gp">$ </span>pio build
+4</pre></td><td class="code"><pre><span class="gp">$ </span>pio build
 ...
-<span class="gp">$ </span>pio <span class="nb">eval </span>org.template.classification.AccuracyEvaluation <span class="se">\</span>
-    org.template.classification.EngineParamsList
+<span class="gp">$ </span>pio <span class="nb">eval </span>org.example.classification.AccuracyEvaluation org.example.classification.EngineParamsList
 ...
 </pre></td></tr></tbody></table> </div> <p>(See MyClassification/src/main/scala/<strong><em>Evaluation.scala</em></strong> for full usage.)</p><h2 id='example-2:-precision-metric' class='header-anchors'>Example 2: Precision Metric</h2><p>Precision is a metric for binary classifier capturing the portion of correction prediction among all <em>positive</em> predictions. We don&#39;t care about the cases where the QPA-tuple gives a negative prediction. (Recall that a binary classifier only provide two output values: <em>positive</em> and <em>negative</em>.) The following table illustrates all four cases:</p> <table><thead> <tr> <th style="text-align: center">PredictedResult</th> <th style="text-align: center">ActualResult</th> <th style="text-align: center">Value</th> </tr> </thead><tbody> <tr> <td style="text-align: center">Positive</td> <td style="text-align: center">Positive</td> <td style="text-align: center">1.0</td> </tr> <tr> <td style="text-align: center">Positive</td> <td style="text-align: center">Negative</td> <td style="text-align: center">0.0</td> </tr> <tr> <td style="text-align: center">Negative</td> <td style="text-align: center">Positive</td> <td style="text-align: center">Don&#39;t care</td> </tr> <tr> <td style="text-align: center">Negative</td> <td style="text-align: center">Negative</td> <td style="text-align: center">Don&#39;t care</td> </tr> </tbody></table> <p>Calculating the precision metric is a slightly more involved procedure than calculating the accuracy metric as we have to specially handle the <em>don&#39;t care</em> negative cases.</p><p>PredictionIO provides a helper class <code>OptionAverageMetric</code> allows user to specify <em>don&#39;t care</em> values as <code>None</code>. It only aggregates the non-None values. Lines 3 to 4 is the method signature of <code>calcuate</code> method. The key difference is that the return value is a <code>Option[Double]</code>, in contrast to <code>Double</code> for <code>AverageMetric</code>. This class only computes the average of <code>Some(.)</code> results. Lines 5 to 13 are the actual logic. The first <code>if</code> factors out the positively predicted case, and the computation is simliar to the accuracy metric. The negatively predicted case are the <em>don&#39;t cares</em>, which we return <code>None</code>.</p><div class="highlight scala"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
@@ -96,11 +94,9 @@
 42
 43
 44
-45
-46</pre></td><td class="code"><pre><span class="gp">$ </span>pio build
+45</pre></td><td class="code"><pre><span class="gp">$ </span>pio build
 ...
-<span class="gp">$ </span>pio <span class="nb">eval </span>org.template.classification.PrecisionEvaluation <span class="se">\</span>
-    org.template.classification.EngineParamsList
+<span class="gp">$ </span>pio <span class="nb">eval </span>org.example.classification.PrecisionEvaluation org.example.classification.EngineParamsList
 ...
 <span class="o">[</span>INFO] <span class="o">[</span>CoreWorkflow<span class="nv">$]</span> Starting evaluation instance ID: SMhzYbJ9QgKkD0fQzTA7MA
 ...
@@ -142,10 +138,10 @@ Optimal Engine Params:
   <span class="o">}</span>
 <span class="o">}</span>
 Metrics:
-  org.template.classification.Precision: 0.8846153846153846
+  org.example.classification.Precision: 0.8846153846153846
 </pre></td></tr></tbody></table> </div> <p>(See MyClassification/src/main/scala/<strong><em>PrecisionEvaluation.scala</em></strong> for the full usage.)</p></div></div></div></div><footer><div class="container"><div class="seperator"></div><div class="row"><div class="col-md-6 footer-link-column"><div class="footer-link-column-row"><h4>Community</h4><ul><li><a href="//predictionio.apache.org/install/" target="blank">Download</a></li><li><a href="//predictionio.apache.org/" target="blank">Docs</a></li><li><a href="//github.com/apache/predictionio" target="blank">GitHub</a></li><li><a href="mailto:user-subscribe@predictionio.apache.org" target="blank">Subscribe to User Mailing List</a></li><li><a href="//stackoverflow.com/questions/tagged/predictionio" target="blank">Stackoverflow</a></li></ul></div></div><div class="col-md-6 footer-link-column"><div class="footer-link-column-row"><h4>Contribute</h4><ul><li><a href="//predictionio.apache.org/community/contribute-code/" target="blank">Contribute</a></li><li><a href="//github.com/apache/predictionio" target="blank">Source Code</a></li><li><a href="//issues.apache.org/jira/browse/PIO" target="blank">Bug Tracker</a></li><li><a href="mailto:dev-subscribe@predictionio.apache.org" target="blank">Subscribe to Development Mailing List</a></li></ul></div></div></div><div class="row"><div class="col-md-12 footer-link-column"><p>Apache PredictionIO, PredictionIO, Apache, the Apache feather logo, and the Apache PredictionIO project logo are either registered trademarks or trademarks of The Apache Software Foundation in the United States and other countries.</p><p>All other marks mentioned may be trademarks or registered trademarks of their respective owners.</p></div></div></div><div id="footer-bottom"><div class="container"><div class="row"><div class="col-md-12"><div id="footer-logo-wrapper"><img alt="PredictionIO" src="/images/logos/logo-white-d1e9c6e6.png"/><span>®</span></div><div id="social-icons-wrapper"><a class="github-button" href="https://github.com/apache/predictionio" data-style="mega" data-count-href="/apache/predictionio/stargazers" data-count-api="/repos/apache/predictionio#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star apache/predictionio on GitHub">Star</a> <a class="github-button" href="https://github.com/apache/predictionio/fork" data-icon="octicon-git-branch" data-style="mega" data-count-href="/apache/predictionio/network" data-count-api="/repos/apache/predictionio#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork apache/predictionio on GitHub">Fork</a> <script id="github-bjs" async="" defer="" src="https://buttons.github.io/buttons.js"></script><a href="https://twitter.com/predictionio" target="blank"><img alt="PredictionIO on Twitter" src="/images/icons/twitter-ea9dc152.png"/></a> <a href="https://www.facebook.com/predictionio" target="blank"><img alt="PredictionIO on Facebook" src="/images/icons/facebook-5c57939c.png"/></a> </div></div></div></div></div></footer></div><script>(function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
 (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
 e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
 })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
 
-_st('install','HaUfpXXV87xoB_zzCQ45');</script><script src="/javascripts/application-1a70e440.js"></script></body></html>
+_st('install','HaUfpXXV87xoB_zzCQ45');</script><script src="/javascripts/application-6d62b164.js"></script></body></html>
