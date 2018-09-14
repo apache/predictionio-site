@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class predictionio\BaseClient | PredictionIO API PHP Client</title>
+
+	<link rel="stylesheet" href="resources/style.css?c2f33731c1948fbed7c333554678bfa68d4817da">
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+				<h3>Namespaces</h3>
+			<ul>
+				<li class="active">
+					<a href="namespace-predictionio.html">
+						predictionio					</a>
+
+						</li>
+			</ul>
+		</div>
+
+		<hr>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li class="active"><a href="class-predictionio.BaseClient.html">BaseClient</a></li>
+				<li><a href="class-predictionio.EngineClient.html">EngineClient</a></li>
+				<li><a href="class-predictionio.EventClient.html">EventClient</a></li>
+				<li><a href="class-predictionio.FileExporter.html">FileExporter</a></li>
+			</ul>
+
+
+			<h3>Traits</h3>
+			<ul>
+				<li><a href="class-predictionio.Exporter.html">Exporter</a></li>
+			</ul>
+
+			<h3>Exceptions</h3>
+			<ul>
+				<li><a href="class-predictionio.PredictionIOAPIError.html">PredictionIOAPIError</a></li>
+			</ul>
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text" placeholder="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-predictionio.html" title="Summary of predictionio"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class BaseClient</h1>
+
+
+	<div class="description">
+	<p>Base client for Event and Engine client</p>
+	</div>
+
+
+
+	<div>
+		<h4>Direct known subclasses</h4>
+			<a href="class-predictionio.EngineClient.html">predictionio\EngineClient</a>, 
+			<a href="class-predictionio.EventClient.html">predictionio\EventClient</a>
+	</div>
+
+
+
+
+
+
+	<div class="info">
+		<b>Abstract</b><br>
+		
+		<b>Namespace:</b> <a href="namespace-predictionio.html">predictionio</a><br>
+		
+
+			<b>Located at</b> <a href="source-class-predictionio.BaseClient.html#23-84" title="Go to source code">predictionio/BaseClient.php</a>
+		<br>
+	</div>
+
+
+
+	<table class="summary methods" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-predictionio.BaseClient.html#32-45" title="Go to source code">__construct</a>( <span>string <var>$baseUrl</var></span>, <span>float <var>$timeout</var></span>, <span>float <var>$connectTimeout</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$baseUrl</var></dt>
+					<dd>Base URL to the server</dd>
+					<dt><var>$timeout</var></dt>
+					<dd>Timeout of the request in seconds. Use 0 to wait indefinitely</dd>
+					<dt><var>$connectTimeout</var></dt>
+					<dd>Number of seconds to wait while trying to connect to a server</dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getStatus" id="_getStatus">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getStatus">#</a>
+		<code><a href="source-class-predictionio.BaseClient.html#47-55" title="Go to source code">getStatus</a>( )</code>
+
+		<div class="description short">
+			<p>Get the status of the Event Server or Engine Instance</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Get the status of the Event Server or Engine Instance</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					string<br>status
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="sendRequest" id="_sendRequest">
+
+		<td class="attributes"><code>
+			 protected 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_sendRequest">#</a>
+		<code><a href="source-class-predictionio.BaseClient.html#57-83" title="Go to source code">sendRequest</a>( <span>string <var>$method</var></span>, <span>string <var>$url</var></span>, <span>string <var>$body</var></span> )</code>
+
+		<div class="description short">
+			<p>Send a HTTP request to the server</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Send a HTTP request to the server</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$method</var></dt>
+					<dd>HTTP request method</dd>
+					<dt><var>$url</var></dt>
+					<dd>Relative or absolute url</dd>
+					<dt><var>$body</var></dt>
+					<dd>HTTP request body</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					array<br>JSON response
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					<code><a href="class-predictionio.PredictionIOAPIError.html">predictionio\PredictionIOAPIError</a></code><br>Request error
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+	<table class="summary properties" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="client" id="$client">
+		<td class="attributes"><code>
+			public  
+			
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-predictionio.BaseClient.html#30" title="Go to source code"><var>$client</var></a>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$client" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	</table>
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		PredictionIO API PHP Client API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>

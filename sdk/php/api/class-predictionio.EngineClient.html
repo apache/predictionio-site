@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class predictionio\EngineClient | PredictionIO API PHP Client</title>
+
+	<link rel="stylesheet" href="resources/style.css?c2f33731c1948fbed7c333554678bfa68d4817da">
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+				<h3>Namespaces</h3>
+			<ul>
+				<li class="active">
+					<a href="namespace-predictionio.html">
+						predictionio					</a>
+
+						</li>
+			</ul>
+		</div>
+
+		<hr>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-predictionio.BaseClient.html">BaseClient</a></li>
+				<li class="active"><a href="class-predictionio.EngineClient.html">EngineClient</a></li>
+				<li><a href="class-predictionio.EventClient.html">EventClient</a></li>
+				<li><a href="class-predictionio.FileExporter.html">FileExporter</a></li>
+			</ul>
+
+
+			<h3>Traits</h3>
+			<ul>
+				<li><a href="class-predictionio.Exporter.html">Exporter</a></li>
+			</ul>
+
+			<h3>Exceptions</h3>
+			<ul>
+				<li><a href="class-predictionio.PredictionIOAPIError.html">PredictionIOAPIError</a></li>
+			</ul>
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text" placeholder="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-predictionio.html" title="Summary of predictionio"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class EngineClient</h1>
+
+
+	<div class="description">
+	<p>Client for connecting to an Engine Instance</p>
+	</div>
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+			<a href="class-predictionio.BaseClient.html"><span>predictionio\BaseClient</span></a>
+			
+			
+			
+		</dd>
+		<dd style="padding-left:30px">
+			<img src="resources/inherit.png" alt="Extended by">
+<b><span>predictionio\EngineClient</span></b>			
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-predictionio.html">predictionio</a><br>
+		
+
+			<b>Located at</b> <a href="source-class-predictionio.EngineClient.html#20-55" title="Go to source code">predictionio/EngineClient.php</a>
+		<br>
+	</div>
+
+
+
+	<table class="summary methods" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-predictionio.EngineClient.html#27-40" title="Go to source code">__construct</a>( <span>string <var>$baseUrl</var> = <span class="php-quote">&quot;http://localhost:8000&quot;</span></span>, <span>float <var>$timeout</var> = <span class="php-num">0</span></span>, <span>float <var>$connectTimeout</var> = <span class="php-num">5</span> </span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$baseUrl</var></dt>
+					<dd>URL to the Engine Instance. Default is localhost:8000.</dd>
+					<dt><var>$timeout</var></dt>
+					<dd><p>of the request in seconds. Use 0 to wait indefinitely
+             Default is 0.</p></dd>
+					<dt><var>$connectTimeout</var></dt>
+					<dd><p>of seconds to wait while trying to connect to a server.
+             Default is 5.</p></dd>
+				</dl></div>
+
+
+
+
+				<h4>Overrides</h4>
+				<div class="list"><code><a href="class-predictionio.BaseClient.html#___construct">predictionio\BaseClient::__construct()</a></code></div>
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="sendQuery" id="_sendQuery">
+
+		<td class="attributes"><code>
+			 public 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_sendQuery">#</a>
+		<code><a href="source-class-predictionio.EngineClient.html#42-54" title="Go to source code">sendQuery</a>( <span>array <var>$query</var></span> )</code>
+
+		<div class="description short">
+			<p>Send prediction query to an Engine Instance</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Send prediction query to an Engine Instance</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$query</var></dt>
+					<dd>Query</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					array<br>JSON response
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					<code><a href="class-predictionio.PredictionIOAPIError.html">predictionio\PredictionIOAPIError</a></code><br>Request error
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+	<table class="summary inherited">
+	<caption>Methods inherited from <a href="class-predictionio.BaseClient.html#methods">predictionio\BaseClient</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-predictionio.BaseClient.html#_getStatus">getStatus()</a>, 
+			<a href="class-predictionio.BaseClient.html#_sendRequest">sendRequest()</a>
+		</code></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+	<table class="summary inherited">
+	<caption>Properties inherited from <a href="class-predictionio.BaseClient.html#properties">predictionio\BaseClient</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-predictionio.BaseClient.html#$client"><var>$client</var></a>
+		</code></td>
+	</tr>
+	</table>
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		PredictionIO API PHP Client API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>
