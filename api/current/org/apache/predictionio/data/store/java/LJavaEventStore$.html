@@ -1,9 +1,9 @@
 <!DOCTYPE html >
 <html>
         <head>
-          <title>LJavaEventStore - PredictionIO Scala API 0.13.0 - org.apache.predictionio.data.store.java.LJavaEventStore</title>
-          <meta name="description" content="LJavaEventStore - PredictionIO Scala API 0.13.0 - org.apache.predictionio.data.store.java.LJavaEventStore" />
-          <meta name="keywords" content="LJavaEventStore PredictionIO Scala API 0.13.0 org.apache.predictionio.data.store.java.LJavaEventStore" />
+          <title>LJavaEventStore - PredictionIO Scala API 0.14.0 - org.apache.predictionio.data.store.java.LJavaEventStore</title>
+          <meta name="description" content="LJavaEventStore - PredictionIO Scala API 0.14.0 - org.apache.predictionio.data.store.java.LJavaEventStore" />
+          <meta name="keywords" content="LJavaEventStore PredictionIO Scala API 0.14.0 org.apache.predictionio.data.store.java.LJavaEventStore" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
@@ -50,10 +50,19 @@
       </h4>
       
           <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>This Java-friendly object provides a set of operation to access Event Store
-without going through Spark's parallelization
+without going through Spark's parallelization.</p><p>Note that blocking methods of this object uses
+<code>scala.concurrent.ExecutionContext.Implicits.global</code> internally.
+Since this is a thread pool which has a number of threads equal to available
+processors, parallelism is limited up to the number of processors.</p><p>If this limitation become bottleneck of resource usage, you can increase the
+number of threads by declaring following VM options before calling &quot;pio deploy&quot;:</p><p><pre>
+export JAVA_OPTS="$JAVA_OPTS \
+  -Dscala.concurrent.context.numThreads=1000 \
+  -Dscala.concurrent.context.maxThreads=1000"
+</pre></p><p>You can learn more about the global execution context in the Scala documentation:
+<a href="https://docs.scala-lang.org/overviews/core/futures.html#the-global-execution-context" target="_blank">https://docs.scala-lang.org/overviews/core/futures.html#the-global-execution-context</a>
 </p></div><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
-          <div class="superTypes hiddenContent"><a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a>, <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Any" class="extype" target="_top">Any</a></div>
+          <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
         
 
@@ -105,7 +114,7 @@ without going through Spark's parallelization
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Any" class="extype" target="_top">Any</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../../../../index.html#org.apache.predictionio.data.store.java.LJavaEventStore$@!=(x$1:Any):Boolean" title="Permalink" target="_top">
@@ -122,7 +131,7 @@ without going through Spark's parallelization
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Int" class="extype" target="_top">Int</a></span>
+        <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Int" class="extype" target="_top">Int</a></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../../../../index.html#org.apache.predictionio.data.store.java.LJavaEventStore$@##():Int" title="Permalink" target="_top">
@@ -139,7 +148,7 @@ without going through Spark's parallelization
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Any" class="extype" target="_top">Any</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../../../../index.html#org.apache.predictionio.data.store.java.LJavaEventStore$@==(x$1:Any):Boolean" title="Permalink" target="_top">
@@ -173,7 +182,7 @@ without going through Spark's parallelization
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">clone</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>
+        <span class="name">clone</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../../../../index.html#org.apache.predictionio.data.store.java.LJavaEventStore$@clone():Object" title="Permalink" target="_top">
@@ -196,7 +205,7 @@ without going through Spark's parallelization
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../../../../index.html#org.apache.predictionio.data.store.java.LJavaEventStore$@eq(x$1:AnyRef):Boolean" title="Permalink" target="_top">
@@ -213,7 +222,7 @@ without going through Spark's parallelization
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Any" class="extype" target="_top">Any</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+        <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../../../../index.html#org.apache.predictionio.data.store.java.LJavaEventStore$@equals(x$1:Any):Boolean" title="Permalink" target="_top">
@@ -230,7 +239,7 @@ without going through Spark's parallelization
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">finalize</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+        <span class="name">finalize</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../../../../index.html#org.apache.predictionio.data.store.java.LJavaEventStore$@finalize():Unit" title="Permalink" target="_top">
@@ -253,7 +262,7 @@ without going through Spark's parallelization
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">find</span><span class="params">(<span name="appName">appName: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="entityType">entityType: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="scala.Predef.String">String</span>]</span>, <span name="entityId">entityId: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="scala.Predef.String">String</span>]</span>, <span name="channelName">channelName: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="scala.Predef.String">String</span>]</span>, <span name="eventNames">eventNames: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="java.util.List">List</span>[<span class="extype" name="scala.Predef.String">String</span>]]</span>, <span name="targetEntityType">targetEntityType: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Option" class="extype" target="_top">Option</a>[<a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="scala.Predef.String">String</span>]]</span>, <span name="targetEntityId">targetEntityId: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Option" class="extype" target="_top">Option</a>[<a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="scala.Predef.String">String</span>]]</span>, <span name="startTime">startTime: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="org.joda.time.DateTime">DateTime</span>]</span>, <span name="untilTime">untilTime: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="org.joda.time.DateTime">DateTime</span>]</span>, <span name="limit">limit: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="java.lang.Integer">Integer</span>]</span>, <span name="timeout">timeout: <span class="extype" name="scala.concurrent.duration.Duration">Duration</span></span>)</span><span class="result">: <span class="extype" name="java.util.List">List</span>[<a href="../../storage/Event.html" class="extype" name="org.apache.predictionio.data.storage.Event">Event</a>]</span>
+        <span class="name">find</span><span class="params">(<span name="appName">appName: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="entityType">entityType: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="scala.Predef.String">String</span>]</span>, <span name="entityId">entityId: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="scala.Predef.String">String</span>]</span>, <span name="channelName">channelName: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="scala.Predef.String">String</span>]</span>, <span name="eventNames">eventNames: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="java.util.List">List</span>[<span class="extype" name="scala.Predef.String">String</span>]]</span>, <span name="targetEntityType">targetEntityType: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Option" class="extype" target="_top">Option</a>[<a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="scala.Predef.String">String</span>]]</span>, <span name="targetEntityId">targetEntityId: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Option" class="extype" target="_top">Option</a>[<a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="scala.Predef.String">String</span>]]</span>, <span name="startTime">startTime: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="org.joda.time.DateTime">DateTime</span>]</span>, <span name="untilTime">untilTime: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="org.joda.time.DateTime">DateTime</span>]</span>, <span name="limit">limit: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="java.lang.Integer">Integer</span>]</span>, <span name="timeout">timeout: <span class="extype" name="scala.concurrent.duration.Duration">Duration</span></span>)</span><span class="result">: <span class="extype" name="java.util.List">List</span>[<a href="../../storage/Event.html" class="extype" name="org.apache.predictionio.data.storage.Event">Event</a>]</span>
       </span>
       </h4><span class="permalink">
       <a href="../../../../../../index.html#org.apache.predictionio.data.store.java.LJavaEventStore$@find(appName:String,entityType:Option[String],entityId:Option[String],channelName:Option[String],eventNames:Option[java.util.List[String]],targetEntityType:Option[Option[String]],targetEntityId:Option[Option[String]],startTime:Option[org.joda.time.DateTime],untilTime:Option[org.joda.time.DateTime],limit:Option[Integer],timeout:scala.concurrent.duration.Duration):java.util.List[org.apache.predictionio.data.storage.Event]" title="Permalink" target="_top">
@@ -263,6 +272,25 @@ without going through Spark's parallelization
       <p class="shortcomment cmt">Reads events generically.</p><div class="fullcomment"><div class="comment cmt"><p>Reads events generically. If entityType or entityId is not specified, it
 results in table scan.
 </p></div><dl class="paramcmts block"><dt class="param">appName</dt><dd class="cmt"><p>return events of this app</p></dd><dt class="param">entityType</dt><dd class="cmt"><p>return events of this entityType</p><ul><li>None means no restriction on entityType</li><li>Some(x) means entityType should match x.</li></ul></dd><dt class="param">entityId</dt><dd class="cmt"><p>return events of this entityId</p><ul><li>None means no restriction on entityId</li><li>Some(x) means entityId should match x.</li></ul></dd><dt class="param">channelName</dt><dd class="cmt"><p>return events of this channel (default channel if it's None)</p></dd><dt class="param">eventNames</dt><dd class="cmt"><p>return events with any of these event names.</p></dd><dt class="param">targetEntityType</dt><dd class="cmt"><p>return events of this targetEntityType:</p><ul><li>None means no restriction on targetEntityType</li><li>Some(None) means no targetEntityType for this event</li><li>Some(Some(x)) means targetEntityType should match x.</li></ul></dd><dt class="param">targetEntityId</dt><dd class="cmt"><p>return events of this targetEntityId</p><ul><li>None means no restriction on targetEntityId</li><li>Some(None) means no targetEntityId for this event</li><li>Some(Some(x)) means targetEntityId should match x.</li></ul></dd><dt class="param">startTime</dt><dd class="cmt"><p>return events with eventTime &gt;= startTime</p></dd><dt class="param">untilTime</dt><dd class="cmt"><p>return events with eventTime &lt; untilTime</p></dd><dt class="param">limit</dt><dd class="cmt"><p>Limit number of events. Get all events if None or Some(-1)</p></dd><dt>returns</dt><dd class="cmt"><p>java.util.List[Event]</p></dd></dl></div>
+    </li><li name="org.apache.predictionio.data.store.java.LJavaEventStore#findAsync" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="findAsync(appName:String,entityType:Option[String],entityId:Option[String],channelName:Option[String],eventNames:Option[java.util.List[String]],targetEntityType:Option[Option[String]],targetEntityId:Option[Option[String]],startTime:Option[org.joda.time.DateTime],untilTime:Option[org.joda.time.DateTime],limit:Option[Integer],executorService:java.util.concurrent.ExecutorService):java.util.concurrent.CompletableFuture[java.util.List[org.apache.predictionio.data.storage.Event]]"></a>
+      <a id="findAsync(String,Option[String],Option[String],Option[String],Option[List[String]],Option[Option[String]],Option[Option[String]],Option[DateTime],Option[DateTime],Option[Integer],ExecutorService):CompletableFuture[List[Event]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">findAsync</span><span class="params">(<span name="appName">appName: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="entityType">entityType: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="scala.Predef.String">String</span>]</span>, <span name="entityId">entityId: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="scala.Predef.String">String</span>]</span>, <span name="channelName">channelName: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="scala.Predef.String">String</span>]</span>, <span name="eventNames">eventNames: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="java.util.List">List</span>[<span class="extype" name="scala.Predef.String">String</span>]]</span>, <span name="targetEntityType">targetEntityType: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Option" class="extype" target="_top">Option</a>[<a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="scala.Predef.String">String</span>]]</span>, <span name="targetEntityId">targetEntityId: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Option" class="extype" target="_top">Option</a>[<a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="scala.Predef.String">String</span>]]</span>, <span name="startTime">startTime: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="org.joda.time.DateTime">DateTime</span>]</span>, <span name="untilTime">untilTime: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="org.joda.time.DateTime">DateTime</span>]</span>, <span name="limit">limit: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="java.lang.Integer">Integer</span>]</span>, <span name="executorService">executorService: <span class="extype" name="java.util.concurrent.ExecutorService">ExecutorService</span></span>)</span><span class="result">: <span class="extype" name="java.util.concurrent.CompletableFuture">CompletableFuture</span>[<span class="extype" name="java.util.List">List</span>[<a href="../../storage/Event.html" class="extype" name="org.apache.predictionio.data.storage.Event">Event</a>]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#org.apache.predictionio.data.store.java.LJavaEventStore$@findAsync(appName:String,entityType:Option[String],entityId:Option[String],channelName:Option[String],eventNames:Option[java.util.List[String]],targetEntityType:Option[Option[String]],targetEntityId:Option[Option[String]],startTime:Option[org.joda.time.DateTime],untilTime:Option[org.joda.time.DateTime],limit:Option[Integer],executorService:java.util.concurrent.ExecutorService):java.util.concurrent.CompletableFuture[java.util.List[org.apache.predictionio.data.storage.Event]]" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Reads events generically.</p><div class="fullcomment"><div class="comment cmt"><p>Reads events generically. If entityType or entityId is not specified, it
+results in table scan.
+</p></div><dl class="paramcmts block"><dt class="param">appName</dt><dd class="cmt"><p>return events of this app</p></dd><dt class="param">entityType</dt><dd class="cmt"><p>return events of this entityType</p><ul><li>None means no restriction on entityType</li><li>Some(x) means entityType should match x.</li></ul></dd><dt class="param">entityId</dt><dd class="cmt"><p>return events of this entityId</p><ul><li>None means no restriction on entityId</li><li>Some(x) means entityId should match x.</li></ul></dd><dt class="param">channelName</dt><dd class="cmt"><p>return events of this channel (default channel if it's None)</p></dd><dt class="param">eventNames</dt><dd class="cmt"><p>return events with any of these event names.</p></dd><dt class="param">targetEntityType</dt><dd class="cmt"><p>return events of this targetEntityType:</p><ul><li>None means no restriction on targetEntityType</li><li>Some(None) means no targetEntityType for this event</li><li>Some(Some(x)) means targetEntityType should match x.</li></ul></dd><dt class="param">targetEntityId</dt><dd class="cmt"><p>return events of this targetEntityId</p><ul><li>None means no restriction on targetEntityId</li><li>Some(None) means no targetEntityId for this event</li><li>Some(Some(x)) means targetEntityId should match x.</li></ul></dd><dt class="param">startTime</dt><dd class="cmt"><p>return events with eventTime &gt;= startTime</p></dd><dt class="param">untilTime</dt><dd class="cmt"><p>return events with eventTime &lt; untilTime</p></dd><dt class="param">limit</dt><dd class="cmt"><p>Limit number of events. Get all events if None or Some(-1)</p></dd><dt>returns</dt><dd class="cmt"><p>CompletableFuture[java.util.List[Event]]</p></dd></dl></div>
     </li><li name="org.apache.predictionio.data.store.java.LJavaEventStore#findByEntity" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="findByEntity(appName:String,entityType:String,entityId:String,channelName:Option[String],eventNames:Option[java.util.List[String]],targetEntityType:Option[Option[String]],targetEntityId:Option[Option[String]],startTime:Option[org.joda.time.DateTime],untilTime:Option[org.joda.time.DateTime],limit:Option[Integer],latest:Boolean,timeout:scala.concurrent.duration.Duration):java.util.List[org.apache.predictionio.data.storage.Event]"></a>
       <a id="findByEntity(String,String,String,Option[String],Option[List[String]],Option[Option[String]],Option[Option[String]],Option[DateTime],Option[DateTime],Option[Integer],Boolean,Duration):List[Event]"></a>
@@ -272,7 +300,7 @@ results in table scan.
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">findByEntity</span><span class="params">(<span name="appName">appName: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="entityType">entityType: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="entityId">entityId: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="channelName">channelName: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="scala.Predef.String">String</span>]</span>, <span name="eventNames">eventNames: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="java.util.List">List</span>[<span class="extype" name="scala.Predef.String">String</span>]]</span>, <span name="targetEntityType">targetEntityType: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Option" class="extype" target="_top">Option</a>[<a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="scala.Predef.String">String</span>]]</span>, <span name="targetEntityId">targetEntityId: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Option" class="extype" target="_top">Option</a>[<a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="scala.Predef.String">String</span>]]</span>, <span name="startTime">startTime: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="org.joda.time.DateTime">DateTime</span>]</span>, <span name="untilTime">untilTime: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="org.joda.time.DateTime">DateTime</span>]</span>, <span name="limit">limit: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="java.lang.Integer">Integer</span>]</span>, <span name="latest">latest: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>, <span name="timeout">timeout: <span class="extype" name="scala.concurrent.duration.Duration">Duration</span></span>)</span><span class="result">: <span class="extype" name="java.util.List">List</span>[<a href="../../storage/Event.html" class="extype" name="org.apache.predictionio.data.storage.Event">Event</a>]</span>
+        <span class="name">findByEntity</span><span class="params">(<span name="appName">appName: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="entityType">entityType: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="entityId">entityId: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="channelName">channelName: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="scala.Predef.String">String</span>]</span>, <span name="eventNames">eventNames: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="java.util.List">List</span>[<span class="extype" name="scala.Predef.String">String</span>]]</span>, <span name="targetEntityType">targetEntityType: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Option" class="extype" target="_top">Option</a>[<a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="scala.Predef.String">String</span>]]</span>, <span name="targetEntityId">targetEntityId: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Option" class="extype" target="_top">Option</a>[<a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="scala.Predef.String">String</span>]]</span>, <span name="startTime">startTime: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="org.joda.time.DateTime">DateTime</span>]</span>, <span name="untilTime">untilTime: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="org.joda.time.DateTime">DateTime</span>]</span>, <span name="limit">limit: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="java.lang.Integer">Integer</span>]</span>, <span name="latest">latest: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>, <span name="timeout">timeout: <span class="extype" name="scala.concurrent.duration.Duration">Duration</span></span>)</span><span class="result">: <span class="extype" name="java.util.List">List</span>[<a href="../../storage/Event.html" class="extype" name="org.apache.predictionio.data.storage.Event">Event</a>]</span>
       </span>
       </h4><span class="permalink">
       <a href="../../../../../../index.html#org.apache.predictionio.data.store.java.LJavaEventStore$@findByEntity(appName:String,entityType:String,entityId:String,channelName:Option[String],eventNames:Option[java.util.List[String]],targetEntityType:Option[Option[String]],targetEntityId:Option[Option[String]],startTime:Option[org.joda.time.DateTime],untilTime:Option[org.joda.time.DateTime],limit:Option[Integer],latest:Boolean,timeout:scala.concurrent.duration.Duration):java.util.List[org.apache.predictionio.data.storage.Event]" title="Permalink" target="_top">
@@ -282,6 +310,25 @@ results in table scan.
       <p class="shortcomment cmt">Reads events of the specified entity.</p><div class="fullcomment"><div class="comment cmt"><p>Reads events of the specified entity. May use this in Algorithm's predict()
 or Serving logic to have fast event store access.
 </p></div><dl class="paramcmts block"><dt class="param">appName</dt><dd class="cmt"><p>return events of this app</p></dd><dt class="param">entityType</dt><dd class="cmt"><p>return events of this entityType</p></dd><dt class="param">entityId</dt><dd class="cmt"><p>return events of this entityId</p></dd><dt class="param">channelName</dt><dd class="cmt"><p>return events of this channel (default channel if it's None)</p></dd><dt class="param">eventNames</dt><dd class="cmt"><p>return events with any of these event names.</p></dd><dt class="param">targetEntityType</dt><dd class="cmt"><p>return events of this targetEntityType:</p><ul><li>None means no restriction on targetEntityType</li><li>Some(None) means no targetEntityType for this event</li><li>Some(Some(x)) means targetEntityType should match x.</li></ul></dd><dt class="param">targetEntityId</dt><dd class="cmt"><p>return events of this targetEntityId</p><ul><li>None means no restriction on targetEntityId</li><li>Some(None) means no targetEntityId for this event</li><li>Some(Some(x)) means targetEntityId should match x.</li></ul></dd><dt class="param">startTime</dt><dd class="cmt"><p>return events with eventTime &gt;= startTime</p></dd><dt class="param">untilTime</dt><dd class="cmt"><p>return events with eventTime &lt; untilTime</p></dd><dt class="param">limit</dt><dd class="cmt"><p>Limit number of events. Get all events if None or Some(-1)</p></dd><dt class="param">latest</dt><dd class="cmt"><p>Return latest event first</p></dd><dt>returns</dt><dd class="cmt"><p>java.util.List[Event]</p></dd></dl></div>
+    </li><li name="org.apache.predictionio.data.store.java.LJavaEventStore#findByEntityAsync" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="findByEntityAsync(appName:String,entityType:String,entityId:String,channelName:Option[String],eventNames:Option[java.util.List[String]],targetEntityType:Option[Option[String]],targetEntityId:Option[Option[String]],startTime:Option[org.joda.time.DateTime],untilTime:Option[org.joda.time.DateTime],limit:Option[Integer],latest:Boolean,executorService:java.util.concurrent.ExecutorService):java.util.concurrent.CompletableFuture[java.util.List[org.apache.predictionio.data.storage.Event]]"></a>
+      <a id="findByEntityAsync(String,String,String,Option[String],Option[List[String]],Option[Option[String]],Option[Option[String]],Option[DateTime],Option[DateTime],Option[Integer],Boolean,ExecutorService):CompletableFuture[List[Event]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">findByEntityAsync</span><span class="params">(<span name="appName">appName: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="entityType">entityType: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="entityId">entityId: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="channelName">channelName: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="scala.Predef.String">String</span>]</span>, <span name="eventNames">eventNames: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="java.util.List">List</span>[<span class="extype" name="scala.Predef.String">String</span>]]</span>, <span name="targetEntityType">targetEntityType: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Option" class="extype" target="_top">Option</a>[<a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="scala.Predef.String">String</span>]]</span>, <span name="targetEntityId">targetEntityId: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Option" class="extype" target="_top">Option</a>[<a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="scala.Predef.String">String</span>]]</span>, <span name="startTime">startTime: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="org.joda.time.DateTime">DateTime</span>]</span>, <span name="untilTime">untilTime: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="org.joda.time.DateTime">DateTime</span>]</span>, <span name="limit">limit: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Option" class="extype" target="_top">Option</a>[<span class="extype" name="java.lang.Integer">Integer</span>]</span>, <span name="latest">latest: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>, <span name="executorService">executorService: <span class="extype" name="java.util.concurrent.ExecutorService">ExecutorService</span></span>)</span><span class="result">: <span class="extype" name="java.util.concurrent.CompletableFuture">CompletableFuture</span>[<span class="extype" name="java.util.List">List</span>[<a href="../../storage/Event.html" class="extype" name="org.apache.predictionio.data.storage.Event">Event</a>]]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../../../index.html#org.apache.predictionio.data.store.java.LJavaEventStore$@findByEntityAsync(appName:String,entityType:String,entityId:String,channelName:Option[String],eventNames:Option[java.util.List[String]],targetEntityType:Option[Option[String]],targetEntityId:Option[Option[String]],startTime:Option[org.joda.time.DateTime],untilTime:Option[org.joda.time.DateTime],limit:Option[Integer],latest:Boolean,executorService:java.util.concurrent.ExecutorService):java.util.concurrent.CompletableFuture[java.util.List[org.apache.predictionio.data.storage.Event]]" title="Permalink" target="_top">
+        <img src="../../../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Reads events of the specified entity.</p><div class="fullcomment"><div class="comment cmt"><p>Reads events of the specified entity. May use this in Algorithm's predict()
+or Serving logic to have fast event store access.
+</p></div><dl class="paramcmts block"><dt class="param">appName</dt><dd class="cmt"><p>return events of this app</p></dd><dt class="param">entityType</dt><dd class="cmt"><p>return events of this entityType</p></dd><dt class="param">entityId</dt><dd class="cmt"><p>return events of this entityId</p></dd><dt class="param">channelName</dt><dd class="cmt"><p>return events of this channel (default channel if it's None)</p></dd><dt class="param">eventNames</dt><dd class="cmt"><p>return events with any of these event names.</p></dd><dt class="param">targetEntityType</dt><dd class="cmt"><p>return events of this targetEntityType:</p><ul><li>None means no restriction on targetEntityType</li><li>Some(None) means no targetEntityType for this event</li><li>Some(Some(x)) means targetEntityType should match x.</li></ul></dd><dt class="param">targetEntityId</dt><dd class="cmt"><p>return events of this targetEntityId</p><ul><li>None means no restriction on targetEntityId</li><li>Some(None) means no targetEntityId for this event</li><li>Some(Some(x)) means targetEntityId should match x.</li></ul></dd><dt class="param">startTime</dt><dd class="cmt"><p>return events with eventTime &gt;= startTime</p></dd><dt class="param">untilTime</dt><dd class="cmt"><p>return events with eventTime &lt; untilTime</p></dd><dt class="param">limit</dt><dd class="cmt"><p>Limit number of events. Get all events if None or Some(-1)</p></dd><dt class="param">latest</dt><dd class="cmt"><p>Return latest event first</p></dd><dt>returns</dt><dd class="cmt"><p>CompletableFuture[java.util.List[Event]]</p></dd></dl></div>
     </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getClass():Class[_]"></a>
       <a id="getClass():Class[_]"></a>
@@ -308,7 +355,7 @@ or Serving logic to have fast event store access.
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Int" class="extype" target="_top">Int</a></span>
+        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Int" class="extype" target="_top">Int</a></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../../../../index.html#org.apache.predictionio.data.store.java.LJavaEventStore$@hashCode():Int" title="Permalink" target="_top">
@@ -325,7 +372,7 @@ or Serving logic to have fast event store access.
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../../../../index.html#org.apache.predictionio.data.store.java.LJavaEventStore$@isInstanceOf[T0]:Boolean" title="Permalink" target="_top">
@@ -342,7 +389,7 @@ or Serving logic to have fast event store access.
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../../../../index.html#org.apache.predictionio.data.store.java.LJavaEventStore$@ne(x$1:AnyRef):Boolean" title="Permalink" target="_top">
@@ -359,7 +406,7 @@ or Serving logic to have fast event store access.
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">notify</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+        <span class="name">notify</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../../../../index.html#org.apache.predictionio.data.store.java.LJavaEventStore$@notify():Unit" title="Permalink" target="_top">
@@ -376,7 +423,7 @@ or Serving logic to have fast event store access.
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../../../../index.html#org.apache.predictionio.data.store.java.LJavaEventStore$@notifyAll():Unit" title="Permalink" target="_top">
@@ -427,7 +474,7 @@ or Serving logic to have fast event store access.
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">wait</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+        <span class="name">wait</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../../../../index.html#org.apache.predictionio.data.store.java.LJavaEventStore$@wait():Unit" title="Permalink" target="_top">
@@ -450,7 +497,7 @@ or Serving logic to have fast event store access.
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Long" class="extype" target="_top">Long</a></span>, <span name="arg1">arg1: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Long" class="extype" target="_top">Long</a></span>, <span name="arg1">arg1: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../../../../index.html#org.apache.predictionio.data.store.java.LJavaEventStore$@wait(x$1:Long,x$2:Int):Unit" title="Permalink" target="_top">
@@ -473,7 +520,7 @@ or Serving logic to have fast event store access.
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Long" class="extype" target="_top">Long</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Long" class="extype" target="_top">Long</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.12/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
       </span>
       </h4><span class="permalink">
       <a href="../../../../../../index.html#org.apache.predictionio.data.store.java.LJavaEventStore$@wait(x$1:Long):Unit" title="Permalink" target="_top">
@@ -497,9 +544,9 @@ or Serving logic to have fast event store access.
 
         <div id="inheritedMembers">
         <div class="parent" name="scala.AnyRef">
-              <h3>Inherited from <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></h3>
+              <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
             </div><div class="parent" name="scala.Any">
-              <h3>Inherited from <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Any" class="extype" target="_top">Any</a></h3>
+              <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
             </div>
         
         </div>

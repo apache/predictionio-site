@@ -1,9 +1,9 @@
 <!DOCTYPE html >
 <html>
         <head>
-          <title>java - PredictionIO Scala API 0.13.0 - org.apache.predictionio.data.store.java</title>
-          <meta name="description" content="java - PredictionIO Scala API 0.13.0 - org.apache.predictionio.data.store.java" />
-          <meta name="keywords" content="java PredictionIO Scala API 0.13.0 org.apache.predictionio.data.store.java" />
+          <title>java - PredictionIO Scala API 0.14.0 - org.apache.predictionio.data.store.java</title>
+          <meta name="description" content="java - PredictionIO Scala API 0.14.0 - org.apache.predictionio.data.store.java" />
+          <meta name="keywords" content="java PredictionIO Scala API 0.14.0 org.apache.predictionio.data.store.java" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
@@ -70,7 +70,7 @@
 
         <div id="values" class="values members">
               <h3>Value Members</h3>
-              <ol><li name="org.apache.predictionio.data.store.java.LJavaEventStore" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+              <ol><li name="org.apache.predictionio.data.store.java.LJavaEventStore" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="LJavaEventStore"></a>
       <a id="LJavaEventStore:LJavaEventStore"></a>
       <h4 class="signature">
@@ -87,8 +87,18 @@
       </a>
     </span>
       <p class="shortcomment cmt">This Java-friendly object provides a set of operation to access Event Store
-without going through Spark's parallelization
-</p>
+without going through Spark's parallelization.</p><div class="fullcomment"><div class="comment cmt"><p>This Java-friendly object provides a set of operation to access Event Store
+without going through Spark's parallelization.</p><p>Note that blocking methods of this object uses
+<code>scala.concurrent.ExecutionContext.Implicits.global</code> internally.
+Since this is a thread pool which has a number of threads equal to available
+processors, parallelism is limited up to the number of processors.</p><p>If this limitation become bottleneck of resource usage, you can increase the
+number of threads by declaring following VM options before calling &quot;pio deploy&quot;:</p><p><pre>
+export JAVA_OPTS="$JAVA_OPTS \
+  -Dscala.concurrent.context.numThreads=1000 \
+  -Dscala.concurrent.context.maxThreads=1000"
+</pre></p><p>You can learn more about the global execution context in the Scala documentation:
+<a href="https://docs.scala-lang.org/overviews/core/futures.html#the-global-execution-context" target="_blank">https://docs.scala-lang.org/overviews/core/futures.html#the-global-execution-context</a>
+</p></div></div>
     </li><li name="org.apache.predictionio.data.store.java.OptionHelper" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="OptionHelper"></a>
       <a id="OptionHelper:OptionHelper"></a>

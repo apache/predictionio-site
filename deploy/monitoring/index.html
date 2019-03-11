@@ -86,7 +86,7 @@
      <span class="k">*</span><span class="p">)</span>
  <span class="k">esac
  </span><span class="nb">exit </span>0
-</pre></td></tr></tbody></table> </div> <p>There can be cases when the process is running but the engine is down however. If the spray REST API used by PredictionIO crashes, the engine process continues but the engine to fail when queried.</p><p>This sort of crash can be taken care of by using monits <code>check program</code> capability.</p><div class="highlight shell"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+</pre></td></tr></tbody></table> </div> <p>There can be cases when the process is running but the engine is down however. If the Akka HTTP REST API used by PredictionIO crashes, the engine process continues but the engine to fail when queried.</p><p>This sort of crash can be taken care of by using monits <code>check program</code> capability.</p><div class="highlight shell"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4

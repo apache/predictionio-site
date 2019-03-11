@@ -1,9 +1,9 @@
 <!DOCTYPE html >
 <html>
         <head>
-          <title>PredictionIO Scala API 0.13.0</title>
-          <meta name="description" content="PredictionIO Scala API 0.13.0" />
-          <meta name="keywords" content="PredictionIO Scala API 0.13.0" />
+          <title>PredictionIO Scala API 0.14.0</title>
+          <meta name="description" content="PredictionIO Scala API 0.14.0" />
+          <meta name="keywords" content="PredictionIO Scala API 0.14.0" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../lib/ref-index.css" media="screen" type="text/css" rel="stylesheet" />
@@ -26,9 +26,6 @@
       <div class="name">Serializer</div>
       <div class="occurrences"><a href="../org/apache/predictionio/data/storage/DateTimeJson4sSupport$.html" class="extype" name="org.apache.predictionio.data.storage.DateTimeJson4sSupport">DateTimeJson4sSupport</a> </div>
     </div><div class="entry">
-      <div class="name">ServerActor</div>
-      <div class="occurrences"><a href="../org/apache/predictionio/workflow/package.html" class="extype" name="org.apache.predictionio.workflow">workflow</a> </div>
-    </div><div class="entry">
       <div class="name">ServerConfig</div>
       <div class="occurrences"><a href="../org/apache/predictionio/workflow/package.html" class="extype" name="org.apache.predictionio.workflow">workflow</a> </div>
     </div><div class="entry">
@@ -41,14 +38,14 @@
       <div class="name">ServingResult</div>
       <div class="occurrences"><a href="../org/apache/predictionio/controller/FastEvalEngineWorkflow.html" class="extype" name="org.apache.predictionio.controller.FastEvalEngineWorkflow">FastEvalEngineWorkflow</a> </div>
     </div><div class="entry">
+      <div class="name">ShouldWritePretty</div>
+      <div class="occurrences"><a href="../org/apache/predictionio/akkahttpjson4s/Json4sSupport$.html" class="extype" name="org.apache.predictionio.akkahttpjson4s.Json4sSupport">Json4sSupport</a> </div>
+    </div><div class="entry">
       <div class="name">SimpleEngine</div>
       <div class="occurrences"><a href="../org/apache/predictionio/controller/package.html" class="extype" name="org.apache.predictionio.controller">controller</a> </div>
     </div><div class="entry">
       <div class="name">SimpleEngineParams</div>
       <div class="occurrences"><a href="../org/apache/predictionio/controller/package.html" class="extype" name="org.apache.predictionio.controller">controller</a> </div>
-    </div><div class="entry">
-      <div class="name">SparkVersionDependent</div>
-      <div class="occurrences"><a href="../org/apache/predictionio/data/package.html" class="extype" name="org.apache.predictionio.data">data</a> </div>
     </div><div class="entry">
       <div class="name">SparkWorkflowUtils</div>
       <div class="occurrences"><a href="../org/apache/predictionio/workflow/package.html" class="extype" name="org.apache.predictionio.workflow">workflow</a> </div>
@@ -110,6 +107,9 @@
       <div class="name">score</div>
       <div class="occurrences"><a href="../org/apache/predictionio/controller/MetricScores.html" class="extype" name="org.apache.predictionio.controller.MetricScores">MetricScores</a> </div>
     </div><div class="entry">
+      <div class="name">serialization</div>
+      <div class="occurrences"><a href="../org/apache/predictionio/workflow/EngineServerJson4sSupport$.html" class="extype" name="org.apache.predictionio.workflow.EngineServerJson4sSupport">EngineServerJson4sSupport</a> </div>
+    </div><div class="entry">
       <div class="name">serializeToJValue</div>
       <div class="occurrences"><a href="../org/apache/predictionio/data/storage/DateTimeJson4sSupport$.html" class="extype" name="org.apache.predictionio.data.storage.DateTimeJson4sSupport">DateTimeJson4sSupport</a> <a href="../org/apache/predictionio/data/storage/EventJson4sSupport$.html" class="extype" name="org.apache.predictionio.data.storage.EventJson4sSupport">EventJson4sSupport</a> </div>
     </div><div class="entry">
@@ -123,10 +123,10 @@
       <div class="occurrences"><a href="../org/apache/predictionio/workflow/MasterActor.html" class="extype" name="org.apache.predictionio.workflow.MasterActor">MasterActor</a> </div>
     </div><div class="entry">
       <div class="name">serverStartTime</div>
-      <div class="occurrences"><a href="../org/apache/predictionio/workflow/ServerActor.html" class="extype" name="org.apache.predictionio.workflow.ServerActor">ServerActor</a> </div>
+      <div class="occurrences"><a href="../org/apache/predictionio/workflow/PredictionServer.html" class="extype" name="org.apache.predictionio.workflow.PredictionServer">PredictionServer</a> </div>
     </div><div class="entry">
       <div class="name">serving</div>
-      <div class="occurrences"><a href="../org/apache/predictionio/controller/MetricEvaluator$$EngineVariant.html" class="extype" name="org.apache.predictionio.controller.MetricEvaluator.EngineVariant">EngineVariant</a> <a href="../org/apache/predictionio/workflow/ServerActor.html" class="extype" name="org.apache.predictionio.workflow.ServerActor">ServerActor</a> </div>
+      <div class="occurrences"><a href="../org/apache/predictionio/controller/MetricEvaluator$$EngineVariant.html" class="extype" name="org.apache.predictionio.controller.MetricEvaluator.EngineVariant">EngineVariant</a> <a href="../org/apache/predictionio/workflow/PredictionServer.html" class="extype" name="org.apache.predictionio.workflow.PredictionServer">PredictionServer</a> </div>
     </div><div class="entry">
       <div class="name">servingCache</div>
       <div class="occurrences"><a href="../org/apache/predictionio/controller/FastEvalEngineWorkflow.html" class="extype" name="org.apache.predictionio.controller.FastEvalEngineWorkflow">FastEvalEngineWorkflow</a> </div>
@@ -135,7 +135,7 @@
       <div class="occurrences"><a href="../org/apache/predictionio/controller/Engine.html" class="extype" name="org.apache.predictionio.controller.Engine">Engine</a> </div>
     </div><div class="entry">
       <div class="name">servingParams</div>
-      <div class="occurrences"><a href="../org/apache/predictionio/controller/EngineParams.html" class="extype" name="org.apache.predictionio.controller.EngineParams">EngineParams</a> <a href="../org/apache/predictionio/controller/FastEvalEngineWorkflow$$ServingPrefix.html" class="extype" name="org.apache.predictionio.controller.FastEvalEngineWorkflow.ServingPrefix">ServingPrefix</a> <a href="../org/apache/predictionio/data/storage/EngineInstance.html" class="extype" name="org.apache.predictionio.data.storage.EngineInstance">EngineInstance</a> <a href="../org/apache/predictionio/workflow/ServerActor.html" class="extype" name="org.apache.predictionio.workflow.ServerActor">ServerActor</a> </div>
+      <div class="occurrences"><a href="../org/apache/predictionio/controller/EngineParams.html" class="extype" name="org.apache.predictionio.controller.EngineParams">EngineParams</a> <a href="../org/apache/predictionio/controller/FastEvalEngineWorkflow$$ServingPrefix.html" class="extype" name="org.apache.predictionio.controller.FastEvalEngineWorkflow.ServingPrefix">ServingPrefix</a> <a href="../org/apache/predictionio/data/storage/EngineInstance.html" class="extype" name="org.apache.predictionio.data.storage.EngineInstance">EngineInstance</a> <a href="../org/apache/predictionio/workflow/PredictionServer.html" class="extype" name="org.apache.predictionio.workflow.PredictionServer">PredictionServer</a> </div>
     </div><div class="entry">
       <div class="name">size</div>
       <div class="occurrences"><a href="../org/apache/predictionio/data/storage/BiMap.html" class="extype" name="org.apache.predictionio.data.storage.BiMap">BiMap</a> <a href="../org/apache/predictionio/data/storage/EntityIdIxMap.html" class="extype" name="org.apache.predictionio.data.storage.EntityIdIxMap">EntityIdIxMap</a> </div>
@@ -160,12 +160,6 @@
     </div><div class="entry">
       <div class="name">splitData</div>
       <div class="occurrences"><a href="../org/apache/predictionio/e2/evaluation/CommonHelperFunctions$.html" class="extype" name="org.apache.predictionio.e2.evaluation.CommonHelperFunctions">CommonHelperFunctions</a> </div>
-    </div><div class="entry">
-      <div class="name">sprayHttpListener</div>
-      <div class="occurrences"><a href="../org/apache/predictionio/workflow/MasterActor.html" class="extype" name="org.apache.predictionio.workflow.MasterActor">MasterActor</a> </div>
-    </div><div class="entry">
-      <div class="name">sqlSession</div>
-      <div class="occurrences"><a href="../org/apache/predictionio/data/SparkVersionDependent$.html" class="extype" name="org.apache.predictionio.data.SparkVersionDependent">SparkVersionDependent</a> </div>
     </div><div class="entry">
       <div class="name">sslEnforced</div>
       <div class="occurrences"><a href="../org/apache/predictionio/workflow/MasterActor.html" class="extype" name="org.apache.predictionio.workflow.MasterActor">MasterActor</a> </div>
@@ -198,12 +192,12 @@
       <div class="occurrences"><a href="../org/apache/predictionio/data/storage/BiMap$.html" class="extype" name="org.apache.predictionio.data.storage.BiMap">BiMap</a> </div>
     </div><div class="entry">
       <div class="name">supplement</div>
-      <div class="occurrences"><a href="../org/apache/predictionio/controller/LServing.html" class="extype" name="org.apache.predictionio.controller.LServing">LServing</a> </div>
+      <div class="occurrences"><a href="../org/apache/predictionio/controller/LServing.html" class="extype" name="org.apache.predictionio.controller.LServing">LServing</a> <a href="../org/apache/predictionio/e2/engine/PythonServing.html" class="extype" name="org.apache.predictionio.e2.engine.PythonServing">PythonServing</a> </div>
     </div><div class="entry">
       <div class="name">supplementBase</div>
       <div class="occurrences"><a href="../org/apache/predictionio/controller/LServing.html" class="extype" name="org.apache.predictionio.controller.LServing">LServing</a> <a href="../org/apache/predictionio/core/BaseServing.html" class="extype" name="org.apache.predictionio.core.BaseServing">BaseServing</a> </div>
     </div><div class="entry">
       <div class="name">system</div>
-      <div class="occurrences"><a href="../org/apache/predictionio/workflow/MasterActor.html" class="extype" name="org.apache.predictionio.workflow.MasterActor">MasterActor</a> <a href="../org/apache/predictionio/workflow/PluginsActor.html" class="extype" name="org.apache.predictionio.workflow.PluginsActor">PluginsActor</a> </div>
+      <div class="occurrences"><a href="../org/apache/predictionio/workflow/MasterActor.html" class="extype" name="org.apache.predictionio.workflow.MasterActor">MasterActor</a> <a href="../org/apache/predictionio/workflow/PluginsActor.html" class="extype" name="org.apache.predictionio.workflow.PluginsActor">PluginsActor</a> <a href="../org/apache/predictionio/workflow/PredictionServer.html" class="extype" name="org.apache.predictionio.workflow.PredictionServer">PredictionServer</a> </div>
     </div></body>
       </html>
